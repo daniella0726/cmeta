@@ -18,7 +18,10 @@
     </div>
   <% end %>
 
-<div style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="encuestador">
+<div class="border border-dark" style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="encuestador">
+
+  <h4 class="p-2 mb-1 bg-secondary text-white text-center">DATOS DE SUPERVISIÓN</h4>
+
   <table class="table table-borderless">
             <tr>
               <th scope="col" class="text-center">Encuestador</th>
@@ -38,9 +41,22 @@
               <td class="text-center"><%= f.text_field :sup, {class: "form-control", id:"res_sup"} %></td>
             </tr>
         </table>
+        <p class="text-center bg-warning border-warning border" id="hora_encuesta"></p>
+        <table class="table table-borderless text-center">
+            <tr>
+              <th>Cuestionario Supervisado</th>
+              <th>Cuestionario Revisado</th>
+              <th>Cuestionario Tabulado</th>
+            </tr>
+            <tr>
+              <td><button class="btn btn-light container-fluid" type="button"><%= f.select :cuestsup, [["Si",1], ["No",2]], {:include_blank => true}, {class: "form-control", id:"res_cuestsup"} %></button></td>
+              <td><button class="btn btn-light container-fluid" type="button"><%= f.select :cuestrev, [["Si",1], ["No",2]], {:include_blank => true}, {class: "form-control", id:"res_cuestrev"} %></button></td>
+              <td><button class="btn btn-light container-fluid" type="button"><%= f.select :cuesttab, [["Si",1], ["No",2]], {:include_blank => true}, {class: "form-control", id:"res_cuesttab"} %></button></td>
+            </tr>
+          </table>
   </div>
 
-  <h6 class="text-center bg-warning border-warning border" style="margin-right: 20px; margin-left: 20px; margin-bottom: 10px;"><br> Muy buenos días/tardes. Mi nombre es     y trabajo para la compañía FOCUS.  Nuestro trabajo es conocer la opinión de personas como usted a través de encuestas, acerca de diferentes temas. Actualmente estamos haciendo un estudio sobre el PRESENTE Y FUTURO DEL DEPARTAMENTO DEL META. 
+  <h6 class="text-center bg-warning border-warning border" style="margin-right: 20px; margin-left: 20px; margin-bottom: 10px;"><br> Muy buenos días/tardes. Mi nombre es <p id="nombre_encuestador"></p>    y trabajo para la compañía FOCUS.  Nuestro trabajo es conocer la opinión de personas como usted a través de encuestas, acerca de diferentes temas. Actualmente estamos haciendo un estudio sobre el PRESENTE Y FUTURO DEL DEPARTAMENTO DEL META. 
 
 Para saber a quién debo entrevistar, me gustaría que por favor me dijera quien es la persona mayor de edad  (QUE NO ESTÉ DE VISITA, NI SEA EMPLEADA) (Rotar hombre / mujer). 
 
@@ -52,6 +68,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 <h4 class="text-center bg-warning border-warning border">UNA VEZ, LA SOLICITUD DE ENCUESTA ES ACEPTADA, COMIENCE CON EL CUESTIONARIO:</h4>  
 
 
+<h4 class="text-center bg-warning border-warning border">FILTROS</h4>  
 
   <div style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="p_m">
     <button class="btn btn-secondary container-fluid" type="button">
@@ -89,7 +106,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     </button>
   </div>
 
-  
+<div class="" id="div_filtro_encuesta">
     <h2 class="bg-dark text-center text-white">1. EXPECTATIVAS – HUMOR SOCIAL</h2>
  
 
@@ -112,32 +129,32 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <h3>1.3 De los aspectos que aparecen en la siguiente tarjeta, por favor dígame cómo se siente usted como METENSE frente a la situación actual del departamento: ( Encuestador:  marcar hacia donde se acerque la opinión) TARJETA No. 1 </h3>
 
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
-    <%= f.label :p_1_3_a, "Aspecto # 1" %>
+    <%= f.label :p_1_3_a, "Aspecto # 1 TRISTE   ALEGRE" %>
     <%= f.select :p_1_3_a, [["Muy Triste",1], ["Triste",2], ["Ni Triste ni Alegre",3], ["Alegre",4], ["Muy Alegre",5]], {:include_blank => true}, {class: "form-control", id:"res_p_1_3_a"} %>
     </button>
 
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
-    <%= f.label :p_1_3_b, "Aspecto # 2" %>
+    <%= f.label :p_1_3_b, "Aspecto # 2 DESCONFIADO   CONFIADO" %>
     <%= f.select :p_1_3_b, [["Muy Desconfiado",1], ["Desconfiado",2], ["Ni Desconfiado ni Confiado",3], ["Confiado",4], ["Muy Confiado",5]], {:include_blank => true}, {class: "form-control", id:"res_p_1_3_b"} %>
     </button>
 
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
-    <%= f.label :p_1_3_c, "Aspecto # 3" %>
+    <%= f.label :p_1_3_c, "Aspecto # 3  TRAICIONADO   RESPALDADO" %>
     <%= f.select :p_1_3_c, [["Muy Traicionado",1], ["Traicionado",2], ["Ni Traicionado ni Respaldado",3], ["Respaldado",4], ["Muy Respaldado",5]], {:include_blank => true}, {class: "form-control", id:"res_p_1_3_c"} %>
     </button>    
 
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
-    <%= f.label :p_1_3_d, "Aspecto # 4" %>
+    <%= f.label :p_1_3_d, "Aspecto # 4 PESIMISTA   OPTIMISTA" %>
     <%= f.select :p_1_3_d, [["Muy Pesimista",1], ["Pesimista",2], ["Ni Pesimista ni Optimista",3], ["Optimista",4], ["Muy Optimista",5]], {:include_blank => true}, {class: "form-control", id:"res_p_1_3_d"} %>
     </button> 
 
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
-    <%= f.label :p_1_3_e, "Aspecto # 5" %>
+    <%= f.label :p_1_3_e, "Aspecto # 5  ABANDONADO   PROTEGIDO" %>
     <%= f.select :p_1_3_e, [["Muy Abandonado",1], ["Abandonado",2], ["Ni Abandonado ni Protegido",3], ["Protegido",4], ["Muy Protegido",5]], {:include_blank => true}, {class: "form-control", id:"res_p_1_3_e"} %>
     </button>    
 
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
-    <%= f.label :p_1_3_f, "Aspecto # 6" %>
+    <%= f.label :p_1_3_f, "Aspecto # 6 OLVIDADO    REPRESENTADO" %>
     <%= f.select :p_1_3_f, [["Muy Olvidado",1], ["Olvidado",2], ["Ni Olvidado ni Representado",3], ["Representado",4], ["Muy Representado",5]], {:include_blank => true}, {class: "form-control", id:"res_p_1_3_f"} %>
     </button>    
   </div>
@@ -170,11 +187,11 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_2_4_a">
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.label :p_2_4_a, "2.4   Si usted tuviera que elegir el principal problema a solucionar por parte del próximo GOBERNADOR DEL DEPARTAMENTO, ¿cuál elegiría?: ( ENC. UNICA RESPUESTA ) ( ENC. MOSTRAR TARJETA )" %>
-    <%= f.select :p_2_4_a, [["La corrupción ",1], ["La inseguridad",2], ["El empleo",3], ["La educación",4], ["La salud",5], ["Las vías",6], ["otro.  Cuál? ",7], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_2_4_a"} %>
+    <%= f.label :p_2_4_a, "2.4   Si usted tuviera que elegir el principal problema a solucionar por parte del próximo GOBERNADOR DEL DEPARTAMENTO, ¿cuál elegiría?: ( ENC. UNICA RESPUESTA ) (( ENC. MOSTRAR TARJETA No. 2)" %>
+    <%= f.select :p_2_4_a, [["1) La corrupción ",1], ["2) La inseguridad",2], ["3) El empleo",3], ["4) La educación",4], ["5) La salud",5], ["6) Las vías",6], ["7) otro.  Cuál? ",7], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_2_4_a"} %>
     </button>
     <div id="p_2_4_b">
-       <p> otro.  Cuál? </p>
+       <p> 7) otro.  Cuál? </p>
       <%= f.text_field :p_2_4_b, {class: "form-control", id:"res_p_2_4_b"} %>
     </div>
   </div>
@@ -182,10 +199,10 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_2_5_a">
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_2_5_a, "2.5  Si usted tuviera que elegir el principal problema a solucionar por parte del próximo ALCALDE DE SU MUNICIPIO, ¿cuál elegiría?: ( ENC. UNICA RESPUESTA ) ( ENC. MOSTRAR TARJETA No. 2)" %>
-    <%= f.select :p_2_5_a, [["La corrupción ",1], ["La inseguridad",2], ["El empleo",3], ["La educación",4], ["La salud",5], ["Las vías",6], ["otro.  Cuál? ",7], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_2_5_a"} %>
+    <%= f.select :p_2_5_a, [["1) La corrupción ",1], ["2) La inseguridad",2], ["3) El empleo",3], ["4) La educación",4], ["5) La salud",5], ["6) Las vías",6], ["7) otro.  Cuál? ",7], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_2_5_a"} %>
     </button>
     <div id="p_2_5_b">
-       <p> otro.  Cuál? </p>
+       <p> 7) otro.  Cuál? </p>
       <%= f.text_field :p_2_5_b, {class: "form-control", id:"res_p_2_5_b"} %>
     </div>
   </div>
@@ -197,12 +214,13 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <%= f.label :p_3_1, "3.1   Por favor, me puede decir el nombre del actual Alcalde de su Municipio? (ENCUESTADOR: VERIFIQUE SI ES CORRECTO)" %>
     <%= f.select :p_3_1, [["CORRECTO",1], ["INCORRECTO",2], ["NO SABE/ NO RESPONDE",99]], {:include_blank => true}, {class: "form-control", id:"res_p_3_1"} %>
     </button>
+    <p class="text-center bg-warning border-warning border" id="nombre_alcalde">El nombre correcto del alcalde es: </p>
   </div>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="p_3_2">
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_3_2, "3.2   ¿Cómo calificaría la gestión del actual Alcalde de su municipio? (ESPONTÁNEA. SI CONTESTA REGULAR PREGUNTAR REGULAR A BIEN O REGULAR A MAL)"%>
-    <%= f.select :p_3_2, [["Muy Bueno",1], ["Bueno",2], ["Regular a bien",3], ["Regular a mal",4], ["Malo",5], ["Muy Malo",6], ["Ns/Nr",9]], {:include_blank => true}, {class: "form-control", id:"res_p_3_2"} %>
+    <%= f.select :p_3_2, [["Muy Bueno",1], ["Bueno",2], ["Regular a bien",3], ["Regular a mal",4], ["Malo",5], ["Muy Malo",6], ["99) NS/NR",9]], {:include_blank => true}, {class: "form-control", id:"res_p_3_2"} %>
     </button>
   </div>
 
@@ -211,7 +229,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
   <div style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="p_4_1">
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_4_1, "4.1   Qué calificación le daría Ud al desempeño de la actual Gobernador(a)? (ESPONTÁNEA. SI CONTESTA REGULAR PREGUNTAR REGULAR A BIEN O REGULAR A MAL)"%>
-    <%= f.select :p_4_1, [["Muy Bueno",1], ["Bueno",2], ["Regular a bien",3], ["Regular a mal",4], ["Malo",5], ["Muy Malo",6], ["Ns/Nr",9]], {:include_blank => true}, {class: "form-control", id:"res_p_4_1"} %>
+    <%= f.select :p_4_1, [["Muy Bueno",1], ["Bueno",2], ["Regular a bien",3], ["Regular a mal",4], ["Malo",5], ["Muy Malo",6], ["99) NS/NR",9]], {:include_blank => true}, {class: "form-control", id:"res_p_4_1"} %>
     </button>
   </div>
 
@@ -240,9 +258,9 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
   <div class="row" style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="p_5_1">
 
-   <h3> 5.1   Voy a mencionarle el nombre de algunos personajes y me gustaría que me dijera si Usted tiene un concepto favorable o desfavorable de cada uno de ellos. Si usted no los conoce o no ha oído hablar de ellos por favor dígamelo: (lea nombre, intercalando-rotar)  </h3>
+   <h3> 5.1   Voy a mencionarle el nombre de algunos personajes y me gustaría que me dijera si Usted tiene un concepto favorable o desfavorable de cada uno de ellos. Si usted no los conoce o no ha oído hablar de ellos por favor dígamelo: (lea nombre, intercalando-rotar)  (ENC. MOSTRAR TARJETA No. 3)</h3>
 
-  <h5 class="bg-info text-center text-white container-fluid">TODOS LOS MUNICIPIOS </h5>
+  <h5 class="bg-info text-center text-white container-fluid">TODOS LOS MUNICIPIOS (ENC. MOSTRAR TARJETA No. 3)</h5>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_5_1_t1">
     <button class="btn btn-secondary container-fluid" type="button">
@@ -381,7 +399,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
 <div class="row" style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="p_5_1_a">
 
-  <h5 class="bg-success text-center text-white container-fluid">SOLO EN ACACIAS </h5>
+  <h5 class="bg-success text-center text-white container-fluid">SOLO EN ACACIAS (ENC. MOSTRAR TARJETA No. 3) </h5>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_5_1_a1">
     <button class="btn btn-secondary container-fluid" type="button">
@@ -484,7 +502,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
 <div class="row" style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="p_5_1_g">
 
-  <h5 class="bg-success text-center text-white container-fluid">SOLO EN GRANADA </h5>
+  <h5 class="bg-success text-center text-white container-fluid">SOLO EN GRANADA (ENC. MOSTRAR TARJETA No. 3)</h5>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_5_1_g1">
     <button class="btn btn-secondary container-fluid" type="button">
@@ -559,7 +577,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
 <div class="row" style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="p_5_1_pg">
 
-  <h5 class="bg-success text-center text-white container-fluid">SOLO EN PUERTO GAITAN </h5>
+  <h5 class="bg-success text-center text-white container-fluid">SOLO EN PUERTO GAITAN (ENC. MOSTRAR TARJETA No. 3) </h5>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_5_1_pg1">
     <button class="btn btn-secondary container-fluid" type="button">
@@ -607,7 +625,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
  
 <div class="row" style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="p_5_1_pl">
 
-  <h5 class="bg-success text-center text-white container-fluid">SOLO EN PUERTO LOPEZ </h5>
+  <h5 class="bg-success text-center text-white container-fluid">SOLO EN PUERTO LOPEZ (ENC. MOSTRAR TARJETA No. 3)</h5>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_5_1_pl1">
     <button class="btn btn-secondary container-fluid" type="button">
@@ -697,7 +715,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
 <div class="row" style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="p_5_1_sm">
 
-  <h5 class="bg-success text-center text-white container-fluid">SOLO EN SAN MARTIN </h5>
+  <h5 class="bg-success text-center text-white container-fluid">SOLO EN SAN MARTIN (ENC. MOSTRAR TARJETA No. 3)</h5>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_5_1_sm1">
     <button class="btn btn-secondary container-fluid" type="button">
@@ -773,7 +791,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
 <div class="row" style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="p_5_1_v">
 
-  <h5 class="bg-success text-center text-white container-fluid">SOLO EN VILLAVICENCIO </h5>
+  <h5 class="bg-success text-center text-white container-fluid">SOLO EN VILLAVICENCIO (ENC. MOSTRAR TARJETA No. 3)</h5>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_5_1_v1">
     <button class="btn btn-secondary container-fluid" type="button">
@@ -885,7 +903,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 </div>
 
 <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_6_2">
-    <h3> <%= f.label :p_6_2, "6.2  (ENTREGAR TARJETA POR MUNICIPIO No. 4) Ahora, pensando en las elecciones de Alcalde del mes de Octubre, si los candidatos fueran los que aparecen en la siguiente tarjeta, por cuál de ellos votaría? (ENCUESTADOR REGISTRAR UNA SOLA OPCIÓN) " %></h3>
+    <h3> <%= f.label :p_6_2, "6.2  (ENTREGAR TARJETA POR MUNICIPIO No. 4) Ahora, pensando en las elecciones de Alcalde del mes de Octubre, si los candidatos fueran los que aparecen en la siguiente tarjeta, por cuál de ellos votaría? (ENCUESTADOR REGISTRAR UNA SOLA OPCIÓN) ENC. MOSTRAR TARJETA No. 4) " %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.text_field :p_6_2, {class: "form-control", id:"res_p_6_2"} %>
     </button>
@@ -906,7 +924,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <%= f.select :p_7_2, [["Partido Liberal 1",1], ["Partido de la U",2], ["Partido Alianza Verde",3], ["Partido Conservador",4], ["Partido Cambio Radical",5], ["Partido Centro Democrático",6], ["Partido Polo Democrático",7], ["Partido Opción Ciudadana",8], ["Partido MIRA",9], ["Partido ASI",10], ["Movimiento Alternativo MAIS",11], ["Movimiento Ciudadano por Firmas",12], ["Partido Político Los Decentes",13], ["Colombia Justa",14], ["Movimiento RENACER",15], ["Otro. CUÁL? ",16], ["Ninguno",17], ["No Sabe / No Contesta (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_7_2"} %>
     </button>
     <div id="p_7_2_a">
-       <p> otro.  Cuál? </p>
+       <p> 7) otro.  Cuál? </p>
       <%= f.text_field :p_7_2_a, {class: "form-control", id:"res_p_7_2_a"} %>
     </div>
 </div>
@@ -917,19 +935,19 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <h6 class="text-center" style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;">7.3  En octubre de este año se realizará una nueva elección de GOBERNADOR DEL META, ¿podría mencionarme los candidatos que usted conoce o ha oído mencionar? (Respuesta espontánea, no leer) </h6>
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_3_a, "Primer Mencionado" %>
-    <%= f.select :p_7_3_a, [["Juan Guillermo Zuluaga",1], ["Hernán Gómez",2], ["Juan Diego Muñoz",3], ["Antonio Cuellar",4],["Alejandro Vega ",5], ["Fernando Sierra ",6], ["Arley Gómez",7], ["Otro.  Cuál?",16]], {:include_blank => true}, {class: "form-control", id:"res_p_7_3_a"} %>
+    <%= f.select :p_7_3_a, [["Juan Guillermo Zuluaga",1], ["Hernán Gómez",2], ["Juan Diego Muñoz",3], ["Antonio Cuellar",4],["Alejandro Vega ",5], ["Fernando Sierra ",6], ["Arley Gómez",7], ["7) otro.  Cuál?",16]], {:include_blank => true}, {class: "form-control", id:"res_p_7_3_a"} %>
     </button>
     <div id="p_7_3_ac" style="margin-left:20px; margin-right: 20px; margin-bottom:10px;">
-       <p> otro.  Cuál? </p>
+       <p> 7) otro.  Cuál? </p>
       <%= f.text_field :p_7_3_ac, {class: "form-control", id:"res_p_7_3_ac"} %>
     </div>
 
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_3_b, "Mencionados en segundo orden" %>
-    <%= f.select :p_7_3_b, [["Juan Guillermo Zuluaga",1], ["Hernán Gómez",2], ["Juan Diego Muñoz",3], ["Antonio Cuellar",4],["Alejandro Vega ",5], ["Fernando Sierra ",6], ["Arley Gómez",7], ["Otro.  Cuál?",16]], {:include_blank => true}, {class: "form-control", id:"res_p_7_3_b"} %>
+    <%= f.select :p_7_3_b, [["Juan Guillermo Zuluaga",1], ["Hernán Gómez",2], ["Juan Diego Muñoz",3], ["Antonio Cuellar",4],["Alejandro Vega ",5], ["Fernando Sierra ",6], ["Arley Gómez",7], ["7) otro.  Cuál?",16]], {:include_blank => true}, {class: "form-control", id:"res_p_7_3_b"} %>
     </button>
     <div id="p_7_3_bc" style="margin-left:20px; margin-right: 20px; margin-bottom:10px;">
-       <p> otro.  Cuál? </p>
+       <p> 7) otro.  Cuál? </p>
       <%= f.text_field :p_7_3_bc, {class: "form-control", id:"res_p_7_3_bc"} %><br>
     </div>
 </div>
@@ -986,7 +1004,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <%= f.select :p_7_10_1, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_1"} %>
     </button>
     <div id="p_7_10_a">
-       <p> otro.  Cuál? </p>
+       <p> 7) otro.  Cuál? </p>
       <%= f.text_field :p_7_10_a, {class: "form-control", id:"res_p_7_10_a"} %>
     </div>
   </div>
@@ -997,7 +1015,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <%= f.select :p_7_10_2, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_2"} %>
     </button>
     <div id="p_7_10_a">
-       <p> otro.  Cuál? </p>
+       <p> 7) otro.  Cuál? </p>
       <%= f.text_field :p_7_10_b, {class: "form-control", id:"res_p_7_10_b"} %>
     </div>
 </div>
@@ -1008,7 +1026,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <%= f.select :p_7_10_3, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_3"} %>
     </button>
     <div id="p_7_10_a">
-       <p> otro.  Cuál? </p>
+       <p> 7) otro.  Cuál? </p>
       <%= f.text_field :p_7_10_c, {class: "form-control", id:"res_p_7_10_c"} %>
     </div>
 </div>
@@ -1019,7 +1037,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <%= f.select :p_7_10_4, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_4"} %>
     </button>
     <div id="p_7_10_a">
-       <p> otro.  Cuál? </p>
+       <p> 7) otro.  Cuál? </p>
       <%= f.text_field :p_7_10_d, {class: "form-control", id:"res_p_7_10_d"} %>
     </div>
 </div>
@@ -1030,7 +1048,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <%= f.select :p_7_10_5, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_5"} %>
     </button>
     <div id="p_7_10_a">
-       <p> otro.  Cuál? </p>
+       <p> 7) otro.  Cuál? </p>
       <%= f.text_field :p_7_10_e, {class: "form-control", id:"res_p_7_10_e"} %>
     </div>
 </div>
@@ -1041,7 +1059,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <%= f.select :p_7_10_6, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_6"} %>
     </button>
     <div id="p_7_10_a">
-       <p> otro.  Cuál? </p>
+       <p> 7) otro.  Cuál? </p>
       <%= f.text_field :p_7_10_f, {class: "form-control", id:"res_p_7_10_f"} %>
     </div>
 </div>
@@ -1052,7 +1070,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <%= f.select :p_7_10_7, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_7"} %>
     </button>
     <div id="p_7_10_a">
-       <p> otro.  Cuál? </p>
+       <p> 7) otro.  Cuál? </p>
       <%= f.text_field :p_7_10_g, {class: "form-control", id:"res_p_7_10_g"} %>
     </div>
   </div>
@@ -1311,7 +1329,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
 <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_8_5_k">
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.label :p_8_5_k, "k) Que lo apoyen los Consejales - Diputados" %>
+    <%= f.label :p_8_5_k, "k) Que lo apoyen los Concejales - Diputados" %>
     <%= f.select :p_8_5_k, [["Nada importante",1], ["Poco importante",2], ["Ni poco importante, ni importante",3], ["importante",4],["Muy importante ",5]], {:include_blank => true}, {class: "form-control", id:"res_p_8_5_k"} %>
     </button>
 </div>
@@ -1367,7 +1385,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
 <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_8_5_s">
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.label :p_8_5_s, "r) Que tena el apoyo del ex presidente Juan Manuel Santos" %>
+    <%= f.label :p_8_5_s, "r) Que tenga el apoyo del ex presidente Juan Manuel Santos" %>
     <%= f.select :p_8_5_s, [["Nada importante",1], ["Poco importante",2], ["Ni poco importante, ni importante",3], ["importante",4],["Muy importante ",5]], {:include_blank => true}, {class: "form-control", id:"res_p_8_5_s"} %>
     </button>
 </div>
@@ -1559,7 +1577,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <%= f.select :p_9_2, [["Partido Liberal 1",1], ["Partido de la U",2], ["Partido Alianza Verde",3], ["Partido Conservador",4], ["Partido Cambio Radical",5], ["Partido Centro Democrático",6], ["Partido Polo Democrático",7], ["Partido Opción Ciudadana",8], ["Partido MIRA",9], ["Partido ASI",10], ["Movimiento Alternativo MAIS",11], ["Movimiento Ciudadano por Firmas",12], ["Partido Político Los Decentes",13], ["Colombia Justa",14], ["Movimiento RENACER",15], ["Otro. CUÁL? ",16], ["Ninguno",17], ["No Sabe / No Contesta (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_7_2"} %>
     </button>
     <div id="p_9_2_a">
-       <p> otro.  Cuál? </p>
+       <p> 7) otro.  Cuál? </p>
       <%= f.text_field :p_9_2_a, {class: "form-control", id:"res_p_9_2_a"} %>
     </div>
 </div>
@@ -1572,7 +1590,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <%= f.select :p_9_3, [["Partido Liberal 1",1], ["Partido de la U",2], ["Partido Alianza Verde",3], ["Partido Conservador",4], ["Partido Cambio Radical",5], ["Partido Centro Democrático",6], ["Partido Polo Democrático",7], ["Partido Opción Ciudadana",8], ["Partido MIRA",9], ["Partido ASI",10], ["Movimiento Alternativo MAIS",11], ["Movimiento Ciudadano por Firmas",12], ["Partido Político Los Decentes",13], ["Colombia Justa",14], ["Movimiento RENACER",15], ["Otro. CUÁL? ",16], ["Ninguno",17], ["No Sabe / No Contesta (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_9_3"} %>
     </button>
     <div id="p_9_3_a">
-       <p> otro.  Cuál? </p>
+       <p> 7) otro.  Cuál? </p>
       <%= f.text_field :p_9_3_a, {class: "form-control", id:"res_p_9_3_a"} %>
     </div>
 </div>
@@ -1581,7 +1599,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
   <div style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="p_10_1">
 
-   <h3> 10.1 Encuestador: Mostar FOTO.  De las sensaciones que le voy a mostrar en esta tarjeta, dígame por favor cuáles de estas le genera a usted esta persona. </h3>
+   <h3> 10.1 Encuestador: Mostrar FOTO.  De las sensaciones que le voy a mostrar en esta tarjeta, dígame por favor cuáles de estas le genera a usted esta persona. </h3>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_1_a">
     <button class="btn btn-secondary container-fluid" type="button">
@@ -1613,7 +1631,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
   </div>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_2">
-    <h3><%= f.label :p_10_2, "10.2 Encuestador:  Mostar FOTO.  Sabe usted quién es esta persona?" %></h3>
+    <h3><%= f.label :p_10_2, "10.2 Encuestador:  Mostrar FOTO.  Sabe usted quién es esta persona?" %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.select :p_10_2, [["Si",1], ["No",2]], {:include_blank => true}, {class: "form-control", id:"res_p_10_2"} %>
     </button>
@@ -1624,7 +1642,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_3">
     <h3><%= f.label :p_10_3, "10.3  Sabe Usted quién es: JUAN GUILLERMO ZULUAGA? (ENC: PREGUNTA CON RESPUESTA EXPONTANEA, NO LEER.  REVISAR EN TARJETA No. 8 SI ESTÁ EL CODIGO DE LA RESPUESTA Y PONERLO, SINO EXISTE CÓDIGO PONER RESPUESTA) " %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.select :p_10_3, [["Si",1], ["No",2], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_3"} %>
+    <%= f.select :p_10_3, [["Si",1], ["No",2], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_3"} %>
     </button>
     <%= f.label :p_10_3_a, "a. Quién es?" %>
     <%= f.text_field :p_10_3_a, {class: "form-control", id:"res_p_10_3_a"} %>
@@ -1633,21 +1651,21 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_4">
     <h3><%= f.label :p_10_4, "10.4 Encuestador: Solamente para los que dijeron un exministro. Recuerda usted qué Ministerio ocupó JUAN GUILLERMO ZULUAGA?" %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.select :p_10_4, [["Ministerio del interior",1], ["Ministerio de Comercio",2], ["Ministerio de Agricultura",3], ["Ministerio de Justicia",4], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_4"} %>
+    <%= f.select :p_10_4, [["Ministerio del interior",1], ["Ministerio de Comercio",2], ["Ministerio de Agricultura",3], ["Ministerio de Justicia",4], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_4"} %>
     </button>
   </div>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_4x">
     <h3><%= f.label :p_10_4x, "10.4x Encuestador: Solamente para los que dijeron un exministro. Recuerda usted qué Ministerio ocupó JUAN GUILLERMO ZULUAGA?" %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.select :p_10_4x, [["Muy Buena",1], ["Buena",2], ["Regular a Bien",3], ["Regular a Mal",4], ["Mala",5], ["Muy Mala",6], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_4x"} %>
+    <%= f.select :p_10_4x, [["Muy Buena",1], ["Buena",2], ["Regular a Bien",3], ["Regular a Mal",4], ["Mala",5], ["Muy Mala",6], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_4x"} %>
     </button>
   </div>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_5">
     <h3><%= f.label :p_10_5, "10.5 Sabe usted JUAN GUILLERMO ZULUAGA de qué partido  es candidato a la GOBERNACIÓN DEL META?" %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.select :p_10_5, [["Partido Liberal",1], ["Partido de la U",2], ["Partido Alianza Verde",3], ["Partido Conservador",4], ["Partido Cambio Radical",5], ["Partido Centro Democrático",6], ["Partido Polo Democrático",7], ["Partido Opción Ciudadana",8], ["Partido MIRA",9], ["Partido ASI",10], ["Movimiento Alternativo MAIS",11], ["Movimiento Ciudadano por Firmas",12], ["Partido Político Los Decentes",13], ["Colombia Justa",14], ["Movimiento RENACER",15], ["Otro",16], ["Ninguno",17], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_5"} %>
+    <%= f.select :p_10_5, [["Partido Liberal",1], ["Partido de la U",2], ["Partido Alianza Verde",3], ["Partido Conservador",4], ["Partido Cambio Radical",5], ["Partido Centro Democrático",6], ["Partido Polo Democrático",7], ["Partido Opción Ciudadana",8], ["Partido MIRA",9], ["Partido ASI",10], ["Movimiento Alternativo MAIS",11], ["Movimiento Ciudadano por Firmas",12], ["Partido Político Los Decentes",13], ["Colombia Justa",14], ["Movimiento RENACER",15], ["Otro",16], ["Ninguno",17], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_5"} %>
     </button>
     <%= f.label :p_10_5_a, "Cuál?" %>
     <%= f.text_field :p_10_5_a, {class: "form-control", id:"res_p_10_5_a"} %>
@@ -1656,7 +1674,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_6">
     <h3><%= f.label :p_10_6, "10.6 Sabe usted si JUAN GUILLERMO ZULUAGA estuvo en otro partido?" %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.select :p_10_6, [["Si",1], ["No",2], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_6"} %>
+    <%= f.select :p_10_6, [["Si",1], ["No",2], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_6"} %>
     </button>
     <%= f.label :p_10_6_a, "Cuál?" %>
     <%= f.text_field :p_10_6_a, {class: "form-control", id:"res_p_10_6_a"} %>
@@ -1665,7 +1683,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_7">
     <h3><%= f.label :p_10_7, "10.7 Para los que respondieron SI.  Cómo ve usted esto?" %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.select :p_10_7, [["Si",1], ["No",2], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_7"} %>
+    <%= f.select :p_10_7, [["Si",1], ["No",2], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_7"} %>
     </button>
   </div>
 
@@ -1685,109 +1703,109 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
             <tr id="p_10_8_a">
               <td class="text-left"><h5><%= f.label :p_10_8_a, "a. Trabajador" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_a, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_a"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_a, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_a"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_b">
               <td class="text-left"><h5><%= f.label :p_10_8_b, "b. Honesto" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_b, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_b"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_b, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_b"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_c">
               <td class="text-left"><h5><%= f.label :p_10_8_c, "c. Capacidad para resolver problemas" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_c, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_c"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_c, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_c"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_d">
               <td class="text-left"><h5><%= f.label :p_10_8_d, "d. Con suficiente preparación" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_d, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_d"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_d, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_d"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_e">
               <td class="text-left"><h5><%= f.label :p_10_8_e, "e. Responsable" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_e, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_e"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_e, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_e"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_f">
               <td class="text-left"><h5><%= f.label :p_10_8_f, "f. Con habilidades para expresarse correctamente" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_f, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_f"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_f, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_f"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_g">
               <td class="text-left"><h5><%= f.label :p_10_8_g, "g. Inspira confianza" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_g, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_g"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_g, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_g"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_h">
               <td class="text-left"><h5><%= f.label :p_10_8_h, "h. Conoce de los problemas del Departamento" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_h, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_h"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_h, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_h"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_i">
               <td class="text-left"><h5><%= f.label :p_10_8_i, "i. Cumple lo que promete" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_i, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_i"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_i, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_i"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_j">
               <td class="text-left"><h5><%= f.label :p_10_8_j, "j. Interés en los problemas de las personas" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_j, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_j"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_j, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_j"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_k">
               <td class="text-left"><h5><%= f.label :p_10_8_k, "k. Buen ejecutor" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_k, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_k"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_k, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_k"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_l">
               <td class="text-left"><h5><%= f.label :p_10_8_l, "l. Con capacidad para gestionar recursos" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_l, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_l"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_l, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_l"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_m">
               <td class="text-left"><h5><%= f.label :p_10_8_m, "m. Cercano a la gente" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_m, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_m"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_m, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_m"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_n">
               <td class="text-left"><h5><%= f.label :p_10_8_n, "n. Serio" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_n, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_n"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_n, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_n"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_o">
               <td class="text-left"><h5><%= f.label :p_10_8_o, "o. Demasiado sincero" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_o, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_o"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_o, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_o"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_p">
               <td class="text-left"><h5><%= f.label :p_10_8_p, "p. Eficiente de resultados" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_p, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_p"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_p, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_p"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_q">
               <td class="text-left"><h5><%= f.label :p_10_8_q, "q. Berraco" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_q, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_q"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_q, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_q"} %></button>
               </td>
             </tr>
             <tr id="p_10_8_r">
               <td class="text-left"><h5><%= f.label :p_10_8_r, "r. Guerrero" %></h5> 
               </td>
-              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_r, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_r"} %></button>
+              <td class="text-center"><button class="btn btn-secondary container-fluid" type="button"><%= f.select :p_10_8_r, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_8_r"} %></button>
               </td>
             </tr>
           </tbody>
@@ -1804,7 +1822,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_10">
     <h3><%= f.label :p_10_10, "10.10 ¿Usted ha oído mencionar actividades qué haya hecho el candidato a la Gobernación del Meta: JUAN GUILLERMO ZULUAGA en las últimas semanas? (PREGUNTA CON RESPUESTA EXPONTANEA.)" %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.select :p_10_10, [["Si",1], ["No",2], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_10"} %>
+    <%= f.select :p_10_10, [["Si",1], ["No",2], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_10"} %>
     </button>
     <%= f.label :p_10_10_a, "Qué ha oído mencionar? _____________________" %>
     <%= f.text_field :p_10_10_a, {class: "form-control", id:"res_p_10_10_a"} %>
@@ -1813,14 +1831,14 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_11">
     <h3><%= f.label :p_10_11, "10.11 ¿Sabía usted que JUAN GUILLERMO ZULUAGA estuvo recorriendo más de 2.000 kilómetros del Departamento del Meta en bicicleta, para escuchar a la gente y conocer sus problemas?" %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.select :p_10_11, [["Si",1], ["No",2], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_11"} %>
+    <%= f.select :p_10_11, [["Si",1], ["No",2], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_11"} %>
     </button>
   </div>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_12">
     <h3><%= f.label :p_10_12, "10.12  El hecho de que JUAN GUILLERMO ZULUAGA estuviera recorriendo más de 2.000 kilómetros del Departamento del Meta en bicicleta, para escuchar a la gente y conocer sus problemas, a usted le provoca:" %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.select :p_10_12, [["Una gran simpatía",1], ["Me parece bien",2], ["No me provoca nada",3], ["Me parece mal",4], ["Me produce un gran rechazo",5], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_12"} %>
+    <%= f.select :p_10_12, [["Una gran simpatía",1], ["Me parece bien",2], ["No me provoca nada",3], ["Me parece mal",4], ["Me produce un gran rechazo",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_12"} %>
     </button>
   </div>
 
@@ -1847,7 +1865,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <br>
 
     <h5><%= f.label :p_11_3, "11.3  En materia religiosa, usted se considera…" %></h5>
-    <%= f.select :p_11_3, [["Católico no practicante ",1], ["Católico practicante ",2], ["Evangélico no practicante",3], ["Evangélico practicante",4], ["Ateo",5], ["Otra",6], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_11_3"} %>
+    <%= f.select :p_11_3, [["Católico no practicante ",1], ["Católico practicante ",2], ["Evangélico no practicante",3], ["Evangélico practicante",4], ["Ateo",5], ["Otra",6], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_11_3"} %>
     <h5 style="margin-top: 10px;"><%= f.label :p_11_3_a, "Cuál?" %></h5>
     <%= f.text_field :p_11_3_a, {class: "form-control", id:"res_p_11_3_a"} %>
     <br>
@@ -1898,6 +1916,9 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
   </div>
 </div>
 
+</div>
+
+
 <div class="col-md-12">
     <div class="row">
       <div class="col-md-6 text-center">
@@ -1919,8 +1940,84 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
   $(document).ready(function(){
 
+
+    var fecha = new Date()
+
+    var horas = fecha.getHours();
+    var minutos = fecha.getMinutes();
+    var segundos = fecha.getSeconds();
+    var dias = fecha.getDate();
+    var mes = fecha.getMonth();
+    var anos = fecha.getYear();
+
+    fecha1 = dias+"/5/2019";
+    codigo = horas+""+minutos+""+segundos;
+    hora1 = "La hora es: "+ horas+":"+minutos;
+
+    document.getElementById("res_date").value = fecha1;
+    document.getElementById('hora_encuesta').innerHTML = hora1;
+
+    $('#res_f_1').change(function(){
+      if($("#res_f_1").val() == "2"){
+        $('#div_filtro_encuesta').addClass('hidden');
+      }
+    });
+
+
+
+    $('#res_f_1').change(function(){
+      if($("#res_f_1").val() == "1"){
+        $('#div_filtro_encuesta').removeClass('hidden');
+      }
+    });
+
+    $('#res_f_2_a').change(function(){
+      if($("#res_f_2_a").val() == "2"){
+        $('#div_filtro_encuesta').addClass('hidden');
+      }
+    });
+
+    $('#res_f_2_a').change(function(){
+      if($("#res_f_2_a").val() == "1"){
+        $('#div_filtro_encuesta').removeClass('hidden');
+      }
+    });
+
+    $('#res_f_2_b').change(function(){
+      if($("#res_f_2_b").val() == "2"){
+        $('#div_filtro_encuesta').addClass('hidden');
+      }
+    });
+
+    $('#res_f_2_b').change(function(){
+      if($("#res_f_2_b").val() == "1"){
+        $('#div_filtro_encuesta').removeClass('hidden');
+      }
+    });
+
+    $('#res_f_2_c').change(function(){
+      if($("#res_f_2_c").val() == "2"){
+        $('#div_filtro_encuesta').addClass('hidden');
+      }
+    });
+
+    $('#res_f_2_c').change(function(){
+      if($("#res_f_2_c").val() == "1"){
+        $('#div_filtro_encuesta').removeClass('hidden');
+      }
+    });
+
+    $("#res_encu").change(function(){
+      var encustador_1 = $('#res_encu').val();
+      document.getElementById('nombre_encuestador').innerHTML = encustador_1;
+    });
+
+
+
+
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "1"){
+        document.getElementById('nombre_encuestador').innerHTML = "Luis Orlando Gutiérrez";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').addClass('hidden');
@@ -1932,6 +2029,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "2"){
+        document.getElementById('nombre_encuestador').innerHTML = "José Alexander Fierro Guayara";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').addClass('hidden');
@@ -1943,6 +2041,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "3"){
+        document.getElementById('nombre_encuestador').innerHTML = "Juan Carlos Mendoza";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').addClass('hidden');
@@ -1954,6 +2053,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "4"){
+        document.getElementById('nombre_encuestador').innerHTML = "Víctor Manuel Bravo Rodríguez";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').removeClass('hidden');
@@ -1965,6 +2065,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "5"){
+        document.getElementById('nombre_encuestador').innerHTML = "Jonathan David Neira";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').removeClass('hidden');
         $('#p_5_1_pl').addClass('hidden');
@@ -1976,6 +2077,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "6"){
+        document.getElementById('nombre_encuestador').innerHTML = "Wilmar Orlando Barbosa Rozo";
         $('#p_5_1_v').removeClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').addClass('hidden');
@@ -2021,11 +2123,45 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
  
         return result;
     }
+
+    
  
     function downloadCSV(args) {
         var data, filename, link;
         
         var stockData = [
+        {
+          Pregunta: "Encuestador",
+          Respuesta : $("#res_encu").val()
+        },
+        {
+          Pregunta: "Fecha",
+          Respuesta : $("#res_date").val()
+        },
+        {
+          Pregunta: "Hora",
+          Respuesta : hora1
+        },
+        {
+          Pregunta: "Codigo",
+          Respuesta : $("#res_cod").val()
+        },
+        {
+          Pregunta: "Supervisor",
+          Respuesta : $("#res_sup").val()
+        },
+        {
+          Pregunta: "Supervisado",
+          Respuesta : $("#res_cuestsup").val()
+        },
+        {
+          Pregunta: "Tabulado",
+          Respuesta : $("#res_cuesttab").val()
+        },
+        {
+          Pregunta: "Revisado",
+          Respuesta : $("#res_cuestrev").val()
+        },
         {
           Pregunta: "municipio",
           Respuesta : $("#res_p_m").val()
@@ -3102,7 +3238,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
           });
           if (csv == null) return;
    
-          filename = args.filename || 'export.csv';
+          filename = codigo + args.filename || 'export.csv';
    
           if (!csv.match(/^data:text\/csv/i)) {
               csv = 'data:text/csv;charset=utf-8,' + csv;

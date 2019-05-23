@@ -68,7 +68,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 <h4 class="text-center bg-warning border-warning border">UNA VEZ, LA SOLICITUD DE ENCUESTA ES ACEPTADA, COMIENCE CON EL CUESTIONARIO:</h4>  
 
 
-<h4 class="text-center bg-warning border-warning border">FILTROS</h4>  
+<h4 class="p-2 bg-dark text-white text-center">FILTROS</h4>  
 
   <div style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="p_m">
     <button class="btn btn-secondary container-fluid" type="button">
@@ -993,89 +993,102 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <%= f.select :p_7_9, [["Juan Guillermo Zuluaga",1], ["Hernán Gómez",2], ["Juan Diego Muñoz",3], ["Antonio Cuellar",4],["Alejandro Vega ",5], ["Fernando Sierra ",6], ["Arley Gómez",7], ["Ninguno",8], ["Ns / Nr",99]], {:include_blank => true}, {class: "form-control", id:"res_p_7_9"} %>
     </button>
 </div>
+</div>
 
-<div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_7_10">
+<div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" >
 
   <h6>7.10 Voy a mencionarle el nombre de los candidatos que se han presentado para la GOBERNACIÓN DEL META y me gustaría que me dijera SI USTED TIENE UN CONCEPTO FAVORABLE O DESFAVORABLE de cada uno de ellos. Si usted no sabe quiénes son o no ha oído hablar de ellos por favor dígamelo; muy bien empecemos: </h6>
-<div class="container-fluid container">
+</div>
+
+<div class="container-fluid container" id="p_7_10">
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_7_10_1">
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_10_1, "a) Hernán Gomez" %>
     <%= f.select :p_7_10_1, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_1"} %>
-    </button>
-    <div id="p_7_10_a">
-       <p> 7) otro.  Cuál? </p>
+      <div id="p_7_10_a">
+       <br>
+       <p>POR QUÉ DE LA IMAGEN</p>
       <%= f.text_field :p_7_10_a, {class: "form-control", id:"res_p_7_10_a"} %>
-    </div>
+      </div>
+    </button>
   </div>
 
+
 <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_7_10_2">
-    <button class="btn btn-secondary container-fluid" type="button">
+
+  <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_10_2, "b) Juan Diego Muñoz" %>
     <%= f.select :p_7_10_2, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_2"} %>
-    </button>
-    <div id="p_7_10_a">
-       <p> 7) otro.  Cuál? </p>
+    <div id="p_7_10_b">
+      <br>
+       <p>POR QUÉ DE LA IMAGEN</p>
       <%= f.text_field :p_7_10_b, {class: "form-control", id:"res_p_7_10_b"} %>
     </div>
+  </button>
 </div>
 
 <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_7_10_3">
-    <button class="btn btn-secondary container-fluid" type="button">
+  <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_10_3, "c) Juan Guillermo Zuluaga" %>
     <%= f.select :p_7_10_3, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_3"} %>
-    </button>
-    <div id="p_7_10_a">
-       <p> 7) otro.  Cuál? </p>
+    <div id="p_7_10_c">
+       <p>POR QUÉ DE LA IMAGEN</p>
+       <br>
       <%= f.text_field :p_7_10_c, {class: "form-control", id:"res_p_7_10_c"} %>
     </div>
+  </button>
 </div>
 
 <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_7_10_4">
-    <button class="btn btn-secondary container-fluid" type="button">
+  <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_10_4, "d) Antonio Cuellar" %>
     <%= f.select :p_7_10_4, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_4"} %>
-    </button>
-    <div id="p_7_10_a">
-       <p> 7) otro.  Cuál? </p>
+    <div id="p_7_10_d">
+      <br>
+       <p>POR QUÉ DE LA IMAGEN</p>
       <%= f.text_field :p_7_10_d, {class: "form-control", id:"res_p_7_10_d"} %>
     </div>
+  </button>
 </div>
 
 <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_7_10_5">
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_10_5, "e) Alejandro Vega" %>
     <%= f.select :p_7_10_5, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_5"} %>
-    </button>
-    <div id="p_7_10_a">
-       <p> 7) otro.  Cuál? </p>
+    <div id="p_7_10_e">
+       <p>POR QUÉ DE LA IMAGEN</p>
+       <br>
       <%= f.text_field :p_7_10_e, {class: "form-control", id:"res_p_7_10_e"} %>
     </div>
+  </button>
 </div>
 
 <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_7_10_6">
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_10_6, "f) Fernando Sierra" %>
     <%= f.select :p_7_10_6, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_6"} %>
-    </button>
-    <div id="p_7_10_a">
-       <p> 7) otro.  Cuál? </p>
+    <div id="p_7_10_f">
+      <br>
+       <p>POR QUÉ DE LA IMAGEN</p>
       <%= f.text_field :p_7_10_f, {class: "form-control", id:"res_p_7_10_f"} %>
     </div>
+  </button>
 </div>
 
 <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_7_10_7">
-    <button class="btn btn-secondary container-fluid" type="button">
+  <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_10_7, "g) Arley Gómez" %>
     <%= f.select :p_7_10_7, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_7"} %>
-    </button>
-    <div id="p_7_10_a">
-       <p> 7) otro.  Cuál? </p>
+    <div id="p_7_10_g">
+       <p>POR QUÉ DE LA IMAGEN</p>
+       <br>
       <%= f.text_field :p_7_10_g, {class: "form-control", id:"res_p_7_10_g"} %>
     </div>
-  </div>
+  </button>
 </div>
 </div>
+
+
 
 
 <h2 class="bg-dark text-center text-white">8. PERFILES Y ATRIBUTOS DE LOS CANDIDATOS A LA GOBERNACION </h2>

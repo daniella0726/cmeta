@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_22_070353) do
+ActiveRecord::Schema.define(version: 2019_05_22_212958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -290,6 +290,41 @@ ActiveRecord::Schema.define(version: 2019_05_22_070353) do
     t.string "direccion"
     t.string "tel"
     t.string "cel"
+  end
+
+  create_table "form514s", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "encu"
+    t.date "date"
+    t.string "cod"
+    t.string "sup"
+    t.string "cuestsup"
+    t.string "cuestrev"
+    t.string "cuesttab"
+    t.time "hourinit"
+    t.integer "f_1"
+    t.integer "f_2_a"
+    t.integer "f_2_b"
+    t.integer "f_2_c"
+    t.integer "p_1_1"
+    t.string "p_2_1"
+    t.integer "p_3_1"
+    t.integer "p_3_2"
+    t.string "p_3_2_a"
+    t.string "p_3_3"
+    t.string "p_3_4"
+    t.integer "p_3_5"
+    t.integer "p_11_d1"
+    t.integer "p_11_d2"
+    t.integer "p_11_d3"
+    t.integer "p_11_d4"
+    t.string "nombre"
+    t.string "barrio"
+    t.string "direccion"
+    t.string "tel"
+    t.string "cel"
+    t.time "hourend"
   end
 
 end

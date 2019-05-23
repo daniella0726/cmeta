@@ -1,0 +1,215 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<%= form_with(model: form514, local: true) do |f| %>
+  <% if form514.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(form514.errors.count, "error") %> prohibited this form514 from being saved:</h2>
+
+      <ul>
+      <% form514.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row" style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="all_form">
+
+  <div class="container-fluid border border-dark" id="encuestador">
+
+    <h4 class="p-2 mb-1 bg-secondary text-white text-center">DATOS DE SUPERVISIÓN</h4>
+
+          <table class="table table-borderless">
+            <tr>
+              <th scope="col" class="text-center">Encuestador</th>
+              <th scope="col" class="text-center">Fecha</th>
+            </tr>
+            <tr>
+              <td class="text-center"><%= f.text_field :encu, {class: "form-control", id:"res_encu"} %></td>
+            
+              <td class="text-center"><%= f.text_field :date, {class: "form-control", id:"res_date"} %></td>
+            </tr>
+            <tr>
+              <th scope="col" class="text-center">Código de la Muestra</th>
+              <th scope="col" class="text-center">Supervisor</th>
+            </tr>
+            <tr>
+              <td class="text-center"><%= f.text_field :cod, {class: "form-control", id:"res_cod"} %></td>
+              <td class="text-center"><%= f.text_field :sup, {class: "form-control", id:"res_sup"} %></td>
+            </tr>
+          </table>
+          <table class="table table-borderless text-center">
+            <tr>
+              <th>Cuestionario Supervisado</th>
+              <th>Cuestionario Revisado</th>
+              <th>Cuestionario Tabulado</th>
+            </tr>
+            <tr>
+              <td><button class="btn btn-light container-fluid" type="button"><%= f.select :cuestsup, [["Si",1], ["No",2]], {:include_blank => true}, {class: "form-control", id:"res_cuestsup"} %></button></td>
+              <td><button class="btn btn-light container-fluid" type="button"><%= f.select :cuestrev, [["Si",1], ["No",2]], {:include_blank => true}, {class: "form-control", id:"res_cuestrev"} %></button></td>
+              <td><button class="btn btn-light container-fluid" type="button"><%= f.select :cuesttab, [["Si",1], ["No",2]], {:include_blank => true}, {class: "form-control", id:"res_cuesttab"} %></button></td>
+            </tr>
+          </table>
+  </div>
+
+  <div class="container-fluid text-center bg-secondary text-white" style="margin-top: 20px; margin-bottom:20px;" id="hora">
+    <h4 class="text-center">HORA DE INICIO:</h4>
+    <h4 class="text-center"><%= f.text_field :hourinit, {class: "form-control", id:"res_hourinit"} %></h4>
+  </div>
+
+  <h4 class="container-fluid bg-dark text-center text-white">FILTROS</h4>
+
+
+  <div class="container-fluid" style="margin-top: 20px; margin-bottom:10px; " id="f_1">
+    <button class="btn btn-secondary container-fluid" type="button">
+    <%= f.label :f_1, "F1. ¿Tiene usted la cédula inscrita para votar?" %>
+    <%= f.select :f_1, [["Si",1], ["No",2]], {:include_blank => true}, {class: "form-control", id:"res_f_1"} %>
+    </button>
+  </div>
+
+  <div class="row" style="margin-top: 10px; margin-left:20px; margin-right:20px; margin-bottom:10px;" id="f_2">
+
+    <h5>F2. ¿Pudo usted votar o por alguna razón no votó en las elecciones de...? </h5>
+
+    <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
+    <%= f.label :f_2_a, "a) El año 2018 para elegir Presidente" %>
+    <%= f.select :f_2_a, [["Votó",1], ["No Votó",2]], {:include_blank => true}, {class: "form-control", id:"res_f_2_a"} %>
+    </button>
+
+    <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
+    <%= f.label :f_2_b, "b) El año 2018 para elegir Congreso" %>
+    <%= f.select :f_2_b, [["Votó",1], ["No Votó",2]], {:include_blank => true}, {class: "form-control", id:"res_f_2_b"} %>
+    </button>
+
+    <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
+    <%= f.label :f_2_c, "c) El año 2015 para elegir Alcalde y Gobernador" %>
+    <%= f.select :f_2_c, [["Votó",1], ["No Votó",2]], {:include_blank => true}, {class: "form-control", id:"res_f_2_c"} %>
+    </button>
+  </div>
+
+  <h4 class="container-fluid bg-dark text-center text-white">1. AFININIDAD</h4>
+
+  <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_1_1">
+    <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
+    <%= f.label :p_1_1, "1.1) ¿Usted se considera? ( Encuestador, mostrar tarjeta )" %>
+    <%= f.select :p_1_1, [["Uribista",1], ["Afín al partido Centro Democrático",2], ["Liberal",3], ["Conservador",4], ["Independiente",5], ["De derecha",6], ["De izquierdaV",7], ["NS/NR (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_1_1"} %>
+    </button>
+  </div>
+
+  <h4 class="container-fluid bg-dark text-center text-white">2. INTENCIÓN DE VOTO ALCALDÍA MUNICIPIOS</h4>
+
+  <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_2_1">
+    <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
+    <%= f.label :p_2_1, "2.1) Si las elecciones a la alcaldía de _____ ( Municipio en el que se encuentre ) fueran mañana, y los candidatos fueran los que aparecen en esta tarjeta, por cuál de estos candidatos votaría usted?" %>
+    <%= f.text_field :p_2_1, {class: "form-control", id:"res_p_2_1"} %>
+    </button>
+  </div>
+
+  <h4 class="container-fluid bg-dark text-center text-white">3. INTENCIÓN DE VOTO GOBERNACIÓN</h4>
+
+  <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_3_1">
+    <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
+    <%= f.label :p_3_1, "3.1 En las próximas elecciones del mes de Octubre para elegir gobernador del Quindío, usted: (leer LENTAMENTE las opciones)" %>
+    <%= f.select :p_3_1, [["Seguramente votará",1], ["Probablemente votará",2], ["Probablemente no votará",3], ["Seguramente no votará",4]], {:include_blank => true}, {class: "form-control", id:"res_p_3_1"} %>
+    </button>
+  </div>
+
+  <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_3_2">
+    <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
+    <%= f.label :p_3_2, "3.2) (ENTREGAR TARJETA # ---) Se elegirá un nuevo Gobernador de QUINDÍO, si el día de hoy fuera la elección a GOBERNADOR, ¿por el candidato de qué partido votaría usted? (ENCUESTADOR REGISTRAR LAS DOS PRIMERAS MENCIONES)" %>
+    <%= f.select :p_3_2, [["Partido Liberal ",1], ["Partido de la U ",2], ["Partido Alianza Verde",3], ["Partido Conservador",4], ["Partido Cambio Radical",5], ["Partido Centro Democrático",6], ["Partido Polo Democrático",7], ["Partido Opción Ciudadana",8], ["MIRA",9], ["Candidato por firmas",10], ["ASI",11], ["Partido MAIS",12], ["Partido Político Los Decentes",13], ["Otro",14], ["Ninguno",89], ["NS/NR (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_3_2"} %>
+    <%= f.label :p_3_2_a, "a. Cuál?" %>
+    <%= f.text_field :p_3_2_a, {class: "form-control", id:"res_p_3_2_a"} %>
+    </button>
+  </div>
+
+  <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_3_3">
+    <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
+    <%= f.label :p_3_3, "3.3)  (ENTREGAR TARJETA # ----) Si para las elecciones de Gobernador del mes de Octubre, los candidatos fueran los que aparecen en la siguiente tarjeta, por cuál de ellos votaría? (ENCUESTADOR REGISTRAR SÓLO LA PRIMERA MENCIÓN)" %>
+    <%= f.text_field :p_3_3, {class: "form-control", id:"res_p_3_3"} %>
+    </button>
+  </div>
+
+  <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_3_4">
+    <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
+    <%= f.label :p_3_4, "3.4). El partido Centro Democrático, debe elegir cuál va a ser su candidato para las elecciones a la Gobernación del QUINDÍO que se realizarán en Octubre del presente año.   De las personas que aparecen en esta tarjeta, cuál considera usted debe ser el candidato por el partido Centro Democrático?" %>
+    <%= f.text_field :p_3_4, {class: "form-control", id:"res_p_3_4"} %>
+    </button>
+  </div>
+
+  <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_3_5">
+    <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
+    <%= f.label :p_3_5, "3.5) ¿Usted votaría por un candidato apoyado por ALVARO URIBE VELEZ?" %>
+    <%= f.select :p_3_5, [["Si",1], ["No",2], ["NS/NR (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_3_5"} %>
+    </button>
+  </div>
+
+  <div class="container-fluid border border-dark" style="margin-top: 10px; margin-bottom:10px;" id="encuestado">
+
+    <h4 class="p-2 mb-1 bg-secondary text-white text-center">DATOS DEL ENCUESTADO
+(Para definir el estrato preguntar que tarifa le aplican en la factura de los servicios públicos)
+</h4>
+
+          <table class="table table-borderless">
+            <tr>
+              <th scope="col" class="text-center">Sexo</th>
+              <th scope="col" class="text-center">Estado Civil</th>
+            </tr>
+            <tr>
+              <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d1, [["Masculino",1], ["Femenino",2]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d1"} %></button></td>
+              <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d2, [["Casado",1], ["Soltero",2], ["Otro",3]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d2"} %></button></td>
+            </tr>
+            <tr>
+              <th scope="col" class="text-center">Edad</th>
+              <th scope="col" class="text-center">Estrato</th>
+            </tr>
+            <tr>
+              <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d3, [["Entre 18-25",1], ["Entre 26-40",2], ["Entre 41-55",3], ["Mayor de 55",4]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d3"} %></button></td>
+              <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d4, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6",6]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d4"} %></button></td>
+            </tr>
+          </table>
+  </div>
+
+  <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="encuestado_datos">
+
+    <h5 class="p-2 bg-secondary text-white text-left">Finalmente, para efectos de verificación por parte de mi supervisor, me podría dar sus datos:</h5>
+
+          <table class="table table-borderless text-center">
+            <tr>
+              <th>Nombre</th>
+              <th>Barrio</th>
+              <th>Dirección</th>
+            </tr>
+            <tr>
+              <td><%= f.text_field :nombre, {class: "form-control", id:"res_nombre"} %></td>
+              <td><%= f.text_field :barrio, {class: "form-control", id:"res_barrio"} %></td>
+              <td><%= f.text_field :direccion, {class: "form-control", id:"res_direccion"} %></td>
+            </tr>
+            <tr>
+              <th>Teléfono casa</th>
+              <th>Teléfono Celular</th>
+              <th>Hora de Finalización</th>
+            </tr>
+            <tr>
+              <td><%= f.text_field :tel, {class: "form-control", id:"res_tel"} %></td>
+              <td><%= f.text_field :cel, {class: "form-control", id:"res_cel"} %></td>
+              <td><%= f.text_field :hourend, {class: "form-control", id:"res_hourend"} %></td>
+            </tr>
+          </table>
+  </div>
+
+
+
+
+</div>
+
+  
+  
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

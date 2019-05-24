@@ -1,3 +1,8 @@
+ <style type="text/css">
+  .hidden {
+  display: none !important;}
+</style>
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <%= form_with(model: form514, local: true) do |f| %>
@@ -14,6 +19,34 @@
   <% end %>
 
 <div class="row" style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="all_form">
+
+  <div class="container-fluid border border-dark" style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="encuestador">
+
+    <h4 class="p-2 mb-1 bg-secondary text-white text-center">DATOS DE UBICACIÓN</h4>
+
+          <table class="table table-borderless">
+            <tr>
+              <th scope="col" class="text-center"><strong>Departamento</strong></th>
+              <th scope="col" class="text-center">Municipio</th>
+            </tr>
+            <tr>
+              <td class="text-center">Quindio</td>
+            
+              <td class="text-center"><%= f.select :cuestsup, [["CALARCA",1], ["GENOVA",2], ["FILANDIA",3], ["QUIMBAYA",4], ["MONTENEGRO",5], ["ARMENIA",6]], {:include_blank => true}, {class: "form-control", id:"res_municipio"} %></td>
+            </tr>
+            <tr>
+              <th scope="col" class="text-center">Comuna</th>
+              <th scope="col" class="text-center">Barrio</th>
+            </tr>
+            <tr>
+              <td class="text-center"><%= f.text_field :cod, {class: "form-control", id:"res_comuna"} %></td>
+              <td class="text-center"><%= f.text_field :sup, {class: "form-control", id:"res_barrio"} %></td>
+            </tr>
+          </table>
+          
+  </div>
+
+  <br>
 
   <div class="container-fluid border border-dark" id="encuestador">
 
@@ -52,10 +85,26 @@
           </table>
   </div>
 
+  <br>
+
   <div class="container-fluid text-center bg-secondary text-white" style="margin-top: 20px; margin-bottom:20px;" id="hora">
-    <h4 class="text-center">HORA DE INICIO:</h4>
-    <h4 class="text-center"><%= f.text_field :hourinit, {class: "form-control", id:"res_hourinit"} %></h4>
+     <h4 class="container-fluid text-center p-2 bg-secondary text-white" style="margin-top: 20px; margin-bottom:20px;" id="hora_encuesta">HORA DE INICIO:</h4>
+    <h4 class="text-center hidden"><%= f.text_field :hourinit, {class: "form-control", id:"res_hourinit"} %></h4>
   </div>
+
+  <div class="border-secondary border" style="margin-right: 20px; margin-left: 20px; margin-bottom: 10px; text-align: justify;">
+
+    <h4 class="p-2 mb-1 bg-secondary text-white text-center">SALUDO</h4>
+
+      <h6 style="margin-right: 10px; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;"> Muy buenos días/tardes. Mi nombre es <b id="nombre_encuestador"></b> y trabajo para la compañía FOCUS.  Nuestro trabajo es conocer la opinión de personas como usted a través de encuestas, acerca de diferentes temas. Actualmente estamos haciendo un estudio sobre el PRESENTE Y FUTURO DEL DEPARTAMENTO DEL QUINDIO. 
+
+      Para saber a quién debo entrevistar, me gustaría que por favor me dijera quien es la persona mayor de edad  (QUE NO ESTÉ DE VISITA, NI SEA EMPLEADA) (Rotar hombre / mujer). 
+
+      ¿Podría hablar con él/ella/usted? (SI ES UNA PERSONA DIFERENTE A QUIEN LE ABRIÓ, COMIENCE DE NUEVO, PRESÉNTESE OTRA VEZ Y COMIENCE CON LA ENTREVISTA). 
+
+      Sus opiniones son muy importantes para nosotros, y lo que usted responda será empleado únicamente con fines estadísticos. Podría regalarme 10 minutos de su tiempo para responder algunas preguntas?</h6>
+  </div>
+<br>
 
   <h4 class="container-fluid bg-dark text-center text-white">FILTROS</h4>
 
@@ -87,6 +136,8 @@
     </button>
   </div>
 
+  <div class="" id="div_filtro_encuesta">
+
   <h4 class="container-fluid bg-dark text-center text-white">1. AFININIDAD</h4>
 
   <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_1_1">
@@ -98,10 +149,40 @@
 
   <h4 class="container-fluid bg-dark text-center text-white">2. INTENCIÓN DE VOTO ALCALDÍA MUNICIPIOS</h4>
 
-  <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_2_1">
+  <label>2.1) Si las elecciones a la alcaldía de <b id="municipio_seleccionado"></b> fueran mañana, y los candidatos fueran los que aparecen en esta tarjeta, por cuál de estos candidatos votaría usted?</label>
+  <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="f_2_1_c">
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
-    <%= f.label :p_2_1, "2.1) Si las elecciones a la alcaldía de _____ ( Municipio en el que se encuentre ) fueran mañana, y los candidatos fueran los que aparecen en esta tarjeta, por cuál de estos candidatos votaría usted?" %>
-    <%= f.text_field :p_2_1, {class: "form-control", id:"res_p_2_1"} %>
+      <%= f.select :f_2_1_c, [["Jesús María Zuluaga Aguilar",1], ["Humberto Salgado Forero",2], ["Jhon Jairo Barrera Sossa",3], ["Claudia Andrea Campos Barón",4], ["Gonzalo Garcia",5], ["Luis Alberto Balsero",6],["Ninguno",89],["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_f_2_1_c"} %>
+    </button>
+  </div>
+
+  <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="f_2_1_g">
+    <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
+      <%= f.select :f_2_1_g, [["Gerardo Corredor Acero",1], ["Jhon Fredy Correa Suárez",2], ["Jorge Ivan Osorio",3],["Ninguno",89],["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_f_2_1_g"} %>
+    </button>
+  </div>
+
+  <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="f_2_1_f">
+    <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
+      <%= f.select :f_2_1_f, [["Jaime Franco",1], ["Luis Abel Cárdenas León",2],["Ninguno",89],["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_f_2_1_f"} %>
+    </button>
+  </div>
+
+  <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="f_2_1_q">
+    <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
+      <%= f.select :f_2_1_q, [["Abelardo Castaño",1], ["Willan Ruiz",2], ["Carlos Restrepo",3],["Ninguno",89],["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_f_2_1_q"} %>
+    </button>
+  </div>
+
+  <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="f_2_1_m">
+    <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
+      <%= f.select :f_2_1_m, [["Gladys Sotelo",1], ["Gustavo Alberto Pava",2], ["Adrián Piedrahita",3], ["Javier del Castillo",4], ["Daniel Restrepo",5],["Ninguno",89],["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_f_2_1_m"} %>
+    </button>
+  </div>
+
+  <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="f_2_1_a">
+    <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
+      <%= f.select :f_2_1_a, [["Antonio José Restrepo",1], ["HFrancisco Jairo Ramírez Concha",2], ["Luis Fernando Jaramillo",3], ["Piedad Correal Rubiano",4], ["José Manuel Ríos",5], ["Albeiro Torres",6], ["José Ricardo Parra",7], ["Jaime Alberto Martínez",8],["Ninguno",89],["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_f_2_1_a"} %>
     </button>
   </div>
 
@@ -126,14 +207,14 @@
   <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_3_3">
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
     <%= f.label :p_3_3, "3.3)  (ENTREGAR TARJETA # ----) Si para las elecciones de Gobernador del mes de Octubre, los candidatos fueran los que aparecen en la siguiente tarjeta, por cuál de ellos votaría? (ENCUESTADOR REGISTRAR SÓLO LA PRIMERA MENCIÓN)" %>
-    <%= f.text_field :p_3_3, {class: "form-control", id:"res_p_3_3"} %>
+    <%= f.select :p_3_3, [["Fabio Olmedo Palacio Valencia",1], ["Luz Amparo Bueno",2], ["Roberto Jairo Jaramillo",3], ["Álvaro Arias",4], ["Álvaro Muriel",5], ["Javier Ramírez Mejía",6], ["Carlos Alberto Gómez Chacón",7], ["Bernardo Valencia",8], ["Luz Amparo Bueno",9], ["Ninguno (NO LEER)",89], ["NS/NR (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_3_3"} %>
     </button>
   </div>
 
   <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_3_4">
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
     <%= f.label :p_3_4, "3.4). El partido Centro Democrático, debe elegir cuál va a ser su candidato para las elecciones a la Gobernación del QUINDÍO que se realizarán en Octubre del presente año.   De las personas que aparecen en esta tarjeta, cuál considera usted debe ser el candidato por el partido Centro Democrático?" %>
-    <%= f.text_field :p_3_4, {class: "form-control", id:"res_p_3_4"} %>
+    <%= f.select :p_3_4, [["Fabio Olmedo Palacio Valencia",1], ["Luz Amparo Bueno",2], ["Ninguno (NO LEER)",89], ["NS/NR (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_3_4"} %>
     </button>
   </div>
 
@@ -154,18 +235,23 @@
             <tr>
               <th scope="col" class="text-center">Sexo</th>
               <th scope="col" class="text-center">Estado Civil</th>
+              <th scope="col" class="text-center">Edad</th>
             </tr>
             <tr>
               <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d1, [["Masculino",1], ["Femenino",2]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d1"} %></button></td>
               <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d2, [["Casado",1], ["Soltero",2], ["Otro",3]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d2"} %></button></td>
-            </tr>
-            <tr>
-              <th scope="col" class="text-center">Edad</th>
-              <th scope="col" class="text-center">Estrato</th>
-            </tr>
-            <tr>
               <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d3, [["Entre 18-25",1], ["Entre 26-40",2], ["Entre 41-55",3], ["Mayor de 55",4]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d3"} %></button></td>
+            </tr>
+            <tr>     
+              <th scope="col" class="text-center">Estrato</th>
+              <th scope="col" class="text-center">Ocupacion Actual</th>
+              <th scope="col" class="text-center">Nivel de estudio</th>
+            </tr>
+            <tr>
               <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d4, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6",6]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d4"} %></button></td>
+              <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d3, [["Estudiante",1], ["Desempleado",2], ["Trabajando medio tiempo",3], ["Trabajando tiempo completo",4], ["Trabajando y estudiando",5], ["Jubilado o pensionado",6]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d5"} %></button></td>
+              <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d3, [["Primaria",1], ["Bachillerato",2], ["Técnico/Tecnólogo",3], ["Universidad ( completa o incompleta )",4], ["Post grado/ Especialización",5], ["Ninguno",6]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d6"} %></button></td>
+              
             </tr>
           </table>
   </div>
@@ -198,17 +284,516 @@
           </table>
   </div>
 </div>
+</div>
 
-<div class="col-md-12">
-  <div class="row">
-    <div class="col-md-6 text-center">
-      <div class="btn btn-warning btn-lg"><%= f.submit "Enviar Encuesta", style:"background-image: none;background: transparent; border: none;" %>
+
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-6 text-center">
+          <a onclick='validar_encuesta();' class="btn btn-primary btn-lg" style="color: #fff;">Validar Encuesta</a>
+      </div>
+      <div class="col-md-6 text-center">  
+        <a onclick='downloadCSV({ filename: "Meta.csv" });' class="btn btn-primary btn-lg hidden" style="color: #fff;" id="guardar_tablet">Guardar Encuesta en la tablet</a>
       </div>
     </div>
   </div>  
-</div>
 <% end %>
 <br>
 <br>
+<script type="text/javascript">
+  
+  $(document).ready(function(){
+
+
+    var fecha = new Date()
+
+    var horas = fecha.getHours();
+    var minutos = fecha.getMinutes();
+    var segundos = fecha.getSeconds();
+    var dias = fecha.getDate();
+    var mes = fecha.getMonth();
+    var anos = fecha.getYear();
+
+    fecha1 = dias+"/5/2019";
+    codigo = horas+""+minutos+""+segundos;
+    hora1 = "La hora es: "+ horas+":"+minutos;
+    horainicio = horas+":"+minutos;
+
+    document.getElementById("res_date").value = fecha1;
+    document.getElementById('hora_encuesta').innerHTML = hora1;
+    document.getElementById('res_hourinit').value = horainicio;
+
+     $("#res_encu").change(function(){
+      var encustador_1 = $('#res_encu').val();
+      document.getElementById('nombre_encuestador').innerHTML = encustador_1;
+    });
+
+    $('#res_municipio').change(function(){
+      var mun_sel = $('#res_municipio').val();
+      if(mun_sel == "1"){
+        document.getElementById('municipio_seleccionado').innerHTML = "CALARCA";
+      }
+      if(mun_sel == "2"){
+        document.getElementById('municipio_seleccionado').innerHTML = "GENOVA";
+      }
+      if(mun_sel == "3"){
+        document.getElementById('municipio_seleccionado').innerHTML = "FILANDIA";
+      }
+      if(mun_sel == "4"){
+        document.getElementById('municipio_seleccionado').innerHTML = "QUIMBAYA";
+      }
+      if(mun_sel == "1"){
+        document.getElementById('municipio_seleccionado').innerHTML = "MONTENEGRO";
+      }
+      if(mun_sel == "1"){
+        document.getElementById('municipio_seleccionado').innerHTML = "ARMENIA";
+      }
+    });
+
+    $('#res_f_1').change(function(){
+      if($("#res_f_1").val() == "2"){
+        $('#div_filtro_encuesta').addClass('hidden');
+      }
+    });
+
+    $('#res_f_1').change(function(){
+      if($("#res_f_1").val() == "1"){
+        $('#div_filtro_encuesta').removeClass('hidden');
+      }
+    });
+
+    $('#res_f_2_a').change(function(){
+      if($("#res_f_2_a").val() == "2"){
+        $('#div_filtro_encuesta').addClass('hidden');
+      }
+    });
+
+    $('#res_f_2_a').change(function(){
+      if($("#res_f_2_a").val() == "1"){
+        $('#div_filtro_encuesta').removeClass('hidden');
+      }
+    });
+
+    $('#res_f_2_b').change(function(){
+      if($("#res_f_2_b").val() == "2"){
+        $('#div_filtro_encuesta').addClass('hidden');
+      }
+    });
+
+    $('#res_f_2_b').change(function(){
+      if($("#res_f_2_b").val() == "1"){
+        $('#div_filtro_encuesta').removeClass('hidden');
+      }
+    });
+
+    $('#res_f_2_c').change(function(){
+      if($("#res_f_2_c").val() == "2"){
+        $('#div_filtro_encuesta').addClass('hidden');
+      }
+    });
+
+    $('#res_f_2_c').change(function(){
+      if($("#res_f_2_c").val() == "1"){
+        $('#div_filtro_encuesta').removeClass('hidden');
+      }
+    });
+
+    $('#res_municipio').change(function(){
+      if($("#res_municipio").val() == "1"){
+        $('#f_2_1_c').removeClass('hidden');
+        $('#f_2_1_g').addClass('hidden');
+        $('#f_2_1_f').addClass('hidden');
+        $('#f_2_1_q').addClass('hidden');
+        $('#f_2_1_m').addClass('hidden');
+        $('#f_2_1_a').addClass('hidden');
+      }
+    });
+
+    $('#res_municipio').change(function(){
+      if($("#res_municipio").val() == "2"){
+        $('#f_2_1_c').addClass('hidden');
+        $('#f_2_1_g').removeClass('hidden');
+        $('#f_2_1_f').addClass('hidden');
+        $('#f_2_1_q').addClass('hidden');
+        $('#f_2_1_m').addClass('hidden');
+        $('#f_2_1_a').addClass('hidden');
+      }
+    });
+
+    $('#res_municipio').change(function(){
+      if($("#res_municipio").val() == "3"){
+        $('#f_2_1_c').addClass('hidden');
+        $('#f_2_1_g').addClass('hidden');
+        $('#f_2_1_f').removeClass('hidden');
+        $('#f_2_1_q').addClass('hidden');
+        $('#f_2_1_m').addClass('hidden');
+        $('#f_2_1_a').addClass('hidden');
+      }
+    });
+
+    $('#res_municipio').change(function(){
+      if($("#res_municipio").val() == "4"){
+        $('#f_2_1_c').addClass('hidden');
+        $('#f_2_1_g').addClass('hidden');
+        $('#f_2_1_f').addClass('hidden');
+        $('#f_2_1_q').removeClass('hidden');
+        $('#f_2_1_m').addClass('hidden');
+        $('#f_2_1_a').addClass('hidden');
+      }
+    });
+
+
+    $('#res_municipio').change(function(){
+      if($("#res_municipio").val() == "5"){
+        $('#f_2_1_c').addClass('hidden');
+        $('#f_2_1_g').addClass('hidden');
+        $('#f_2_1_f').addClass('hidden');
+        $('#f_2_1_q').addClass('hidden');
+        $('#f_2_1_m').removeClass('hidden');
+        $('#f_2_1_a').addClass('hidden');
+      }
+    });
+
+    $('#res_municipio').change(function(){
+      if($("#res_municipio").val() == "6"){
+        $('#f_2_1_c').addClass('hidden');
+        $('#f_2_1_g').addClass('hidden');
+        $('#f_2_1_f').addClass('hidden');
+        $('#f_2_1_q').addClass('hidden');
+        $('#f_2_1_m').addClass('hidden');
+        $('#f_2_1_a').removeClass('hidden');
+      }
+    });
+
+    $("#res_nombre").change(function(){
+      var fecha1 = new Date()
+      var horas1 = fecha1.getHours();
+      var minutos1 = fecha1.getMinutes();
+      horafinal = horas+":"+minutos;      
+      document.getElementById('res_hourend').value = horafinal;
+    });
+
+
+  });
+
+  function validar_encuesta() {
+
+    var error = 0;
+
+    if($("#res_municipio").val() == ""){
+        alert("El campo municipio está vacio");
+        error = 1;
+      }
+    if($("#res_f_1").val() == ""){
+        alert("El campo F.1. está vacio");
+        error = 1;
+      }
+    if($("#res_f_2_a").val() == ""){
+        alert("El campo F.2.A está vacio");
+        error = 1;
+      }
+    if($("#res_f_2_b").val() == ""){
+        alert("El campo F.2.B está vacio");
+        error = 1;
+      }
+    if($("#res_f_2_c").val() == ""){
+        alert("El campo F.2.C está vacio");
+        error = 1;
+      }
+    if($("#res_p_1_1").val() == ""){
+        alert("El campo AFININIDAD está vacio");
+        error = 1;
+      }
+    if($("#res_p_3_1").val() == ""){
+        alert("El campo 3.1 está vacio");
+        error = 1;
+      }
+    if($("#res_p_3_2").val() == ""){
+        alert("El campo 3.2 está vacio");
+        error = 1;
+      }
+    if($("#res_p_3_3").val() == ""){
+        alert("El campo 3.3 está vacio");
+        error = 1;
+      }
+    if($("#res_p_3_4").val() == ""){
+        alert("El campo 3.4 está vacio");
+        error = 1;
+      }
+    if($("#res_p_3_5").val() == ""){
+        alert("El campo 3.5 está vacio");
+        error = 1;
+      }
+    if($("#res_p_11_d1").val() == ""){
+        alert("El campo Sexo está vacio");
+        error = 1;
+      }
+    if($("#res_p_11_d2").val() == ""){
+        alert("El campo Estado Civil está vacio");
+        error = 1;
+      }
+    if($("#res_p_11_d3").val() == ""){
+        alert("El campo Edad está vacio");
+        error = 1;
+      }
+    if($("#res_p_11_d4").val() == ""){
+        alert("El campo Estrato está vacio");
+        error = 1;
+      }
+    if($("#res_p_11_d5").val() == ""){
+        alert("El campo Ocupacion está vacio");
+        error = 1;
+      }
+    if($("#res_p_11_d6").val() == ""){
+        alert("El campo Nivel de estudio está vacio");
+        error = 1;
+      }
+    if($("#res_nombre").val() == ""){
+        alert("El campo nombre de encuestado está vacio");
+        error = 1;
+      }
+
+    if (error == 0) {
+      alert("Encuesta validada correctamente, favor descargar la encuesta y validar que se haya descargado en la tablet");
+      $('#guardar_tablet').removeClass("hidden");
+
+    }
+
+
+
+   
+
+  }
+  
+  function guardarsininternet() {
+      alert("Encuesta Guardada con Exito");
+    }
+ 
+    function convertArrayOfObjectsToCSV(args) {
+        var result, ctr, keys, columnDelimiter, lineDelimiter, data;
+ 
+        data = args.data || null;
+        if (data == null || !data.length) {
+            return null;
+        }
+ 
+        columnDelimiter = args.columnDelimiter || ',';
+        lineDelimiter = args.lineDelimiter || '\n';
+ 
+        keys = Object.keys(data[0]);
+ 
+        result = '';
+        result += keys.join(columnDelimiter);
+        result += lineDelimiter;
+ 
+        data.forEach(function(item) {
+            ctr = 0;
+            keys.forEach(function(key) {
+                if (ctr > 0) result += columnDelimiter;
+ 
+                result += item[key];
+                ctr++;
+            });
+            result += lineDelimiter;
+        });
+ 
+        return result;
+    }
+
+    
+ 
+    function downloadCSV(args) {
+        var data, filename, link;
+        
+        var stockData = [
+        {
+          Pregunta: "Departamento",
+          Respuesta : "Quindio"
+        },
+        {
+          Pregunta: "Municipio",
+          Respuesta : $("#res_municipio").val()
+        },
+        {
+          Pregunta: "Comuna",
+          Respuesta : $("#res_comuna").val()
+        },
+        {
+          Pregunta: "Barrio",
+          Respuesta : $("#res_barrio").val()
+        },
+        {
+          Pregunta: "Encuestador",
+          Respuesta : $("#res_encu").val()
+        },
+        {
+          Pregunta: "Fecha",
+          Respuesta : $("#res_date").val()
+        },
+        {
+          Pregunta: "Cod muestra",
+          Respuesta : $("#res_cod").val()
+        },
+        {
+          Pregunta: "Supervidor",
+          Respuesta : $("#res_sup").val()
+        },
+        {
+          Pregunta: "Supervisado",
+          Respuesta : $("#res_cuestsup").val()
+        },
+        {
+          Pregunta: "Revisado",
+          Respuesta : $("#res_cuestrev").val()
+        },
+        {
+          Pregunta: "Tabulado",
+          Respuesta : $("#res_cuesttab").val()
+        },
+        {
+          Pregunta: "Hora inicio",
+          Respuesta : $("#res_hourinit").val()
+        },
+        {
+          Pregunta: "F_1",
+          Respuesta : $("#res_f_1").val()
+        },
+        {
+          Pregunta: "F_2_A",
+          Respuesta : $("#res_f_2_a").val()
+        },
+        {
+          Pregunta: "F_2_B",
+          Respuesta : $("#res_f_2_b").val()
+        },
+        {
+          Pregunta: "F_2_C",
+          Respuesta : $("#res_f_2_c").val()
+        },
+        {
+          Pregunta: "P_1_1",
+          Respuesta : $("#res_p_1_1").val()
+        },
+        {
+          Pregunta: "P_2_1_A",
+          Respuesta : $("#res_f_2_1_a").val()
+        },
+        {
+          Pregunta: "P_2_1_M",
+          Respuesta : $("#res_f_2_1_m").val()
+        },
+        {
+          Pregunta: "P_2_1_Q",
+          Respuesta : $("#res_f_2_1_q").val()
+        },
+        {
+          Pregunta: "P_2_1_F",
+          Respuesta : $("#res_f_2_1_f").val()
+        },
+        {
+          Pregunta: "P_2_1_G",
+          Respuesta : $("#res_f_2_1_g").val()
+        },
+        {
+          Pregunta: "P_2_1_C",
+          Respuesta : $("#res_f_2_1_c").val()
+        },
+        {
+          Pregunta: "P_3_1",
+          Respuesta : $("#res_p_3_1").val()
+        },
+        {
+          Pregunta: "P_3_2",
+          Respuesta : $("#res_p_3_2").val()
+        },
+        {
+          Pregunta: "P_3_2_otra",
+          Respuesta : $("#res_p_3_2_a").val()
+        },
+        {
+          Pregunta: "P_3_3",
+          Respuesta : $("#res_p_3_3").val()
+        },
+        {
+          Pregunta: "P_3_4",
+          Respuesta : $("#res_p_3_4").val()
+        },
+        {
+          Pregunta: "P_3_5",
+          Respuesta : $("#res_p_3_5").val()
+        },
+        {
+          Pregunta: "Sexo",
+          Respuesta : $("#res_p_11_d1").val()
+        },
+        {
+          Pregunta: "Estado Civil",
+          Respuesta : $("#res_p_11_d2").val()
+        },
+        {
+          Pregunta: "Edad",
+          Respuesta : $("#res_p_11_d3").val()
+        },
+        {
+          Pregunta: "Estrato",
+          Respuesta : $("#res_p_11_d4").val()
+        },
+        {
+          Pregunta: "Ocupacion",
+          Respuesta : $("#res_p_11_d5").val()
+        },
+        {
+          Pregunta: "Nivel de estudio",
+          Respuesta : $("#res_p_11_d6").val()
+        },
+        {
+          Pregunta: "Nombre",
+          Respuesta : $("#res_nombre").val()
+        },
+        {
+          Pregunta: "Barrio",
+          Respuesta : $("#res_barrio").val()
+        },
+        {
+          Pregunta: "Direccion",
+          Respuesta : $("#res_direccion").val()
+        },
+        {
+          Pregunta: "Teléfono",
+          Respuesta : $("#res_tel").val()
+        },
+        {
+          Pregunta: "Celular",
+          Respuesta : $("#res_tel").val()
+        },
+        {
+          Pregunta: "Hora Finalización",
+          Respuesta : $("#res_hourend").val()
+        }
+        ];
+
+
+          var csv = convertArrayOfObjectsToCSV({
+            data: stockData
+          });
+          if (csv == null) return;
+   
+          filename = codigo + "Quindio" || 'export.csv';
+   
+          if (!csv.match(/^data:text\/csv/i)) {
+              csv = 'data:text/csv;charset=utf-8,' + csv;
+          }
+          data = encodeURI(csv);
+   
+          link = document.createElement('a');
+          link.setAttribute('href', data);
+          link.setAttribute('download', filename);
+          link.click();
+          alert("Encuesta Guardada con Exito");
+          setTimeout(function(){document.location.href = "https://quiet-reef-76274.herokuapp.com/form483s/new";},500);
+        
+    }
+
+</script>
 
 

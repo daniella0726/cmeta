@@ -41,7 +41,6 @@
               <td class="text-center"><%= f.text_field :sup, {class: "form-control", id:"res_sup"} %></td>
             </tr>
         </table>
-        <p class="text-center bg-warning border-warning border" id="hora_encuesta"></p>
         <table class="table table-borderless text-center">
             <tr>
               <th>Cuestionario Supervisado</th>
@@ -56,17 +55,24 @@
           </table>
   </div>
 
-  <h6 class="text-center bg-warning border-warning border" style="margin-right: 20px; margin-left: 20px; margin-bottom: 10px;"><br> Muy buenos días/tardes. Mi nombre es <p id="nombre_encuestador"></p>    y trabajo para la compañía FOCUS.  Nuestro trabajo es conocer la opinión de personas como usted a través de encuestas, acerca de diferentes temas. Actualmente estamos haciendo un estudio sobre el PRESENTE Y FUTURO DEL DEPARTAMENTO DEL META. 
+  <h4 class="container-fluid text-center p-2 bg-secondary text-white" style="margin-top: 20px; margin-bottom:20px;" id="hora_encuesta">HORA DE INICIO:</h4>
 
-Para saber a quién debo entrevistar, me gustaría que por favor me dijera quien es la persona mayor de edad  (QUE NO ESTÉ DE VISITA, NI SEA EMPLEADA) (Rotar hombre / mujer). 
 
-¿Podría hablar con él/ella/usted? (SI ES UNA PERSONA DIFERENTE A QUIEN LE ABRIÓ, COMIENCE DE NUEVO, PRESÉNTESE OTRA VEZ Y COMIENCE CON LA ENTREVISTA). 
+  <div class="border-secondary border" style="margin-right: 20px; margin-left: 20px; margin-bottom: 10px; text-align: justify;">
 
-Sus opiniones son muy importantes para nosotros, y lo que usted responda será empleado únicamente con fines estadísticos. Podría regalarme 10 minutos de su tiempo para responder algunas preguntas? <p></p></h6>
+    <h4 class="p-2 mb-1 bg-secondary text-white text-center">SALUDO</h4>
+
+      <h6 style="margin-right: 10px; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;"> Muy buenos días/tardes. Mi nombre es <b id="nombre_encuestador"></b> y trabajo para la compañía FOCUS.  Nuestro trabajo es conocer la opinión de personas como usted a través de encuestas, acerca de diferentes temas. Actualmente estamos haciendo un estudio sobre el PRESENTE Y FUTURO DEL DEPARTAMENTO DEL META. 
+
+      Para saber a quién debo entrevistar, me gustaría que por favor me dijera quien es la persona mayor de edad  (QUE NO ESTÉ DE VISITA, NI SEA EMPLEADA) (Rotar hombre / mujer). 
+
+      ¿Podría hablar con él/ella/usted? (SI ES UNA PERSONA DIFERENTE A QUIEN LE ABRIÓ, COMIENCE DE NUEVO, PRESÉNTESE OTRA VEZ Y COMIENCE CON LA ENTREVISTA). 
+
+      Sus opiniones son muy importantes para nosotros, y lo que usted responda será empleado únicamente con fines estadísticos. Podría regalarme 10 minutos de su tiempo para responder algunas preguntas?</h6>
+  </div>
 <br>
 
-<h4 class="text-center bg-warning border-warning border">UNA VEZ, LA SOLICITUD DE ENCUESTA ES ACEPTADA, COMIENCE CON EL CUESTIONARIO:</h4>  
-
+<h4 class="text-center bg-warning border-warning border" style="margin-bottom: 20px;">UNA VEZ, LA SOLICITUD DE ENCUESTA ES ACEPTADA, COMIENCE CON EL CUESTIONARIO:</h4>  
 
 <h4 class="p-2 bg-dark text-white text-center">FILTROS</h4>  
 
@@ -74,7 +80,6 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_m, "Municipios"%>
     <%= f.select :p_m, [["Acacias",1], ["Puerto_Gaitán",2], ["Granada",3], ["Puerto_López",4], ["San_Martin",5], ["Villavicencio",6]], {:include_blank => true}, {class: "form-control", id:"res_p_m"} %>
-
     </button>
   </div>
 
@@ -189,22 +194,22 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_2_4_a, "2.4   Si usted tuviera que elegir el principal problema a solucionar por parte del próximo GOBERNADOR DEL DEPARTAMENTO, ¿cuál elegiría?: ( ENC. UNICA RESPUESTA ) (( ENC. MOSTRAR TARJETA No. 2)" %>
     <%= f.select :p_2_4_a, [["1) La corrupción ",1], ["2) La inseguridad",2], ["3) El empleo",3], ["4) La educación",4], ["5) La salud",5], ["6) Las vías",6], ["7) otro.  Cuál? ",7], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_2_4_a"} %>
-    </button>
     <div id="p_2_4_b">
-       <p> 7) otro.  Cuál? </p>
+       <h6 class="text-left" style="margin-top: 10px;"> 7) otro.  Cuál? </h6>
       <%= f.text_field :p_2_4_b, {class: "form-control", id:"res_p_2_4_b"} %>
     </div>
+    </button>
   </div>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_2_5_a">
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_2_5_a, "2.5  Si usted tuviera que elegir el principal problema a solucionar por parte del próximo ALCALDE DE SU MUNICIPIO, ¿cuál elegiría?: ( ENC. UNICA RESPUESTA ) ( ENC. MOSTRAR TARJETA No. 2)" %>
     <%= f.select :p_2_5_a, [["1) La corrupción ",1], ["2) La inseguridad",2], ["3) El empleo",3], ["4) La educación",4], ["5) La salud",5], ["6) Las vías",6], ["7) otro.  Cuál? ",7], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_2_5_a"} %>
-    </button>
     <div id="p_2_5_b">
-       <p> 7) otro.  Cuál? </p>
+       <h6 class="text-left" style="margin-top: 10px;"> 7) otro.  Cuál? </h6>
       <%= f.text_field :p_2_5_b, {class: "form-control", id:"res_p_2_5_b"} %>
     </div>
+  </button>
   </div>
 
   <h2 class="bg-dark text-center text-white">3.  EVALUACIÓN DE ALCALDES </h2>
@@ -214,7 +219,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
     <%= f.label :p_3_1, "3.1   Por favor, me puede decir el nombre del actual Alcalde de su Municipio? (ENCUESTADOR: VERIFIQUE SI ES CORRECTO)" %>
     <%= f.select :p_3_1, [["CORRECTO",1], ["INCORRECTO",2], ["NO SABE/ NO RESPONDE",99]], {:include_blank => true}, {class: "form-control", id:"res_p_3_1"} %>
     </button>
-    <p class="text-center bg-warning border-warning border" id="nombre_alcalde">El nombre correcto del alcalde es: </p>
+    <p class="text-center bg-warning border-warning border">El nombre correcto del alcalde es: <b id="nombre_alcalde"></b></p>
   </div>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="p_3_2">
@@ -1087,9 +1092,6 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
   </button>
 </div>
 </div>
-
-
-
 
 <h2 class="bg-dark text-center text-white">8. PERFILES Y ATRIBUTOS DE LOS CANDIDATOS A LA GOBERNACION </h2>
 
@@ -2030,7 +2032,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "1"){
-        document.getElementById('nombre_encuestador').innerHTML = "Luis Orlando Gutiérrez";
+        document.getElementById('nombre_alcalde').innerHTML = "Luis Orlando Gutiérrez";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').addClass('hidden');
@@ -2042,7 +2044,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "2"){
-        document.getElementById('nombre_encuestador').innerHTML = "José Alexander Fierro Guayara";
+        document.getElementById('nombre_alcalde').innerHTML = "José Alexander Fierro Guayara";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').addClass('hidden');
@@ -2054,7 +2056,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "3"){
-        document.getElementById('nombre_encuestador').innerHTML = "Juan Carlos Mendoza";
+        document.getElementById('nombre_alcalde').innerHTML = "Juan Carlos Mendoza";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').addClass('hidden');
@@ -2066,7 +2068,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "4"){
-        document.getElementById('nombre_encuestador').innerHTML = "Víctor Manuel Bravo Rodríguez";
+        document.getElementById('nombre_alcalde').innerHTML = "Víctor Manuel Bravo Rodríguez";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').removeClass('hidden');
@@ -2078,7 +2080,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "5"){
-        document.getElementById('nombre_encuestador').innerHTML = "Jonathan David Neira";
+        document.getElementById('nombre_alcalde').innerHTML = "Jonathan David Neira";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').removeClass('hidden');
         $('#p_5_1_pl').addClass('hidden');
@@ -2090,7 +2092,7 @@ Sus opiniones son muy importantes para nosotros, y lo que usted responda será e
 
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "6"){
-        document.getElementById('nombre_encuestador').innerHTML = "Wilmar Orlando Barbosa Rozo";
+        document.getElementById('nombre_alcalde').innerHTML = "Wilmar Orlando Barbosa Rozo";
         $('#p_5_1_v').removeClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').addClass('hidden');

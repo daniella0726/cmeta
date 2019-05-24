@@ -116,6 +116,8 @@
     </button>
   </div>
 
+  <div class="" id="div_filtro">
+
   <div class="row" style="margin-top: 10px; margin-left:20px; margin-right:20px; margin-bottom:10px;" id="f_2">
 
     <h5>F2. ¿Pudo usted votar o por alguna razón no votó en las elecciones de...? </h5>
@@ -136,7 +138,10 @@
     </button>
   </div>
 
-  <div class="" id="div_filtro_encuesta">
+
+
+  <div class="" id="div_filtro_encuesta2">  
+
   <h4 class="container-fluid bg-dark text-center text-white">1. AFININIDAD</h4>
 
   <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_1_1">
@@ -294,6 +299,7 @@
   </div>
 </div>
 </div>
+</div>
 
 
   <div class="col-md-12">
@@ -361,49 +367,39 @@
 
     $('#res_f_1').change(function(){
       if($("#res_f_1").val() == "2"){
-        $('#div_filtro_encuesta').addClass('hidden');
+        $('#div_filtro').addClass('hidden');
       }
     });
 
     $('#res_f_1').change(function(){
       if($("#res_f_1").val() == "1"){
-        $('#div_filtro_encuesta').removeClass('hidden');
-      }
-    });
-
-    $('#res_f_2_a').change(function(){
-      if($("#res_f_2_a").val() == "2"){
-        $('#div_filtro_encuesta').addClass('hidden');
+        $('#div_filtro').removeClass('hidden');
       }
     });
 
     $('#res_f_2_a').change(function(){
       if($("#res_f_2_a").val() == "1"){
-        $('#div_filtro_encuesta').removeClass('hidden');
-      }
-    });
-
-    $('#res_f_2_b').change(function(){
-      if($("#res_f_2_b").val() == "2"){
-        $('#div_filtro_encuesta').addClass('hidden');
+        $('#div_filtro_encuesta2').removeClass('hidden');
       }
     });
 
     $('#res_f_2_b').change(function(){
       if($("#res_f_2_b").val() == "1"){
-        $('#div_filtro_encuesta').removeClass('hidden');
+        $('#div_filtro_encuesta2').removeClass('hidden');
       }
     });
 
-    $('#res_f_2_c').change(function(){
-      if($("#res_f_2_c").val() == "2"){
-        $('#div_filtro_encuesta').addClass('hidden');
-      }
-    });
 
     $('#res_f_2_c').change(function(){
       if($("#res_f_2_c").val() == "1"){
-        $('#div_filtro_encuesta').removeClass('hidden');
+        $('#div_filtro_encuesta2').removeClass('hidden');
+      }
+    });
+
+
+    $('#res_f_2_a'&&'#res_f_2_c'&&'#res_f_2_c').change(function(){
+      if($("#res_f_2_c"&&"#res_f_2_c"&&"#res_f_2_c").val() == "2"){
+        $('#div_filtro_encuesta2').addClass('hidden');
       }
     });
 

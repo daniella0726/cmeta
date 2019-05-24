@@ -143,14 +143,14 @@
 
   <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_1_1">
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
-    <%= f.label :p_1_1, "1.1) ¿Usted se considera? ( Encuestador, mostrar tarjeta )" %>
+    <%= f.label :p_1_1, "1.1) ¿Usted se considera? (Encuestador, mostrar TARJETA No. 1)" %>
     <%= f.select :p_1_1, [["Uribista",1], ["Afín al partido Centro Democrático",2], ["Liberal",3], ["Conservador",4], ["Independiente",5], ["De derecha",6], ["De izquierda",7], ["NS/NR (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_1_1"} %>
     </button>
   </div>
 
   <h4 class="container-fluid bg-dark text-center text-white">2. INTENCIÓN DE VOTO ALCALDÍA MUNICIPIOS</h4>
 
-  <label>2.1) Si las elecciones a la alcaldía de <b id="municipio_seleccionado"></b> fueran mañana, y los candidatos fueran los que aparecen en esta tarjeta, por cuál de estos candidatos votaría usted?</label>
+  <label>2.1) Si las elecciones a la alcaldía de <b id="municipio_seleccionado"></b> fueran mañana, y los candidatos fueran los que aparecen en esta tarjeta (Encuestador, mostrar TARJETA No. 2), por cuál de estos candidatos votaría usted?</label>
   <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="f_2_1_c">
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
       <%= f.select :f_2_1_c, [["Jesús María Zuluaga Aguilar",1], ["Humberto Salgado Forero",2], ["Jhon Jairo Barrera Sossa",3], ["Claudia Andrea Campos Barón",4], ["Gonzalo Garcia",5], ["Luis Alberto Balsero",6],["Ninguno",89],["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_f_2_1_c"} %>
@@ -198,7 +198,7 @@
 
   <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_3_2">
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
-    <%= f.label :p_3_2, "3.2) (ENTREGAR TARJETA # ---) Se elegirá un nuevo Gobernador de QUINDÍO, si el día de hoy fuera la elección a GOBERNADOR, ¿por el candidato de qué partido votaría usted? (ENCUESTADOR REGISTRAR LAS DOS PRIMERAS MENCIONES)" %>
+    <%= f.label :p_3_2, "3.2 (Encuestador, mostrar TARJETA No. 3) Se elegirá un nuevo Gobernador de QUINDÍO, si el día de hoy fuera la elección a GOBERNADOR, ¿por el candidato de qué partido votaría usted? (ENCUESTADOR REGISTRAR LAS DOS PRIMERAS MENCIONES)" %>
     <p style="margin-top: 10px;">Selección 1</p>
     <%= f.select :p_3_2, [["Partido Liberal ",1], ["Partido de la U ",2], ["Partido Alianza Verde",3], ["Partido Conservador",4], ["Partido Cambio Radical",5], ["Partido Centro Democrático",6], ["Partido Polo Democrático",7], ["Partido Opción Ciudadana",8], ["MIRA",9], ["Candidato por firmas",10], ["ASI",11], ["Partido MAIS",12], ["Partido Político Los Decentes",13], ["Otro",14], ["Ninguno",89], ["NS/NR (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_3_2"} %>
     <p style="margin-top: 10px;">Selección 2</p>
@@ -210,14 +210,14 @@
 
   <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_3_3">
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
-    <%= f.label :p_3_3, "3.3)  (ENTREGAR TARJETA # ----) Si para las elecciones de Gobernador del mes de Octubre, los candidatos fueran los que aparecen en la siguiente tarjeta, por cuál de ellos votaría? (ENCUESTADOR REGISTRAR SÓLO LA PRIMERA MENCIÓN)" %>
+    <%= f.label :p_3_3, "3.3  (Encuestador, mostrar TARJETA No. 4)  Si para las elecciones de Gobernador del mes de Octubre, los candidatos fueran los que aparecen en la siguiente tarjeta, por cuál de ellos votaría? (ENCUESTADOR REGISTRAR SÓLO LA PRIMERA MENCIÓN)" %>
     <%= f.select :p_3_3, [["Fabio Olmedo Palacio Valencia",1], ["Luz Amparo Bueno",2], ["Roberto Jairo Jaramillo",3], ["Álvaro Arias",4], ["Álvaro Muriel",5], ["Javier Ramírez Mejía",6], ["Carlos Alberto Gómez Chacón",7], ["Bernardo Valencia",8], ["Luz Amparo Bueno",9], ["Ninguno (NO LEER)",89], ["NS/NR (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_3_3"} %>
     </button>
   </div>
 
   <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_3_4">
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
-    <%= f.label :p_3_4, "3.4). El partido Centro Democrático, debe elegir cuál va a ser su candidato para las elecciones a la Gobernación del QUINDÍO que se realizarán en Octubre del presente año.   De las personas que aparecen en esta tarjeta, cuál considera usted debe ser el candidato por el partido Centro Democrático?" %>
+    <%= f.label :p_3_4, "3.4). El partido Centro Democrático, debe elegir cuál va a ser su candidato para las elecciones a la Gobernación del QUINDÍO que se realizarán en Octubre del presente año.   De las personas que aparecen en esta tarjeta, cuál considera usted debe ser el candidato por el partido Centro Democrático? (Encuestador, mostrar TARJETA No. 5)" %>
     <%= f.select :p_3_4, [["Fabio Olmedo Palacio Valencia",1], ["Luz Amparo Bueno",2], ["Ninguno (NO LEER)",89], ["NS/NR (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_3_4"} %>
     </button>
   </div>

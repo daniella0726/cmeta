@@ -116,6 +116,8 @@
     </button>
   </div>
 
+  <div class="" id="div_filtro_encuesta">
+
   <div class="row" style="margin-top: 10px; margin-left:20px; margin-right:20px; margin-bottom:10px;" id="f_2">
 
     <h5>F2. ¿Pudo usted votar o por alguna razón no votó en las elecciones de...? </h5>
@@ -136,14 +138,13 @@
     </button>
   </div>
 
-  <div class="" id="div_filtro_encuesta">
 
   <h4 class="container-fluid bg-dark text-center text-white">1. AFININIDAD</h4>
 
   <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_1_1">
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
     <%= f.label :p_1_1, "1.1) ¿Usted se considera? ( Encuestador, mostrar tarjeta )" %>
-    <%= f.select :p_1_1, [["Uribista",1], ["Afín al partido Centro Democrático",2], ["Liberal",3], ["Conservador",4], ["Independiente",5], ["De derecha",6], ["De izquierdaV",7], ["NS/NR (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_1_1"} %>
+    <%= f.select :p_1_1, [["Uribista",1], ["Afín al partido Centro Democrático",2], ["Liberal",3], ["Conservador",4], ["Independiente",5], ["De derecha",6], ["De izquierda",7], ["NS/NR (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_1_1"} %>
     </button>
   </div>
 
@@ -182,7 +183,7 @@
 
   <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="f_2_1_a">
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
-      <%= f.select :f_2_1_a, [["Antonio José Restrepo",1], ["HFrancisco Jairo Ramírez Concha",2], ["Luis Fernando Jaramillo",3], ["Piedad Correal Rubiano",4], ["José Manuel Ríos",5], ["Albeiro Torres",6], ["José Ricardo Parra",7], ["Jaime Alberto Martínez",8],["Ninguno",89],["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_f_2_1_a"} %>
+      <%= f.select :f_2_1_a, [["Antonio José Restrepo",1], ["Francisco Jairo Ramírez Concha",2], ["Luis Fernando Jaramillo",3], ["Piedad Correal Rubiano",4], ["José Manuel Ríos",5], ["Albeiro Torres",6], ["José Ricardo Parra",7], ["Jaime Alberto Martínez",8],["Ninguno",89],["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_f_2_1_a"} %>
     </button>
   </div>
 
@@ -198,7 +199,10 @@
   <div class="container-fluid" style="margin-top: 10px; margin-bottom:10px;" id="p_3_2">
     <button class="btn btn-secondary container-fluid" type="button" style="margin-bottom: 10px;">
     <%= f.label :p_3_2, "3.2) (ENTREGAR TARJETA # ---) Se elegirá un nuevo Gobernador de QUINDÍO, si el día de hoy fuera la elección a GOBERNADOR, ¿por el candidato de qué partido votaría usted? (ENCUESTADOR REGISTRAR LAS DOS PRIMERAS MENCIONES)" %>
+    <p style="margin-top: 10px;">Selección 1</p>
     <%= f.select :p_3_2, [["Partido Liberal ",1], ["Partido de la U ",2], ["Partido Alianza Verde",3], ["Partido Conservador",4], ["Partido Cambio Radical",5], ["Partido Centro Democrático",6], ["Partido Polo Democrático",7], ["Partido Opción Ciudadana",8], ["MIRA",9], ["Candidato por firmas",10], ["ASI",11], ["Partido MAIS",12], ["Partido Político Los Decentes",13], ["Otro",14], ["Ninguno",89], ["NS/NR (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_3_2"} %>
+    <p style="margin-top: 10px;">Selección 2</p>
+    <%= f.select :p_3_2_b, [["Partido Liberal ",1], ["Partido de la U ",2], ["Partido Alianza Verde",3], ["Partido Conservador",4], ["Partido Cambio Radical",5], ["Partido Centro Democrático",6], ["Partido Polo Democrático",7], ["Partido Opción Ciudadana",8], ["MIRA",9], ["Candidato por firmas",10], ["ASI",11], ["Partido MAIS",12], ["Partido Político Los Decentes",13], ["Otro",14], ["Ninguno",89], ["NS/NR (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_3_2_b"} %>
     <%= f.label :p_3_2_a, "a. Cuál?" %>
     <%= f.text_field :p_3_2_a, {class: "form-control", id:"res_p_3_2_a"} %>
     </button>
@@ -248,9 +252,16 @@
               <th scope="col" class="text-center">Nivel de estudio</th>
             </tr>
             <tr>
-              <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d4, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6",6]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d4"} %></button></td>
-              <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d3, [["Estudiante",1], ["Desempleado",2], ["Trabajando medio tiempo",3], ["Trabajando tiempo completo",4], ["Trabajando y estudiando",5], ["Jubilado o pensionado",6]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d5"} %></button></td>
-              <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d3, [["Primaria",1], ["Bachillerato",2], ["Técnico/Tecnólogo",3], ["Universidad ( completa o incompleta )",4], ["Post grado/ Especialización",5], ["Ninguno",6]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d6"} %></button></td>
+              <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d4, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6",6]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d4"} %></button>
+              </td>
+              <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d3, [["Estudiante",1], ["Desempleado",2], ["Trabajando medio tiempo",3], ["Trabajando tiempo completo",4], ["Trabajando y estudiando",5], ["Jubilado o pensionado",6], ["Otro",7]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d5"} %></button>
+                
+                <div id="p_11_d3_a" class="hidden">
+                  <p style="margin-top: 10px; text-align: left;">Cual?<%= f.text_field :p_11_d3_a, {class: "form-control", id:"res_p_11_d3_a"} %></p>
+                </div>
+              </td>
+              <td class="text-center"><button class="btn btn-light container-fluid" type="button"><%= f.select :p_11_d3, [["Primaria",1], ["Bachillerato",2], ["Técnico/Tecnólogo",3], ["Universidad ( completa o incompleta )",4], ["Post grado/ Especialización",5], ["Ninguno",6]], {:include_blank => true}, {class: "form-control", id:"res_p_11_d6"} %></button>
+              </td>
               
             </tr>
           </table>
@@ -293,7 +304,7 @@
           <a onclick='validar_encuesta();' class="btn btn-primary btn-lg" style="color: #fff;">Validar Encuesta</a>
       </div>
       <div class="col-md-6 text-center">  
-        <a onclick='downloadCSV({ filename: "Meta.csv" });' class="btn btn-primary btn-lg hidden" style="color: #fff;" id="guardar_tablet">Guardar Encuesta en la tablet</a>
+        <a onclick='downloadCSV({ filename: "Quindio.csv" });' class="btn btn-primary btn-lg hidden" style="color: #fff;" id="guardar_tablet">Guardar Encuesta en la tablet</a>
       </div>
     </div>
   </div>  
@@ -342,10 +353,10 @@
       if(mun_sel == "4"){
         document.getElementById('municipio_seleccionado').innerHTML = "QUIMBAYA";
       }
-      if(mun_sel == "1"){
+      if(mun_sel == "5"){
         document.getElementById('municipio_seleccionado').innerHTML = "MONTENEGRO";
       }
-      if(mun_sel == "1"){
+      if(mun_sel == "6"){
         document.getElementById('municipio_seleccionado').innerHTML = "ARMENIA";
       }
     });
@@ -462,6 +473,12 @@
         $('#f_2_1_q').addClass('hidden');
         $('#f_2_1_m').addClass('hidden');
         $('#f_2_1_a').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_11_d5').change(function(){
+      if($("#res_p_11_d5").val() == "7"){
+        $('#p_11_d3_a').removeClass('hidden');
       }
     });
 
@@ -703,8 +720,12 @@
           Respuesta : $("#res_p_3_1").val()
         },
         {
-          Pregunta: "P_3_2",
+          Pregunta: "P_3_2_op1",
           Respuesta : $("#res_p_3_2").val()
+        },
+        {
+          Pregunta: "P_3_2_op2",
+          Respuesta : $("#res_p_3_2_b").val()
         },
         {
           Pregunta: "P_3_2_otra",
@@ -741,6 +762,10 @@
         {
           Pregunta: "Ocupacion",
           Respuesta : $("#res_p_11_d5").val()
+        },
+        {
+          Pregunta: "Ocupacion_Otra",
+          Respuesta : $("#res_p_d3_a").val()
         },
         {
           Pregunta: "Nivel de estudio",
@@ -790,7 +815,7 @@
           link.setAttribute('download', filename);
           link.click();
           alert("Encuesta Guardada con Exito");
-          setTimeout(function(){document.location.href = "https://quiet-reef-76274.herokuapp.com/form483s/new";},500);
+          setTimeout(function(){document.location.href = "https://quiet-reef-76274.herokuapp.com/form514s/new";},500);
         
     }
 

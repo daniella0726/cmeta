@@ -204,10 +204,16 @@
     <%= f.label :p_3_2, "3.2 (Encuestador, mostrar TARJETA No. 3) Se elegirá un nuevo Gobernador de QUINDÍO, si el día de hoy fuera la elección a GOBERNADOR, ¿por el candidato de qué partido votaría usted? (ENCUESTADOR REGISTRAR LAS DOS PRIMERAS MENCIONES)" %>
     <p style="margin-top: 10px;">Selección 1</p>
     <%= f.select :p_3_2, [["Partido Liberal ",1], ["Partido de la U ",2], ["Partido Alianza Verde",3], ["Partido Conservador",4], ["Partido Cambio Radical",5], ["Partido Centro Democrático",6], ["Partido Polo Democrático",7], ["Partido Opción Ciudadana",8], ["MIRA",9], ["Candidato por firmas",10], ["ASI",11], ["Partido MAIS",12], ["Partido Político Los Decentes",13], ["Otro",14], ["Ninguno",89], ["NS/NR (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_3_2"} %>
+    <div class="hidden" id="p_3_2_c">
+    <%= f.label :p_3_2_c, "a. Cuál?" %>
+    <%= f.text_field :p_3_2_c, {class: "form-control", id:"res_p_3_2_c"} %>
+    </div>
     <p style="margin-top: 10px;">Selección 2</p>
     <%= f.select :p_3_2_b, [["Partido Liberal ",1], ["Partido de la U ",2], ["Partido Alianza Verde",3], ["Partido Conservador",4], ["Partido Cambio Radical",5], ["Partido Centro Democrático",6], ["Partido Polo Democrático",7], ["Partido Opción Ciudadana",8], ["MIRA",9], ["Candidato por firmas",10], ["ASI",11], ["Partido MAIS",12], ["Partido Político Los Decentes",13], ["Otro",14], ["Ninguno",89], ["NS/NR (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_3_2_b"} %>
+    <div class="hidden" id="p_3_2_a">
     <%= f.label :p_3_2_a, "a. Cuál?" %>
     <%= f.text_field :p_3_2_a, {class: "form-control", id:"res_p_3_2_a"} %>
+    </div>
     </button>
   </div>
 
@@ -397,8 +403,18 @@
     });
 
 
-    $('#res_f_2_a'&&'#res_f_2_c'&&'#res_f_2_c').change(function(){
-      if($("#res_f_2_c"&&"#res_f_2_c"&&"#res_f_2_c").val() == "2"){
+    $('#res_f_2_a').change(function(){
+      if($("#res_f_2_a").val() == "2" && $("#res_f_2_b").val() == "2" && $("#res_f_2_c").val() == "2"){
+        $('#div_filtro_encuesta2').addClass('hidden');
+      }
+    });
+    $('#res_f_2_b').change(function(){
+      if($("#res_f_2_a").val() == "2" && $("#res_f_2_b").val() == "2" && $("#res_f_2_c").val() == "2"){
+        $('#div_filtro_encuesta2').addClass('hidden');
+      }
+    });
+    $('#res_f_2_c').change(function(){
+      if($("#res_f_2_a").val() == "2" && $("#res_f_2_b").val() == "2" && $("#res_f_2_c").val() == "2"){
         $('#div_filtro_encuesta2').addClass('hidden');
       }
     });
@@ -470,9 +486,39 @@
       }
     });
 
+    $('#res_p_3_2').change(function(){
+      if($("#res_p_3_2").val() == "14"){
+        $('#p_3_2_c').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_3_2').change(function(){
+      if($("#res_p_3_2").val() != "14"){
+        $('#p_3_2_c').addClass('hidden');
+      }
+    });
+
+    $('#res_p_3_2_b').change(function(){
+      if($("#res_p_3_2_b").val() == "14"){
+        $('#p_3_2_a').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_3_2_b').change(function(){
+      if($("#res_p_3_2_b").val() != "14"){
+        $('#p_3_2_a').addClass('hidden');
+      }
+    });
+
     $('#res_p_11_d5').change(function(){
       if($("#res_p_11_d5").val() == "7"){
         $('#p_11_d3_a').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_11_d5').change(function(){
+      if($("#res_p_11_d5").val() != "7"){
+        $('#p_11_d3_a').addClass('hidden');
       }
     });
 
@@ -722,7 +768,11 @@
           Respuesta : $("#res_p_3_2_b").val()
         },
         {
-          Pregunta: "P_3_2_otra",
+          Pregunta: "P_3_2_otra1",
+          Respuesta : $("#res_p_3_2_c").val()
+        },
+        {
+          Pregunta: "P_3_2_otra2",
           Respuesta : $("#res_p_3_2_a").val()
         },
         {

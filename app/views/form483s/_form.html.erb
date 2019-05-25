@@ -182,7 +182,7 @@
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_2_3">
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.label :p_2_3_a, "2.3  ¿Cuál considera usted que es el principal problema de ________ (nombrar Municipio en el que se encuentre) que debe intentar solucionar el próximo alcalde de su municipio? (Respuesta abierta, digitar las dos palabras claves. P.ej: aumentar empleo, disminuir inseguridad, cupos educación, pavimentar carreteras, etc.). Buscar si el problema mencionado está en LA TARJETA No. 2 DE  PROBLEMÁTICA y anotar el código, SINO EXISTE EL CODIGO ESCRIBIR LA RESPUESTA) " %>
+    <label>2.3  ¿Cuál considera usted que es el principal problema de <b id="nombre_municipio"></b> que debe intentar solucionar el próximo alcalde de su municipio? (Respuesta abierta, digitar las dos palabras claves. P.ej: aumentar empleo, disminuir inseguridad, cupos educación, pavimentar carreteras, etc.). Buscar si el problema mencionado está en LA TARJETA No. 2 DE  PROBLEMÁTICA y anotar el código, SINO EXISTE EL CODIGO ESCRIBIR LA RESPUESTA)</label>
     <p> 1ero </p>
     <%= f.text_field :p_2_3_a, {class: "form-control", id:"res_p_2_3_a"} %>
     <p> 2do </p>
@@ -194,7 +194,7 @@
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_2_4_a, "2.4   Si usted tuviera que elegir el principal problema a solucionar por parte del próximo GOBERNADOR DEL DEPARTAMENTO, ¿cuál elegiría?: ( ENC. UNICA RESPUESTA ) (( ENC. MOSTRAR TARJETA No. 2)" %>
     <%= f.select :p_2_4_a, [["1) La corrupción ",1], ["2) La inseguridad",2], ["3) El empleo",3], ["4) La educación",4], ["5) La salud",5], ["6) Las vías",6], ["7) otro.  Cuál? ",7], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_2_4_a"} %>
-    <div id="p_2_4_b">
+    <div class= "hidden" id="p_2_4_b">
        <h6 class="text-left" style="margin-top: 10px;"> 7) otro.  Cuál? </h6>
       <%= f.text_field :p_2_4_b, {class: "form-control", id:"res_p_2_4_b"} %>
     </div>
@@ -205,7 +205,7 @@
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_2_5_a, "2.5  Si usted tuviera que elegir el principal problema a solucionar por parte del próximo ALCALDE DE SU MUNICIPIO, ¿cuál elegiría?: ( ENC. UNICA RESPUESTA ) ( ENC. MOSTRAR TARJETA No. 2)" %>
     <%= f.select :p_2_5_a, [["1) La corrupción ",1], ["2) La inseguridad",2], ["3) El empleo",3], ["4) La educación",4], ["5) La salud",5], ["6) Las vías",6], ["7) otro.  Cuál? ",7], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_2_5_a"} %>
-    <div id="p_2_5_b">
+    <div class="hidden" id="p_2_5_b">
        <h6 class="text-left" style="margin-top: 10px;"> 7) otro.  Cuál? </h6>
       <%= f.text_field :p_2_5_b, {class: "form-control", id:"res_p_2_5_b"} %>
     </div>
@@ -247,7 +247,7 @@
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_4_3">
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.label :p_4_3, "4.3 Por qué considera que cosas durante la administración de la Gobernadora del Meta  ___________________ ( LEER RESPUESTA ANTERIOR )?" %>
+    <label>4.3 Por qué considera que las cosas durante la administración de la Gobernadora del Meta <b id="respuesta4_2"></b> LEER RESPUESTA ANTERIOR )?</label>
     <%= f.text_field :p_4_3, {class: "form-control", id:"res_p_4_3"} %>
     <p class="text-left" style="margin-top: 10px;">No Sabe / No Responde</p>
     <%= f.select :p_4_3_a, [["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_4_3_a"} %>
@@ -1105,7 +1105,7 @@
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_2, "7.2    (ENC. ENTREGAR TARJETA No. 5) Se elegirá un nuevo Gobernador del META, aunque aún falta tiempo para este proceso, si el día de hoy fuera la elección a GOBERNADOR, ¿por cuál partido votaría usted?" %>
     <%= f.select :p_7_2, [["Partido Liberal 1",1], ["Partido de la U",2], ["Partido Alianza Verde",3], ["Partido Conservador",4], ["Partido Cambio Radical",5], ["Partido Centro Democrático",6], ["Partido Polo Democrático",7], ["Partido Opción Ciudadana",8], ["Partido MIRA",9], ["Partido ASI",10], ["Movimiento Alternativo MAIS",11], ["Movimiento Ciudadano por Firmas",12], ["Partido Político Los Decentes",13], ["Colombia Justa",14], ["Movimiento RENACER",15], ["Otro. CUÁL? ",16], ["Ninguno",17], ["No Sabe / No Contesta (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_7_2"} %>
-    <div id="p_7_2_a">
+    <div class="hidden" id="p_7_2_a">
        <p class="text-left"> Otro.  Cuál? </p>
       <%= f.text_field :p_7_2_a, {class: "form-control", id:"res_p_7_2_a"} %>
     </div>
@@ -1120,7 +1120,7 @@
     <%= f.label :p_7_3_a, "Primer Mencionado" %>
     <%= f.select :p_7_3_a, [["Juan Guillermo Zuluaga",1], ["Hernán Gómez",2], ["Juan Diego Muñoz",3], ["Antonio Cuellar",4],["Alejandro Vega ",5], ["Fernando Sierra ",6], ["Arley Gómez",7], ["7) otro.  Cuál?",16]], {:include_blank => true}, {class: "form-control", id:"res_p_7_3_a"} %>
     </button>
-    <div id="p_7_3_ac" style="margin-left:20px; margin-right: 20px; margin-bottom:10px;">
+    <div class="hidden" id="p_7_3_ac" style="margin-left:20px; margin-right: 20px; margin-bottom:10px;">
        <p> Otro.  Cuál? </p>
       <%= f.text_field :p_7_3_ac, {class: "form-control", id:"res_p_7_3_ac"} %>
     </div>
@@ -1129,7 +1129,7 @@
     <%= f.label :p_7_3_b, "Mencionados en segundo orden" %>
     <%= f.select :p_7_3_b, [["Juan Guillermo Zuluaga",1], ["Hernán Gómez",2], ["Juan Diego Muñoz",3], ["Antonio Cuellar",4],["Alejandro Vega ",5], ["Fernando Sierra ",6], ["Arley Gómez",7], ["7) otro.  Cuál?",16]], {:include_blank => true}, {class: "form-control", id:"res_p_7_3_b"} %>
     </button>
-    <div id="p_7_3_bc" style="margin-left:20px; margin-right: 20px; margin-bottom:10px;">
+    <div class="hidden" id="p_7_3_bc" style="margin-left:20px; margin-right: 20px; margin-bottom:10px;">
        <p> Otro.  Cuál? </p>
       <%= f.text_field :p_7_3_bc, {class: "form-control", id:"res_p_7_3_bc"} %><br>
     </div>
@@ -1144,7 +1144,7 @@
 
 <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_7_5">
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.label :p_7_5, "7.5  ¿ Por qué votaría por ___________________ ( ENCUESTADOR:  Leer respuesta anterior )" %>
+    <label>7.5  ¿ Por qué votaría por <b id="nombre_gobernado_voto"></b> ( ENCUESTADOR:  Leer respuesta anterior )</label>
     <%= f.text_field :p_7_5, {class: "form-control", id:"res_p_7_5"} %>
     </button>
 </div>
@@ -1158,7 +1158,7 @@
 
 <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_7_7">
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.label :p_7_7, "7.7  ¿Por qué NUNCA votaría por ___________________ ( ENCUESTADOR:  Leer respuesta anterior)" %>
+      <label>7.7  ¿Por qué NUNCA votaría por <b id="nombre_gobernado_no_voto"></b> ( ENCUESTADOR:  Leer respuesta anterior)</label>
     <%= f.text_field :p_7_7, {class: "form-control", id:"res_p_7_7"} %>
     </button>
 </div>
@@ -1767,7 +1767,7 @@
     </h3>
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.select :p_9_2, [["Partido Liberal 1",1], ["Partido de la U",2], ["Partido Alianza Verde",3], ["Partido Conservador",4], ["Partido Cambio Radical",5], ["Partido Centro Democrático",6], ["Partido Polo Democrático",7], ["Partido Opción Ciudadana",8], ["Partido MIRA",9], ["Partido ASI",10], ["Movimiento Alternativo MAIS",11], ["Movimiento Ciudadano por Firmas",12], ["Partido Político Los Decentes",13], ["Colombia Justa",14], ["Movimiento RENACER",15], ["Otro. CUÁL? ",16], ["Ninguno",17], ["No Sabe / No Contesta (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_9_2"} %>
-    <div id="p_9_2_a" class="text-left" style="margin-top: 10px;">
+    <div id="p_9_2_a" class="text-left hidden" style="margin-top: 10px;">
        <p> Otro.  Cuál? </p>
       <%= f.text_field :p_9_2_a, {class: "form-control", id:"res_p_9_2_a"} %>
     </div>
@@ -1784,7 +1784,7 @@
     </h3>
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.select :p_9_3, [["Partido Liberal 1",1], ["Partido de la U",2], ["Partido Alianza Verde",3], ["Partido Conservador",4], ["Partido Cambio Radical",5], ["Partido Centro Democrático",6], ["Partido Polo Democrático",7], ["Partido Opción Ciudadana",8], ["Partido MIRA",9], ["Partido ASI",10], ["Movimiento Alternativo MAIS",11], ["Movimiento Ciudadano por Firmas",12], ["Partido Político Los Decentes",13], ["Colombia Justa",14], ["Movimiento RENACER",15], ["Otro. CUÁL? ",16], ["Ninguno",17], ["No Sabe / No Contesta (NO LEER)",99]], {:include_blank => true}, {class: "form-control", id:"res_p_9_3"} %>
-    <div id="p_9_3_a" class="text-left" style="margin-top: 10px;">
+    <div id="p_9_3_a" class="text-left hidden" style="margin-top: 10px;">
        <p> Otro.  Cuál? </p>
       <%= f.text_field :p_9_3_a, {class: "form-control", id:"res_p_9_3_a"} %>
     </div>
@@ -1855,8 +1855,8 @@
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_4">
     <h3><%= f.label :p_10_4, "10.4 Encuestador: Solamente para los que dijeron un exministro. Recuerda usted qué Ministerio ocupó JUAN GUILLERMO ZULUAGA?" %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.select :p_10_4, [["Ministerio del interior",1], ["Ministerio de Comercio",2], ["Ministerio de Agricultura",3], ["Ministerio de Justicia",4], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_4"} %>
-    <div id="p_10_4_a" class="text-left" style="margin-top: 10px;">
+    <%= f.select :p_10_4, [["Ministerio del interior",1], ["Ministerio de Comercio",2], ["Ministerio de Agricultura",3], ["Ministerio de Justicia",4], ["Otra, Cual?",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_4"} %>
+    <div id="p_10_4_a" class="text-left hidden" style="margin-top: 10px;">
     <%= f.label :p_10_4_a, "Otro. Cuál?" %>
     <%= f.text_field :p_10_4_a, {class: "form-control", id:"res_p_10_4_a"} %>
     </div>
@@ -1874,7 +1874,7 @@
     <h3><%= f.label :p_10_5, "10.6 Sabe usted JUAN GUILLERMO ZULUAGA de qué partido  es candidato a la GOBERNACIÓN DEL META?" %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.select :p_10_5, [["Partido Liberal",1], ["Partido de la U",2], ["Partido Alianza Verde",3], ["Partido Conservador",4], ["Partido Cambio Radical",5], ["Partido Centro Democrático",6], ["Partido Polo Democrático",7], ["Partido Opción Ciudadana",8], ["Partido MIRA",9], ["Partido ASI",10], ["Movimiento Alternativo MAIS",11], ["Movimiento Ciudadano por Firmas",12], ["Partido Político Los Decentes",13], ["Colombia Justa",14], ["Movimiento RENACER",15], ["Otro",16], ["Ninguno",17], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_5"} %>
-    <div id="p_10_5_a" class="text-left" style="margin-top: 10px;">
+    <div id="p_10_5_a" class="text-left hidden" style="margin-top: 10px;">
     <%= f.label :p_10_5_a, "Cuál?" %>
     <%= f.text_field :p_10_5_a, {class: "form-control", id:"res_p_10_5_a"} %>
     </div>
@@ -1895,7 +1895,7 @@
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_7">
     <h3><%= f.label :p_10_7, "10.8 Para los que respondieron SI.  Cómo ve usted esto?" %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
-    <%= f.select :p_10_7, [["Si",1], ["No",2], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_7"} %>
+    <%= f.select :p_10_7, [["Bueno",1], ["Malo",2], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_7"} %>
     </button>
   </div>
 
@@ -2072,8 +2072,10 @@
 
     <h5><%= f.label :p_11_1, "11.1  ¿Cuál es su ocupación actual?" %></h5>
     <%= f.select :p_11_1, [["Estudiante",1], ["Desempleado",2], ["Trabajando medio tiempo",3], ["Trabajando tiempo completo",4], ["Trabajando y estudiando",5], ["Jubilado o pensionado",6], ["Otra",7]], {:include_blank => true}, {class: "form-control", id:"res_p_11_1"} %>
-    <h5 style="margin-top: 10px;"><%= f.label :p_11_1_a, "Cuál?" %></h5>
+    <div class="hidden" id="div_p11_1_a">
+      <h5 style="margin-top: 10px;"><%= f.label :p_11_1_a, "Cuál?" %></h5>
     <%= f.text_field :p_11_1_a, {class: "form-control", id:"res_p_11_1_a"} %>
+    </div>
     <br>
  
     <h5><%= f.label :p_11_2, "11.2  ¿Cuál es el último nivel educativo que terminó o está cursando actualmente? " %></h5>
@@ -2082,8 +2084,10 @@
 
     <h5><%= f.label :p_11_3, "11.3  En materia religiosa, usted se considera…" %></h5>
     <%= f.select :p_11_3, [["Católico no practicante ",1], ["Católico practicante ",2], ["Evangélico no practicante",3], ["Evangélico practicante",4], ["Ateo",5], ["Otra",6], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_11_3"} %>
+    <div class="hidden" id="div_p11_3_a">
     <h5 style="margin-top: 10px;"><%= f.label :p_11_3_a, "Cuál?" %></h5>
     <%= f.text_field :p_11_3_a, {class: "form-control", id:"res_p_11_3_a"} %>
+    </div>
     <br>
 
 <div class="container-fluid border border-dark" style="margin-top: 10px; margin-bottom:10px;" id="encuestado">
@@ -2150,7 +2154,7 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
       <div class="col-md-6 text-center">  
         <a onclick='validar_informacion();' class="btn btn-primary btn-lg" style="color: #fff;">Validar informacion</a>
       </div>
-      <div class="col-md-6 text-center">  
+      <div class="col-md-6 text-center hidden" id="guardar_tablet">  
         <a onclick='downloadCSV({ filename: "Meta.csv" });' class="btn btn-primary btn-lg" style="color: #fff;">Guardar Encuesta en la tablet</a>
       </div>
     </div>
@@ -2178,12 +2182,14 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
     codigo = horas+""+minutos+""+segundos;
     hora1 = "La hora es: "+ horas+":"+minutos;
 
+
     document.getElementById("res_date").value = fecha1;
     document.getElementById('hora_encuesta').innerHTML = hora1;
 
     $('#res_f_1').change(function(){
       if($("#res_f_1").val() == "2"){
         $('#div_filtro_encuesta').addClass('hidden');
+        $('#f_2').addClass('hidden');
       }
     });
 
@@ -2192,48 +2198,63 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
     $('#res_f_1').change(function(){
       if($("#res_f_1").val() == "1"){
         $('#div_filtro_encuesta').removeClass('hidden');
+        $('#f_2').removeClass('hidden');
       }
     });
 
-    $('#res_f_2_a').change(function(){
-      if($("#res_f_2_a").val() == "2"){
-        $('#div_filtro_encuesta').addClass('hidden');
-      }
-    });
 
     $('#res_f_2_a').change(function(){
-      if($("#res_f_2_a").val() == "1"){
+      if($("#res_f_2_a").val() || "1" && $("#res_f_2_b").val() || "1" && $("#res_f_2_c").val() == "1"){
         $('#div_filtro_encuesta').removeClass('hidden');
       }
     });
 
-    $('#res_f_2_b').change(function(){
-      if($("#res_f_2_b").val() == "2"){
+    $('#res_f_2_a').change(function(){
+      if($("#res_f_2_a").val() == "2" && $("#res_f_2_b").val() == "2" && $("#res_f_2_c").val() == "2"){
         $('#div_filtro_encuesta').addClass('hidden');
       }
     });
 
     $('#res_f_2_b').change(function(){
-      if($("#res_f_2_b").val() == "1"){
+      if($("#res_f_2_a").val() || "1" && $("#res_f_2_b").val() || "1" && $("#res_f_2_c").val() == "1"){
         $('#div_filtro_encuesta').removeClass('hidden');
       }
     });
 
-    $('#res_f_2_c').change(function(){
-      if($("#res_f_2_c").val() == "2"){
+    $('#res_f_2_b').change(function(){
+      if($("#res_f_2_a").val() == "2" && $("#res_f_2_b").val() == "2" && $("#res_f_2_c").val() == "2"){
         $('#div_filtro_encuesta').addClass('hidden');
       }
     });
 
     $('#res_f_2_c').change(function(){
-      if($("#res_f_2_c").val() == "1"){
+      if($("#res_f_2_a").val() || "1" && $("#res_f_2_b").val() || "1" && $("#res_f_2_c").val() == "1"){
         $('#div_filtro_encuesta').removeClass('hidden');
       }
     });
+
+    $('#res_f_2_c').change(function(){
+      if($("#res_f_2_a").val() == "2" && $("#res_f_2_b").val() == "2" && $("#res_f_2_c").val() == "2"){
+        $('#div_filtro_encuesta').addClass('hidden');
+      }
+    });
+
+
+    
 
     $("#res_encu").change(function(){
       var encustador_1 = $('#res_encu').val();
       document.getElementById('nombre_encuestador').innerHTML = encustador_1;
+    });
+
+    $('#res_nombre').change(function(){
+      var fecha = new Date()
+      var horas = fecha.getHours();
+      var minutos = fecha.getMinutes();
+      var segundos = fecha.getSeconds();
+
+      hora1 = horas+":"+minutos+":"+segundos;
+      document.getElementById('res_hourend').value = hora1;
     });
 
 
@@ -2242,6 +2263,7 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "1"){
         document.getElementById('nombre_alcalde').innerHTML = "Luis Orlando Gutiérrez";
+        document.getElementById('nombre_municipio').innerHTML = "ACACIAS";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').addClass('hidden');
@@ -2262,6 +2284,7 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "2"){
         document.getElementById('nombre_alcalde').innerHTML = "José Alexander Fierro Guayara";
+        document.getElementById('nombre_municipio').innerHTML = "Puerto_Gaitán";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').addClass('hidden');
@@ -2282,6 +2305,7 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "3"){
         document.getElementById('nombre_alcalde').innerHTML = "Juan Carlos Mendoza";
+        document.getElementById('nombre_municipio').innerHTML = "GRANADA";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').addClass('hidden');
@@ -2302,6 +2326,7 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "4"){
         document.getElementById('nombre_alcalde').innerHTML = "Víctor Manuel Bravo Rodríguez";
+        document.getElementById('nombre_municipio').innerHTML = "Puerto_López";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').removeClass('hidden');
@@ -2322,6 +2347,7 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "5"){
         document.getElementById('nombre_alcalde').innerHTML = "Jonathan David Neira";
+        document.getElementById('nombre_municipio').innerHTML = "San_Martin";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').removeClass('hidden');
         $('#p_5_1_pl').addClass('hidden');
@@ -2342,6 +2368,7 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "6"){
         document.getElementById('nombre_alcalde').innerHTML = "Wilmar Orlando Barbosa Rozo";
+        document.getElementById('nombre_municipio').innerHTML = "VILLAVICENCIO";
         $('#p_5_1_v').removeClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').addClass('hidden');
@@ -2362,6 +2389,7 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
     $('#res_p_m').change(function(){
       if($("#res_p_m").val() == "7"){
         document.getElementById('nombre_alcalde').innerHTML = "Miguel Antonio Caro";
+        document.getElementById('nombre_municipio').innerHTML = "CUMARAL";
         $('#p_5_1_v').addClass('hidden');
         $('#p_5_1_sm').addClass('hidden');
         $('#p_5_1_pl').addClass('hidden');
@@ -2412,6 +2440,183 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
       }
       if($("#res_p_10_10").val() == "2"){
         $('#p_10_10_a').addClass('hidden');
+      }
+    });
+
+    $('#res_p_2_4_a').change(function(){
+      if($("#res_p_2_4_a").val() != "7"){
+        $('#p_2_4_b').addClass('hidden');
+      }
+      if($("#res_p_2_4_a").val() == "7"){
+        $('#p_2_4_b').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_2_5_a').change(function(){
+      if($("#res_p_2_5_a").val() != "7"){
+        $('#p_2_5_b').addClass('hidden');
+      }
+      if($("#res_p_2_5_a").val() == "7"){
+        $('#p_2_5_b').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_4_2').change(function(){
+      respuesta4_2 = $('#res_p_4_2').val();
+      if (respuesta4_2 == "1") {
+        document.getElementById('respuesta4_2').innerHTML = "Han Mejorado";
+      }
+      if (respuesta4_2 == "2") {
+        document.getElementById('respuesta4_2').innerHTML = "Siguen igual";
+      }
+      if (respuesta4_2 == "3") {
+        document.getElementById('respuesta4_2').innerHTML = "Han Empeorado";
+      }
+      if (respuesta4_2 == "4") {
+        document.getElementById('respuesta4_2').innerHTML = "No sabe /No responde";
+      }
+    });
+
+    $('#res_p_7_2').change(function(){
+      if($("#res_p_7_2").val() != "16"){
+        $('#p_7_2_a').addClass('hidden');
+      }
+      if($("#res_p_7_2").val() == "16"){
+        $('#p_7_2_a').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_7_3_a').change(function(){
+      if($("#res_p_7_3_a").val() != "16"){
+        $('#p_7_3_ac').addClass('hidden');
+      }
+      if($("#res_p_7_3_a").val() == "16"){
+        $('#p_7_3_ac').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_7_3_b').change(function(){
+      if($("#res_p_7_3_b").val() != "16"){
+        $('#p_7_3_bc').addClass('hidden');
+      }
+      if($("#res_p_7_3_b").val() == "16"){
+        $('#p_7_3_bc').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_7_4').change(function(){
+      respuesta4_2 = $('#res_p_7_4').val();
+      if (respuesta4_2 == "1") {
+        document.getElementById('nombre_gobernado_voto').innerHTML = "Juan Guillermo Zuluaga";
+      }
+      if (respuesta4_2 == "2") {
+        document.getElementById('nombre_gobernado_voto').innerHTML = "Hernán Gomez";
+      }
+      if (respuesta4_2 == "3") {
+        document.getElementById('nombre_gobernado_voto').innerHTML = "Juan Diego Muñoz";
+      }
+      if (respuesta4_2 == "4") {
+        document.getElementById('nombre_gobernado_voto').innerHTML = "Antonio Cuellar";
+      }
+      if (respuesta4_2 == "5") {
+        document.getElementById('nombre_gobernado_voto').innerHTML = "Alejandro Vega";
+      }
+      if (respuesta4_2 == "6") {
+        document.getElementById('nombre_gobernado_voto').innerHTML = "Fernando Sierra";
+      }
+      if (respuesta4_2 == "7") {
+        document.getElementById('nombre_gobernado_voto').innerHTML = "Arley Gomez";
+      }
+      if (respuesta4_2 == "8") {
+        document.getElementById('nombre_gobernado_voto').innerHTML = "Ninguno";
+      }
+      if (respuesta4_2 == "99") {
+        document.getElementById('nombre_gobernado_voto').innerHTML = "No sabe/ No responde";
+      }
+    });
+
+    $('#res_p_7_6').change(function(){
+      respuesta4_2 = $('#res_p_7_6').val();
+      if (respuesta4_2 == "1") {
+        document.getElementById('nombre_gobernado_no_voto').innerHTML = "Juan Guillermo Zuluaga";
+      }
+      if (respuesta4_2 == "2") {
+        document.getElementById('nombre_gobernado_no_voto').innerHTML = "Hernán Gomez";
+      }
+      if (respuesta4_2 == "3") {
+        document.getElementById('nombre_gobernado_no_voto').innerHTML = "Juan Diego Muñoz";
+      }
+      if (respuesta4_2 == "4") {
+        document.getElementById('nombre_gobernado_no_voto').innerHTML = "Antonio Cuellar";
+      }
+      if (respuesta4_2 == "5") {
+        document.getElementById('nombre_gobernado_no_voto').innerHTML = "Alejandro Vega";
+      }
+      if (respuesta4_2 == "6") {
+        document.getElementById('nombre_gobernado_no_voto').innerHTML = "Fernando Sierra";
+      }
+      if (respuesta4_2 == "7") {
+        document.getElementById('nombre_gobernado_no_voto').innerHTML = "Arley Gomez";
+      }
+      if (respuesta4_2 == "8") {
+        document.getElementById('nombre_gobernado_no_voto').innerHTML = "Ninguno";
+      }
+      if (respuesta4_2 == "99") {
+        document.getElementById('nombre_gobernado_no_voto').innerHTML = "No sabe/ No responde";
+      }
+    });
+
+     $('#res_p_9_2').change(function(){
+      if($("#res_p_9_2").val() != "16"){
+        $('#p_9_2_a').addClass('hidden');
+      }
+      if($("#res_p_9_2").val() == "16"){
+        $('#p_9_2_a').removeClass('hidden');
+      }
+    });
+
+     $('#res_p_9_3').change(function(){
+      if($("#res_p_9_3").val() != "16"){
+        $('#p_9_3_a').addClass('hidden');
+      }
+      if($("#res_p_9_3").val() == "16"){
+        $('#p_9_3_a').removeClass('hidden');
+      }
+    });
+
+     $('#res_p_10_4').change(function(){
+      if($("#res_p_10_4").val() != "5"){
+        $('#p_10_4_a').addClass('hidden');
+      }
+      if($("#res_p_10_4").val() == "5"){
+        $('#p_10_4_a').removeClass('hidden');
+      }
+    });
+
+     $('#res_p_10_5').change(function(){
+      if($("#res_p_10_5").val() != "16"){
+        $('#p_10_5_a').addClass('hidden');
+      }
+      if($("#res_p_10_5").val() == "16"){
+        $('#p_10_5_a').removeClass('hidden');
+      }
+    });
+
+     $('#res_p_11_1').change(function(){
+      if($("#res_p_11_1").val() != "7"){
+        $('#div_p11_1_a').addClass('hidden');
+      }
+      if($("#res_p_11_1").val() == "7"){
+        $('#div_p11_1_a').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_11_3').change(function(){
+      if($("#res_p_11_2").val() != "6"){
+        $('#div_p11_3_a').addClass('hidden');
+      }
+      if($("#res_p_11_3").val() == "6"){
+        $('#div_p11_3_a').removeClass('hidden');
       }
     });
       
@@ -2535,10 +2740,6 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
       }
     if($("#res_p_7_2").val() == ""){
         alert("La pregunta P.7.2 esta vacia");
-        error = 1;
-      }
-    if($("#res_p_7_2_a").val() == ""){
-        alert("La pregunta P.7.2 A esta vacia");
         error = 1;
       }
     if($("#res_p_7_3_a").val() == ""){
@@ -3272,7 +3473,11 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
           Respuesta : $("#res_p_4_3").val()
         },
         {
-          Pregunta: "4.3",
+          Pregunta: "4.3 NS/NR",
+          Respuesta : $("#res_p_4_3_a").val()
+        },
+        {
+          Pregunta: "4.4",
           Respuesta : $("#res_p_4_4").val()
         },
         {
@@ -3670,10 +3875,6 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
         {
           Pregunta: "6.1 c",
           Respuesta : $("#res_p_6_1_c").val()
-        },
-        {
-          Pregunta: "6.2",
-          Respuesta : $("#res_p_6_2").val()
         },
         {
           Pregunta: "6.2 ACACIAS",
@@ -4326,6 +4527,10 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
         {
           Pregunta: "supervisor",
           Respuesta : $("#res_sup").val()
+        },
+        {
+          Pregunta: "hora fin",
+          Respuesta : $("#res_hourend").val()
         }
         ];
 

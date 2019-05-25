@@ -1851,7 +1851,7 @@
     </div>
     </button>
   </div>
-
+  <div class="" id="div_juan_zuluaga">
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_4">
     <h3><%= f.label :p_10_4, "10.4 Encuestador: Solamente para los que dijeron un exministro. Recuerda usted qué Ministerio ocupó JUAN GUILLERMO ZULUAGA?" %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
@@ -1863,7 +1863,7 @@
     </button>
   </div>
 
-  <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_4x">
+  <div class="hidden" style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_4x">
     <h3><%= f.label :p_10_4x, "10.5 JUAN GUILLERMO ZULUAGA fue MINISTRO DE AGRICULTURA en el periodo comprendido entre 2017 – 2018, Qué calificación le daría Ud a su gestión como Ministro de Agricultura? (ESPONTÁNEA. SI CONTESTA REGULAR PREGUNTAR REGULAR A BIEN O REGULAR A MAL)" %></h3>
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.select :p_10_4x, [["Muy Buena",1], ["Buena",2], ["Regular a Bien",3], ["Regular a Mal",4], ["Mala",5], ["Muy Mala",6], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_4x"} %>
@@ -2055,6 +2055,7 @@
     <%= f.select :p_10_12, [["Una gran simpatía",1], ["Me parece bien",2], ["No me provoca nada",3], ["Me parece mal",4], ["Me produce un gran rechazo",5], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_10_12"} %>
     </button>
   </div>
+  </div>
 
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_10_13">
     <h3><%= f.label :p_10_13, "10.14  Qué le produce la siguiente frase: “vamos por grandes metas”? (Encuestador: respuesta abierta)" %></h3>
@@ -2154,7 +2155,7 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
       <div class="col-md-6 text-center">  
         <a onclick='validar_informacion();' class="btn btn-primary btn-lg" style="color: #fff;">Validar informacion</a>
       </div>
-      <div class="col-md-6 text-center hidden" id="guardar_tablet">  
+      <div class="col-md-6 text-center" id="guardar_tablet">  
         <a onclick='downloadCSV({ filename: "Meta.csv" });' class="btn btn-primary btn-lg" style="color: #fff;">Guardar Encuesta en la tablet</a>
       </div>
     </div>
@@ -2419,11 +2420,54 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
     $('#res_p_10_3').change(function(){
       if($("#res_p_10_3").val() == "1"){
         $('#p_10_3_a').removeClass('hidden');
+        $('#p_10_3_a').removeClass('hidden');
+        $('#p_10_4x').removeClass('hidden');
+        $('#p_10_4').removeClass('hidden');
+        $('#p_10_5').removeClass('hidden');
+        $('#p_10_6').removeClass('hidden');
+        $('#p_10_7').removeClass('hidden');
+        $('#p_10_8').removeClass('hidden');
+        $('#p_10_9').removeClass('hidden');
+        $('#p_10_10').removeClass('hidden');
+        $('#p_10_11').removeClass('hidden');
+        $('#p_10_12').removeClass('hidden');
       }
       if($("#res_p_10_3").val() == "2"){
         $('#p_10_3_a').addClass('hidden');
+        $('#p_10_4x').addClass('hidden');
+        $('#p_10_4').addClass('hidden');
+        $('#p_10_5').addClass('hidden');
+        $('#p_10_6').addClass('hidden');
+        $('#p_10_7').addClass('hidden');
+        $('#p_10_8').addClass('hidden');
+        $('#p_10_9').addClass('hidden');
+        $('#p_10_10').addClass('hidden');
+        $('#p_10_11').addClass('hidden');
+        $('#p_10_12').addClass('hidden');
       }
     });
+
+    $('#res_p_10_3_a').change(function(){
+      if($("#res_p_10_3_a").val() == "3"){
+        $('#p_10_4').removeClass('hidden');
+      }
+      if($("#res_p_10_3_a").val() != "3"){
+        $('#p_10_4').addClass('hidden');
+      }
+    });
+
+    $('#res_p_10_4').change(function(){
+      if($("#res_p_10_4").val() == "3"){
+        $('#p_10_4x').removeClass('hidden');
+      }
+      if($("#res_p_10_4").val() != "3"){
+        $('#p_10_4x').addClass('hidden');
+      }
+    });
+
+
+
+
 
     $('#res_p_10_6').change(function(){
       if($("#res_p_10_6").val() == "1"){
@@ -3140,114 +3184,6 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
       }
     if($("#res_p_10_3").val() == ""){
         alert("La pregunta P.10.3 esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_4").val() == ""){
-        alert("La pregunta P.10.3 esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_4x").val() == ""){
-        alert("La pregunta P.10.4X esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_5").val() == ""){
-        alert("La pregunta P.10.5 esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_6").val() == ""){
-        alert("La pregunta P.10.6 esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_7").val() == ""){
-        alert("La pregunta P.10.7 esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_a").val() == ""){
-        alert("La pregunta P.10.8.A esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_b").val() == ""){
-        alert("La pregunta P.10.8.B esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_c").val() == ""){
-        alert("La pregunta P.10.8.C esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_d").val() == ""){
-        alert("La pregunta P.10.8.D esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_e").val() == ""){
-        alert("La pregunta P.10.8.E esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_f").val() == ""){
-        alert("La pregunta P.10.8.F esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_g").val() == ""){
-        alert("La pregunta P.10.8.G esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_h").val() == ""){
-        alert("La pregunta P.10.8.H esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_i").val() == ""){
-        alert("La pregunta P.10.8.I esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_j").val() == ""){
-        alert("La pregunta P.10.8.J esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_k").val() == ""){
-        alert("La pregunta P.10.8.K esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_l").val() == ""){
-        alert("La pregunta P.10.8.L esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_m").val() == ""){
-        alert("La pregunta P.10.8.M esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_n").val() == ""){
-        alert("La pregunta P.10.8.N esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_o").val() == ""){
-        alert("La pregunta P.10.8.O esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_p").val() == ""){
-        alert("La pregunta P.10.8.P esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_q").val() == ""){
-        alert("La pregunta P.10.8.Q esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_8_r").val() == ""){
-        alert("La pregunta P.10.8.R esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_9").val() == ""){
-        alert("La pregunta P.10.9 esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_10").val() == ""){
-        alert("La pregunta P.10.10 esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_11").val() == ""){
-        alert("La pregunta P.10.11 esta vacia");
-        error = 1;
-      }
-    if($("#res_p_10_12").val() == ""){
-        alert("La pregunta P.10.12 esta vacia");
         error = 1;
       }
     if($("#res_p_10_13").val() == ""){

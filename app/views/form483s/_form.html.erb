@@ -1118,7 +1118,7 @@
     <h6 class="text-center" style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;">7.3  En octubre de este año se realizará una nueva elección de GOBERNADOR DEL META, ¿podría mencionarme los candidatos que usted conoce o ha oído mencionar? (Respuesta espontánea, no leer) </h6>
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_3_a, "Primer Mencionado" %>
-    <%= f.select :p_7_3_a, [["Juan Guillermo Zuluaga",1], ["Hernán Gómez",2], ["Juan Diego Muñoz",3], ["Antonio Cuellar",4],["Alejandro Vega ",5], ["Fernando Sierra ",6], ["Arley Gómez",7], ["7) otro.  Cuál?",16]], {:include_blank => true}, {class: "form-control", id:"res_p_7_3_a"} %>
+    <%= f.select :p_7_3_a, [["Juan Guillermo Zuluaga",1], ["Hernán Gómez",2], ["Juan Diego Muñoz",3], ["Antonio Cuellar",4],["Alejandro Vega ",5], ["Fernando Sierra ",6], ["Arley Gómez",7], ["8) Ninguno",8], ["16) otro.  Cuál?",16], ["99) NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_7_3_a"} %>
     </button>
     <div class="hidden" id="p_7_3_ac" style="margin-left:20px; margin-right: 20px; margin-bottom:10px;">
        <p> Otro.  Cuál? </p>
@@ -1187,7 +1187,7 @@
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_10_1, "a) Hernán Gomez" %>
     <%= f.select :p_7_10_1, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_1"} %>
-      <div id="p_7_10_a">
+      <div class="hidden" id="p_7_10_a">
        <br>
        <p>POR QUÉ DE LA IMAGEN</p>
       <%= f.text_field :p_7_10_a, {class: "form-control", id:"res_p_7_10_a"} %>
@@ -1201,7 +1201,7 @@
   <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_10_2, "b) Juan Diego Muñoz" %>
     <%= f.select :p_7_10_2, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_2"} %>
-    <div id="p_7_10_b">
+    <div class="hidden" id="p_7_10_b">
       <br>
        <p>POR QUÉ DE LA IMAGEN</p>
       <%= f.text_field :p_7_10_b, {class: "form-control", id:"res_p_7_10_b"} %>
@@ -1213,7 +1213,7 @@
   <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_10_3, "c) Juan Guillermo Zuluaga" %>
     <%= f.select :p_7_10_3, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_3"} %>
-    <div id="p_7_10_c">
+    <div class="hidden" id="p_7_10_c">
        <p>POR QUÉ DE LA IMAGEN</p>
        <br>
       <%= f.text_field :p_7_10_c, {class: "form-control", id:"res_p_7_10_c"} %>
@@ -1225,7 +1225,7 @@
   <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_10_4, "d) Antonio Cuellar" %>
     <%= f.select :p_7_10_4, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_4"} %>
-    <div id="p_7_10_d">
+    <div class="hidden" id="p_7_10_d">
       <br>
        <p>POR QUÉ DE LA IMAGEN</p>
       <%= f.text_field :p_7_10_d, {class: "form-control", id:"res_p_7_10_d"} %>
@@ -1237,7 +1237,7 @@
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_10_5, "e) Alejandro Vega" %>
     <%= f.select :p_7_10_5, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_5"} %>
-    <div id="p_7_10_e">
+    <div class="hidden" id="p_7_10_e">
        <p>POR QUÉ DE LA IMAGEN</p>
        <br>
       <%= f.text_field :p_7_10_e, {class: "form-control", id:"res_p_7_10_e"} %>
@@ -1249,7 +1249,7 @@
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_10_6, "f) Fernando Sierra" %>
     <%= f.select :p_7_10_6, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_6"} %>
-    <div id="p_7_10_f">
+    <div class="hidden" id="p_7_10_f">
       <br>
        <p>POR QUÉ DE LA IMAGEN</p>
       <%= f.text_field :p_7_10_f, {class: "form-control", id:"res_p_7_10_f"} %>
@@ -1261,7 +1261,7 @@
   <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_7_10_7, "g) Arley Gómez" %>
     <%= f.select :p_7_10_7, [["NO SABE QUIÉN ES",9], ["Sabe quien es - Favorable",1], [" Sabe quien es - Regular (NO LEER)",2], [" Sabe quien es - Desfavorable",3], [" Sabe quien es Conoce - sin opinión",4]], {:include_blank => true}, {class: "form-control", id:"res_p_7_10_7"} %>
-    <div id="p_7_10_g">
+    <div class="hidden" id="p_7_10_g">
        <p>POR QUÉ DE LA IMAGEN</p>
        <br>
       <%= f.text_field :p_7_10_g, {class: "form-control", id:"res_p_7_10_g"} %>
@@ -2663,6 +2663,69 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
         $('#div_p11_3_a').removeClass('hidden');
       }
     });
+
+    $('#res_p_7_10_1').change(function(){
+      if($("#res_p_7_10_1").val() == "9"){
+        $('#p_7_10_a').addClass('hidden');
+      }
+      if($("#res_p_7_10_1").val() != "9"){
+        $('#p_7_10_a').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_7_10_2').change(function(){
+      if($("#res_p_7_10_2").val() == "9"){
+        $('#p_7_10_b').addClass('hidden');
+      }
+      if($("#res_p_7_10_2").val() != "9"){
+        $('#p_7_10_b').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_7_10_3').change(function(){
+      if($("#res_p_7_10_3").val() == "9"){
+        $('#p_7_10_c').addClass('hidden');
+      }
+      if($("#res_p_7_10_3").val() != "9"){
+        $('#p_7_10_c').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_7_10_4').change(function(){
+      if($("#res_p_7_10_4").val() == "9"){
+        $('#p_7_10_d').addClass('hidden');
+      }
+      if($("#res_p_7_10_4").val() != "9"){
+        $('#p_7_10_d').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_7_10_5').change(function(){
+      if($("#res_p_7_10_5").val() == "9"){
+        $('#p_7_10_e').addClass('hidden');
+      }
+      if($("#res_p_7_10_5").val() != "9"){
+        $('#p_7_10_e').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_7_10_6').change(function(){
+      if($("#res_p_7_10_6").val() == "9"){
+        $('#p_7_10_f').addClass('hidden');
+      }
+      if($("#res_p_7_10_6").val() != "9"){
+        $('#p_7_10_f').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_7_10_7').change(function(){
+      if($("#res_p_7_10_7").val() == "9"){
+        $('#p_7_10_g').addClass('hidden');
+      }
+      if($("#res_p_7_10_7").val() != "9"){
+        $('#p_7_10_g').removeClass('hidden');
+      }
+    });
       
   });
 
@@ -2848,34 +2911,6 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
       }
     if($("#res_p_7_10_7").val() == ""){
         alert("La pregunta P.7.10.7 esta vacia");
-        error = 1;
-      }
-    if($("#res_p_7_10_a").val() == ""){
-        alert("La pregunta P.7.10.A esta vacia");
-        error = 1;
-      }
-    if($("#res_p_7_10_b").val() == ""){
-        alert("La pregunta P.7.10.B esta vacia");
-        error = 1;
-      }
-    if($("#res_p_7_10_c").val() == ""){
-        alert("La pregunta P.7.10.C esta vacia");
-        error = 1;
-      }
-    if($("#res_p_7_10_d").val() == ""){
-        alert("La pregunta P.7.10.D esta vacia");
-        error = 1;
-      }
-    if($("#res_p_7_10_e").val() == ""){
-        alert("La pregunta P.7.10.E esta vacia");
-        error = 1;
-      }
-    if($("#res_p_7_10_f").val() == ""){
-        alert("La pregunta P.7.10.F esta vacia");
-        error = 1;
-      }
-    if($("#res_p_7_10_g").val() == ""){
-        alert("La pregunta P.7.10.G esta vacia");
         error = 1;
       }
     if($("#res_p_8_1_a").val() == ""){

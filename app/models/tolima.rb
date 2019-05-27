@@ -1,0 +1,2 @@
+class Tolima < ApplicationRecord
+end

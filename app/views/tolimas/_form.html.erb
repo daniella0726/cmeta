@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<%= form_with(model: tolima, local: true) do |f| %>
+  <% if tolima.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tolima.errors.count, "error") %> prohibited this tolima from being saved:</h2>
+
+      <ul>
+      <% tolima.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+<div class="row" style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="all_form">
+
+  <div class="container-fluid border border-dark" style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="encuestador">
+
+    <h4 class="p-2 mb-1 bg-secondary text-white text-center">DATOS DE UBICACIÓN</h4>
+
+          <table class="table table-borderless">
+            <tr>
+              <th scope="col" class="text-center"><strong>Departamento</strong></th>
+              <th scope="col" class="text-center">Municipio</th>
+            </tr>
+            <tr>
+              <td class="text-center">Ibagué</td>
+            
+              <td class="text-center"><%= f.select :cuestsup, [], {:include_blank => true}, {class: "form-control", id:"res_municipio"} %></td>
+            </tr>
+            <tr>
+              <th scope="col" class="text-center">Comuna</th>
+              <th scope="col" class="text-center">Barrio</th>
+            </tr>
+            <tr>
+              <td class="text-center"><%= f.text_field :cod, {class: "form-control", id:"res_comuna"} %></td>
+              <td class="text-center"><%= f.text_field :sup, {class: "form-control", id:"res_barrio"} %></td>
+            </tr>
+          </table>
+          
+  </div>
+
+  <br>
+
+  <div class="container-fluid border border-dark" style="margin-top: 20px; margin-left:20px; margin-right:20px; margin-bottom:20px;" id="encuestador">
+
+    <h4 class="p-2 mb-1 bg-secondary text-white text-center">DATOS DE SUPERVISIÓN</h4>
+
+          <table class="table table-borderless">
+            <tr>
+              <th scope="col" class="text-center">Encuestador</th>
+              <th scope="col" class="text-center">Fecha</th>
+            </tr>
+            <tr>
+              <td class="text-center"><%= f.text_field :encu, {class: "form-control", id:"res_encu"} %></td>
+            
+              <td class="text-center"><%= f.text_field :date, {class: "form-control", id:"res_date"} %></td>
+            </tr>
+            <tr>
+              <th scope="col" class="text-center">Código de la Muestra</th>
+              <th scope="col" class="text-center">Supervisor</th>
+            </tr>
+            <tr>
+              <td class="text-center"><%= f.text_field :cod, {class: "form-control", id:"res_cod"} %></td>
+              <td class="text-center"><%= f.text_field :sup, {class: "form-control", id:"res_sup"} %></td>
+            </tr>
+          </table>
+          <table class="table table-borderless text-center">
+            <tr>
+              <th>Cuestionario Supervisado</th>
+              <th>Cuestionario Revisado</th>
+              <th>Cuestionario Tabulado</th>
+            </tr>
+            <tr>
+              <td><button class="btn btn-light container-fluid" type="button"><%= f.select :cuestsup, [["Si",1], ["No",2]], {:include_blank => true}, {class: "form-control", id:"res_cuestsup"} %></button></td>
+              <td><button class="btn btn-light container-fluid" type="button"><%= f.select :cuestrev, [["Si",1], ["No",2]], {:include_blank => true}, {class: "form-control", id:"res_cuestrev"} %></button></td>
+              <td><button class="btn btn-light container-fluid" type="button"><%= f.select :cuesttab, [["Si",1], ["No",2]], {:include_blank => true}, {class: "form-control", id:"res_cuesttab"} %></button></td>
+            </tr>
+          </table>
+  </div>
+
+
+
+
+
+</div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

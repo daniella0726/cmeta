@@ -1015,7 +1015,11 @@
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_6_2a">
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_6_2a, "Candidatos" %>
-    <%= f.select :p_6_2a, [["1.     CARLOS PLATA ",1], ["2.     LUCY FERNANDA TAMAYO  ",2], ["3.     ARMANDO AMAYA ",3], ["4.     FABIO REYES MATALLANA ",4], ["5.     INGRID GORDO ",5], ["6.     NELSON GUTIERREZ ",6], ["7.     ARSENIO VARGAS  ",7], ["8.     NELSON RODRIGUEZ ",8], ["9.     HERALDO CUBIDES ",9], ["10.  EDUARDO CORTEZ ",10], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_6_2a"} %>
+    <%= f.select :p_6_2a, [["1.     CARLOS PLATA ",1], ["2.     LUCY FERNANDA TAMAYO  ",2], ["3.     ARMANDO AMAYA ",3], ["4.     FABIO REYES MATALLANA ",4], ["5.     INGRID GORDO ",5], ["6.     NELSON GUTIERREZ ",6], ["7.     ARSENIO VARGAS  ",7], ["8.     NELSON RODRIGUEZ ",8], ["9.     HERALDO CUBIDES ",9], ["10.  EDUARDO CORTEZ ",10], ["11. Ninguno",11], ["12. Otro",12], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_6_2a"} %>
+    <div class="hidden" id="p_6_2a_o">
+       <p class="text-left"> Otro.  Cuál? </p>
+      <%= f.text_field :p_6_2a_o, {class: "form-control", id:"res_p_6_2a_o"} %>
+    </div>
     </button>
   </div>
 </div>
@@ -1027,7 +1031,11 @@
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_6_2g">
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_6_2g, "Candidatos" %>
-    <%= f.select :p_6_2g, [["1)   LUIS ALBERTO RODRIGUEZ ",1], ["2)   FREDY HERNAN PEREZ ",2], ["3)   YIMMY ALBERTO LEAL ",3], ["4)   JUAN CARLOS SANCHEZ ",4], ["5)   RICARDO CASAS ",5], ["6)   YIDER TORRES",6], ["7)   LUIS ALFREDO VILLALOBOS",7], ["8)   ASDRUBAL MARTINEZ",8], ["9)   DERLY PARRA ",9], ["10)  JHON  JAIRO ROMERO",10], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_6_2g"} %>
+    <%= f.select :p_6_2g, [["1)   LUIS ALBERTO RODRIGUEZ ",1], ["2)   FREDY HERNAN PEREZ ",2], ["3)   YIMMY ALBERTO LEAL ",3], ["4)   JUAN CARLOS SANCHEZ ",4], ["5)   RICARDO CASAS ",5], ["6)   YIDER TORRES",6], ["7)   LUIS ALFREDO VILLALOBOS",7], ["8)   ASDRUBAL MARTINEZ",8], ["9)   DERLY PARRA ",9], ["10)  JHON  JAIRO ROMERO",10], ["11. Ninguno",11], ["12. Otro",12], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_6_2g"} %>
+    <div class="hidden" id="p_6_2g_o">
+       <p class="text-left"> Otro.  Cuál? </p>
+      <%= f.text_field :p_6_2g_o, {class: "form-control", id:"res_p_6_2g_o"} %>
+    </div>
     </button>
   </div>
 </div>
@@ -1039,7 +1047,11 @@
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_6_2pg">
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_6_2pg, "Candidatos" %>
-    <%= f.select :p_6_2pg, [["1)   OSCAR BOLAÑOS ",1], ["2)   JORGE PLAZAS ",2], ["3)   CESAR PEREZ ",3], ["4)   LUIS ALBERTO BOHORQUEZ ",4], ["5)   JAIRO VARGAS",5], ["6)  ROSARIO SANABRIA",6], ["7)   NATALIA LEYVA",7], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_6_2pg"} %>
+    <%= f.select :p_6_2pg, [["1)   OSCAR BOLAÑOS ",1], ["2)   JORGE PLAZAS ",2], ["3)   CESAR PEREZ ",3], ["4)   LUIS ALBERTO BOHORQUEZ ",4], ["5)   JAIRO VARGAS",5], ["6)  ROSARIO SANABRIA",6], ["7)   NATALIA LEYVA",7], ["8. Ninguno",8], ["9. Otro",9], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_6_2pg"} %>
+    <div class="hidden" id="p_6_2pg_o">
+       <p class="text-left"> Otro.  Cuál? </p>
+      <%= f.text_field :p_6_2pg_o, {class: "form-control", id:"res_p_6_2pg_o"} %>
+    </div>
     </button>
   </div>
 </div>
@@ -1051,7 +1063,11 @@
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_6_2pl">
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_6_2pl, "Candidatos" %>
-    <%= f.select :p_6_2pl, [["1)   PEDRO VELANDIA ",1], ["2)   JAIME MACIAS ",2], ["3)   JUAN GUALTEROS ",3], ["4)   JORGE CIFUENTES ",4], ["5)   JHON EMEL RIOS ",5], ["6)   CARLOS JULIO GUTIERREZ ",6], ["7)   ALEXANDER BERMUDES ",7], ["8)   PEDRO MOLANO",8], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_6_2pl"} %>
+    <%= f.select :p_6_2pl, [["1)   PEDRO VELANDIA ",1], ["2)   JAIME MACIAS ",2], ["3)   JUAN GUALTEROS ",3], ["4)   JORGE CIFUENTES ",4], ["5)   JHON EMEL RIOS ",5], ["6)   CARLOS JULIO GUTIERREZ ",6], ["7)   ALEXANDER BERMUDES ",7], ["8)   PEDRO MOLANO",8], ["9. Ninguno",9], ["10. Otro",10], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_6_2pl"} %>
+    <div class="hidden" id="p_6_2pl_o">
+       <p class="text-left"> Otro.  Cuál? </p>
+      <%= f.text_field :p_6_2pl_o, {class: "form-control", id:"res_p_6_2pl_o"} %>
+    </div>
     </button>
   </div>
 </div>
@@ -1063,7 +1079,11 @@
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_6_2sm">
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_6_2sm, "Candidatos" %>
-    <%= f.select :p_6_2sm, [["1)   CARLOS ENRIQUE “KIKE” MELO  ",1], ["2)   JHON FRANKLIN SANCHEZ ",2], ["3)   JORGE VALDERRAMA ",3], ["4)   JHON HAMILTON DEAZA ",4], ["5)   JHON GERMAN RAMIREZ ",5], ["6)   NOE GUTIERREZ",6], ["7)   HENRY LOPEZ FIERRO",7], ["8)   MARCELA YESENIA RODRIGUEZ",8], ["9)   BRAYAN MORENO",9], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_6_2sm"} %>
+    <%= f.select :p_6_2sm, [["1)   CARLOS ENRIQUE “KIKE” MELO  ",1], ["2)   JHON FRANKLIN SANCHEZ ",2], ["3)   JORGE VALDERRAMA ",3], ["4)   JHON HAMILTON DEAZA ",4], ["5)   JHON GERMAN RAMIREZ ",5], ["6)   NOE GUTIERREZ",6], ["7)   HENRY LOPEZ FIERRO",7], ["8)   MARCELA YESENIA RODRIGUEZ",8], ["9)   BRAYAN MORENO",9], ["10. Ninguno",10], ["11. Otro",11], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_6_2sm"} %>
+    <div class="hidden" id="p_6_2sm_o">
+       <p class="text-left"> Otro.  Cuál? </p>
+      <%= f.text_field :p_6_2sm_o, {class: "form-control", id:"res_p_6_2sm_o"} %>
+    </div>
     </button>
   </div>
 </div>
@@ -1075,7 +1095,11 @@
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_6_2v">
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_6_2v, "Candidatos" %>
-    <%= f.select :p_6_2v, [["1.     EDDY BAQUERO GARCIA ",1], ["2.     ALEXANDER BAQUERO ",2], ["3.     FELIPE HARMAN ",3], ["4.     FELIPE CARREÑO ",4], ["5.     LEONARDO PEREZ ",5], ["6.     JOSE LUIS SILVA VALENCIA ",6], ["7.     OSCAR ALEJO ",7], ["8.     FABIAN TORRES ",8], ["9.     OSCAR APOLINAR ",9], ["10.  XIMENA CALDERON",10], ["11.  LUCY CONTENTO",11], ["12.  HAROLD BARRETO",12], ["13.  WALTER LACHARME",13], ["14.  DANIEL MURCIA",14], ["15.  GILBERTO GIRALDO",15], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_6_2v"} %>
+    <%= f.select :p_6_2v, [["1.     EDDY BAQUERO GARCIA ",1], ["2.     ALEXANDER BAQUERO ",2], ["3.     FELIPE HARMAN ",3], ["4.     FELIPE CARREÑO ",4], ["5.     LEONARDO PEREZ ",5], ["6.     JOSE LUIS SILVA VALENCIA ",6], ["7.     OSCAR ALEJO ",7], ["8.     FABIAN TORRES ",8], ["9.     OSCAR APOLINAR ",9], ["10.  XIMENA CALDERON",10], ["11.  LUCY CONTENTO",11], ["12.  HAROLD BARRETO",12], ["13.  WALTER LACHARME",13], ["14.  DANIEL MURCIA",14], ["15.  GILBERTO GIRALDO",15], ["16. Ninguno",16], ["17. Otro",17], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_6_2v"} %>
+    <div class="hidden" id="p_6_2v_o">
+       <p class="text-left"> Otro.  Cuál? </p>
+      <%= f.text_field :p_6_2v_o, {class: "form-control", id:"res_p_6_2v_o"} %>
+    </div>
     </button>
   </div>
 </div>
@@ -1087,7 +1111,11 @@
   <div style="margin-top: 20px; margin-left:20px; margin-right: 20px; margin-bottom:20px;" id="p_6_2c">
     <button class="btn btn-secondary container-fluid" type="button">
     <%= f.label :p_6_2c, "Candidatos" %>
-    <%= f.select :p_6_2c, [["1)   RICARDO ROMERO",1], ["2)   ALBERTO DEUDEBES",2], ["3)   ALVARO MARTINEZ",3], ["4)   CESAR MOLANO",4], ["5)   JHON FREDY MARTINEZ",5], ["6)   ROMAN BERNAL",6], ["7)   DARWIN PINZON",7], ["8)   ELIVER AGATON",8], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_6_2c"} %>
+    <%= f.select :p_6_2c, [["1)   RICARDO ROMERO",1], ["2)   ALBERTO DEUDEBES",2], ["3)   ALVARO MARTINEZ",3], ["4)   CESAR MOLANO",4], ["5)   JHON FREDY MARTINEZ",5], ["6)   ROMAN BERNAL",6], ["7)   DARWIN PINZON",7], ["8)   ELIVER AGATON",8], ["9. Ninguno",9], ["10. Otro",10], ["NS/NR",99]], {:include_blank => true}, {class: "form-control", id:"res_p_6_2c"} %>
+    <div class="hidden" id="p_6_2c_o">
+       <p class="text-left"> Otro.  Cuál? </p>
+      <%= f.text_field :p_6_2c_o, {class: "form-control", id:"res_p_6_2c_o"} %>
+    </div>
     </button>
   </div>
 </div>
@@ -2405,6 +2433,69 @@ Y QUE TENGA UN FELIZ DIA / TARDE / NOCHE</h5>
         $('#p_6_2g').addClass('hidden');
         $('#p_6_2a').addClass('hidden');
         $('#p_6_2c').removeClass('hidden');
+      }
+    });
+
+    $('#res_p_6_2a').change(function(){
+      if($("#res_p_6_2a").val() == "12"){
+        $('#p_6_2a_o').removeClass('hidden');
+      }
+      if($("#res_p_6_2a").val() != "12"){
+        $('#p_6_2a_o').addClass('hidden');
+      }
+    });
+
+    $('#res_p_6_2g').change(function(){
+      if($("#res_p_6_2g").val() == "12"){
+        $('#p_6_2g_o').removeClass('hidden');
+      }
+      if($("#res_p_6_2g").val() != "12"){
+        $('#p_6_2g_o').addClass('hidden');
+      }
+    });
+
+    $('#res_p_6_2pg').change(function(){
+      if($("#res_p_6_2pg").val() == "9"){
+        $('#p_6_2pg_o').removeClass('hidden');
+      }
+      if($("#res_p_6_2pg").val() != "9"){
+        $('#p_6_2pg_o').addClass('hidden');
+      }
+    });
+
+    $('#res_p_6_2pl').change(function(){
+      if($("#res_p_6_2pl").val() == "10"){
+        $('#p_6_2pl_o').removeClass('hidden');
+      }
+      if($("#res_p_6_2pl").val() != "10"){
+        $('#p_6_2pl_o').addClass('hidden');
+      }
+    });
+
+    $('#res_p_6_2sm').change(function(){
+      if($("#res_p_6_2sm").val() == "11"){
+        $('#p_6_2sm_o').removeClass('hidden');
+      }
+      if($("#res_p_6_2sm").val() != "11"){
+        $('#p_6_2sm_o').addClass('hidden');
+      }
+    });
+
+    $('#res_p_6_2v').change(function(){
+      if($("#res_p_6_2v").val() == "17"){
+        $('#p_6_2v_o').removeClass('hidden');
+      }
+      if($("#res_p_6_2v").val() != "17"){
+        $('#p_6_2v_o').addClass('hidden');
+      }
+    });
+
+    $('#res_p_6_2c').change(function(){
+      if($("#res_p_6_2c").val() == "10"){
+        $('#p_6_2c_o').removeClass('hidden');
+      }
+      if($("#res_p_6_2c").val() != "10"){
+        $('#p_6_2c_o').addClass('hidden');
       }
     });
 

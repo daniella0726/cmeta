@@ -1,0 +1,1637 @@
+<style>
+.hidden {
+  display: none !important;}
+  .centrado{
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  }
+
+  .centrado-abajo{
+  position: absolute;
+  top: 90%; 
+  width: 80%;
+  }
+  .qts{
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    color: rgb(255, 255, 255);
+    -webkit-appearance: none;
+    transform: translateZ(0px);
+    font-size: 18px;
+    line-height: 38px;
+    -webkit-font-smoothing: antialiased;
+    padding: 0px 0px 8px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+    border-radius: 0px;
+    transition: box-shadow 0.2s ease 0s;
+    background: none;
+  }
+  select {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #222d5a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #43a2d2;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  select:hover {
+  background-color: dodgerblue;
+  }
+  .no-focus-outline button:focus {
+    outline: none;
+  }
+  
+
+  .boton3 {
+  color: #254064 !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: rgba(0,0,0,0);
+  border: 2px solid;
+  border-radius: 50px;
+  border-color: #254064;
+  transition: all 1s ease;
+  position: relative;
+  }
+  .boton3:hover {
+  background: #254064;
+  color: #fff !important;
+  }
+  .boton1 {
+    cursor: pointer;
+  transition: all 1s ease;
+  }
+  .boton1:hover {
+  color: white !important;
+  }
+  
+
+.inputGroup {
+  background-color: transparent;
+  display: block;
+  margin: 10px 0;
+  position: relative;
+  width: 80%
+}
+.inputGroup label {
+  padding: 12px 30px;
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: #3C454C;
+  font-family: 'Heebo';
+  border: 1px solid #222d5a;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+}
+.inputGroup label:before {
+  width: 100%;
+  height: 10px;
+  border-radius: 50%;
+  content: '';
+  background-color: #254064;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%) scale3d(1, 1, 1);
+          transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: -1;
+}
+.inputGroup label:after {
+  width: 32px;
+  height: 32px;
+  content: '';
+  border: 1px solid #254064;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: 2px 3px;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+.inputGroup input:checked ~ label {
+  color: #fff;
+}
+.inputGroup input:checked ~ label:before {
+  -webkit-transform: translate(-50%, -50%) scale3d(56, 56, 1);
+          transform: translate(-50%, -50%) scale3d(56, 56, 1);
+  opacity: 1;
+}
+.inputGroup input:checked ~ label:after {
+  background-color: #43a2d2;
+  border-color: #43a2d2;
+}
+.inputGroup input {
+  width: 32px;
+  height: 32px;
+  order: 1;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  visibility: hidden;
+}
+
+  .form {
+  padding: 0 16px;
+  margin: 50px auto;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 36px;
+  }
+
+  body {
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding: 50px 0;
+    color: #222d5a;
+    background: url('/assets/grayscale/form_quipu.png') no-repeat center center fixed;
+    background-color: white;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+
+  code {
+    background-color: #9AA3AC;
+    padding: 0 8px;
+  }
+</style>
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://kit.fontawesome.com/1f7411956b.js"></script>
+
+<%= form_with(model: estudiante, local: true) do |f| %>
+  <% if estudiante.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(estudiante.errors.count, "error") %> prohibited this estudiante from being saved:</h2>
+
+      <ul>
+      <% estudiante.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="centrado hidden" style="width: 90%; text-align: center; position: absolute;" id="div_pregunta_0">
+  <h3 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Buenos días, tardes, noches, mi nombre es ____________ y trabajo para El Colectivo Investigaciones, un equipo profesional de investigadores de mercados. Actualmente estamos haciendo un estudio sobre posgrados. Sus respuestas son muy importantes para el estudio ¿Podría darme 15 minutos de su tiempo para hacerle unas breves preguntas? </h3>
+
+  <h4 style="font-family: 'Heebo', sans-serif; color: #942f88;">Recuerde debe estudiar estas carreras:  Economía, administración de empresas, administración de negocios internacionales, finanzas, mercadeo. </h4>
+
+  <h4 style="font-family: 'Heebo', sans-serif; color: #942f88;">Semestres 8, 9 y 10 </h4>
+
+  <button type="button" class="boton3" style="" id="but_res_pregunta_0">
+    <i class="fas fa-check-circle"; id="but_pregunta_0"></i>
+    Empieza!
+  </button>
+</div>  
+
+
+<div class="centrado hidden" style="width: 90%" id="div_nombre">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">1. ¿Cuál es su nombre?</h2>
+  <br>
+  <div class="field qts">
+    <%= f.text_field :nombre, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_nombre", placeholder: "Nombre completo del entrevistado"}%>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_nombre"><strong>Por favor, diligencia tu nombre!</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_nombre">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_nombre">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_nombre_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">0 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 0%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_semestre_nombre_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_0_nombre_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_semestre">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Semestre que esta cursando:</h2>
+  <br>
+  <div class="field qts">
+    <%= f.select :semestre, [["8"], ["9"], ["10"]], {:prompt => 'Seleccioná el semestre'}, {class: "", style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_semestre" , autocomplete: "off", placeholder: "Escoge el tipo de contrato aquí"}%>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_semestre"><strong>Por favor, selecciona un semestre!</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_semestre">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_semestre">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_semestre_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">0 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 0%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_carrera_semestre_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_nombre_semestre_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+
+<div class="centrado hidden" style="width: 90%" id="div_carrera">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Carrera en la que se encuentra matriculad@:</h2>
+  <br>
+  <div class="field qts">
+
+    <div class="inputGroup">
+      <%= f.radio_button :carrera, "Economia" , id:"radio-1-carrera"%>
+      <%= f.label :carrera, "Economía", for: "radio-1-carrera"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :carrera, "Administracion de Empresas" , id:"radio-2-carrera"%>
+      <%= f.label :carrera, "Administración de Empresas", for: "radio-2-carrera"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :carrera, "Administracion de negocios internacionales" , id:"radio-3-carrera"%>
+      <%= f.label :carrera, "Administración de negocios internacionales", for: "radio-3-carrera"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :carrera, "Administracion y negocios internacionales" , id:"radio-6-carrera"%>
+      <%= f.label :carrera, "Administración y Negocios Internacionales", for: "radio-6-carrera"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :carrera, "Finanzas" , id:"radio-4-carrera"%>
+      <%= f.label :carrera, "Finanzas", for: "radio-4-carrera"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :carrera, "Mercadeo" , id:"radio-5-carrera"%>
+      <%= f.label :carrera, "Mercadeo", for: "radio-5-carrera"%>
+    </div>
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_carrera"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_carrera">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_carrera">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_carrera_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">0 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 0%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_universidad_carrera_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_semestre_carrera_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_universidad">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Universidad en la que se encuentra matriculad@:</h2>
+  <br>
+  <div class="field qts">
+
+    <div class="inputGroup">
+      <%= f.radio_button :universidad, "Fundacion Universitaria Internacional del Tropico Americano" , id:"radio-1-universidad"%>
+      <%= f.label :universidad, "Fundación Universitaria Internacional del Trópico Americano", for: "radio-1-universidad"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :universidad, "Fundacion Universitaria Tecnologica de Casanare (FUC)" , id:"radio-2-universidad"%>
+      <%= f.label :universidad, "Fundación Universitaria Tecnológica de Casanare (FUC)", for: "radio-2-universidad"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :universidad, "Corporacion Universitaria Remington" , id:"radio-3-universidad"%>
+      <%= f.label :universidad, "Corporación Universitaria Remington", for: "radio-3-universidad"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :universidad, "Universidad de Boyaca" , id:"radio-4-universidad"%>
+      <%= f.label :universidad, "Universidad de Boyacá", for: "radio-4-universidad"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :universidad, "Universidad de San Gil" , id:"radio-5-universidad"%>
+      <%= f.label :universidad, "Universidad de San Gil", for: "radio-5-universidad"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :universidad, "UNAD" , id:"radio-6-universidad"%>
+      <%= f.label :universidad, "UNAD", for: "radio-6-universidad"%>
+    </div>
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_universidad"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_universidad">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_universidad">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_universidad_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">0 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 0%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_trabaja_universidad_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_carrera_universidad_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_trabaja">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Usted trabaja actualmente:</h2>
+  <br>
+  <div class="field qts">
+
+    <div class="inputGroup">
+      <%= f.radio_button :trabaja, "si" , id:"radio-1-trabaja"%>
+      <%= f.label :trabaja, "Si", for: "radio-1-trabaja"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :trabaja, "no" , id:"radio-2-trabaja"%>
+      <%= f.label :trabaja, "No", for: "radio-2-trabaja"%>
+    </div>
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_trabaja"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_trabaja">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_trabaja">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_trabaja_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">0 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 0%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p1_trabaja_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_universidad_trabaja_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_empresa">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Nombre de la empresa donde trabaja</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :empresa, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_empresa", placeholder: "Empresa"}%>
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_empresa"><strong>Por favor, digite</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_empresa">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_empresa">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_empresa_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">0 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 0%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p1_empresa_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_trabaja_empresa_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_cargo">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Cargo que ocupa en la empresa que trabaja</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :cargo, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_cargo", placeholder: "Cargo"}%>
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_cargo"><strong>Por favor, digite</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_empresa">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_cargo">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_cargo_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">0 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 0%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p1_cargo_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_empresa_cargo_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_p1">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">1.- ¿Está interesado en hacer un programa de posgrado? </h2>
+  <br>
+  <div class="field qts">
+
+    <div class="inputGroup">
+      <%= f.radio_button :p1, "si" , id:"radio-1-p1"%>
+      <%= f.label :p1, "Si", for: "radio-1-p1"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p1, "no" , id:"radio-2-p1"%>
+      <%= f.label :p1, "No", for: "radio-2-p1"%>
+    </div>
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p1"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p1">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p1">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p1_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">1 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 5%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p2_p1_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_cargo_p1_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%; text-align: center; position: absolute;" id="div_pregunta_p1_0">
+  <h3 style="font-family: 'Heebo', sans-serif; color: #222d5a; text-align: left;">Le voy a leer la descripción de una especialización, para que por favor me diga si le interesaría estudiarla</h3>
+
+  <h4 style="font-family: 'Heebo', sans-serif; color: #222d5a; text-align: justify; border color: #942f88; ">La especialización es en Evaluación y Desarrollo de Proyectos, abarca todos los campos posibles de proyectos públicos y privados, así como todas las etapas y fases de un proyecto desde su formulación inicial, pasando por la investigación de mercados, la financiación y obtención de recursos hasta su elaboración final. <br> <br> Esta especialización se dictaría en la ciudad de Yopal y Tiene una duración de 26 créditos académicos, distribuidos en 2 semestres. <br> <br> El especialista en evaluación y desarrollo de proyectos cuenta con las destrezas y habilidades para la preparación, formulación y estructuración de proyectos.  De esta forma, está en capacidad de liderar la formulación, evaluación o la estructuración de un proyecto, tanto en el sector privado como en el público, así como de analizar la rentabilidad financiera, económica y social de los proyectos. </h4>
+
+
+  <button type="button" class="boton3" style="" id="but_res_pregunta_0">
+    <i class="fas fa-check-circle"; id="but_pregunta_p1_0"></i>
+    Pregunta
+  </button>
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_p2a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">2.- ¿Le interesaría estudiar este programa de posgrado?</h2>
+  <br>
+  <div class="field qts">
+
+    <div class="inputGroup">
+      <%= f.radio_button :p2a, "si" , id:"radio-1-p2a"%>
+      <%= f.label :p2a, "Si", for: "radio-1-p2a"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p2a, "no" , id:"radio-2-p2a"%>
+      <%= f.label :p2a, "No", for: "radio-2-p2a"%>
+    </div>
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p2a"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p2a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p2a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p2a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">2 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 11%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p2b_p2a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p1_p2a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_p2b">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Describa las razones por las cuales no le interesaría estudiar este programa de posgrado</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p2b, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p2b", placeholder: "Razones"}%>    
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p2b"><strong>Por favor, digite</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p2b">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p2b">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p2b_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">2 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 11%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p2a_p2b_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p3_p2b_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_p3">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">3.- ¿Qué aspectos positivos tiene para usted el hecho de realizar esta especialización en Evaluación y Desarrollo de Proyectos? </h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p3, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p3", placeholder: "Escriba aquí"}%>    
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p3"><strong>Por favor, digite</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p3">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p3">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p3_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">3 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 17%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p2b_p3_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p4_p3_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+
+<div class="centrado hidden" style="width: 90%" id="div_p4">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">4.- ¿Y qué aspectos negativos o barreras le encuentra a realizar esta especialización en Evaluación y Desarrollo de Proyectos?</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: "Escriba aquí"}%>    
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p4"><strong>Por favor, digite</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p4">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p4">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p4_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">4 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 23%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p3_p4_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p5_p3_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+
+<div class="centrado hidden" style="width: 90%" id="div_p5a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">5.- Por favor califique de 1 a 5 la especialización, en los siguientes atributos, dónde 1 es la menor calificación y 5 la máxima. Empecemos: ENCUESTADOR LEA CADA UNO DE LOS ATRIBUTOS.</h2>
+  <br>
+  <div class="field qts">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="color: #222d5a; text-align: center;" colspan="6"> <h2> NOVEDAD</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5a, "1" , id:"radio-1-p5a"%>
+                <%= f.label :p5a, "1", for: "radio-1-p5a"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5a, "2" , id:"radio-2-p5a"%>
+                <%= f.label :p5a, "2", for: "radio-2-p5a"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5a, "3" , id:"radio-3-p5a"%>
+                <%= f.label :p5a, "3", for: "radio-3-p5a"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5a, "4" , id:"radio-4-p5a"%>
+                <%= f.label :p5a, "4", for: "radio-4-p5a"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5a, "5" , id:"radio-5-p5a"%>
+                <%= f.label :p5a, "5", for: "radio-5-p5a"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5a, "99" , id:"radio-6-p5a"%>
+                <%= f.label :p5a, "NS/NR", for: "radio-6-p5a"%>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>   
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p5a"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p5a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p5a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p5a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">5 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 24%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p4_p5a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p5b_p5a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+
+<div class="centrado hidden" style="width: 90%" id="div_p5b">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">5.- Por favor califique de 1 a 5 la especialización, en los siguientes atributos, dónde 1 es la menor calificación y 5 la máxima. Empecemos: ENCUESTADOR LEA CADA UNO DE LOS ATRIBUTOS.</h2>
+  <br>
+  <div class="field qts">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="color: #222d5a; text-align: center; text-transform: uppercase;" colspan="6"> <h2> Utilidad</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5b, "1" , id:"radio-1-p5b"%>
+                <%= f.label :p5b, "1", for: "radio-1-p5b"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5b, "2" , id:"radio-2-p5b"%>
+                <%= f.label :p5b, "2", for: "radio-2-p5b"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5b, "3" , id:"radio-3-p5b"%>
+                <%= f.label :p5b, "3", for: "radio-3-p5b"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5b, "4" , id:"radio-4-p5b"%>
+                <%= f.label :p5b, "4", for: "radio-4-p5b"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5b, "5" , id:"radio-5-p5b"%>
+                <%= f.label :p5b, "5", for: "radio-5-p5b"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5b, "99" , id:"radio-6-p5b"%>
+                <%= f.label :p5b, "NS/NR", for: "radio-6-p5b"%>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>   
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p5b"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p5b">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p5b">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p5b_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">5 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 35%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p5a_p5b_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p5c_p5b_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_p5c">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">5.- Por favor califique de 1 a 5 la especialización, en los siguientes atributos, dónde 1 es la menor calificación y 5 la máxima. Empecemos: ENCUESTADOR LEA CADA UNO DE LOS ATRIBUTOS.</h2>
+  <br>
+  <div class="field qts">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="color: #222d5a; text-align: center; text-transform: uppercase;" colspan="6"> <h2>Diferencia a lo que ofrecen otras universidades</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5c, "1" , id:"radio-1-p5c"%>
+                <%= f.label :p5c, "1", for: "radio-1-p5c"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5c, "2" , id:"radio-2-p5c"%>
+                <%= f.label :p5c, "2", for: "radio-2-p5c"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5c, "3" , id:"radio-3-p5c"%>
+                <%= f.label :p5c, "3", for: "radio-3-p5c"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5c, "4" , id:"radio-4-p5c"%>
+                <%= f.label :p5c, "4", for: "radio-4-p5c"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5c, "5" , id:"radio-5-p5c"%>
+                <%= f.label :p5c, "5", for: "radio-5-p5c"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5c, "99" , id:"radio-6-p5c"%>
+                <%= f.label :p5c, "NS/NR", for: "radio-6-p5c"%>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>   
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p5c"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p5c">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p5c">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p5c_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">5 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 26%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p5b_p5c_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p5d_p5c_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_p5d">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">5.- Por favor califique de 1 a 5 la especialización, en los siguientes atributos, dónde 1 es la menor calificación y 5 la máxima. Empecemos: ENCUESTADOR LEA CADA UNO DE LOS ATRIBUTOS.</h2>
+  <br>
+  <div class="field qts">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="color: #222d5a; text-align: center; text-transform: uppercase;" colspan="6"> <h2>Lo Interesante del contenido</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5d, "1" , id:"radio-1-p5d"%>
+                <%= f.label :p5d, "1", for: "radio-1-p5d"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5d, "2" , id:"radio-2-p5d"%>
+                <%= f.label :p5d, "2", for: "radio-2-p5d"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5d, "3" , id:"radio-3-p5d"%>
+                <%= f.label :p5d, "3", for: "radio-3-p5d"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5d, "4" , id:"radio-4-p5d"%>
+                <%= f.label :p5d, "4", for: "radio-4-p5d"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5d, "5" , id:"radio-5-p5d"%>
+                <%= f.label :p5d, "5", for: "radio-5-p5d"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5d, "99" , id:"radio-6-p5d"%>
+                <%= f.label :p5d, "NS/NR", for: "radio-6-p5d"%>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>   
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p5d"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p5d">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p5d">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p5d_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">5 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 27%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p5c_p5d_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p5e_p5d_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_p5e">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">5.- Por favor califique de 1 a 5 la especialización, en los siguientes atributos, dónde 1 es la menor calificación y 5 la máxima. Empecemos: ENCUESTADOR LEA CADA UNO DE LOS ATRIBUTOS.</h2>
+  <br>
+  <div class="field qts">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="color: #222d5a; text-align: center; text-transform: uppercase;" colspan="6"> <h2>La aplicabilidad de la información en su vida laboral</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5e, "1" , id:"radio-1-p5e"%>
+                <%= f.label :p5e, "1", for: "radio-1-p5e"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5e, "2" , id:"radio-2-p5e"%>
+                <%= f.label :p5e, "2", for: "radio-2-p5e"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5e, "3" , id:"radio-3-p5e"%>
+                <%= f.label :p5e, "3", for: "radio-3-p5e"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5e, "4" , id:"radio-4-p5e"%>
+                <%= f.label :p5e, "4", for: "radio-4-p5e"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5e, "5" , id:"radio-5-p5e"%>
+                <%= f.label :p5e, "5", for: "radio-5-p5e"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5e, "99" , id:"radio-6-p5e"%>
+                <%= f.label :p5e, "NS/NR", for: "radio-6-p5e"%>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>   
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p5e"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p5e">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p5e">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p5e_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">5 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 28%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p5d_p5e_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p5f_p5e_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_p5f">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">5.- Por favor califique de 1 a 5 la especialización, en los siguientes atributos, dónde 1 es la menor calificación y 5 la máxima. Empecemos: ENCUESTADOR LEA CADA UNO DE LOS ATRIBUTOS.</h2>
+  <br>
+  <div class="field qts">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="color: #222d5a; text-align: center; text-transform: uppercase;" colspan="6"> <h2>Relevancia de realizar la especialización a nivel profesional</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5f, "1" , id:"radio-1-p5f"%>
+                <%= f.label :p5f, "1", for: "radio-1-p5f"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5f, "2" , id:"radio-2-p5f"%>
+                <%= f.label :p5f, "2", for: "radio-2-p5f"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5f, "3" , id:"radio-3-p5f"%>
+                <%= f.label :p5f, "3", for: "radio-3-p5f"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5f, "4" , id:"radio-4-p5f"%>
+                <%= f.label :p5f, "4", for: "radio-4-p5f"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5f, "5" , id:"radio-5-p5f"%>
+                <%= f.label :p5f, "5", for: "radio-5-p5f"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5f, "99" , id:"radio-6-p5f"%>
+                <%= f.label :p5f, "NS/NR", for: "radio-6-p5f"%>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>   
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p5f"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p5f">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p5f">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p5f_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">5 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 29%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p5e_p5f_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p5g_p5f_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_p5g">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">5.- Por favor califique de 1 a 5 la especialización, en los siguientes atributos, dónde 1 es la menor calificación y 5 la máxima. Empecemos: ENCUESTADOR LEA CADA UNO DE LOS ATRIBUTOS.</h2>
+  <br>
+  <div class="field qts">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="color: #222d5a; text-align: center; text-transform: uppercase;" colspan="6"> <h2>Es un programa para personas como usted</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5g, "1" , id:"radio-1-p5g"%>
+                <%= f.label :p5g, "1", for: "radio-1-p5g"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5g, "2" , id:"radio-2-p5g"%>
+                <%= f.label :p5g, "2", for: "radio-2-p5g"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5g, "3" , id:"radio-3-p5g"%>
+                <%= f.label :p5g, "3", for: "radio-3-p5g"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5g, "4" , id:"radio-4-p5g"%>
+                <%= f.label :p5g, "4", for: "radio-4-p5g"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5g, "5" , id:"radio-5-p5g"%>
+                <%= f.label :p5g, "5", for: "radio-5-p5g"%>
+          </div></td>
+          <td><div class="inputGroup">
+                <%= f.radio_button :p5g, "99" , id:"radio-6-p5g"%>
+                <%= f.label :p5g, "NS/NR", for: "radio-6-p5g"%>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>   
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p5g"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p5g">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p5g">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p5g_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">5 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 30%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p5f_p5g_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p6_p5g_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_p6">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">6.- ¿Qué modalidad prefiere usted para realizar esta especialización?</h2>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p6, "Presencial" , id:"radio-1-p6"%>
+      <%= f.label :p6, "Presencial", for: "radio-1-p6"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p6, "Virtual" , id:"radio-2-p6"%>
+      <%= f.label :p6, "Virtual", for: "radio-2-p6"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p6, "Semipresencial" , id:"radio-3-p6"%>
+      <%= f.label :p6, "Semipresencial", for: "radio-3-p6"%>
+    </div>      
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p6"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p6">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p6">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p6_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">6 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 35%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p5g_p6_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p7_p6_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+
+<div class="centrado hidden" style="width: 90%" id="div_p7">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">7.- En qué horarios preferiría usted que se dictara esta especialización? </h2>
+  <br>
+  <div class="field qts">
+
+    <div class="inputGroup">
+      <%= f.radio_button :p7, "1" , id:"radio-1-p7"%>
+      <%= f.label :p7, "Viernes y sábados de 8 a.m. a 5 p.m.", for: "radio-1-p7"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p7, "2" , id:"radio-2-p7"%>
+      <%= f.label :p7, "Jueves, viernes y sábado de 8 a 5 p.m. cada 15 días", for: "radio-2-p7"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p7, "3" , id:"radio-3-p7"%>
+      <%= f.label :p7, "Viernes de 6 p.m. a 9 p.m. y sábado de 8 a.m. a 5 p.m.", for: "radio-3-p7"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p7, "4" , id:"radio-4-p7"%>
+      <%= f.label :p7, "Viernes de 6 p.m. a 10 p.m. y sábado de 7 a.m. a 1 p.m.", for: "radio-4-p7"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p7, "5" , id:"radio-5-p7"%>
+      <%= f.label :p7, "Lunes a viernes de 2 p.m. a 6 p.m. ", for: "radio-5-p7"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p7, "6" , id:"radio-6-p7"%>
+      <%= f.label :p7, "Una vez al mes jueves, viernes y sábado todo el día", for: "radio-6-p7"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p7, "otro" , id:"radio-7-p7"%>
+      <%= f.label :p7, "Otro. ¿Cuál? ", for: "radio-7-p7"%>
+    </div>
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p7"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p7">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p7">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p7_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">7 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 41%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p6_p7_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p8_p7_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_p7a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">¿Cual? </h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p7a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p7a", placeholder: "Cúal otro horario preferiría"}%> 
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p7a"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p7a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p7a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p7a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">7 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 41%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p7_p7a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p8_p7a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_p8">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">8.- Cuánto dinero estaría dispuesto a pagar en total por esta especialización?</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p8, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p8", placeholder: "Escriba aquí el valor"}%> 
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p8"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p8">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p8">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p8_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">8 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 47%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p7_p8_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p9_p8_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado" style="width: 90%" id="div_p9">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">9.- Qué modalidad de pago o financiación preferiría utilizar para la especialización?</h2>
+
+<div class="row">
+
+  <div class="col-md-5">
+    <div class="field qts">
+
+      <div class="inputGroup">
+        <%= f.radio_button :p9, "1" , id:"radio-1-p9"%>
+        <%= f.label :p9, "Contado con descuento", for: "radio-1-p9"%>
+      </div>
+
+      <div class="inputGroup">
+        <%= f.radio_button :p9, "2" , id:"radio-2-p9"%>
+        <%= f.label :p9, "Crédito bancario", for: "radio-2-p9"%>
+      </div>
+
+      <div class="inputGroup">
+        <%= f.radio_button :p9, "3" , id:"radio-3-p9"%>
+        <%= f.label :p9, "ICETEX", for: "radio-3-p9"%>
+      </div>
+
+      <div class="inputGroup">
+        <%= f.radio_button :p9, "4" , id:"radio-4-p9"%>
+        <%= f.label :p9, "Apoyo familiar", for: "radio-4-p9"%>
+      </div>
+
+      <div class="inputGroup">
+        <%= f.radio_button :p9, "5" , id:"radio-5-p9"%>
+        <%= f.label :p9, "Cheques post fechados", for: "radio-5-p9"%>
+      </div>
+
+  </div>
+</div>
+
+<div class="col-md-5">
+  <div class="field qts">
+
+    <div class="inputGroup">
+      <%= f.radio_button :p9, "6" , id:"radio-6-p9"%>
+      <%= f.label :p9, "Crédito universitario", for: "radio-6-p9"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p9, "7" , id:"radio-7-p9"%>
+      <%= f.label :p9, "Apoyo de la empresa donde trabaja", for: "radio-7-p9"%>
+    </div>   
+
+    <div class="inputGroup">
+      <%= f.radio_button :p9, "8" , id:"radio-8-p9"%>
+      <%= f.label :p9, "Uso de cesantías", for: "radio-8-p9"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p9, "otro" , id:"radio-9-p9"%>
+      <%= f.label :p9, "Otro ¿Cuál?", for: "radio-9-p9"%>
+    </div> 
+
+  </div>
+</div>   
+</div>
+
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p9"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p9">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p9">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p9_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">9 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 52%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p8_p9_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p10_p9_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+
+
+
+<div class="hidden">
+
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :semestre %>
+    <%= f.text_field :semestre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :carrera %>
+    <%= f.text_field :carrera %>
+  </div>
+
+  <div class="field">
+    <%= f.label :universidad %>
+    <%= f.text_field :universidad %>
+  </div>
+
+  <div class="field">
+    <%= f.label :trabaja %>
+    <%= f.text_field :trabaja %>
+  </div>
+
+  <div class="field">
+    <%= f.label :empresa %>
+    <%= f.text_field :empresa %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cargo %>
+    <%= f.text_field :cargo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :encuestador %>
+    <%= f.text_field :encuestador %>
+  </div>
+
+  <div class="field">
+    <%= f.label :supervisor %>
+    <%= f.text_field :supervisor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :revisor %>
+    <%= f.text_field :revisor %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>

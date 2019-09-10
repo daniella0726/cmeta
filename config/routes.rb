@@ -1,5 +1,6 @@
 
 Rails.application.routes.draw do
+  resources :estudiantes
   resources :tolimas
   resources :form514s
   resources :form483s

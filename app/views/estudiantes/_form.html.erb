@@ -1,4 +1,8 @@
 <style>
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "estudiantes";
+
 .hidden {
   display: none !important;}
   .centrado{
@@ -199,9 +203,14 @@
   }
 </style>
 
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 <script src="https://kit.fontawesome.com/1f7411956b.js"></script>
 
 <%= form_with(model: estudiante, local: true) do |f| %>
@@ -1406,11 +1415,11 @@
 </div>
 
 <div class="centrado hidden" style="width: 90%" id="div_p7a">
-  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">¿Cual? </h2>
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">¿Cuál? </h2>
   <br>
   <div class="field qts">
 
-    <%= f.text_field :p7a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p7a", placeholder: "Cúal otro horario preferiría"}%> 
+    <%= f.text_field :p7a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p7a", placeholder: "Cuál otro horario preferiría"}%> 
 
   </div>
   <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p7a"><strong>Por favor, escribe sin signos</strong></div>
@@ -1481,12 +1490,9 @@
   </div> 
 </div>
 
-<div class="centrado" style="width: 90%" id="div_p9">
+<div class="centrado hidden" style="width: 90%; margin-top: 70px;" id="div_p9">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">9.- Qué modalidad de pago o financiación preferiría utilizar para la especialización?</h2>
 
-<div class="row">
-
-  <div class="col-md-5">
     <div class="field qts">
 
       <div class="inputGroup">
@@ -1514,12 +1520,6 @@
         <%= f.label :p9, "Cheques post fechados", for: "radio-5-p9"%>
       </div>
 
-  </div>
-</div>
-
-<div class="col-md-5">
-  <div class="field qts">
-
     <div class="inputGroup">
       <%= f.radio_button :p9, "6" , id:"radio-6-p9"%>
       <%= f.label :p9, "Crédito universitario", for: "radio-6-p9"%>
@@ -1541,9 +1541,6 @@
     </div> 
 
   </div>
-</div>   
-</div>
-
   <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p9"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p9">
     <i class="fas fa-check-circle"></i>
@@ -1551,7 +1548,7 @@
   </button>
   <p  class="hidden" style="color: #222d5a;" id="p_p9">presiona <strong>ENTER</strong></p>
 </div>  
-<div class="container hidden" id="pregunta_p9_footer">
+<div class="container hidden" id="pregunta_p9_footer" style="margin-top: 70px;">
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
@@ -1566,6 +1563,197 @@
             <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>
           <a class="boton1" id="pregunta_p10_p9_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_p9a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">¿Cuál? </h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p7a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p9a", placeholder: "¿Cuál otra modalidad de pago?"}%> 
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p9a"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p9a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p9a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p9a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">9 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 52%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p9_p9a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p10_p9a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p10">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">10.- ¿Cuál universidad cree usted que ofrecería esta especialización acá en Yopal?</h2>
+
+  <div class="row">
+
+    <div class="col-md-6">
+
+    <div class="field qts">
+
+      <div class="inputGroup">
+        <%= f.radio_button :p10, "1" , id:"radio-1-p10"%>
+        <%= f.label :p10, "Andes", for: "radio-1-p10"%>
+      </div>
+
+      <div class="inputGroup">
+        <%= f.radio_button :p10, "2" , id:"radio-2-p10"%>
+        <%= f.label :p10, "Javeriana", for: "radio-2-p10"%>
+      </div>
+
+      <div class="inputGroup">
+        <%= f.radio_button :p10, "3" , id:"radio-3-p10"%>
+        <%= f.label :p10, "Rosario", for: "radio-3-p10"%>
+      </div>
+
+      <div class="inputGroup">
+        <%= f.radio_button :p10, "4" , id:"radio-4-p10"%>
+        <%= f.label :p10, "Nacional", for: "radio-4-p10"%>
+      </div>
+
+      <div class="inputGroup">
+        <%= f.radio_button :p10, "5" , id:"radio-5-p10"%>
+        <%= f.label :p10, "UNAD", for: "radio-5-p10"%>
+      </div>
+
+      <div class="inputGroup">
+        <%= f.radio_button :p10, "6" , id:"radio-6-p10"%>
+        <%= f.label :p10, "Fundación Universitaria Internacional del Trópico Américano", for: "radio-6-p10"%>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-md-6">
+
+    <div class="field qts">
+
+    <div class="inputGroup">
+      <%= f.radio_button :p10, "7" , id:"radio-7-p10"%>
+      <%= f.label :p10, "Fundación Universitaria Tecnológica del Casanare", for: "radio-7-p10"%>
+    </div>   
+
+    <div class="inputGroup">
+      <%= f.radio_button :p10, "8" , id:"radio-8-p10"%>
+      <%= f.label :p10, "Fundación Remington", for: "radio-8-p10"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p10, "9" , id:"radio-9-p10"%>
+      <%= f.label :p10, "Universidad de San Gil", for: "radio-9-p10"%>
+    </div> 
+
+    <div class="inputGroup">
+      <%= f.radio_button :p10, "10" , id:"radio-10-p10"%>
+      <%= f.label :p10, "Universidad de Boyacá", for: "radio-10-p10"%>
+    </div> 
+
+    <div class="inputGroup">
+      <%= f.radio_button :p10, "11" , id:"radio-11-p10"%>
+      <%= f.label :p10, "Universidad de La Salle", for: "radio-11-p10"%>
+    </div> 
+
+    <div class="inputGroup">
+      <%= f.radio_button :p10, "12" , id:"radio-12-p10"%>
+      <%= f.label :p10, "Uniminuto", for: "radio-12-p10"%>
+    </div> 
+
+    <div class="inputGroup">
+      <%= f.radio_button :p10, "otro" , id:"radio-13-p10"%>
+      <%= f.label :p10, "Otro ¿Cuál?", for: "radio-13-p10"%>
+    </div> 
+
+  </div>
+</div>
+</div>
+
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p10"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p10">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p10">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p10_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">10 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 58%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p9_p10_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p11_p10_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<div class="centrado hidden" style="width: 90%" id="div_p10a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">¿Cuál? </h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p10a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p10a", placeholder: "¿Cuál universidad?"}%> 
+
+  </div>
+  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p10a"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p10a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p10a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p10a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">10 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 58%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p10_p10a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p11_p10a_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>          
         </div>

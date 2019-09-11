@@ -239,6 +239,31 @@
   </button>
 </div>  
 
+<script type="text/javascript">
+  $('form').on('keypress', e => {
+    if (e.keyCode == 13) {
+        return false;
+    }
+  });
+  var input = document.getElementById("but_res_pregunta_0");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_pregunta_0").click();
+      }
+    });
+  document.getElementById("but_res_pregunta_0").addEventListener("click", fun_pregunta_0);
+  function fun_pregunta_0() {
+      $('#div_pregunta_0').slideUp();
+      $('#div_pregunta_0').addClass('hidden');
+      $('#div_nombre').slideDown();
+      $('#div_nombre').removeClass('hidden');
+      $('#pregunta_nombre_footer').removeClass('hidden');
+      $('#div_error_nombre').addClass('hidden');
+      document.getElementById("res_nombre").focus();
+  }
+</script>
+
 
 <div class="centrado hidden" style="width: 90%" id="div_nombre">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">1. ¿Cuál es su nombre?</h2>
@@ -276,6 +301,44 @@
   </div> 
 </div>
 
+<script type="text/javascript">
+  $('form').on('keypress', e => {
+    if (e.keyCode == 13) {
+        return false;
+    }
+  });
+  var input = document.getElementById("res_nombre");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_nombre").click();
+      }
+    });
+
+  document.getElementById("pregunta_0_nombre_boton").addEventListener("click", fun_nombre_dev);
+  function fun_nombre_dev() {
+      $('#div_pregunta_0').slideDown();
+      $('#div_pregunta_0').removeClass('hidden');
+      $('#div_semestre').slideUp();
+      $('#div_semestre').addClass('hidden');
+      $('#pregunta_semestre_footer').addClass('hidden');
+      $('#div_error_semestre').removeClass('hidden');
+  }
+
+  document.getElementById("pregunta_semestre_nombre_boton").addEventListener("click", fun_nombre);
+  document.getElementById("but_res_nombre").addEventListener("click", fun_nombre);
+  function fun_nombre() {
+      $('#div_semestre').slideUp();
+      $('#div_semestre').addClass('hidden');
+      $('#pregunta_semestre_footer').addClass('hidden');
+      $('#div_semestre').slideDown();
+      $('#div_semestre').removeClass('hidden');
+      $('#pregunta_semestre_footer').removeClass('hidden');
+      $('#div_error_semestre').addClass('hidden');
+      document.getElementById("res_semestre").focus();
+  }
+</script>
+
 <div class="centrado hidden" style="width: 90%" id="div_semestre">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Semestre que esta cursando:</h2>
   <br>
@@ -311,6 +374,45 @@
     </div>
   </div> 
 </div>
+
+<script type="text/javascript">
+  $('form').on('keypress', e => {
+    if (e.keyCode == 13) {
+        return false;
+    }
+  });
+  var input = document.getElementById("but_res_nombre");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_nombre").click();
+      }
+    });
+
+  document.getElementById("pregunta_0_nombre_boton").addEventListener("click", fun_nombre_dev);
+  function fun_nombre_dev() {
+      $('#div_semestre').slideDown();
+      $('#div_semestre').removeClass('hidden');
+      $('#pregunta_semestre_footer').removeClass('hidden');
+      $('#div_semestre').slideUp();
+      $('#div_semestre').addClass('hidden');
+      $('#pregunta_semestre_footer').addClass('hidden');
+      $('#div_error_semestre').removeClass('hidden');
+  }
+
+  document.getElementById("pregunta_semestre_nombre_boton").addEventListener("click", fun_nombre);
+  document.getElementById("but_res_nombre").addEventListener("click", fun_nombre);
+  function fun_nombre() {
+      $('#div_semestre').slideUp();
+      $('#div_semestre').addClass('hidden');
+      $('#pregunta_semestre_footer').addClass('hidden');
+      $('#div_semestre').slideDown();
+      $('#div_semestre').removeClass('hidden');
+      $('#pregunta_semestre_footer').removeClass('hidden');
+      $('#div_error_semestre').addClass('hidden');
+      document.getElementById("res_semestre").focus();
+  }
+</script>
 
 
 <div class="centrado hidden" style="width: 90%" id="div_carrera">

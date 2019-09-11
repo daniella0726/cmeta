@@ -801,17 +801,16 @@
       $('#div_error_cargo').addClass('hidden');
   }
 
-  document.getElementById("pregunta_p1_cargo_boton").addEventListener("click", fun_empresa);
-  document.getElementById("but_res_empresa").addEventListener("click", fun_empresa);
-  function fun_empresa() {
-      $('#div_empresa').slideUp();
-      $('#div_empresa').addClass('hidden');
-      $('#pregunta_empresa_footer').addClass('hidden');
-      $('#div_cargo').slideDown();
-      $('#div_cargo').removeClass('hidden');
-      $('#pregunta_cargo_footer').removeClass('hidden');
-      $('#div_error_cargo').addClass('hidden');
-      document.getElementById("res_cargo").focus();
+  document.getElementById("pregunta_p1_cargo_boton").addEventListener("click", fun_cargo);
+  document.getElementById("but_res_cargo").addEventListener("click", fun_cargo);
+  function fun_cargo() {
+      $('#div_cargo').slideUp();
+      $('#div_cargo').addClass('hidden');
+      $('#pregunta_cargo_footer').addClass('hidden');
+      $('#div_p1').slideDown();
+      $('#div_p1').removeClass('hidden');
+      $('#pregunta_p1_footer').removeClass('hidden');
+      $('#div_error_p1').addClass('hidden');
   }
 </script>
 
@@ -849,7 +848,7 @@
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p2_p1_boton">
+          <a class="boton1" id="pregunta_p1_0_p1_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>
           <a class="boton1" id="pregunta_cargo_p1_boton">
@@ -861,17 +860,89 @@
   </div> 
 </div>
 
+<script type="text/javascript">
+
+  document.getElementById("pregunta_cargo_p1_boton").addEventListener("click", fun_p1_dev);
+  function fun_p1_dev() {
+      $('#div_cargo').slideDown();
+      $('#div_cargo').removeClass('hidden');
+      $('#pregunta_cargo_footer').removeClass('hidden');
+      $('#div_p1').slideUp();
+      $('#div_p1').addClass('hidden');
+      $('#pregunta_p1_footer').addClass('hidden');
+      $('#div_error_p1').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p1_0_p1_boton").addEventListener("click", fun_p1);
+  document.getElementById("radio-1-p1").addEventListener("click", fun_p1);
+  document.getElementById("radio-2-p1").addEventListener("click", fun_p1);
+  function fun_p1() {
+      $('#div_p1').slideUp();
+      $('#div_p1').addClass('hidden');
+      $('#pregunta_p1_footer').addClass('hidden');
+      $('#div_pregunta_p1_0').slideDown();
+      $('#div_pregunta_p1_0').removeClass('hidden');
+  }
+</script>
+
 <div class="centrado hidden" style="width: 90%; text-align: center; position: absolute;" id="div_pregunta_p1_0">
   <h3 style="font-family: 'Heebo', sans-serif; color: #222d5a; text-align: left;">Le voy a leer la descripción de una especialización, para que por favor me diga si le interesaría estudiarla</h3>
 
   <h4 style="font-family: 'Heebo', sans-serif; color: #222d5a; text-align: justify; border color: #942f88; ">La especialización es en Evaluación y Desarrollo de Proyectos, abarca todos los campos posibles de proyectos públicos y privados, así como todas las etapas y fases de un proyecto desde su formulación inicial, pasando por la investigación de mercados, la financiación y obtención de recursos hasta su elaboración final. <br> <br> Esta especialización se dictaría en la ciudad de Yopal y Tiene una duración de 26 créditos académicos, distribuidos en 2 semestres. <br> <br> El especialista en evaluación y desarrollo de proyectos cuenta con las destrezas y habilidades para la preparación, formulación y estructuración de proyectos.  De esta forma, está en capacidad de liderar la formulación, evaluación o la estructuración de un proyecto, tanto en el sector privado como en el público, así como de analizar la rentabilidad financiera, económica y social de los proyectos. </h4>
 
 
-  <button type="button" class="boton3" style="" id="but_res_pregunta_0">
+  <button type="button" class="boton3" style="" id="but_res_pregunta_p1_0">
     <i class="fas fa-check-circle"; id="but_pregunta_p1_0"></i>
     Pregunta
   </button>
 </div>
+<div class="container hidden" id="pregunta_p1_0_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">1 de 17 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 5%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p2a_p1_0_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p1_p1_0_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p1_p1_0_boton").addEventListener("click", fun_p1_0_dev);
+  function fun_p1_0_dev() {
+      $('#div_p1').slideDown();
+      $('#div_p1').removeClass('hidden');
+      $('#pregunta_p1_footer').removeClass('hidden');
+      $('#div_pregunta_p1_0').slideUp();
+      $('#div_pregunta_p1_0').addClass('hidden');
+      $('#pregunta_p1_0_footer').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p2a_p1_0_boton").addEventListener("click", fun_p1_0);
+  document.getElementById("but_pregunta_p1_0").addEventListener("click", fun_p1_0);
+  function fun_p1_0() {
+      $('#div_pregunta_p1_0').slideUp();
+      $('#div_pregunta_p1_0').addClass('hidden');
+      $('#pregunta_p1_0_footer').addClass('hidden');
+      $('#div_p2a').slideDown();
+      $('#div_p2a').removeClass('hidden');
+      $('#pregunta_p2a_footer').removeClass('hidden');
+      $('#div_error_p2a').addClass('hidden');
+  }
+</script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p2a">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">2.- ¿Le interesaría estudiar este programa de posgrado?</h2>
@@ -910,7 +981,7 @@
           <a class="boton1" id="pregunta_p2b_p2a_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_p1_p2a_boton">
+          <a class="boton1" id="pregunta_p1_0_p2a_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>          
         </div>
@@ -918,6 +989,31 @@
     </div>
   </div> 
 </div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p1_0_p2a_boton").addEventListener("click", fun_p2a_dev);
+  function fun_p2a_dev() {
+      $('#div_pregunta_p1_0').slideDown();
+      $('#div_pregunta_p1_0').removeClass('hidden');
+      $('#pregunta_p1_0_footer').removeClass('hidden');
+      $('#div_p2a').slideUp();
+      $('#div_p2a').addClass('hidden');
+      $('#pregunta_p2a_footer').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p2b_p2a_boton").addEventListener("click", fun_2a);
+  document.getElementById("but_res_p2a").addEventListener("click", fun_2a);
+  function fun_2a() {
+      $('#div_2a').slideUp();
+      $('#div_2a').addClass('hidden');
+      $('#pregunta_2a_footer').addClass('hidden');
+      $('#div_p2b').slideDown();
+      $('#div_p2b').removeClass('hidden');
+      $('#pregunta_p2b_footer').removeClass('hidden');
+      $('#div_error_p2b').addClass('hidden');
+  }
+</script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p2b">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Describa las razones por las cuales no le interesaría estudiar este programa de posgrado</h2>

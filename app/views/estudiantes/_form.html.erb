@@ -302,11 +302,6 @@
 </div>
 
 <script type="text/javascript">
-  $('form').on('keypress', e => {
-    if (e.keyCode == 13) {
-        return false;
-    }
-  });
   var input = document.getElementById("res_nombre");
       input.addEventListener("keyup", function(event) {
       if (event.keyCode === 13) {
@@ -319,18 +314,18 @@
   function fun_nombre_dev() {
       $('#div_pregunta_0').slideDown();
       $('#div_pregunta_0').removeClass('hidden');
-      $('#div_semestre').slideUp();
-      $('#div_semestre').addClass('hidden');
-      $('#pregunta_semestre_footer').addClass('hidden');
-      $('#div_error_semestre').removeClass('hidden');
+      $('#div_nombre').slideUp();
+      $('#div_nombre').addClass('hidden');
+      $('#pregunta_nombre_footer').addClass('hidden');
+      $('#div_error_nombre').addClass('hidden');
   }
 
   document.getElementById("pregunta_semestre_nombre_boton").addEventListener("click", fun_nombre);
   document.getElementById("but_res_nombre").addEventListener("click", fun_nombre);
   function fun_nombre() {
-      $('#div_semestre').slideUp();
-      $('#div_semestre').addClass('hidden');
-      $('#pregunta_semestre_footer').addClass('hidden');
+      $('#div_nombre').slideUp();
+      $('#div_nombre').addClass('hidden');
+      $('#pregunta_nombre_footer').addClass('hidden');
       $('#div_semestre').slideDown();
       $('#div_semestre').removeClass('hidden');
       $('#pregunta_semestre_footer').removeClass('hidden');
@@ -376,41 +371,36 @@
 </div>
 
 <script type="text/javascript">
-  $('form').on('keypress', e => {
-    if (e.keyCode == 13) {
-        return false;
-    }
-  });
-  var input = document.getElementById("but_res_nombre");
+  var input = document.getElementById("res_semestre");
       input.addEventListener("keyup", function(event) {
       if (event.keyCode === 13) {
         event.preventDefault();
-        document.getElementById("but_res_nombre").click();
+        document.getElementById("but_res_semestre").click();
       }
     });
 
-  document.getElementById("pregunta_0_nombre_boton").addEventListener("click", fun_nombre_dev);
-  function fun_nombre_dev() {
-      $('#div_semestre').slideDown();
-      $('#div_semestre').removeClass('hidden');
-      $('#pregunta_semestre_footer').removeClass('hidden');
+  document.getElementById("pregunta_nombre_semestre_boton").addEventListener("click", fun_semestre_dev);
+  function fun_semestre_dev() {
+      $('#div_nombre').slideDown();
+      $('#div_nombre').removeClass('hidden');
+      $('#pregunta_nombre_footer').removeClass('hidden');
       $('#div_semestre').slideUp();
       $('#div_semestre').addClass('hidden');
       $('#pregunta_semestre_footer').addClass('hidden');
-      $('#div_error_semestre').removeClass('hidden');
+      $('#div_error_semestre').addClass('hidden');
   }
 
-  document.getElementById("pregunta_semestre_nombre_boton").addEventListener("click", fun_nombre);
-  document.getElementById("but_res_nombre").addEventListener("click", fun_nombre);
-  function fun_nombre() {
+  document.getElementById("pregunta_carrera_semestre_boton").addEventListener("click", fun_semestre);
+  document.getElementById("but_res_semestre").addEventListener("click", fun_semestre);
+  function fun_semestre() {
       $('#div_semestre').slideUp();
       $('#div_semestre').addClass('hidden');
       $('#pregunta_semestre_footer').addClass('hidden');
-      $('#div_semestre').slideDown();
-      $('#div_semestre').removeClass('hidden');
-      $('#pregunta_semestre_footer').removeClass('hidden');
-      $('#div_error_semestre').addClass('hidden');
-      document.getElementById("res_semestre").focus();
+      $('#div_carrera').slideDown();
+      $('#div_carrera').removeClass('hidden');
+      $('#pregunta_carrera_footer').removeClass('hidden');
+      $('#div_error_carrera').addClass('hidden');
+      document.getElementById("res_carrera").focus();
   }
 </script>
 
@@ -481,6 +471,36 @@
   </div> 
 </div>
 
+<script type="text/javascript">
+
+  document.getElementById("pregunta_semestre_carrera_boton").addEventListener("click", fun_carrera_dev);
+  function fun_carrera_dev() {
+      $('#div_semestre').slideDown();
+      $('#div_semestre').removeClass('hidden');
+      $('#pregunta_semestre_footer').removeClass('hidden');
+      $('#div_carrera').slideUp();
+      $('#div_carrera').addClass('hidden');
+      $('#pregunta_carrera_footer').addClass('hidden');
+      $('#div_error_carrera').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_universidad_carrera_boton").addEventListener("click", fun_carrera);
+  document.getElementById("radio-1-carrera").addEventListener("click", fun_carrera);
+  document.getElementById("radio-2-carrera").addEventListener("click", fun_carrera);
+  document.getElementById("radio-3-carrera").addEventListener("click", fun_carrera);
+  document.getElementById("radio-4-carrera").addEventListener("click", fun_carrera);
+  document.getElementById("radio-5-carrera").addEventListener("click", fun_carrera);
+  function fun_carrera() {
+      $('#div_carrera').slideUp();
+      $('#div_carrera').addClass('hidden');
+      $('#pregunta_carrera_footer').addClass('hidden');
+      $('#div_universidad').slideDown();
+      $('#div_universidad').removeClass('hidden');
+      $('#pregunta_universidad_footer').removeClass('hidden');
+      $('#div_error_universidad').addClass('hidden');
+  }
+</script>
+
 <div class="centrado hidden" style="width: 90%" id="div_universidad">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Universidad en la que se encuentra matriculad@:</h2>
   <br>
@@ -547,6 +567,37 @@
   </div> 
 </div>
 
+<script type="text/javascript">
+
+  document.getElementById("pregunta_carrera_universidad_boton").addEventListener("click", fun_universidad_dev);
+  function fun_universidad_dev() {
+      $('#div_carrera').slideDown();
+      $('#div_carrera').removeClass('hidden');
+      $('#pregunta_carrera_footer').removeClass('hidden');
+      $('#div_universidad').slideUp();
+      $('#div_universidad').addClass('hidden');
+      $('#pregunta_universidad_footer').addClass('hidden');
+      $('#div_error_universidad').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_trabaja_universidad_boton").addEventListener("click", fun_universidad);
+  document.getElementById("radio-1-universidad").addEventListener("click", fun_universidad);
+  document.getElementById("radio-2-universidad").addEventListener("click", fun_universidad);
+  document.getElementById("radio-3-universidad").addEventListener("click", fun_universidad);
+  document.getElementById("radio-4-universidad").addEventListener("click", fun_universidad);
+  document.getElementById("radio-5-universidad").addEventListener("click", fun_universidad);
+  document.getElementById("radio-6-universidad").addEventListener("click", fun_universidad);
+  function fun_universidad() {
+      $('#div_universidad').slideUp();
+      $('#div_universidad').addClass('hidden');
+      $('#pregunta_universidad_footer').addClass('hidden');
+      $('#div_trabaja').slideDown();
+      $('#div_trabaja').removeClass('hidden');
+      $('#pregunta_trabaja_footer').removeClass('hidden');
+      $('#div_error_trabaja').addClass('hidden');
+  }
+</script>
+
 <div class="centrado hidden" style="width: 90%" id="div_trabaja">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Usted trabaja actualmente:</h2>
   <br>
@@ -581,7 +632,7 @@
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p1_trabaja_boton">
+          <a class="boton1" id="pregunta_empresa_trabaja_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>
           <a class="boton1" id="pregunta_universidad_trabaja_boton">
@@ -592,6 +643,33 @@
     </div>
   </div> 
 </div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_universidad_trabaja_boton").addEventListener("click", fun_trabaja_dev);
+  function fun_trabaja_dev() {
+      $('#div_universidad').slideDown();
+      $('#div_universidad').removeClass('hidden');
+      $('#pregunta_universidad_footer').removeClass('hidden');
+      $('#div_trabaja').slideUp();
+      $('#div_trabaja').addClass('hidden');
+      $('#pregunta_trabaja_footer').addClass('hidden');
+      $('#div_error_trabaja').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_empresa_trabaja_boton").addEventListener("click", fun_trabaja);
+  document.getElementById("radio-1-trabaja").addEventListener("click", fun_trabaja);
+  document.getElementById("radio-2-trabaja").addEventListener("click", fun_trabaja);
+  function fun_trabaja() {
+      $('#div_trabaja').slideUp();
+      $('#div_trabaja').addClass('hidden');
+      $('#pregunta_trabaja_footer').addClass('hidden');
+      $('#div_empresa').slideDown();
+      $('#div_empresa').removeClass('hidden');
+      $('#pregunta_empresa_footer').removeClass('hidden');
+      $('#div_error_empresa').addClass('hidden');
+  }
+</script>
 
 <div class="centrado hidden" style="width: 90%" id="div_empresa">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Nombre de la empresa donde trabaja</h2>
@@ -619,7 +697,7 @@
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p1_empresa_boton">
+          <a class="boton1" id="pregunta_cargo_empresa_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>
           <a class="boton1" id="pregunta_trabaja_empresa_boton">
@@ -631,6 +709,40 @@
   </div> 
 </div>
 
+<script type="text/javascript">
+  var input = document.getElementById("res_empresa");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_empresa").click();
+      }
+    });
+
+  document.getElementById("pregunta_trabaja_empresa_boton").addEventListener("click", fun_empresa_dev);
+  function fun_empresa_dev() {
+      $('#div_trabaja').slideDown();
+      $('#div_trabaja').removeClass('hidden');
+      $('#pregunta_trabaja_footer').removeClass('hidden');
+      $('#div_empresa').slideUp();
+      $('#div_empresa').addClass('hidden');
+      $('#pregunta_empresa_footer').addClass('hidden');
+      $('#div_error_empresa').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_cargo_empresa_boton").addEventListener("click", fun_empresa);
+  document.getElementById("but_res_empresa").addEventListener("click", fun_empresa);
+  function fun_empresa() {
+      $('#div_empresa').slideUp();
+      $('#div_empresa').addClass('hidden');
+      $('#pregunta_empresa_footer').addClass('hidden');
+      $('#div_cargo').slideDown();
+      $('#div_cargo').removeClass('hidden');
+      $('#pregunta_cargo_footer').removeClass('hidden');
+      $('#div_error_cargo').addClass('hidden');
+      document.getElementById("res_cargo").focus();
+  }
+</script>
+
 <div class="centrado hidden" style="width: 90%" id="div_cargo">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Cargo que ocupa en la empresa que trabaja</h2>
   <br>
@@ -640,7 +752,7 @@
 
   </div>
   <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_cargo"><strong>Por favor, digite</strong></div>
-  <button type="button" class="boton3 hidden" id="but_res_empresa">
+  <button type="button" class="boton3 hidden" id="but_res_cargo">
     <i class="fas fa-check-circle"></i>
     OK
   </button>
@@ -668,6 +780,40 @@
     </div>
   </div> 
 </div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_cargo");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_cargo").click();
+      }
+    });
+
+  document.getElementById("pregunta_empresa_cargo_boton").addEventListener("click", fun_cargo_dev);
+  function fun_cargo_dev() {
+      $('#div_empresa').slideDown();
+      $('#div_empresa').removeClass('hidden');
+      $('#pregunta_empresa_footer').removeClass('hidden');
+      $('#div_cargo').slideUp();
+      $('#div_cargo').addClass('hidden');
+      $('#pregunta_cargo_footer').addClass('hidden');
+      $('#div_error_cargo').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p1_cargo_boton").addEventListener("click", fun_empresa);
+  document.getElementById("but_res_empresa").addEventListener("click", fun_empresa);
+  function fun_empresa() {
+      $('#div_empresa').slideUp();
+      $('#div_empresa').addClass('hidden');
+      $('#pregunta_empresa_footer').addClass('hidden');
+      $('#div_cargo').slideDown();
+      $('#div_cargo').removeClass('hidden');
+      $('#pregunta_cargo_footer').removeClass('hidden');
+      $('#div_error_cargo').addClass('hidden');
+      document.getElementById("res_cargo").focus();
+  }
+</script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p1">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">1.- ¿Está interesado en hacer un programa de posgrado? </h2>

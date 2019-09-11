@@ -226,7 +226,7 @@
     </div>
   <% end %>
 
-<div class="centrado hidden" style="width: 90%; text-align: center; position: absolute;" id="div_pregunta_0">
+<div class="centrado" style="width: 90%; text-align: center; position: absolute;" id="div_pregunta_0">
   <h3 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Buenos días, tardes, noches, mi nombre es ____________ y trabajo para El Colectivo Investigaciones, un equipo profesional de investigadores de mercados. Actualmente estamos haciendo un estudio sobre posgrados. Sus respuestas son muy importantes para el estudio ¿Podría darme 15 minutos de su tiempo para hacerle unas breves preguntas? </h3>
 
   <h4 style="font-family: 'Heebo', sans-serif; color: #942f88;">Recuerde debe estudiar estas carreras:  Economía, administración de empresas, administración de negocios internacionales, finanzas, mercadeo. </h4>
@@ -262,6 +262,7 @@
       $('#div_error_nombre').addClass('hidden');
       document.getElementById("res_nombre").focus();
   }
+
 </script>
 
 
@@ -332,6 +333,23 @@
       $('#div_error_semestre').addClass('hidden');
       document.getElementById("res_semestre").focus();
   }
+
+  $(document).ready(function(){ 
+
+    //document.getElementById("but_res_pregunta_0").focus();
+
+    $('#res_nombre').on('input', function() { 
+      if (document.getElementById("res_nombre").value == "") {
+      $('#but_res_nombre').addClass('hidden');
+      $('#p_nombre').addClass('hidden');
+      $('#div_error_nombre').removeClass('hidden');
+      } else {
+       $('#but_res_nombre').removeClass('hidden');
+       $('#p_nombre').removeClass('hidden');
+       $('#div_error_nombre').addClass('hidden');
+      }
+    }); 
+  }); 
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_semestre">
@@ -400,8 +418,24 @@
       $('#div_carrera').removeClass('hidden');
       $('#pregunta_carrera_footer').removeClass('hidden');
       $('#div_error_carrera').addClass('hidden');
-      document.getElementById("res_carrera").focus();
   }
+
+  $(document).ready(function(){ 
+
+    //document.getElementById("but_res_pregunta_0").focus();
+
+    $('#res_semestre').change(function() { 
+      if (document.getElementById("res_semestre").value == "") {
+      $('#but_res_semestre').addClass('hidden');
+      $('#p_semestre').addClass('hidden');
+      $('#div_error_semestre').removeClass('hidden');
+      } else {
+       $('#but_res_semestre').removeClass('hidden');
+       $('#p_semestre').removeClass('hidden');
+       $('#div_error_semestre').addClass('hidden');
+      }
+    }); 
+  }); 
 </script>
 
 

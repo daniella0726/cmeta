@@ -1,7 +1,8 @@
 <script type="text/javascript">
 
   document.getElementById("radio-9-estoy").addEventListener("click", fun_op1);
-  setTimeout(function fun_op1() {
+  function fun_op1() {
+    setTimeout(function(){
       $('#div_estoy').slideUp();
       $('#div_estoy').addClass('hidden');
       $('#pregunta_estoy_footer').addClass('hidden');
@@ -10,4 +11,5 @@
       $('#pregunta_voy_footer').removeClass('hidden');
       $('#div_error_voy').addClass('hidden');
   } , 500);
+  }
 </script>

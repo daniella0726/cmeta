@@ -549,7 +549,7 @@
   document.getElementById("radio-4-carrera").addEventListener("click", fun_carrera);
   document.getElementById("radio-5-carrera").addEventListener("click", fun_carrera);
   document.getElementById("radio-6-carrera").addEventListener("click", fun_carrera);
-  function fun_carrera() {
+  setTimeout(function fun_carrera() {
       $('#div_carrera').slideUp();
       $('#div_carrera').addClass('hidden');
       $('#pregunta_carrera_footer').addClass('hidden');
@@ -557,7 +557,7 @@
       $('#div_universidad').removeClass('hidden');
       $('#pregunta_universidad_footer').removeClass('hidden');
       $('#div_error_universidad').addClass('hidden');
-  }
+  }  , 500);
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_universidad">
@@ -646,7 +646,7 @@
   document.getElementById("radio-4-universidad").addEventListener("click", fun_universidad);
   document.getElementById("radio-5-universidad").addEventListener("click", fun_universidad);
   document.getElementById("radio-6-universidad").addEventListener("click", fun_universidad);
-  function fun_universidad() {
+  setTimeout(function fun_universidad() {
       $('#div_universidad').slideUp();
       $('#div_universidad').addClass('hidden');
       $('#pregunta_universidad_footer').addClass('hidden');
@@ -654,7 +654,7 @@
       $('#div_trabaja').removeClass('hidden');
       $('#pregunta_trabaja_footer').removeClass('hidden');
       $('#div_error_trabaja').addClass('hidden');
-  }
+  } , 500);
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_trabaja">
@@ -719,7 +719,7 @@
   document.getElementById("pregunta_empresa_trabaja_boton").addEventListener("click", fun_trabaja);
   document.getElementById("radio-1-trabaja").addEventListener("click", fun_trabaja);
   document.getElementById("radio-2-trabaja").addEventListener("click", fun_trabaja);
-  function fun_trabaja() {
+  setTimeout(function fun_trabaja() {
       $('#div_trabaja').slideUp();
       $('#div_trabaja').addClass('hidden');
       $('#pregunta_trabaja_footer').addClass('hidden');
@@ -727,7 +727,7 @@
       $('#div_empresa').removeClass('hidden');
       $('#pregunta_empresa_footer').removeClass('hidden');
       $('#div_error_empresa').addClass('hidden');
-  }
+  } , 500);
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_empresa">
@@ -994,13 +994,13 @@
   document.getElementById("pregunta_px_p1_boton").addEventListener("click", fun_p1);
   document.getElementById("radio-1-p1").addEventListener("click", fun_p1);
   document.getElementById("radio-2-p1").addEventListener("click", fun_p1);
-  function fun_p1() {
+  setTimeout(function fun_p1() {
       $('#div_p1').slideUp();
       $('#div_p1').addClass('hidden');
       $('#pregunta_p1_footer').addClass('hidden');
       $('#div_pregunta_px').slideDown();
       $('#div_pregunta_px').removeClass('hidden');
-  }
+  } , 500);
 </script>
  
 <div class="centrado hidden" style="width: 90%; text-align: center; position: absolute;" id="div_pregunta_px">
@@ -1102,7 +1102,7 @@
 
   document.getElementById("pregunta_p3_p2a_boton").addEventListener("click", fun_p2a);
   document.getElementById("radio-1-p2a").addEventListener("click", fun_p2a);
-  function fun_p2a() {
+  setTimeout(function fun_p2a() {
       $('#div_p2a').slideUp();
       $('#div_p2a').addClass('hidden');
       $('#pregunta_p2a_footer').addClass('hidden');
@@ -1110,10 +1110,10 @@
       $('#div_p3').removeClass('hidden');
       $('#pregunta_p3_footer').removeClass('hidden');
       $('#div_error_p3').addClass('hidden');
-  }
+  } , 500);
 
   document.getElementById("radio-2-p2a").addEventListener("click", fun_op1);
-  function fun_op1() {
+  setTimeout(function fun_op1() {
       $('#div_p2a').slideUp();
       $('#div_p2a').addClass('hidden');
       $('#pregunta_p2a_footer').addClass('hidden');
@@ -1121,7 +1121,7 @@
       $('#div_p2b').removeClass('hidden');
       $('#pregunta_p2b_footer').removeClass('hidden');
       $('#div_error_p2b').addClass('hidden');
-  }
+  } , 500);
 
 </script>
 
@@ -1520,7 +1520,7 @@
   document.getElementById("radio-4-p5a").addEventListener("click", fun_p5a);
   document.getElementById("radio-5-p5a").addEventListener("click", fun_p5a);
   document.getElementById("radio-6-p5a").addEventListener("click", fun_p5a);
-  function fun_p5a() {
+  setTimeout(function fun_p5a() {
       $('#div_p5a').slideUp();
       $('#div_p5a').addClass('hidden');
       $('#pregunta_p5a_footer').addClass('hidden');
@@ -1528,7 +1528,7 @@
       $('#div_p5b').removeClass('hidden');
       $('#pregunta_p5b_footer').removeClass('hidden');
       $('#div_error_p5b').addClass('hidden');
-  }
+  } , 500);
 </script>
 
 
@@ -1624,7 +1624,7 @@
   document.getElementById("radio-4-p5b").addEventListener("click", fun_p5b);
   document.getElementById("radio-5-p5b").addEventListener("click", fun_p5b);
   document.getElementById("radio-6-p5b").addEventListener("click", fun_p5b);
-  function fun_p5b() {
+  setTimeout(function fun_p5b() {
       $('#div_p5b').slideUp();
       $('#div_p5b').addClass('hidden');
       $('#pregunta_p5b_footer').addClass('hidden');
@@ -1632,7 +1632,7 @@
       $('#div_p5c').removeClass('hidden');
       $('#pregunta_p5c_footer').removeClass('hidden');
       $('#div_error_p5c').addClass('hidden');
-  }
+  } , 500);
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p5c">
@@ -1727,7 +1727,7 @@
   document.getElementById("radio-4-p5c").addEventListener("click", fun_p5c);
   document.getElementById("radio-5-p5c").addEventListener("click", fun_p5c);
   document.getElementById("radio-6-p5c").addEventListener("click", fun_p5c);
-  function fun_p5c() {
+  setTimeout(function fun_p5c() {
       $('#div_p5c').slideUp();
       $('#div_p5c').addClass('hidden');
       $('#pregunta_p5c_footer').addClass('hidden');
@@ -1735,7 +1735,7 @@
       $('#div_p5d').removeClass('hidden');
       $('#pregunta_p5d_footer').removeClass('hidden');
       $('#div_error_p5d').addClass('hidden');
-  }
+  } , 500);
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p5d">
@@ -1830,7 +1830,7 @@
   document.getElementById("radio-4-p5d").addEventListener("click", fun_p5d);
   document.getElementById("radio-5-p5d").addEventListener("click", fun_p5d);
   document.getElementById("radio-6-p5d").addEventListener("click", fun_p5d);
-  function fun_p5d() {
+  setTimeout(function fun_p5d() {
       $('#div_p5d').slideUp();
       $('#div_p5d').addClass('hidden');
       $('#pregunta_p5d_footer').addClass('hidden');
@@ -1838,7 +1838,7 @@
       $('#div_p5e').removeClass('hidden');
       $('#pregunta_p5e_footer').removeClass('hidden');
       $('#div_error_p5e').addClass('hidden');
-  }
+  } , 500);
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p5e">
@@ -1933,7 +1933,7 @@
   document.getElementById("radio-4-p5e").addEventListener("click", fun_p5e);
   document.getElementById("radio-5-p5e").addEventListener("click", fun_p5e);
   document.getElementById("radio-6-p5e").addEventListener("click", fun_p5e);
-  function fun_p5e() {
+  setTimeout(function fun_p5e() {
       $('#div_p5e').slideUp();
       $('#div_p5e').addClass('hidden');
       $('#pregunta_p5e_footer').addClass('hidden');
@@ -1941,7 +1941,7 @@
       $('#div_p5f').removeClass('hidden');
       $('#pregunta_p5f_footer').removeClass('hidden');
       $('#div_error_p5f').addClass('hidden');
-  }
+  } , 500);
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p5f">
@@ -2036,7 +2036,7 @@
   document.getElementById("radio-4-p5f").addEventListener("click", fun_p5f);
   document.getElementById("radio-5-p5f").addEventListener("click", fun_p5f);
   document.getElementById("radio-6-p5f").addEventListener("click", fun_p5f);
-  function fun_p5f() {
+  setTimeout(function fun_p5f() {
       $('#div_p5f').slideUp();
       $('#div_p5f').addClass('hidden');
       $('#pregunta_p5f_footer').addClass('hidden');
@@ -2044,7 +2044,7 @@
       $('#div_p5g').removeClass('hidden');
       $('#pregunta_p5g_footer').removeClass('hidden');
       $('#div_error_p5g').addClass('hidden');
-  }
+  } , 500);
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p5g">
@@ -2139,7 +2139,7 @@
   document.getElementById("radio-4-p5g").addEventListener("click", fun_p5g);
   document.getElementById("radio-5-p5g").addEventListener("click", fun_p5g);
   document.getElementById("radio-6-p5g").addEventListener("click", fun_p5g);
-  function fun_p5g() {
+  setTimeout(function fun_p5g() {
       $('#div_p5g').slideUp();
       $('#div_p5g').addClass('hidden');
       $('#pregunta_p5g_footer').addClass('hidden');
@@ -2147,7 +2147,7 @@
       $('#div_p6').removeClass('hidden');
       $('#pregunta_p6_footer').removeClass('hidden');
       $('#div_error_p6').addClass('hidden');
-  }
+  } , 500);
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p6">
@@ -2217,7 +2217,7 @@
   document.getElementById("radio-1-p6").addEventListener("click", fun_p6);
   document.getElementById("radio-2-p6").addEventListener("click", fun_p6);
   document.getElementById("radio-3-p6").addEventListener("click", fun_p6);
-  function fun_p6() {
+  setTimeout(function fun_p6() {
       $('#div_p6').slideUp();
       $('#div_p6').addClass('hidden');
       $('#pregunta_p6_footer').addClass('hidden');
@@ -2225,7 +2225,7 @@
       $('#div_p7').removeClass('hidden');
       $('#pregunta_p7_footer').removeClass('hidden');
       $('#div_error_p7').addClass('hidden');
-  }
+  } , 500);
 </script>
 
 
@@ -2320,7 +2320,7 @@
   document.getElementById("radio-4-p7").addEventListener("click", fun_p7);
   document.getElementById("radio-5-p7").addEventListener("click", fun_p7);
   document.getElementById("radio-6-p7").addEventListener("click", fun_p7);
-  function fun_p7() {
+  setTimeout(function fun_p7() {
       $('#div_p7').slideUp();
       $('#div_p7').addClass('hidden');
       $('#pregunta_p7_footer').addClass('hidden');
@@ -2328,10 +2328,10 @@
       $('#div_p8').removeClass('hidden');
       $('#pregunta_p8_footer').removeClass('hidden');
       $('#div_error_p8').addClass('hidden');
-  }
+  } , 500);
 
   document.getElementById("radio-7-p7").addEventListener("click", fun_op1);
-  function fun_op1() {
+  setTimeout(function fun_op1() {
       $('#div_p7').slideUp();
       $('#div_p7').addClass('hidden');
       $('#pregunta_p7_footer').addClass('hidden');
@@ -2339,7 +2339,7 @@
       $('#div_p7a').removeClass('hidden');
       $('#pregunta_p7a_footer').removeClass('hidden');
       $('#div_error_p7a').addClass('hidden');
-  }
+  } , 500);
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p7a">
@@ -2647,7 +2647,7 @@
   document.getElementById("radio-6-p9").addEventListener("click", fun_p9);
   document.getElementById("radio-7-p9").addEventListener("click", fun_p9);
   document.getElementById("radio-8-p9").addEventListener("click", fun_p9);
-  function fun_p9() {
+  setTimeout(function fun_p9() {
       $('#div_p9').slideUp();
       $('#div_p9').addClass('hidden');
       $('#pregunta_p9_footer').addClass('hidden');
@@ -2655,10 +2655,10 @@
       $('#div_p10').removeClass('hidden');
       $('#pregunta_p10_footer').removeClass('hidden');
       $('#div_error_p10').addClass('hidden');
-  }
+  } , 500);
 
   document.getElementById("radio-9-p9").addEventListener("click", fun_op1);
-  function fun_op1() {
+  setTimeout(function fun_op1() {
       $('#div_p9').slideUp();
       $('#div_p9').addClass('hidden');
       $('#pregunta_p9_footer').addClass('hidden');
@@ -2666,7 +2666,7 @@
       $('#div_p9a').removeClass('hidden');
       $('#pregunta_p9a_footer').removeClass('hidden');
       $('#div_error_p9a').addClass('hidden');
-  }
+  } , 500);
 
 </script>
 
@@ -2912,7 +2912,7 @@
   document.getElementById("radio-10-p10").addEventListener("click", fun_p10);
   document.getElementById("radio-11-p10").addEventListener("click", fun_p10);
   document.getElementById("radio-12-p10").addEventListener("click", fun_p10);
-  function fun_p10() {
+  setTimeout(function fun_p10() {
       $('#div_p10').slideUp();
       $('#div_p10').addClass('hidden');
       $('#pregunta_p10_footer').addClass('hidden');
@@ -2920,10 +2920,10 @@
       $('#div_p11').removeClass('hidden');
       $('#pregunta_p11_footer').removeClass('hidden');
       $('#div_error_p11').addClass('hidden');
-  }
+  } , 500);
 
   document.getElementById("radio-13-p10").addEventListener("click", fun_op1);
-  function fun_op1() {
+  setTimeout(function fun_op1() {
       $('#div_p10').slideUp();
       $('#div_p10').addClass('hidden');
       $('#pregunta_p10_footer').addClass('hidden');
@@ -2931,7 +2931,7 @@
       $('#div_p10a').removeClass('hidden');
       $('#pregunta_p10a_footer').removeClass('hidden');
       $('#div_error_p10a').addClass('hidden');
-  }
+  } , 500);
 
 </script>
 
@@ -3168,7 +3168,7 @@
 
   document.getElementById("but_res_p11").addEventListener("click", fun_p11);
 
-  function fun_p11() {
+  setTimeout(function fun_p11() {
       $('#div_p11').slideUp();
       $('#div_p11').addClass('hidden');
       $('#pregunta_p11_footer').addClass('hidden');
@@ -3176,7 +3176,7 @@
       $('#div_p12').removeClass('hidden');
       $('#pregunta_p12_footer').removeClass('hidden');
       $('#div_error_p12').addClass('hidden');
-  }
+  } , 500);
 
   document.getElementById("radio-1-p11").addEventListener("click", fun_multi);
   document.getElementById("radio-2-p11").addEventListener("click", fun_multi);
@@ -3191,13 +3191,13 @@
   document.getElementById("radio-11-p11").addEventListener("click", fun_multi);
   document.getElementById("radio-12-p11").addEventListener("click", fun_multi);
   
-  function fun_multi() {
+  setTimeout(function fun_multi() {
       $('#but_res_p11').removeClass('hidden');
 
-  }
+  } , 500);
 
   document.getElementById("radio-13-p11").addEventListener("click", fun_op1);
-  function fun_op1() {
+  setTimeout(function fun_op1() {
       $('#div_p11').slideUp();
       $('#div_p11').addClass('hidden');
       $('#pregunta_p11_footer').addClass('hidden');
@@ -3205,7 +3205,7 @@
       $('#div_p11a').removeClass('hidden');
       $('#pregunta_p11a_footer').removeClass('hidden');
       $('#div_error_p11a').addClass('hidden');
-  }
+  } , 500);
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p11a">
@@ -3371,7 +3371,7 @@
   document.getElementById("pregunta_p13_p12_boton").addEventListener("click", fun_p12);
 
   document.getElementById("radio-2-p12").addEventListener("click", fun_p12);
-  function fun_p12() {
+  setTimeout(function fun_p12() {
       $('#div_p12').slideUp();
       $('#div_p12').addClass('hidden');
       $('#pregunta_p12_footer').addClass('hidden');
@@ -3379,10 +3379,10 @@
       $('#div_p13').removeClass('hidden');
       $('#pregunta_p13_footer').removeClass('hidden');
       $('#div_error_p13').addClass('hidden');
-  }
+  } , 500);
 
   document.getElementById("radio-1-p12").addEventListener("click", fun_op1);
-  function fun_op1() {
+  setTimeout(function fun_op1() {
       $('#div_p12').slideUp();
       $('#div_p12').addClass('hidden');
       $('#pregunta_p12_footer').addClass('hidden');
@@ -3390,7 +3390,7 @@
       $('#div_p12b').removeClass('hidden');
       $('#pregunta_p12b_footer').removeClass('hidden');
       $('#div_error_p12b').addClass('hidden');
-  }
+  } , 500);
 
 </script>
 
@@ -3675,7 +3675,7 @@
 
   document.getElementById("but_res_p14").addEventListener("click", fun_p14);
 
-  function fun_p14() {
+  setTimeout(function fun_p14() {
       $('#div_p14').slideUp();
       $('#div_p14').addClass('hidden');
       $('#pregunta_p14_footer').addClass('hidden');
@@ -3683,20 +3683,20 @@
       $('#div_p15').removeClass('hidden');
       $('#pregunta_p15_footer').removeClass('hidden');
       $('#div_error_p15').addClass('hidden');
-  }
+  } , 500);
 
   document.getElementById("radio-1-p14").addEventListener("click", fun_multi);
   document.getElementById("radio-2-p14").addEventListener("click", fun_multi);
   document.getElementById("radio-3-p14").addEventListener("click", fun_multi);
   document.getElementById("radio-4-p14").addEventListener("click", fun_multi);
   
-  function fun_multi() {
+  setTimeout(function fun_multi() {
       $('#but_res_p14').removeClass('hidden');
 
-  }
+  } , 500);
 
   document.getElementById("radio-5-p14").addEventListener("click", fun_op1);
-  function fun_op1() {
+  setTimeout(function fun_op1() {
       $('#div_p14').slideUp();
       $('#div_p14').addClass('hidden');
       $('#pregunta_p14_footer').addClass('hidden');
@@ -3704,7 +3704,7 @@
       $('#div_p14a').removeClass('hidden');
       $('#pregunta_p14a_footer').removeClass('hidden');
       $('#div_error_p14a').addClass('hidden');
-  }
+  } , 500);
 
 </script>
 
@@ -3877,7 +3877,7 @@
   document.getElementById("radio-1-p15").addEventListener("click", fun_p15);
   document.getElementById("radio-2-p15").addEventListener("click", fun_p15);
   document.getElementById("radio-3-p15").addEventListener("click", fun_p15);
-  function fun_p15() {
+  setTimeout(function fun_p15() {
       $('#div_p15').slideUp();
       $('#div_p15').addClass('hidden');
       $('#pregunta_p15_footer').addClass('hidden');
@@ -3885,7 +3885,7 @@
       $('#div_p16').removeClass('hidden');
       $('#pregunta_p16_footer').removeClass('hidden');
       $('#div_error_p16').addClass('hidden');
-  }
+  } , 500);
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p16">

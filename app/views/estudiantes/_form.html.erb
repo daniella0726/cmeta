@@ -4235,9 +4235,6 @@
       $('#pregunta_p17_footer').addClass('hidden');
       $('#div_pregunta_s').slideDown();
       $('#div_pregunta_s').removeClass('hidden');
-      $('#pregunta_pregunta_s_footer').removeClass('hidden');
-      $('#div_error_pregunta_s').addClass('hidden');
-      document.getElementById("res_pregunta_s").focus();
     }
   }
 
@@ -4346,17 +4343,175 @@
   </div> 
 </div>
 
+<script type="text/javascript">
+  var input = document.getElementById("res_ps1");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_ps2").focus();
+      }
+    });
 
+  var input1 = document.getElementById("res_ps2");
+      input1.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_ps3").focus();
+      }
+    });
+
+  var input2 = document.getElementById("res_ps3");
+      input2.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_pst").focus();
+      }
+    });
+
+  document.getElementById("pregunta_ps_pst_boton").addEventListener("click", fun_pst_dev);
+  function fun_pst_dev() {
+      $('#div_pregunta_s').slideDown();
+      $('#div_pregunta_s').removeClass('hidden');
+      $('#div_pst').slideUp();
+      $('#div_pst').addClass('hidden');
+      $('#pregunta_pst_footer').addClass('hidden');
+      $('#div_error_pst').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_pe_pst_boton").addEventListener("click", fun_pst);
+  document.getElementById("but_res_pst").addEventListener("click", fun_pst);
+    function fun_pst() {
+    var frase = document.getElementById("res_ps1").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_ps1").value = frase;
+    var frase1 = document.getElementById("res_ps2").value; 
+      frase1 = frase1.replace("#"," ");
+      frase1 = frase1.replace("%"," ");
+      frase1 = frase1.replace("&"," ");
+      frase1 = frase1.replace("$"," ");
+      frase1 = frase1.replace("  "," ");
+      document.getElementById("res_ps2").value = frase1;
+    var frase2 = document.getElementById("res_ps3").value; 
+      frase2 = frase2.replace("#"," ");
+      frase2 = frase2.replace("%"," ");
+      frase2 = frase2.replace("&"," ");
+      frase2 = frase2.replace("$"," ");
+      frase2 = frase2.replace("  "," ");
+      document.getElementById("res_ps3").value = frase2;
+    if (document.getElementById("res_ps1").value == "" || document.getElementById("res_ps2").value == "" ||document.getElementById("res_ps3").value == "") {
+      $('#but_res_pst').addClass('hidden');
+      $('#p_pst').addClass('hidden');
+      $('#div_error_pst').removeClass('hidden');
+    } else {
+      $('#div_pst').slideUp();
+      $('#div_pst').addClass('hidden');
+      $('#pregunta_pst_footer').addClass('hidden');
+      $('#div_pregunta_pe').slideDown();
+      $('#div_pregunta_pe').removeClass('hidden');
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_ps1').on('input', function() { 
+      var frase = document.getElementById("res_ps1").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_ps1").value = frase;
+      if (document.getElementById("res_ps1").value == "" || document.getElementById("res_ps2").value == "" ||document.getElementById("res_ps3").value == "") {
+      $('#but_res_pst').addClass('hidden');
+      $('#p_pst').addClass('hidden');
+      $('#div_error_pst').removeClass('hidden');
+      } else {
+       $('#but_res_pst').removeClass('hidden');
+       $('#p_pst').removeClass('hidden');
+       $('#div_error_pst').addClass('hidden');
+      }
+    }); 
+
+    $('#res_ps2').on('input', function() { 
+      var frase = document.getElementById("res_ps2").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_ps2").value = frase;
+      if (document.getElementById("res_ps1").value == "" || document.getElementById("res_ps2").value == "" ||document.getElementById("res_ps3").value == "") {
+      $('#but_res_pst').addClass('hidden');
+      $('#p_pst').addClass('hidden');
+      $('#div_error_pst').removeClass('hidden');
+      } else {
+       $('#but_res_pst').removeClass('hidden');
+       $('#p_pst').removeClass('hidden');
+       $('#div_error_pst').addClass('hidden');
+      }
+    }); 
+
+    $('#res_ps3').on('input', function() { 
+      var frase = document.getElementById("res_ps3").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_ps3").value = frase;
+      if (document.getElementById("res_ps1").value == "" || document.getElementById("res_ps2").value == "" ||document.getElementById("res_ps3").value == "") {
+      $('#but_res_pst').addClass('hidden');
+      $('#p_pst').addClass('hidden');
+      $('#div_error_pst').removeClass('hidden');
+      } else {
+       $('#but_res_pst').removeClass('hidden');
+       $('#p_pst').removeClass('hidden');
+       $('#div_error_pst').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
 
 <div class="centrado hidden" style="width: 90%; text-align: center; position: absolute;" id="div_pregunta_pe">
   <h1 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Muchas gracias por su tiempo!</h1>
   <br>
   <br>
-  <button type="button" class="boton3" style="" id="but_res_pregunta_s">
-    <i class="fas fa-check-circle"; id="but_pregunta_pe"></i>
-    Nombre encuestador!
+  <button type="button" class="boton3" style="" id="but_res_pregunta_pe">
+    <i class="fas fa-check-circle"></i>
+    Haga clic aquí para diligenciar el nombre del encuestador!
   </button>
 </div>
+
+<script type="text/javascript">
+  $('form').on('keypress', e => {
+    if (e.keyCode == 13) {
+        return false;
+    }
+  });
+  var input = document.getElementById("but_res_pregunta_pe");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_pregunta_pe").click();
+      }
+    });
+  document.getElementById("but_res_pregunta_pe").addEventListener("click", fun_pregunta_pe);
+  function fun_pregunta_pe() {
+      $('#div_pregunta_pe').slideUp();
+      $('#div_pregunta_pe').addClass('hidden');
+      $('#div_pd').slideDown();
+      $('#div_pd').removeClass('hidden');
+      $('#pregunta_pd_footer').removeClass('hidden');
+      $('#div_error_pd').addClass('hidden');
+      document.getElementById("res_pd").focus();
+  }
+
+</script>
+
 
 <div class="centrado hidden" style="width: 90%;" id="div_pd">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Para guardar la encuesta</h2>
@@ -4383,10 +4538,10 @@
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_pst_pd_boton">
+          <a class="boton1" id="pregunta_pg_pd_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_pg_pd_boton">
+          <a class="boton1" id="pregunta_pe_pd_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>          
         </div>
@@ -4394,6 +4549,71 @@
     </div>
   </div> 
 </div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_pd");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_pd").click();
+      }
+    });
+
+  document.getElementById("pregunta_pe_pd_boton").addEventListener("click", fun_pd_dev);
+  function fun_pd_dev() {
+      $('#div_pe').slideDown();
+      $('#div_pe').removeClass('hidden');
+      $('#div_pd').slideUp();
+      $('#div_pd').addClass('hidden');
+      $('#pregunta_pd_footer').addClass('hidden');
+      $('#div_error_pd').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_pg_pd_boton").addEventListener("click", fun_pd);
+  document.getElementById("but_res_pd").addEventListener("click", fun_pd);
+    function fun_pd() {
+    var frase = document.getElementById("res_pd").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_pd").value = frase;
+    if (document.getElementById("res_pd").value == "") {
+      $('#but_res_pd').addClass('hidden');
+      $('#p_pd').addClass('hidden');
+      $('#div_error_pd').removeClass('hidden');
+    } else {
+      $('#div_pd').slideUp();
+      $('#div_pd').addClass('hidden');
+      $('#pregunta_pd_footer').addClass('hidden');
+      $('#div_pg').slideDown();
+      $('#div_pg').removeClass('hidden');
+      $('#pregunta_pg_footer').removeClass('hidden');
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_pd').on('input', function() { 
+      var frase = document.getElementById("res_pd").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_pd").value = frase;
+      if (document.getElementById("res_pd").value == "") {
+      $('#but_res_pd').addClass('hidden');
+      $('#p_pd').addClass('hidden');
+      $('#div_error_pd').removeClass('hidden');
+      } else {
+       $('#but_res_pd').removeClass('hidden');
+       $('#p_pd').removeClass('hidden');
+       $('#div_error_pd').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
 
 <div class="centrado hidden" style="width: 90%; text-align: center;" id="div_pg">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Terminaste!</h2>
@@ -4404,7 +4624,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a;">17 de 37 respuestas</span>
+        <span style="color: #222d5a;">37 de 37 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 100%; background-color: #942f88;"></div>
           </div>

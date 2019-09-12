@@ -695,7 +695,7 @@
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_empresa_trabaja_boton">
+          <a class="boton1" id="pregunta_p1_trabaja_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>
           <a class="boton1" id="pregunta_universidad_trabaja_boton">
@@ -720,10 +720,23 @@
       $('#div_error_trabaja').addClass('hidden');
   }
 
-  document.getElementById("pregunta_empresa_trabaja_boton").addEventListener("click", fun_trabaja);
-  document.getElementById("radio-1-trabaja").addEventListener("click", fun_trabaja);
+  document.getElementById("pregunta_p1_trabaja_boton").addEventListener("click", fun_trabaja);
   document.getElementById("radio-2-trabaja").addEventListener("click", fun_trabaja);
+
   function fun_trabaja() {
+    setTimeout(function(){
+      $('#div_trabaja').slideUp();
+      $('#div_trabaja').addClass('hidden');
+      $('#pregunta_trabaja_footer').addClass('hidden');
+      $('#div_p1').slideDown();
+      $('#div_p1').removeClass('hidden');
+      $('#pregunta_p1_footer').removeClass('hidden');
+      $('#div_error_p1').addClass('hidden');
+  } , 500);
+  }
+
+  document.getElementById("radio-1-trabaja").addEventListener("click", fun_op1);
+  function fun_op1() {
     setTimeout(function(){
       $('#div_trabaja').slideUp();
       $('#div_trabaja').addClass('hidden');
@@ -732,7 +745,9 @@
       $('#div_empresa').removeClass('hidden');
       $('#pregunta_empresa_footer').removeClass('hidden');
       $('#div_error_empresa').addClass('hidden');
-  } , 500);}
+  } , 500);
+  }
+
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_empresa">
@@ -990,7 +1005,7 @@
           <a class="boton1" id="pregunta_px_p1_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_cargo_p1_boton">
+          <a class="boton1" id="pregunta_trabaja_p1_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>          
         </div>
@@ -1001,11 +1016,11 @@
 
 <script type="text/javascript">
 
-  document.getElementById("pregunta_cargo_p1_boton").addEventListener("click", fun_p1_dev);
+  document.getElementById("pregunta_trabaja_p1_boton").addEventListener("click", fun_p1_dev);
   function fun_p1_dev() {
-      $('#div_cargo').slideDown();
-      $('#div_cargo').removeClass('hidden');
-      $('#pregunta_cargo_footer').removeClass('hidden');
+      $('#div_trabaja').slideDown();
+      $('#div_trabaja').removeClass('hidden');
+      $('#pregunta_trabaja_footer').removeClass('hidden');
       $('#div_p1').slideUp();
       $('#div_p1').addClass('hidden');
       $('#pregunta_p1_footer').addClass('hidden');
@@ -4261,6 +4276,32 @@
   </button>
 </div>
 
+<script type="text/javascript">
+  $('form').on('keypress', e => {
+    if (e.keyCode == 13) {
+        return false;
+    }
+  });
+  var input = document.getElementById("but_res_pregunta_s");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_pregunta_s").click();
+      }
+    });
+  document.getElementById("but_res_pregunta_s").addEventListener("click", fun_pregunta_s);
+  function fun_pregunta_s() {
+      $('#div_pregunta_s').slideUp();
+      $('#div_pregunta_s').addClass('hidden');
+      $('#div_pst').slideDown();
+      $('#div_pst').removeClass('hidden');
+      $('#pregunta_pst_footer').removeClass('hidden');
+      $('#div_error_pst').addClass('hidden');
+      document.getElementById("res_pst").focus();
+  }
+
+</script>
+
 
 <div class="centrado hidden" style="width: 90%;" id="div_pst">
   <br>
@@ -4272,7 +4313,7 @@
     <%= f.text_field :ps2, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_ps2", placeholder: "Dirección"}%>
     <br>
     <h4 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Teléfono fijo o celular:</h4>
-    <%= f.text_field :ps3, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_ps2", placeholder: "Télefono fijo o celular"}%>
+    <%= f.text_field :ps3, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_ps3", placeholder: "Télefono fijo o celular"}%>
 
   </div>
   <div class="hidden" style="color: #222d5a;" id="div_error_pst"><strong>Por favor, diligencie todos los campos</strong></div>
@@ -4293,10 +4334,10 @@
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_ps_pst_boton">
+          <a class="boton1" id="pregunta_pe_pst_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_pd_pst_boton">
+          <a class="boton1" id="pregunta_ps_pst_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>          
         </div>
@@ -4305,13 +4346,15 @@
   </div> 
 </div>
 
-<div class="centrado hidden" style="width: 90%; text-align: center; position: absolute;" id="div_pregunta_s">
-  <h1 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Para efectos de supervisión, ¿me podría dar los siguientes datos, por favor?</h1>
+
+
+<div class="centrado hidden" style="width: 90%; text-align: center; position: absolute;" id="div_pregunta_pe">
+  <h1 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Muchas gracias por su tiempo!</h1>
   <br>
   <br>
   <button type="button" class="boton3" style="" id="but_res_pregunta_s">
-    <i class="fas fa-check-circle"; id="but_pregunta_s"></i>
-    Siguiente!
+    <i class="fas fa-check-circle"; id="but_pregunta_pe"></i>
+    Nombre encuestador!
   </button>
 </div>
 

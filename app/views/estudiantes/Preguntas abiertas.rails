@@ -26,6 +26,7 @@
       frase = frase.replace("%"," ");
       frase = frase.replace("&"," ");
       frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
       document.getElementById("res_estoy").value = frase;
     if (document.getElementById("res_estoy").value == "") {
       $('#but_res_estoy').addClass('hidden');

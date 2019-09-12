@@ -24,7 +24,7 @@
   document.getElementById("radio-10-estoy").addEventListener("click", fun_estoy);
   document.getElementById("radio-11-estoy").addEventListener("click", fun_estoy);
   document.getElementById("radio-12-estoy").addEventListener("click", fun_estoy);
-  function fun_estoy() {
+  setTimeout(function fun_estoy() {
       $('#div_estoy').slideUp();
       $('#div_estoy').addClass('hidden');
       $('#pregunta_estoy_footer').addClass('hidden');
@@ -32,5 +32,5 @@
       $('#div_voy').removeClass('hidden');
       $('#pregunta_voy_footer').removeClass('hidden');
       $('#div_error_voy').addClass('hidden');
-  }
+  } , 500);
 </script>

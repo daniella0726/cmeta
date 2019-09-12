@@ -20,7 +20,18 @@
 
   document.getElementById("pregunta_voy_estoy_boton").addEventListener("click", fun_estoy);
   document.getElementById("but_res_estoy").addEventListener("click", fun_estoy);
-  function fun_estoy() {
+    function fun_estoy() {
+    var frase = document.getElementById("res_estoy").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_estoy").value = frase;
+    if (document.getElementById("res_estoy").value == "") {
+      $('#but_res_estoy').addClass('hidden');
+      $('#p_estoy').addClass('hidden');
+      $('#div_error_estoy').removeClass('hidden');
+    } else {
       $('#div_estoy').slideUp();
       $('#div_estoy').addClass('hidden');
       $('#pregunta_estoy_footer').addClass('hidden');
@@ -29,6 +40,7 @@
       $('#pregunta_voy_footer').removeClass('hidden');
       $('#div_error_voy').addClass('hidden');
       document.getElementById("res_voy").focus();
+    }
   }
 
   $(document).ready(function(){ 
@@ -36,6 +48,12 @@
     //document.getElementById("but_res_pregunta_0").focus();
 
     $('#res_estoy').on('input', function() { 
+      var frase = document.getElementById("res_estoy").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_estoy").value = frase;
       if (document.getElementById("res_estoy").value == "") {
       $('#but_res_estoy').addClass('hidden');
       $('#p_estoy').addClass('hidden');

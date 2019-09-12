@@ -271,8 +271,9 @@
   <br>
   <div class="field qts">
     <%= f.text_field :nombre, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_nombre", placeholder: "Nombre completo del entrevistado"}%>
+    <div class="invalid-feedback" style="color: #222d5a;" id="div_error_nombre"><strong>Por favor, diligencia tu nombre!</strong></div>
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_nombre"><strong>Por favor, diligencia tu nombre!</strong></div>
+  
   <button type="button" class="boton3 hidden" id="but_res_nombre">
     <i class="fas fa-check-circle"></i>
     OK
@@ -283,9 +284,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">0 de 17 respuestas</span>
+        <span style="color: #222d5a">1 de 17 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 0%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 6%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -324,6 +325,17 @@
   document.getElementById("pregunta_semestre_nombre_boton").addEventListener("click", fun_nombre);
   document.getElementById("but_res_nombre").addEventListener("click", fun_nombre);
   function fun_nombre() {
+    var frase = document.getElementById("res_nombre").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_nombre").value = frase;
+    if (document.getElementById("res_nombre").value == "") {
+      $('#but_res_nombre').addClass('hidden');
+      $('#p_nombre').addClass('hidden');
+      $('#div_error_nombre').removeClass('hidden');
+    } else {
       $('#div_nombre').slideUp();
       $('#div_nombre').addClass('hidden');
       $('#pregunta_nombre_footer').addClass('hidden');
@@ -332,6 +344,7 @@
       $('#pregunta_semestre_footer').removeClass('hidden');
       $('#div_error_semestre').addClass('hidden');
       document.getElementById("res_semestre").focus();
+    }
   }
 
   $(document).ready(function(){ 
@@ -339,6 +352,12 @@
     //document.getElementById("but_res_pregunta_0").focus();
 
     $('#res_nombre').on('input', function() { 
+      var frase = document.getElementById("res_nombre").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_nombre").value = frase;
       if (document.getElementById("res_nombre").value == "") {
       $('#but_res_nombre').addClass('hidden');
       $('#p_nombre').addClass('hidden');
@@ -369,9 +388,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">0 de 17 respuestas</span>
+        <span style="color: #222d5a">2 de 17 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 0%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 12%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -411,6 +430,11 @@
   document.getElementById("pregunta_carrera_semestre_boton").addEventListener("click", fun_semestre);
   document.getElementById("but_res_semestre").addEventListener("click", fun_semestre);
   function fun_semestre() {
+    if (document.getElementById("res_semestre").value == "Seleccioná el semestre") {
+      $('#but_res_semestre').addClass('hidden');
+      $('#p_semestre').addClass('hidden');
+      $('#div_error_semestre').removeClass('hidden');
+    } else {
       $('#div_semestre').slideUp();
       $('#div_semestre').addClass('hidden');
       $('#pregunta_semestre_footer').addClass('hidden');
@@ -418,6 +442,7 @@
       $('#div_carrera').removeClass('hidden');
       $('#pregunta_carrera_footer').removeClass('hidden');
       $('#div_error_carrera').addClass('hidden');
+    }
   }
 
   $(document).ready(function(){ 
@@ -486,9 +511,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">0 de 17 respuestas</span>
+        <span style="color: #222d5a">3 de 17 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 0%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 18%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -583,9 +608,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">0 de 17 respuestas</span>
+        <span style="color: #222d5a">4 de 17 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 0%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 24%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -660,9 +685,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">0 de 17 respuestas</span>
+        <span style="color: #222d5a">5 de 17 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 0%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 30%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -725,9 +750,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">0 de 17 respuestas</span>
+        <span style="color: #222d5a">6 de 17 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 0%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 36%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -768,6 +793,17 @@
   document.getElementById("pregunta_cargo_empresa_boton").addEventListener("click", fun_empresa);
   document.getElementById("but_res_empresa").addEventListener("click", fun_empresa);
   function fun_empresa() {
+    var frase = document.getElementById("res_empresa").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_empresa").value = frase;
+    if (document.getElementById("res_empresa").value == "") {
+      $('#but_res_empresa').addClass('hidden');
+      $('#p_empresa').addClass('hidden');
+      $('#div_error_empresa').removeClass('hidden');
+    } else {
       $('#div_empresa').slideUp();
       $('#div_empresa').addClass('hidden');
       $('#pregunta_empresa_footer').addClass('hidden');
@@ -776,6 +812,7 @@
       $('#pregunta_cargo_footer').removeClass('hidden');
       $('#div_error_cargo').addClass('hidden');
       document.getElementById("res_cargo").focus();
+    }
   }
 
   $(document).ready(function(){ 
@@ -815,9 +852,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">0 de 17 respuestas</span>
+        <span style="color: #222d5a">7 de 17 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 0%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 42%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -857,6 +894,17 @@
   document.getElementById("pregunta_p1_cargo_boton").addEventListener("click", fun_cargo);
   document.getElementById("but_res_cargo").addEventListener("click", fun_cargo);
   function fun_cargo() {
+    var frase = document.getElementById("res_cargo").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_cargo").value = frase;
+    if (document.getElementById("res_cargo").value == "") {
+      $('#but_res_cargo').addClass('hidden');
+      $('#p_cargo').addClass('hidden');
+      $('#div_error_cargo').removeClass('hidden');
+    } else {
       $('#div_cargo').slideUp();
       $('#div_cargo').addClass('hidden');
       $('#pregunta_cargo_footer').addClass('hidden');
@@ -864,6 +912,7 @@
       $('#div_p1').removeClass('hidden');
       $('#pregunta_p1_footer').removeClass('hidden');
       $('#div_error_p1').addClass('hidden');
+    }
   }
 
   $(document).ready(function(){ 
@@ -911,9 +960,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">1 de 17 respuestas</span>
+        <span style="color: #222d5a">8 de 17 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 5%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 48%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1020,9 +1069,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">2 de 17 respuestas</span>
+        <span style="color: #222d5a">9 de 17 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 11%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 54%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1096,9 +1145,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">2 de 17 respuestas</span>
+        <span style="color: #222d5a">10 de 17 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 11%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 60%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1139,12 +1188,24 @@
   document.getElementById("pregunta_pg_p2b_boton").addEventListener("click", fun_p2b);
   document.getElementById("but_res_p2b").addEventListener("click", fun_p2b);
   function fun_p2b() {
+    var frase = document.getElementById("res_p2b").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p2b").value = frase;
+    if (document.getElementById("res_p2b").value == "") {
+      $('#but_res_p2b').addClass('hidden');
+      $('#p_p2b').addClass('hidden');
+      $('#div_error_p2b').removeClass('hidden');
+    } else {
       $('#div_p2b').slideUp();
       $('#div_p2b').addClass('hidden');
       $('#pregunta_p2b_footer').addClass('hidden');
       $('#div_pg').slideDown();
       $('#div_pg').removeClass('hidden');
       document.getElementById("res_pg").focus();
+    }
   }
 
   $(document).ready(function(){ 
@@ -1184,9 +1245,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">3 de 17 respuestas</span>
+        <span style="color: #222d5a">11 de 17 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 17%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 66%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1226,6 +1287,17 @@
   document.getElementById("pregunta_p4_p3_boton").addEventListener("click", fun_p3);
   document.getElementById("but_res_p3").addEventListener("click", fun_p3);
   function fun_p3() {
+    var frase = document.getElementById("res_p3").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p3").value = frase;
+    if (document.getElementById("res_p3").value == "") {
+      $('#but_res_p3').addClass('hidden');
+      $('#p_p3').addClass('hidden');
+      $('#div_error_p3').removeClass('hidden');
+    } else {
       $('#div_p3').slideUp();
       $('#div_p3').addClass('hidden');
       $('#pregunta_p3_footer').addClass('hidden');
@@ -1234,6 +1306,7 @@
       $('#pregunta_p4_footer').removeClass('hidden');
       $('#div_error_p4').addClass('hidden');
       document.getElementById("res_p4").focus();
+    }
   }
 
   $(document).ready(function(){ 
@@ -1274,9 +1347,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">4 de 17 respuestas</span>
+        <span style="color: #222d5a">12 de 17 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 23%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 72%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1316,6 +1389,17 @@
   document.getElementById("pregunta_p5a_p4_boton").addEventListener("click", fun_p4);
   document.getElementById("but_res_p4").addEventListener("click", fun_p4);
   function fun_p4() {
+    var frase = document.getElementById("res_p4").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p4").value = frase;
+    if (document.getElementById("res_p4").value == "") {
+      $('#but_res_p4').addClass('hidden');
+      $('#p_p4').addClass('hidden');
+      $('#div_error_p4').removeClass('hidden');
+    } else {
       $('#div_p4').slideUp();
       $('#div_p4').addClass('hidden');
       $('#pregunta_p4_footer').addClass('hidden');
@@ -1324,6 +1408,7 @@
       $('#pregunta_p5a_footer').removeClass('hidden');
       $('#div_error_p5a').addClass('hidden');
       document.getElementById("res_p5a").focus();
+    }
   }
 
   $(document).ready(function(){ 
@@ -1397,9 +1482,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">5 de 17 respuestas</span>
+        <span style="color: #222d5a">13 de 17 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 24%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 78%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1501,9 +1586,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">5 de 17 respuestas</span>
+        <span style="color: #222d5a">14 de 17 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 35%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 84%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1604,9 +1689,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">5 de 17 respuestas</span>
+        <span style="color: #222d5a">15 de 17 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 26%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 90%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1707,7 +1792,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">5 de 17 respuestas</span>
+        <span style="color: #222d5a">16 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 27%; background-color: #afcb3a;"></div>
           </div>
@@ -1810,7 +1895,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">5 de 17 respuestas</span>
+        <span style="color: #222d5a">17 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 28%; background-color: #afcb3a;"></div>
           </div>
@@ -1913,7 +1998,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">5 de 17 respuestas</span>
+        <span style="color: #222d5a">18 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 29%; background-color: #afcb3a;"></div>
           </div>
@@ -2016,7 +2101,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">5 de 17 respuestas</span>
+        <span style="color: #222d5a">19 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 30%; background-color: #afcb3a;"></div>
           </div>
@@ -2097,7 +2182,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">6 de 17 respuestas</span>
+        <span style="color: #222d5a">20 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 35%; background-color: #afcb3a;"></div>
           </div>
@@ -2197,7 +2282,7 @@
   <div class="centrado-abajo" style="margin-top: 30px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">7 de 17 respuestas</span>
+        <span style="color: #222d5a">21 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 41%; background-color: #afcb3a;"></div>
           </div>
@@ -2277,7 +2362,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">7 de 17 respuestas</span>
+        <span style="color: #222d5a">21 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 41%; background-color: #afcb3a;"></div>
           </div>
@@ -2319,6 +2404,17 @@
   document.getElementById("pregunta_p8_p7a_boton").addEventListener("click", fun_p7a);
   document.getElementById("but_res_p7a").addEventListener("click", fun_p7a);
   function fun_p7a() {
+    var frase = document.getElementById("res_p7a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p7a").value = frase;
+    if (document.getElementById("res_p7a").value == "") {
+      $('#but_res_p7a').addClass('hidden');
+      $('#p_p7a').addClass('hidden');
+      $('#div_error_p7a').removeClass('hidden');
+    } else {
       $('#div_p7a').slideUp();
       $('#div_p7a').addClass('hidden');
       $('#pregunta_p7a_footer').addClass('hidden');
@@ -2327,6 +2423,7 @@
       $('#pregunta_p8_footer').removeClass('hidden');
       $('#div_error_p8').addClass('hidden');
       document.getElementById("res_p8").focus();
+    }
   }
 
   $(document).ready(function(){ 
@@ -2366,7 +2463,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">8 de 17 respuestas</span>
+        <span style="color: #222d5a">22 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 47%; background-color: #afcb3a;"></div>
           </div>
@@ -2408,6 +2505,17 @@
   document.getElementById("pregunta_p9_p8_boton").addEventListener("click", fun_p8);
   document.getElementById("but_res_p8").addEventListener("click", fun_p8);
   function fun_p8() {
+    var frase = document.getElementById("res_p8").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p8").value = frase;
+    if (document.getElementById("res_p8").value == "") {
+      $('#but_res_p8').addClass('hidden');
+      $('#p_p8').addClass('hidden');
+      $('#div_error_p8').removeClass('hidden');
+    } else {
       $('#div_p8').slideUp();
       $('#div_p8').addClass('hidden');
       $('#pregunta_p8_footer').addClass('hidden');
@@ -2416,6 +2524,7 @@
       $('#pregunta_p9_footer').removeClass('hidden');
       $('#div_error_p9').addClass('hidden');
       document.getElementById("res_p9").focus();
+    }
   }
 
   $(document).ready(function(){ 
@@ -2498,7 +2607,7 @@
   <div class="centrado-abajo" style="margin-top: 150px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">9 de 17 respuestas</span>
+        <span style="color: #222d5a">23 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 52%; background-color: #afcb3a;"></div>
           </div>
@@ -2581,7 +2690,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">9 de 17 respuestas</span>
+        <span style="color: #222d5a">24 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 52%; background-color: #afcb3a;"></div>
           </div>
@@ -2623,6 +2732,17 @@
   document.getElementById("pregunta_p10_p9a_boton").addEventListener("click", fun_p9a);
   document.getElementById("but_res_p9a").addEventListener("click", fun_p9a);
   function fun_p9a() {
+    var frase = document.getElementById("res_p9a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p9a").value = frase;
+    if (document.getElementById("res_p9a").value == "") {
+      $('#but_res_p9a').addClass('hidden');
+      $('#p_p9a').addClass('hidden');
+      $('#div_error_p9a').removeClass('hidden');
+    } else {
       $('#div_p9a').slideUp();
       $('#div_p9a').addClass('hidden');
       $('#pregunta_p9a_footer').addClass('hidden');
@@ -2631,6 +2751,7 @@
       $('#pregunta_p10_footer').removeClass('hidden');
       $('#div_error_p10').addClass('hidden');
       document.getElementById("res_p10").focus();
+    }
   }
 
   $(document).ready(function(){ 
@@ -2747,7 +2868,7 @@
   <div class="centrado-abajo" style="margin-top: 70px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">10 de 17 respuestas</span>
+        <span style="color: #222d5a">25 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 58%; background-color: #afcb3a;"></div>
           </div>
@@ -2834,7 +2955,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">10 de 17 respuestas</span>
+        <span style="color: #222d5a">26 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 58%; background-color: #afcb3a;"></div>
           </div>
@@ -2876,6 +2997,17 @@
   document.getElementById("pregunta_p11_p10a_boton").addEventListener("click", fun_p10a);
   document.getElementById("but_res_p10a").addEventListener("click", fun_p10a);
   function fun_p10a() {
+    var frase = document.getElementById("res_p10a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p10a").value = frase;
+    if (document.getElementById("res_p10a").value == "") {
+      $('#but_res_p10a').addClass('hidden');
+      $('#p_p10a').addClass('hidden');
+      $('#div_error_p10a').removeClass('hidden');
+    } else {
       $('#div_p10a').slideUp();
       $('#div_p10a').addClass('hidden');
       $('#pregunta_p10a_footer').addClass('hidden');
@@ -2884,6 +3016,7 @@
       $('#pregunta_p11_footer').removeClass('hidden');
       $('#div_error_p11').addClass('hidden');
       document.getElementById("res_p11").focus();
+    }
   }
 
   $(document).ready(function(){ 
@@ -3000,7 +3133,7 @@
   <div class="centrado-abajo" style="margin-top: 240px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">11 de 17 respuestas</span>
+        <span style="color: #222d5a">26 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 64%; background-color: #afcb3a;"></div>
           </div>
@@ -3095,7 +3228,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">11 de 17 respuestas</span>
+        <span style="color: #222d5a">27 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 64%; background-color: #afcb3a;"></div>
           </div>
@@ -3137,6 +3270,17 @@
   document.getElementById("pregunta_p12_p11a_boton").addEventListener("click", fun_p11a);
   document.getElementById("but_res_p11a").addEventListener("click", fun_p11a);
   function fun_p11a() {
+    var frase = document.getElementById("res_p11a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p11a").value = frase;
+    if (document.getElementById("res_p11a").value == "") {
+      $('#but_res_p11a').addClass('hidden');
+      $('#p_p11a').addClass('hidden');
+      $('#div_error_p11a').removeClass('hidden');
+    } else {
       $('#div_p11a').slideUp();
       $('#div_p11a').addClass('hidden');
       $('#pregunta_p11a_footer').addClass('hidden');
@@ -3145,6 +3289,7 @@
       $('#pregunta_p12_footer').removeClass('hidden');
       $('#div_error_p12').addClass('hidden');
       document.getElementById("res_p12").focus();
+    }
   }
 
   $(document).ready(function(){ 
@@ -3192,7 +3337,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">12 de 17 respuestas</span>
+        <span style="color: #222d5a">28 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 70%; background-color: #afcb3a;"></div>
           </div>
@@ -3269,7 +3414,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">12 de 17 respuestas</span>
+        <span style="color: #222d5a">29 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 70%; background-color: #afcb3a;"></div>
           </div>
@@ -3311,6 +3456,17 @@
   document.getElementById("pregunta_p13_p12b_boton").addEventListener("click", fun_p12b);
   document.getElementById("but_res_p12b").addEventListener("click", fun_p12b);
   function fun_p12b() {
+    var frase = document.getElementById("res_p12b").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p12b").value = frase;
+    if (document.getElementById("res_p12b").value == "") {
+      $('#but_res_p12b').addClass('hidden');
+      $('#p_p12b').addClass('hidden');
+      $('#div_error_p12b').removeClass('hidden');
+    } else {
       $('#div_p12b').slideUp();
       $('#div_p12b').addClass('hidden');
       $('#pregunta_p12b_footer').addClass('hidden');
@@ -3319,6 +3475,7 @@
       $('#pregunta_p13_footer').removeClass('hidden');
       $('#div_error_p13').addClass('hidden');
       document.getElementById("res_p13").focus();
+    }
   }
 
   $(document).ready(function(){ 
@@ -3359,7 +3516,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">13 de 17 respuestas</span>
+        <span style="color: #222d5a">30 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 76%; background-color: #afcb3a;"></div>
           </div>
@@ -3401,6 +3558,17 @@
   document.getElementById("pregunta_p14_p13_boton").addEventListener("click", fun_p13);
   document.getElementById("but_res_p13").addEventListener("click", fun_p13);
   function fun_p13() {
+    var frase = document.getElementById("res_p13").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p13").value = frase;
+    if (document.getElementById("res_p13").value == "") {
+      $('#but_res_p13').addClass('hidden');
+      $('#p_p13').addClass('hidden');
+      $('#div_error_p13').removeClass('hidden');
+    } else {
       $('#div_p13').slideUp();
       $('#div_p13').addClass('hidden');
       $('#pregunta_p13_footer').addClass('hidden');
@@ -3409,6 +3577,7 @@
       $('#pregunta_p14_footer').removeClass('hidden');
       $('#div_error_p14').addClass('hidden');
       document.getElementById("res_p14").focus();
+    }
   }
 
   $(document).ready(function(){ 
@@ -3471,7 +3640,7 @@
   <div class="centrado-abajo" style="margin-top: 50px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">14 de 17 respuestas</span>
+        <span style="color: #222d5a">31 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 82%; background-color: #afcb3a;"></div>
           </div>
@@ -3559,7 +3728,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">14 de 17 respuestas</span>
+        <span style="color: #222d5a">32 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 82%; background-color: #afcb3a;"></div>
           </div>
@@ -3601,6 +3770,17 @@
   document.getElementById("pregunta_p15_p14a_boton").addEventListener("click", fun_p14a);
   document.getElementById("but_res_p14a").addEventListener("click", fun_p14a);
   function fun_p14a() {
+    var frase = document.getElementById("res_p14a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p14a").value = frase;
+    if (document.getElementById("res_p14a").value == "") {
+      $('#but_res_p14a').addClass('hidden');
+      $('#p_p14a').addClass('hidden');
+      $('#div_error_p14a').removeClass('hidden');
+    } else {
       $('#div_p14a').slideUp();
       $('#div_p14a').addClass('hidden');
       $('#pregunta_p14a_footer').addClass('hidden');
@@ -3609,6 +3789,7 @@
       $('#pregunta_p15_footer').removeClass('hidden');
       $('#div_error_p15').addClass('hidden');
       document.getElementById("res_p15").focus();
+    }
   }
 
   $(document).ready(function(){ 
@@ -3661,7 +3842,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">15 de 17 respuestas</span>
+        <span style="color: #222d5a">32 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 88%; background-color: #afcb3a;"></div>
           </div>
@@ -3729,7 +3910,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">16 de 17 respuestas</span>
+        <span style="color: #222d5a">33 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 94%; background-color: #afcb3a;"></div>
           </div>
@@ -3747,6 +3928,69 @@
     </div>
   </div> 
 </div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p16");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p16").click();
+      }
+    });
+
+  document.getElementById("pregunta_p15_p16_boton").addEventListener("click", fun_p16_dev);
+  function fun_p16_dev() {
+      $('#div_p15').slideDown();
+      $('#div_p15').removeClass('hidden');
+      $('#pregunta_p15_footer').removeClass('hidden');
+      $('#div_p16').slideUp();
+      $('#div_p16').addClass('hidden');
+      $('#pregunta_p16_footer').addClass('hidden');
+      $('#div_error_p16').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p17_p16_boton").addEventListener("click", fun_p16);
+  document.getElementById("but_res_p16").addEventListener("click", fun_p16);
+    function fun_p16() {
+    var frase = document.getElementById("res_p16").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p16").value = frase;
+    if (document.getElementById("res_p16").value == "") {
+      $('#but_res_p16').addClass('hidden');
+      $('#p_p16').addClass('hidden');
+      $('#div_error_p16').removeClass('hidden');
+    } else {
+      $('#div_p16').slideUp();
+      $('#div_p16').addClass('hidden');
+      $('#pregunta_p16_footer').addClass('hidden');
+      $('#div_p17').slideDown();
+      $('#div_p17').removeClass('hidden');
+      $('#pregunta_p17_footer').removeClass('hidden');
+      $('#div_error_p17').addClass('hidden');
+      document.getElementById("res_p17").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    //document.getElementById("but_res_pregunta_0").focus();
+
+    $('#res_p16').on('input', function() { 
+      if (document.getElementById("res_p16").value == "") {
+      $('#but_res_p16').addClass('hidden');
+      $('#p_p16').addClass('hidden');
+      $('#div_error_p16').removeClass('hidden');
+      } else {
+       $('#but_res_p16').removeClass('hidden');
+       $('#p_p16').removeClass('hidden');
+       $('#div_error_p16').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p17">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">17.- En promedio, cuántos son sus ingresos mensuales:</h2>
@@ -3767,7 +4011,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">17 de 17 respuestas</span>
+        <span style="color: #222d5a">34 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 100%; background-color: #afcb3a;"></div>
           </div>
@@ -3786,6 +4030,69 @@
   </div> 
 </div>
 
+<script type="text/javascript">
+  var input = document.getElementById("res_p17");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p17").click();
+      }
+    });
+
+  document.getElementById("pregunta_p16_p17_boton").addEventListener("click", fun_p17_dev);
+  function fun_p17_dev() {
+      $('#div_p16').slideDown();
+      $('#div_p16').removeClass('hidden');
+      $('#pregunta_p16_footer').removeClass('hidden');
+      $('#div_p17').slideUp();
+      $('#div_p17').addClass('hidden');
+      $('#pregunta_p17_footer').addClass('hidden');
+      $('#div_error_p17').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_ps_p17_boton").addEventListener("click", fun_p17);
+  document.getElementById("but_res_p17").addEventListener("click", fun_p17);
+    function fun_p17() {
+    var frase = document.getElementById("res_p17").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p17").value = frase;
+    if (document.getElementById("res_p17").value == "") {
+      $('#but_res_p17').addClass('hidden');
+      $('#p_p17').addClass('hidden');
+      $('#div_error_p17').removeClass('hidden');
+    } else {
+      $('#div_p17').slideUp();
+      $('#div_p17').addClass('hidden');
+      $('#pregunta_p17_footer').addClass('hidden');
+      $('#div_ps').slideDown();
+      $('#div_ps').removeClass('hidden');
+      $('#pregunta_ps_footer').removeClass('hidden');
+      $('#div_error_ps').addClass('hidden');
+      document.getElementById("res_ps").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    //document.getElementById("but_res_pregunta_0").focus();
+
+    $('#res_p17').on('input', function() { 
+      if (document.getElementById("res_p17").value == "") {
+      $('#but_res_p17').addClass('hidden');
+      $('#p_p17').addClass('hidden');
+      $('#div_error_p17').removeClass('hidden');
+      } else {
+       $('#but_res_p17').removeClass('hidden');
+       $('#p_p17').removeClass('hidden');
+       $('#div_error_p17').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
 <div class="centrado hidden" style="width: 90%; text-align: center; position: absolute;" id="div_pregunta_s">
   <h1 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Para efectos de supervisión, ¿me podría dar los siguientes datos, por favor?</h1>
   <br>
@@ -3795,6 +4102,7 @@
     Siguiente!
   </button>
 </div>
+
 
 <div class="centrado hidden" style="width: 90%;" id="div_pst">
   <br>
@@ -3820,7 +4128,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">17 de 17 respuestas</span>
+        <span style="color: #222d5a">35 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 100%; background-color: #afcb3a;"></div>
           </div>
@@ -3867,7 +4175,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a;">17 de 17 respuestas</span>
+        <span style="color: #222d5a;">36 de 17 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 100%; background-color: #afcb3a;"></div>
           </div>

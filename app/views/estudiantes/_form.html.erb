@@ -271,9 +271,8 @@
   <br>
   <div class="field qts">
     <%= f.text_field :nombre, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_nombre", placeholder: "Nombre completo del entrevistado"}%>
-    <div class="invalid-feedback" style="color: #222d5a;" id="div_error_nombre"><strong>Por favor, diligencia tu nombre!</strong></div>
   </div>
-  
+  <div class="hidden" style="color: #222d5a;" id="div_error_nombre"><strong>Por favor, diligencia tu nombre!</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_nombre">
     <i class="fas fa-check-circle"></i>
     OK
@@ -284,9 +283,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">1 de 17 respuestas</span>
+        <span style="color: #222d5a">1 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 6%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 3%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -377,7 +376,7 @@
   <div class="field qts">
     <%= f.select :semestre, [["8"], ["9"], ["10"]], {:prompt => 'Seleccioná el semestre'}, {class: "", style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_semestre" , autocomplete: "off", placeholder: "Escoge el tipo de contrato aquí"}%>
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_semestre"><strong>Por favor, selecciona un semestre!</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_semestre"><strong>Por favor, selecciona un semestre!</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_semestre">
     <i class="fas fa-check-circle"></i>
     OK
@@ -388,9 +387,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">2 de 17 respuestas</span>
+        <span style="color: #222d5a">2 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 12%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 6%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -430,7 +429,7 @@
   document.getElementById("pregunta_carrera_semestre_boton").addEventListener("click", fun_semestre);
   document.getElementById("but_res_semestre").addEventListener("click", fun_semestre);
   function fun_semestre() {
-    if (document.getElementById("res_semestre").value == "Seleccioná el semestre") {
+    if (document.getElementById("res_semestre").value == "") {
       $('#but_res_semestre').addClass('hidden');
       $('#p_semestre').addClass('hidden');
       $('#div_error_semestre').removeClass('hidden');
@@ -500,7 +499,7 @@
     </div>
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_carrera"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_carrera"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_carrera">
     <i class="fas fa-check-circle"></i>
     OK
@@ -511,9 +510,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">3 de 17 respuestas</span>
+        <span style="color: #222d5a">3 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 18%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 9%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -597,7 +596,7 @@
     </div>
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_universidad"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_universidad"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_universidad">
     <i class="fas fa-check-circle"></i>
     OK
@@ -608,9 +607,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">4 de 17 respuestas</span>
+        <span style="color: #222d5a">4 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 24%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 12%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -674,7 +673,7 @@
     </div>
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_trabaja"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_trabaja"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_trabaja">
     <i class="fas fa-check-circle"></i>
     OK
@@ -685,9 +684,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">5 de 17 respuestas</span>
+        <span style="color: #222d5a">5 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 30%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 15%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -739,7 +738,7 @@
     <%= f.text_field :empresa, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_empresa", placeholder: "Empresa"}%>
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_empresa"><strong>Por favor, digite</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_empresa"><strong>Por favor, digite</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_empresa">
     <i class="fas fa-check-circle"></i>
     OK
@@ -750,9 +749,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">6 de 17 respuestas</span>
+        <span style="color: #222d5a">6 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 36%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 18%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -841,7 +840,7 @@
     <%= f.text_field :cargo, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_cargo", placeholder: "Cargo"}%>
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_cargo"><strong>Por favor, digite</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_cargo"><strong>Por favor, digite</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_cargo">
     <i class="fas fa-check-circle"></i>
     OK
@@ -852,9 +851,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">7 de 17 respuestas</span>
+        <span style="color: #222d5a">7 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 42%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 21%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -949,7 +948,7 @@
     </div>
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p1"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p1"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p1">
     <i class="fas fa-check-circle"></i>
     OK
@@ -960,9 +959,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">8 de 17 respuestas</span>
+        <span style="color: #222d5a">8 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 48%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 24%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1058,7 +1057,7 @@
     </div>
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p2a"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p2a"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p2a">
     <i class="fas fa-check-circle"></i>
     OK
@@ -1069,9 +1068,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">9 de 17 respuestas</span>
+        <span style="color: #222d5a">9 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 54%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 27%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1134,7 +1133,7 @@
     <%= f.text_field :p2b, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p2b", placeholder: "Razones"}%>    
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p2b"><strong>Por favor, digite</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p2b"><strong>Por favor, digite</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p2b">
     <i class="fas fa-check-circle"></i>
     OK
@@ -1145,9 +1144,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">10 de 17 respuestas</span>
+        <span style="color: #222d5a">10 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 60%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 30%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1234,7 +1233,7 @@
     <%= f.text_field :p3, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p3", placeholder: "Escriba aquí"}%>    
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p3"><strong>Por favor, digite</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p3"><strong>Por favor, digite</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p3">
     <i class="fas fa-check-circle"></i>
     OK
@@ -1245,9 +1244,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">11 de 17 respuestas</span>
+        <span style="color: #222d5a">11 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 66%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 33%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1336,7 +1335,7 @@
     <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: "Escriba aquí"}%>    
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p4"><strong>Por favor, digite</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p4"><strong>Por favor, digite</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p4">
     <i class="fas fa-check-circle"></i>
     OK
@@ -1347,9 +1346,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">12 de 17 respuestas</span>
+        <span style="color: #222d5a">12 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 72%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 36%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1471,7 +1470,7 @@
     </table>   
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p5a"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p5a"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p5a">
     <i class="fas fa-check-circle"></i>
     OK
@@ -1482,9 +1481,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">13 de 17 respuestas</span>
+        <span style="color: #222d5a">13 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 78%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 39%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1575,7 +1574,7 @@
     </table>   
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p5b"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p5b"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p5b">
     <i class="fas fa-check-circle"></i>
     OK
@@ -1586,9 +1585,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">14 de 17 respuestas</span>
+        <span style="color: #222d5a">14 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 84%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 42%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1678,7 +1677,7 @@
     </table>   
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p5c"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p5c"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p5c">
     <i class="fas fa-check-circle"></i>
     OK
@@ -1689,9 +1688,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">15 de 17 respuestas</span>
+        <span style="color: #222d5a">15 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 90%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 45%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1781,7 +1780,7 @@
     </table>   
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p5d"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p5d"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p5d">
     <i class="fas fa-check-circle"></i>
     OK
@@ -1792,9 +1791,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">16 de 17 respuestas</span>
+        <span style="color: #222d5a">16 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 27%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 48%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1884,7 +1883,7 @@
     </table>   
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p5e"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p5e"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p5e">
     <i class="fas fa-check-circle"></i>
     OK
@@ -1895,9 +1894,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">17 de 17 respuestas</span>
+        <span style="color: #222d5a">17 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 28%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 51%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1987,7 +1986,7 @@
     </table>   
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p5f"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p5f"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p5f">
     <i class="fas fa-check-circle"></i>
     OK
@@ -1998,9 +1997,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">18 de 17 respuestas</span>
+        <span style="color: #222d5a">18 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 29%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 54%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -2090,7 +2089,7 @@
     </table>   
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p5g"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p5g"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p5g">
     <i class="fas fa-check-circle"></i>
     OK
@@ -2101,9 +2100,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">19 de 17 respuestas</span>
+        <span style="color: #222d5a">19 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 30%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 57%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -2171,7 +2170,7 @@
     </div>      
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p6"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p6"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p6">
     <i class="fas fa-check-circle"></i>
     OK
@@ -2182,9 +2181,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">20 de 17 respuestas</span>
+        <span style="color: #222d5a">20 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 35%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 60%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -2271,7 +2270,7 @@
     </div>
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p7"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p7"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p7">
     <i class="fas fa-check-circle"></i>
     OK
@@ -2282,9 +2281,9 @@
   <div class="centrado-abajo" style="margin-top: 30px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">21 de 17 respuestas</span>
+        <span style="color: #222d5a">21 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 41%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 63%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -2351,7 +2350,7 @@
     <%= f.text_field :p7a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p7a", placeholder: "Cuál otro horario preferiría"}%> 
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p7a"><strong>Por favor, escribe sin signos</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p7a"><strong>Por favor, escribe sin signos</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p7a">
     <i class="fas fa-check-circle"></i>
     OK
@@ -2362,9 +2361,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">21 de 17 respuestas</span>
+        <span style="color: #222d5a">21 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 41%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 66%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -2452,7 +2451,7 @@
     <%= f.text_field :p8, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p8", placeholder: "Escriba aquí el valor"}%> 
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p8"><strong>Por favor, escribe sin signos</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p8"><strong>Por favor, escribe sin signos</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p8">
     <i class="fas fa-check-circle"></i>
     OK
@@ -2463,9 +2462,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">22 de 17 respuestas</span>
+        <span style="color: #222d5a">22 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 47%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 66%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -2596,7 +2595,7 @@
     </div> 
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p9"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p9"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p9">
     <i class="fas fa-check-circle"></i>
     OK
@@ -2607,9 +2606,9 @@
   <div class="centrado-abajo" style="margin-top: 150px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">23 de 17 respuestas</span>
+        <span style="color: #222d5a">23 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 52%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 69%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -2679,7 +2678,7 @@
     <%= f.text_field :p7a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p9a", placeholder: "¿Cuál otra modalidad de pago?"}%> 
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p9a"><strong>Por favor, escribe sin signos</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p9a"><strong>Por favor, escribe sin signos</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p9a">
     <i class="fas fa-check-circle"></i>
     OK
@@ -2690,9 +2689,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">24 de 17 respuestas</span>
+        <span style="color: #222d5a">24 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 52%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 72%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -2857,7 +2856,7 @@
 </div>
 </div>
 
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p10"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p10"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p10">
     <i class="fas fa-check-circle"></i>
     OK
@@ -2868,9 +2867,9 @@
   <div class="centrado-abajo" style="margin-top: 70px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">25 de 17 respuestas</span>
+        <span style="color: #222d5a">25 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 58%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 75%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -2944,7 +2943,7 @@
     <%= f.text_field :p10a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p10a", placeholder: "¿Cuál universidad?"}%> 
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p10a"><strong>Por favor, escribe sin signos</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p10a"><strong>Por favor, escribe sin signos</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p10a">
     <i class="fas fa-check-circle"></i>
     OK
@@ -2955,9 +2954,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">26 de 17 respuestas</span>
+        <span style="color: #222d5a">26 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 58%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 78%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -3122,7 +3121,7 @@
 </div>
 </div>
 
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p11"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p11"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p11">
     <i class="fas fa-check-circle"></i>
     OK
@@ -3133,9 +3132,9 @@
   <div class="centrado-abajo" style="margin-top: 240px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">26 de 17 respuestas</span>
+        <span style="color: #222d5a">26 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 64%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 81%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -3217,7 +3216,7 @@
     <%= f.text_field :p11a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p11a", placeholder: "¿Cuales características?"}%> 
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p11a"><strong>Por favor, escribe sin signos</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p11a"><strong>Por favor, escribe sin signos</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p11a">
     <i class="fas fa-check-circle"></i>
     OK
@@ -3228,9 +3227,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">27 de 17 respuestas</span>
+        <span style="color: #222d5a">27 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 64%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 84%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -3326,7 +3325,7 @@
     </div>
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p12"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p12"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p12">
     <i class="fas fa-check-circle"></i>
     OK
@@ -3337,9 +3336,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">28 de 17 respuestas</span>
+        <span style="color: #222d5a">28 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 70%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 87%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -3403,7 +3402,7 @@
     <%= f.text_field :p12b, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p12b", placeholder: "¿Cuál?"}%>    
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p12b"><strong>Por favor, digite</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p12b"><strong>Por favor, digite</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p12b">
     <i class="fas fa-check-circle"></i>
     OK
@@ -3414,9 +3413,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">29 de 17 respuestas</span>
+        <span style="color: #222d5a">29 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 70%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 90%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -3505,7 +3504,7 @@
     <%= f.text_field :p13, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p13", placeholder: "Escriba aquí"}%>    
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p13"><strong>Por favor, digite</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p13"><strong>Por favor, digite</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p13">
     <i class="fas fa-check-circle"></i>
     OK
@@ -3516,9 +3515,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">30 de 17 respuestas</span>
+        <span style="color: #222d5a">30 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 76%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 93%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -3629,7 +3628,7 @@
     </div>
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p14"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p14"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p14">
     <i class="fas fa-check-circle"></i>
     OK
@@ -3640,9 +3639,9 @@
   <div class="centrado-abajo" style="margin-top: 50px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">31 de 17 respuestas</span>
+        <span style="color: #222d5a">31 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 82%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 84%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -3717,7 +3716,7 @@
     <%= f.text_field :p14a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p14a", placeholder: "¿Cuáles?"}%>    
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p14a"><strong>Por favor, digite</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p14a"><strong>Por favor, digite</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p14a">
     <i class="fas fa-check-circle"></i>
     OK
@@ -3728,9 +3727,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">32 de 17 respuestas</span>
+        <span style="color: #222d5a">32 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 82%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 87%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -3831,7 +3830,7 @@
     </div>
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p15"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p15"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p15">
     <i class="fas fa-check-circle"></i>
     OK
@@ -3842,9 +3841,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">32 de 17 respuestas</span>
+        <span style="color: #222d5a">32 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 88%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 90%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -3899,7 +3898,7 @@
     <%= f.text_field :p16, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p16", placeholder: "Escriba aquí"}%>
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p16"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p16"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p16">
     <i class="fas fa-check-circle"></i>
     OK
@@ -3910,9 +3909,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">33 de 17 respuestas</span>
+        <span style="color: #222d5a">33 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 94%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 93%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -4000,7 +3999,7 @@
     <%= f.text_field :p17, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p17", placeholder: "Escriba aquí"}%>
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_p17"><strong>Por favor, selecciona una opción</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p17"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p17">
     <i class="fas fa-check-circle"></i>
     OK
@@ -4011,9 +4010,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">34 de 17 respuestas</span>
+        <span style="color: #222d5a">34 de 37 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 100%; background-color: #afcb3a;"></div>
+            <div class="bar" style="width: 96%; background-color: #afcb3a;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -4117,7 +4116,7 @@
     <%= f.text_field :ps3, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_ps2", placeholder: "Télefono fijo o celular"}%>
 
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_pst"><strong>Por favor, diligencie todos los campos</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_pst"><strong>Por favor, diligencie todos los campos</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_pst">
     <i class="fas fa-check-circle"></i>
     OK
@@ -4128,7 +4127,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a">35 de 17 respuestas</span>
+        <span style="color: #222d5a">35 de 37 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 100%; background-color: #afcb3a;"></div>
           </div>
@@ -4164,7 +4163,7 @@
     <h4 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Nombre del encuestador</h4>
     <%= f.text_field :ps1, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_pd", placeholder: "Nombre del encuestador"}%>
   </div>
-  <div class="invalid-feedback hidden" style="color: #222d5a;" id="div_error_pd"><strong>Por favor, diligencie los campos</strong></div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_pd"><strong>Por favor, diligencie los campos</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_pd">
     <i class="fas fa-check-circle"></i>
     OK
@@ -4175,7 +4174,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a;">36 de 17 respuestas</span>
+        <span style="color: #222d5a;">36 de 37 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 100%; background-color: #afcb3a;"></div>
           </div>
@@ -4203,7 +4202,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #222d5a;">17 de 17 respuestas</span>
+        <span style="color: #222d5a;">17 de 37 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 100%; background-color: #942f88;"></div>
           </div>

@@ -725,6 +725,7 @@
 
   function fun_trabaja() {
     setTimeout(function(){
+      alert($("#radio-1-trabaja").is(':checked'));
       $('#div_trabaja').slideUp();
       $('#div_trabaja').addClass('hidden');
       $('#pregunta_trabaja_footer').addClass('hidden');
@@ -738,6 +739,7 @@
   document.getElementById("radio-1-trabaja").addEventListener("click", fun_op1);
   function fun_op1() {
     setTimeout(function(){
+      alert($("#radio-1-trabaja").is(':checked'));
       $('#div_trabaja').slideUp();
       $('#div_trabaja').addClass('hidden');
       $('#pregunta_trabaja_footer').addClass('hidden');
@@ -4113,7 +4115,7 @@
       $('#p_p16').addClass('hidden');
       $('#div_error_p16').removeClass('hidden');
     } else {
-      if (document.getElementById("radio-1-trabaja").value == "si") {
+      if ($("#radio-1-trabaja").is(':checked') == true) {
         $('#div_p16').slideUp();
         $('#div_p16').addClass('hidden');
         $('#pregunta_p16_footer').addClass('hidden');

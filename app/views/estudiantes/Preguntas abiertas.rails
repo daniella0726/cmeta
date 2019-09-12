@@ -46,8 +46,6 @@
 
   $(document).ready(function(){ 
 
-    //document.getElementById("but_res_pregunta_0").focus();
-
     $('#res_estoy').on('input', function() { 
       var frase = document.getElementById("res_estoy").value; 
       frase = frase.replace("#"," ");

@@ -481,25 +481,19 @@
     </div>
 
     <div class="inputGroup">
-      <%= f.radio_button :carrera, "Administracion de negocios internacionales" , id:"radio-3-carrera"%>
-      <%= f.label :carrera, "Administración de negocios internacionales", for: "radio-3-carrera"%>
+      <%= f.radio_button :carrera, "Mercadeo" , id:"radio-3-carrera"%>
+      <%= f.label :carrera, "Mercadeo", for: "radio-3-carrera"%>
     </div>
 
     <div class="inputGroup">
-      <%= f.radio_button :carrera, "Administracion y negocios internacionales" , id:"radio-6-carrera"%>
-      <%= f.label :carrera, "Administración y Negocios Internacionales", for: "radio-6-carrera"%>
+      <%= f.radio_button :carrera, "Administracion y negocios internacionales" , id:"radio-4-carrera"%>
+      <%= f.label :carrera, "Administración y Negocios Internacionales", for: "radio-4-carrera"%>
     </div>
 
     <div class="inputGroup">
-      <%= f.radio_button :carrera, "Finanzas" , id:"radio-4-carrera"%>
-      <%= f.label :carrera, "Finanzas", for: "radio-4-carrera"%>
+      <%= f.radio_button :carrera, "Finanzas" , id:"radio-5-carrera"%>
+      <%= f.label :carrera, "Finanzas", for: "radio-5-carrera"%>
     </div>
-
-    <div class="inputGroup">
-      <%= f.radio_button :carrera, "Mercadeo" , id:"radio-5-carrera"%>
-      <%= f.label :carrera, "Mercadeo", for: "radio-5-carrera"%>
-    </div>
-
   </div>
   <div class="hidden" style="color: #222d5a;" id="div_error_carrera"><strong>Por favor, selecciona una opción</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_carrera">
@@ -725,7 +719,6 @@
 
   function fun_trabaja() {
     setTimeout(function(){
-      alert($("#radio-1-trabaja").is(':checked'));
       $('#div_trabaja').slideUp();
       $('#div_trabaja').addClass('hidden');
       $('#pregunta_trabaja_footer').addClass('hidden');
@@ -739,7 +732,6 @@
   document.getElementById("radio-1-trabaja").addEventListener("click", fun_op1);
   function fun_op1() {
     setTimeout(function(){
-      alert($("#radio-1-trabaja").is(':checked'));
       $('#div_trabaja').slideUp();
       $('#div_trabaja').addClass('hidden');
       $('#pregunta_trabaja_footer').addClass('hidden');
@@ -4620,7 +4612,7 @@
 <div class="centrado hidden" style="width: 90%; text-align: center;" id="div_pg">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Terminaste!</h2>
     <i class="fas fa-check-circle" id="but_pregunta_pg"></i>
-    <%= f.submit "Guardar", :class => 'boton3'%>
+    <a onclick='downloadCSV({ filename: "Modulo17CensoAgropecuario.csv" });' class="boton3" > Descargar encuesta </a>
 </div>  
 <div class="container hidden" id="pregunta_pg_footer">
   <div class="centrado-abajo">
@@ -4701,3 +4693,115 @@
   </div>
 <% end %>
 </div>
+
+<script type="text/javascript">
+
+  function convertArrayOfObjectsToCSV(args) {
+        var result, ctr, keys, columnDelimiter, lineDelimiter, data;
+ 
+        data = args.data || null;
+        if (data == null || !data.length) {
+            return null;
+        }
+ 
+        columnDelimiter = args.columnDelimiter || ',';
+        lineDelimiter = args.lineDelimiter || '\n';
+ 
+        keys = Object.keys(data[0]);
+ 
+        result = '';
+        result += keys.join(columnDelimiter);
+        result += lineDelimiter;
+ 
+        data.forEach(function(item) {
+            ctr = 0;
+            keys.forEach(function(key) {
+                if (ctr > 0) result += columnDelimiter;
+ 
+                result += item[key];
+                ctr++;
+            });
+            result += lineDelimiter;
+        });
+ 
+        return result;
+    }
+
+  function downloadCSV(args) {
+    var carrera_val = "";
+       if ($("#radio-1-trabaja").is(':checked') == true) {
+        carrera_val = "Economía";
+       }
+       if ($("#radio-2-trabaja").is(':checked') == true) {
+        carrera_val = "Administracion de Empresas";
+       }
+       if ($("#radio-3-trabaja").is(':checked') == true) {
+        carrera_val = "Mercadeo";
+       }
+       if ($("#radio-4-trabaja").is(':checked') == true) {
+        carrera_val = "Administración y Negocios Internacionales";
+       }
+       if ($("#radio-5-trabaja").is(':checked') == true) {
+        carrera_val = "Finanzas";
+       }
+
+       var universidad_val = "";
+       if ($("#radio-1-universidad").is(':checked') == true) {
+        universidad_val = "Fundacion Universitaria Internacional del Tropico Americano";
+       }
+       if ($("#radio-2-universidad").is(':checked') == true) {
+        universidad_val = "Fundacion Universitaria Tecnologica de Casanare (FUC)";
+       }
+       if ($("#radio-3-universidad").is(':checked') == true) {
+        universidad_val = "Corporacion Universitaria Remington";
+       }
+       if ($("#radio-4-universidad").is(':checked') == true) {
+        universidad_val = "Universidad de Boyaca";
+       }
+       if ($("#radio-5-universidad").is(':checked') == true) {
+        universidad_val = "Universidad de San Gil";
+       }
+       if ($("#radio-6-universidad").is(':checked') == true) {
+        universidad_val = "UNAD";
+       }
+       
+        var data, filename, link;
+        var stockData = [
+         {
+         Pregunta: "Nombre",
+         Respuesta : $("#res_nombre").val()
+         },
+         {
+         Pregunta: "Semestre",
+         Respuesta : $("#res_semestre").val()
+         },
+         {
+         Pregunta: "Carrera",
+         Respuesta : carrera_val
+         },
+         {
+         Pregunta: "Universidad",
+         Respuesta : universidad_val
+         },
+         ];
+
+  var csv = convertArrayOfObjectsToCSV({
+            data: stockData
+          });
+          if (csv == null) return;
+   
+          filename = args.filename || 'export.csv';
+   
+          if (!csv.match(/^data:text\/csv/i)) {
+              csv = 'data:text/csv;charset=utf-8,' + csv;
+          }
+          data = encodeURI(csv);
+   
+          link = document.createElement('a');
+          link.setAttribute('href', data);
+          link.setAttribute('download', filename);
+          link.click();
+          alert("Encuesta descargada con Exito");
+    }
+
+</script>

@@ -3155,23 +3155,23 @@
       </div>
 
       <div class="inputGroup">
-        <%= f.radio_button :p11b, "3" , id:"radio-3-p11"%>
-        <%= f.label :p11b, "Calidad de la planta de docentes", for: "radio-3-p11"%>
+        <%= f.radio_button :p11c, "3" , id:"radio-3-p11"%>
+        <%= f.label :p11c, "Calidad de la planta de docentes", for: "radio-3-p11"%>
       </div>
 
       <div class="inputGroup">
-        <%= f.radio_button :p11c, "4" , id:"radio-4-p11"%>
-        <%= f.label :p11c, "Facilidades de financiamiento ", for: "radio-4-p11"%>
+        <%= f.radio_button :p11d, "4" , id:"radio-4-p11"%>
+        <%= f.label :p11d, "Facilidades de financiamiento", for: "radio-4-p11"%>
       </div>
 
       <div class="inputGroup">
-        <%= f.radio_button :p11d, "5" , id:"radio-5-p11"%>
-        <%= f.label :p11d, "Egresados destacados de la universidad", for: "radio-5-p11"%>
+        <%= f.radio_button :p11e, "5" , id:"radio-5-p11"%>
+        <%= f.label :p11e, "Egresados destacados de la universidad", for: "radio-5-p11"%>
       </div>
 
       <div class="inputGroup">
-        <%= f.radio_button :p11e, "6" , id:"radio-6-p11"%>
-        <%= f.label :p11e, "Convenios con el exterior", for: "radio-6-p11"%>
+        <%= f.radio_button :p11f, "6" , id:"radio-6-p11"%>
+        <%= f.label :p11f, "Convenios con el exterior", for: "radio-6-p11"%>
       </div>
 
     </div>
@@ -3182,38 +3182,38 @@
     <div class="field qts">
 
     <div class="inputGroup">
-      <%= f.radio_button :p11f, "7" , id:"radio-7-p11"%>
-      <%= f.label :p11f, "Los costos de la especialización", for: "radio-7-p11"%>
+      <%= f.radio_button :p11g, "7" , id:"radio-7-p11"%>
+      <%= f.label :p11g, "Los costos de la especialización", for: "radio-7-p11"%>
     </div>   
 
     <div class="inputGroup">
-      <%= f.radio_button :p11g, "8" , id:"radio-8-p11"%>
-      <%= f.label :p11g, "Infraestructura de la universidad", for: "radio-8-p11"%>
+      <%= f.radio_button :p11h, "8" , id:"radio-8-p11"%>
+      <%= f.label :p11h, "Infraestructura de la universidad", for: "radio-8-p11"%>
     </div>
 
     <div class="inputGroup">
-      <%= f.radio_button :p11h, "9" , id:"radio-9-p11"%>
-      <%= f.label :p11h, "Recomendación de familia/amigos/terceros", for: "radio-9-p11"%>
+      <%= f.radio_button :p11i, "9" , id:"radio-9-p11"%>
+      <%= f.label :p11i, "Recomendación de familia/amigos/terceros", for: "radio-9-p11"%>
     </div> 
 
     <div class="inputGroup">
-      <%= f.radio_button :p11i, "10" , id:"radio-10-p11"%>
-      <%= f.label :p11i, "Empleabilidad de los egresados", for: "radio-10-p11"%>
+      <%= f.radio_button :p11j, "10" , id:"radio-10-p11"%>
+      <%= f.label :p11j, "Empleabilidad de los egresados", for: "radio-10-p11"%>
     </div> 
 
     <div class="inputGroup">
-      <%= f.radio_button :p11j, "11" , id:"radio-11-p11"%>
-      <%= f.label :p11j, "Acreditación de alta calidad de la especialización", for: "radio-11-p11"%>
+      <%= f.radio_button :p11k, "11" , id:"radio-11-p11"%>
+      <%= f.label :p11k, "Acreditación de alta calidad de la especialización", for: "radio-11-p11"%>
     </div> 
 
     <div class="inputGroup">
-      <%= f.radio_button :p11k, "12" , id:"radio-12-p11"%>
-      <%= f.label :p11k, "La universidad donde ya hizo estudios (pregrado o post)", for: "radio-12-p11"%>
+      <%= f.radio_button :p11l, "12" , id:"radio-12-p11"%>
+      <%= f.label :p11l, "La universidad donde ya hizo estudios (pregrado o post)", for: "radio-12-p11"%>
     </div> 
 
     <div class="inputGroup">
-      <%= f.radio_button :p11, "otro" , id:"radio-13-p11"%>
-      <%= f.label :p11, "OTROS. ¿CUÁLES?", for: "radio-13-p11"%>
+      <%= f.radio_button :p11m, "otro" , id:"radio-13-p11"%>
+      <%= f.label :p11m, "OTROS. ¿CUÁLES?", for: "radio-13-p11"%>
     </div> 
 
   </div>
@@ -4963,6 +4963,103 @@
        if ($("#radio-7-p7").is(':checked') == true) {
         p7_val = "Otro. ¿Cuál?";
        }
+       var p9_val = "";
+       if ($("#radio-1-p9").is(':checked') == true) {
+        p9_val = "Contado con descuento";
+       }
+       if ($("#radio-2-p9").is(':checked') == true) {
+        p9_val = "Crédito bancario";
+       }
+       if ($("#radio-3-p9").is(':checked') == true) {
+        p9_val = "ICETEX";
+       }
+       if ($("#radio-4-p9").is(':checked') == true) {
+        p9_val = "Apoyo familiar";
+       }
+       if ($("#radio-5-p9").is(':checked') == true) {
+        p9_val = "Cheques post fechados";
+       }
+       if ($("#radio-6-p9").is(':checked') == true) {
+        p9_val = "Crédito universitario";
+       }
+        if ($("#radio-7-p9").is(':checked') == true) {
+        p9_val = "Apoyo de la empresa donde trabaja";
+       }
+       if ($("#radio-8-p9").is(':checked') == true) {
+        p9_val = "Uso de cesantías";
+       }
+       if ($("#radio-9-p9").is(':checked') == true) {
+        p9_val = "Otro ¿Cuál?";
+       }
+
+       var p10_val = "";
+       if ($("#radio-1-p10").is(':checked') == true) {
+        p10_val = "Andes";
+       }
+       if ($("#radio-2-p10").is(':checked') == true) {
+        p10_val = "Javeriana";
+       }
+       if ($("#radio-3-p10").is(':checked') == true) {
+        p10_val = "Rosario";
+       }
+       if ($("#radio-4-p10").is(':checked') == true) {
+        p10_val = "Nacional";
+       }
+       if ($("#radio-5-p10").is(':checked') == true) {
+        p10_val = "UNAD";
+       }
+       if ($("#radio-6-p10").is(':checked') == true) {
+        p10_val = "Fundación Universitaria Internacional del Trópico Américano";
+       }
+       if ($("#radio-7-p10").is(':checked') == true) {
+        p10_val = "Fundación Universitaria Tecnológica del Casanare";
+       }
+       if ($("#radio-8-p10").is(':checked') == true) {
+        p10_val = "Fundación Remington";
+       }
+       if ($("#radio-9-p10").is(':checked') == true) {
+        p10_val = "Universidad de San Gil";
+       }
+       if ($("#radio-10-p10").is(':checked') == true) {
+        p10_val = "Universidad de Boyacá";
+       }
+       if ($("#radio-11-p10").is(':checked') == true) {
+        p10_val = "Universidad de La Salle";
+       }
+       if ($("#radio-12-p10").is(':checked') == true) {
+        p10_val = "Uniminuto";
+       }
+       if ($("#radio-13-p10").is(':checked') == true) {
+        p10_val = "Otro ¿Cuál?";
+       }
+
+       var p11_a_val = "";
+       if ($("#radio-1-p10").is(':checked') == true) {
+        p10_val = "Andes";
+       }
+       if ($("#radio-2-p10").is(':checked') == true) {
+        p10_val = "Javeriana";
+       }
+       if ($("#radio-3-p10").is(':checked') == true) {
+        p10_val = "Rosario";
+       }
+       if ($("#radio-4-p10").is(':checked') == true) {
+        p10_val = "Nacional";
+       }
+       if ($("#radio-5-p10").is(':checked') == true) {
+        p10_val = "UNAD";
+       }
+       if ($("#radio-6-p10").is(':checked') == true) {
+        p10_val = "Fundación Universitaria Internacional del Trópico Américano";
+       }
+
+       var p12_val = "";
+       if ($("#radio-1-p12").is(':checked') == true) {
+        p12_val = "si";
+       }
+       if ($("#radio-2-p12").is(':checked') == true) {
+        p12_val = "no";
+       }
 
         var data, filename, link;
         var stockData = [
@@ -5053,6 +5150,110 @@
          {
          Pregunta: "8 Cuánto dinero estaría dispuesto a pagar en total por esta especialización",
          Respuesta : $("#res_p8").val()
+         },
+         {
+         Pregunta: "9 Qué modalidad de pago o financiación preferiría utilizar para la especialización",
+         Respuesta : p9_val
+         },
+         {
+         Pregunta: "9 Cual",
+         Respuesta :  $("#res_p9a").val()
+         },
+         {
+         Pregunta: "10 Cuál universidad cree usted que ofrecería esta especialización acá en Yopal",
+         Respuesta :  p10_val
+         },
+         {
+         Pregunta: "10 Cuál ",
+         Respuesta :  $("#res_p10a").val()
+         },
+         {
+         Pregunta: "11 Reconocimiento y prestigio",
+         Respuesta :  $("#radio-1-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Calidad académica del programa",
+         Respuesta :  $("#radio-2-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Calidad de la planta de docentes",
+         Respuesta :  $("#radio-3-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Facilidades de financiamiento",
+         Respuesta :  $("#radio-4-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Egresados destacados de la universidad",
+         Respuesta :  $("#radio-5-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Convenios con el exterior",
+         Respuesta :  $("#radio-6-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Los costos de la especialización",
+         Respuesta :  $("#radio-7-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Infraestructura de la universidad",
+         Respuesta :  $("#radio-8-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Recomendación de familia/amigos/terceros",
+         Respuesta :  $("#radio-9-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Empleabilidad de los egresados",
+         Respuesta :  $("#radio-10-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Acreditación de alta calidad de la especialización",
+         Respuesta :  $("#radio-11-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 La universidad donde ya hizo estudios (pregrado o post)",
+         Respuesta :  $("#radio-12-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Otro",
+         Respuesta :  $("#radio-13-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Cuál ",
+         Respuesta :  $("#res_p11a").val()
+         },
+         {
+         Pregunta: "12 Conoce alguna institución educativa que ofrezca esta especialización en Evaluación y desarrollo de Proyectos, acá en Yopal",
+         Respuesta :  p12_val
+         },
+         {
+         Pregunta: "13 En cuáles otros temas estaría interesado en realizar una especialización",
+         Respuesta :  $("#res_p13").val()
+         },
+         {
+         Pregunta: "14 Falta de tiempo",
+         Respuesta :  $("#radio-1-p14").is(':checked')
+         },
+         {
+         Pregunta: "14 Altos costos",
+         Respuesta :  $("#radio-2-p14").is(':checked')
+         },
+         {
+         Pregunta: "14 Prestigio de la universidad",
+         Respuesta :  $("#radio-3-p14").is(':checked')
+         },
+         {
+         Pregunta: "14 Pensum poco atractivo",
+         Respuesta :  $("#radio-4-p14").is(':checked')
+         },
+         {
+         Pregunta: "14 otro",
+         Respuesta :  $("#radio-5-p14").is(':checked')
+         },
+         {
+         Pregunta: "14 Cual",
+         Respuesta :  $("#res_p14a").val()
          },
          ];
 

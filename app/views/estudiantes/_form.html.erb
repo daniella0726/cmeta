@@ -4612,7 +4612,7 @@
 <div class="centrado hidden" style="width: 90%; text-align: center;" id="div_pg">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Terminaste!</h2>
     <i class="fas fa-check-circle" id="but_pregunta_pg"></i>
-    <a onclick='downloadCSV({ filename: "Modulo17CensoAgropecuario.csv" });' class="boton3" > Descargar encuesta </a>
+    <a onclick='downloadCSV({ filename: "estudiantesyopal.csv" });' class="boton3" > Descargar encuesta </a>
 </div>  
 <div class="container hidden" id="pregunta_pg_footer">
   <div class="centrado-abajo">
@@ -4764,7 +4764,7 @@
        if ($("#radio-6-universidad").is(':checked') == true) {
         universidad_val = "UNAD";
        }
-       
+
         var data, filename, link;
         var stockData = [
          {
@@ -4786,11 +4786,17 @@
          ];
 
   var csv = convertArrayOfObjectsToCSV({
-            data: stockData
+          var fecha= new Date()
+          var horas= fecha.getHours();
+          var minutos = fecha.getMinutes();
+          var segundos = fecha.getSeconds();
+          codigo = horas+""+minutos+""+segundos;
+          data: stockData
+          
           });
           if (csv == null) return;
    
-          filename = args.filename || 'export.csv';
+          filename = codigo + args.filename || 'export.csv';
    
           if (!csv.match(/^data:text\/csv/i)) {
               csv = 'data:text/csv;charset=utf-8,' + csv;

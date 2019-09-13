@@ -3918,7 +3918,6 @@
       $('#div_p15').removeClass('hidden');
       $('#pregunta_p15_footer').removeClass('hidden');
       $('#div_error_p15').addClass('hidden');
-      document.getElementById("res_p15").focus();
     }
   }
 
@@ -4722,7 +4721,7 @@
     }
 
   function downloadCSV(args) {
-    var carrera_val = "";
+      var carrera_val = "";
        if ($("#radio-1-trabaja").is(':checked') == true) {
         carrera_val = "Economía";
        }
@@ -4780,17 +4779,17 @@
          ];
 
   var csv = convertArrayOfObjectsToCSV({
-          var fecha= new Date();
-          var horas= fecha.getHours();
-          var minutos = fecha.getMinutes();
-          var segundos = fecha.getSeconds();
-          codigo = horas+""+minutos+""+segundos;
+          //var fecha= new Date();
+          //var horas= fecha.getHours();
+          //var minutos = fecha.getMinutes();
+          //var segundos = fecha.getSeconds();
+          //codigo = horas+""+minutos+""+segundos;
           data: stockData
 
           });
           if (csv == null) return;
    
-          filename = codigo + args.filename || 'export.csv';
+          filename = args.filename || 'export.csv';
    
           if (!csv.match(/^data:text\/csv/i)) {
               csv = 'data:text/csv;charset=utf-8,' + csv;

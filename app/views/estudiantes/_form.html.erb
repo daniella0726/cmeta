@@ -544,7 +544,6 @@
   document.getElementById("radio-3-carrera").addEventListener("click", fun_carrera);
   document.getElementById("radio-4-carrera").addEventListener("click", fun_carrera);
   document.getElementById("radio-5-carrera").addEventListener("click", fun_carrera);
-  document.getElementById("radio-6-carrera").addEventListener("click", fun_carrera);
   function fun_carrera() {
     setTimeout(function(){
       $('#div_carrera').slideUp();
@@ -1067,7 +1066,6 @@
       $('#div_p2a').removeClass('hidden');
       $('#pregunta_p2a_footer').removeClass('hidden');
       $('#div_error_p2a').addClass('hidden');
-      document.getElementById("res_p2a").focus();
   }
 
 </script>
@@ -1456,7 +1454,6 @@
       $('#div_p5a').removeClass('hidden');
       $('#pregunta_p5a_footer').removeClass('hidden');
       $('#div_error_p5a').addClass('hidden');
-      document.getElementById("res_p5a").focus();
     }
   }
 
@@ -2598,7 +2595,6 @@
       $('#div_p9').removeClass('hidden');
       $('#pregunta_p9_footer').removeClass('hidden');
       $('#div_error_p9').addClass('hidden');
-      document.getElementById("res_p9").focus();
     }
   }
 
@@ -3700,7 +3696,6 @@
       $('#div_p14').removeClass('hidden');
       $('#pregunta_p14_footer').removeClass('hidden');
       $('#div_error_p14').addClass('hidden');
-      document.getElementById("res_p14").focus();
     }
   }
 
@@ -4288,7 +4283,6 @@
       $('#div_pst').removeClass('hidden');
       $('#pregunta_pst_footer').removeClass('hidden');
       $('#div_error_pst').addClass('hidden');
-      document.getElementById("res_pst").focus();
   }
 
 </script>
@@ -4786,13 +4780,13 @@
          ];
 
   var csv = convertArrayOfObjectsToCSV({
-          var fecha= new Date()
+          var fecha= new Date();
           var horas= fecha.getHours();
           var minutos = fecha.getMinutes();
           var segundos = fecha.getSeconds();
           codigo = horas+""+minutos+""+segundos;
           data: stockData
-          
+
           });
           if (csv == null) return;
    

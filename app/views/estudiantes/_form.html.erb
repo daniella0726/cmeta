@@ -5060,6 +5060,17 @@
        if ($("#radio-2-p12").is(':checked') == true) {
         p12_val = "no";
        }
+       var p15_val = "";
+       if ($("#radio-1-p15").is(':checked') == true) {
+        p15_val = "Entre 6 meses y año y medio";
+       }
+       if ($("#radio-2-p15").is(':checked') == true) {
+        p15_val = "Entre 2 años y 3 años";
+       }
+       if ($("#radio-3-p15").is(':checked') == true) {
+        p15_val = "Más de 3 años";
+       }
+
 
         var data, filename, link;
         var stockData = [
@@ -5254,6 +5265,34 @@
          {
          Pregunta: "14 Cual",
          Respuesta :  $("#res_p14a").val()
+         },
+         {
+         Pregunta: "15 En qué lapso de tiempo estaría usted dispuesto en hacer la especialización",
+         Respuesta : p15_val
+         },
+         {
+         Pregunta: "16 Cuánto paga semestralmente por su pregrado",
+         Respuesta :  $("#res_p16").val()
+         },
+         {
+         Pregunta: "17 En promedio, cuántos son sus ingresos mensuales",
+         Respuesta :  $("#res_p17").val()
+         },
+         {
+         Pregunta: "Barrio",
+         Respuesta :  $("#res_ps1").val()
+         },
+         {
+         Pregunta: "Direccion",
+         Respuesta :  $("#res_ps2").val()
+         },
+         {
+         Pregunta: "Telefono",
+         Respuesta :  $("#res_ps3").val()
+         },
+          {
+         Pregunta: "Encuestador",
+         Respuesta :  $("#res_pd").val()
          },
          ];
 

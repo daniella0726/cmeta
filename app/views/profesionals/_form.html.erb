@@ -4066,75 +4066,42 @@
 
 <script type="text/javascript">
 
-  document.getElementById("pregunta_p15_p16_boton").addEventListener("click", fun_p16a_dev);
-  function fun_p16a_dev() {
+  document.getElementById("pregunta_p15_p16_boton").addEventListener("click", fun_p16_dev);
+  function fun_p16_dev() {
       $('#div_p15').slideDown();
       $('#div_p15').removeClass('hidden');
       $('#pregunta_p15_footer').removeClass('hidden');
-      $('#div_p16a').slideUp();
-      $('#div_p16a').addClass('hidden');
-      $('#pregunta_p16a_footer').addClass('hidden');
-      $('#div_error_p16a').addClass('hidden');
+      $('#div_p16').slideUp();
+      $('#div_p16').addClass('hidden');
+      $('#pregunta_p16_footer').addClass('hidden');
+      $('#div_error_p16').addClass('hidden');
   }
 
-  document.getElementById("pregunta_p17_p16a_boton").addEventListener("click", fun_p16a);
-  document.getElementById("radio-1-p16").addEventListener("click", fun_p15);
-  document.getElementById("but_res_p16").addEventListener("click", fun_p16a);
-    function fun_p16a() {
-    var frase = document.getElementById("res_p16a").value; 
-      frase = frase.replace("#"," ");
-      frase = frase.replace("%"," ");
-      frase = frase.replace("&"," ");
-      frase = frase.replace("$"," ");
-      frase = frase.replace("  "," ");
-      document.getElementById("res_p16a").value = frase;
-    if (document.getElementById("res_p16a").value == "") {
-      $('#but_res_p16a').addClass('hidden');
-      $('#p_p16a').addClass('hidden');
-      $('#div_error_p16a').removeClass('hidden');
+  document.getElementById("pregunta_p16a_p16_boton").addEventListener("click", fun_p16);
+  document.getElementById("radio-1-p16").addEventListener("click", fun_p16);
+  document.getElementById("radio-1-p16").addEventListener("click", fun_p16);
+  document.getElementById("but_res_p16").addEventListener("click", fun_p16);
+    function fun_p16() {
+    if ($("#radio-1-p16").is(':checked') == true) {
+        $('#div_p16').slideUp();
+        $('#div_p16').addClass('hidden');
+        $('#pregunta_p16_footer').addClass('hidden');
+        $('#div_p16a').slideDown();
+        $('#div_p16a').removeClass('hidden');
+        $('#pregunta_p16a_footer').removeClass('hidden');
+        $('#div_error_p16a').addClass('hidden');
+        document.getElementById("res_p16a").focus();
     } else {
-      if ($("#radio-1-trabaja").is(':checked') == true) {
-        $('#div_p16a').slideUp();
-        $('#div_p16a').addClass('hidden');
-        $('#pregunta_p16a_footer').addClass('hidden');
-        $('#div_p17').slideDown();
-        $('#div_p17').removeClass('hidden');
-        $('#pregunta_p17_footer').removeClass('hidden');
-        $('#div_error_p17').addClass('hidden');
-        document.getElementById("res_p17").focus();
-      } else {
-        $('#div_p16a').slideUp();
-        $('#div_p16a').addClass('hidden');
-        $('#pregunta_p16a_footer').addClass('hidden');
-        $('#div_pregunta_s').slideDown();
-        $('#div_pregunta_s').removeClass('hidden');
-      }
+        $('#div_p16').slideUp();
+        $('#div_p16').addClass('hidden');
+        $('#pregunta_p16_footer').addClass('hidden');
+        $('#div_p16b').slideDown();
+        $('#div_p16b').removeClass('hidden');
+        $('#pregunta_p16b_footer').removeClass('hidden');
+        $('#div_error_p16b').addClass('hidden');
     }
   }
 
-  $(document).ready(function(){ 
-
-    //document.getElementById("but_res_pregunta_0").focus();
-
-    $('#res_p16').on('input', function() { 
-      var frase = document.getElementById("res_p16").value; 
-      frase = frase.replace("#"," ");
-      frase = frase.replace("%"," ");
-      frase = frase.replace("&"," ");
-      frase = frase.replace("$"," ");
-      frase = frase.replace("  "," ");
-      document.getElementById("res_p16").value = frase;
-      if (document.getElementById("res_p16").value == "") {
-      $('#but_res_p16').addClass('hidden');
-      $('#p_p16').addClass('hidden');
-      $('#div_error_p16').removeClass('hidden');
-      } else {
-       $('#but_res_p16').removeClass('hidden');
-       $('#p_p16').removeClass('hidden');
-       $('#div_error_p16').addClass('hidden');
-      }
-    }); 
-  }); 
 </script>
 
 <script type="text/javascript">
@@ -4172,7 +4139,7 @@
           <a class="boton1" id="pregunta_p16_p16a_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_p17_p16a_boton">
+          <a class="boton1" id="pregunta_p16b_p16a_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
           </a>          
         </div>
@@ -4202,7 +4169,6 @@
   }
 
   document.getElementById("pregunta_p17_p16a_boton").addEventListener("click", fun_p16a);
-  document.getElementById("radio-1-p15").addEventListener("click", fun_p15);
   document.getElementById("but_res_p16a").addEventListener("click", fun_p16a);
     function fun_p16a() {
     var frase = document.getElementById("res_p16a").value; 
@@ -4221,18 +4187,349 @@
         $('#div_p16a').slideUp();
         $('#div_p16a').addClass('hidden');
         $('#pregunta_p16a_footer').addClass('hidden');
+        $('#div_p16b').slideDown();
+        $('#div_p16b').removeClass('hidden');
+        $('#pregunta_p16b_footer').removeClass('hidden');
+        $('#div_error_p16b').addClass('hidden');
+      } else {
+        $('#div_p16a').slideUp();
+        $('#div_p16a').addClass('hidden');
+        $('#pregunta_p16a_footer').addClass('hidden');
+        $('#div_pregunta_p16b').slideDown();
+        $('#div_pregunta_p16b').removeClass('hidden');
+        $('#pregunta_p16b_footer').addClass('hidden');
+      }
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p16a').on('input', function() { 
+      var frase = document.getElementById("res_p16a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p16a").value = frase;
+      if (document.getElementById("res_p16a").value == "") {
+      $('#but_res_p16a').addClass('hidden');
+      $('#p_p16a').addClass('hidden');
+      $('#div_error_p16a').removeClass('hidden');
+      } else {
+       $('#but_res_p16a').removeClass('hidden');
+       $('#p_p16a').removeClass('hidden');
+       $('#div_error_p16a').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p16b">
+  <h3 style="font-family: 'Heebo', sans-serif; color: #942f88; text-transform: uppercase; text-align: center;">Para terminar, dos preguntas a nivel económico:</h3>
+
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">16.- Ha realizado algún estudio de posgrado:</h2>
+  <br>
+  <div class="field qts">
+
+    <div class="inputGroup">
+      <%= f.radio_button :p16b, "No dan ningún tipo de apoyo" , id:"radio-1-p16b"%>
+      <%= f.label :p16b, "No dan ningún tipo de apoyo", for: "radio-1-p16b"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p16b, "Ayudan con recursos económicos" , id:"radio-2-p16b"%>
+      <%= f.label :p16b, "Ayudan con recursos económicos", for: "radio-2-p16b"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p16b, "Dan tiempo libre para los estudios" , id:"radio-3-p16b"%>
+      <%= f.label :p16b, "Dan tiempo libre para los estudios", for: "radio-3-p16b"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p16b, "Ayudan con tiempo y dinero" , id:"radio-4-p16b"%>
+      <%= f.label :p16b, "Ayudan con tiempo y dinero", for: "radio-4-p16b"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p16b, "Ayudan con el material para los estudios (libros, materiales)" , id:"radio-5-p16b"%>
+      <%= f.label :p16b, "Ayudan con el material para los estudios (libros, materiales)", for: "radio-5-p16b"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :p16b, "Otro. ¿Cuál? " , id:"radio-6-p16b"%>
+      <%= f.label :p16b, "Otro. ¿Cuál? ", for: "radio-6-p16b"%>
+    </div>
+
+  </div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p16b"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p16b">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p16b">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p16b_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">33 de 37 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 93%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p15_p16b_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p16a_p16b_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p16a_p16b_boton").addEventListener("click", fun_p16b_dev);
+  function fun_p16b_dev() {
+    $('#div_p16b').slideUp();
+    $('#div_p16b').addClass('hidden');
+    $('#pregunta_p16b_footer').addClass('hidden');
+    $('#div_error_p16b').addClass('hidden');
+    $('#div_p16a').slideDown();
+    $('#div_p16a').removeClass('hidden');
+    $('#pregunta_p16a_footer').removeClass('hidden');  
+  }
+
+  document.getElementById("pregunta_p17_p16b_boton").addEventListener("click", fun_p16b);
+  document.getElementById("radio-1-p16").addEventListener("click", fun_p16b);
+  document.getElementById("radio-2-p16").addEventListener("click", fun_p16b);
+  document.getElementById("radio-3-p16").addEventListener("click", fun_p16b);
+  document.getElementById("radio-4-p16").addEventListener("click", fun_p16b);
+  document.getElementById("radio-5-p16").addEventListener("click", fun_p16b);
+  document.getElementById("radio-6-p16").addEventListener("click", fun_p16b);
+  document.getElementById("but_res_p16").addEventListener("click", fun_p16b);
+    function fun_p16b() {
+    if ($("#radio-6-p16").is(':checked') == true) {
+        $('#div_p16b').slideUp();
+        $('#div_p16b').addClass('hidden');
+        $('#pregunta_p16b_footer').addClass('hidden');
+        $('#div_p16c').slideDown();
+        $('#div_p16c').removeClass('hidden');
+        $('#pregunta_p16c_footer').removeClass('hidden');
+        $('#div_error_p16c').addClass('hidden');
+        document.getElementById("res_p16c").focus();
+    } else {
+        $('#div_p16b').slideUp();
+        $('#div_p16b').addClass('hidden');
+        $('#pregunta_p16b_footer').addClass('hidden');
+        $('#div_p17').slideDown();
+        $('#div_p17').removeClass('hidden');
+        $('#pregunta_p17_footer').removeClass('hidden');
+        $('#div_error_p17').addClass('hidden');
+    }
+  }
+
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p16c">
+  <h3 style="font-family: 'Heebo', sans-serif; color: #942f88; text-transform: uppercase; text-align: center;">Para terminar, dos preguntas a nivel económico:</h3>
+
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">16.- Otra, Cúal?:</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p16c, {type:"number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p16c", placeholder: "Escriba aquí"}%>
+
+  </div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p16c"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p16c">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p16c">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p16c_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">33 de 37 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 93%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p17_p16c_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p16b_p16c_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p16c");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p16c").click();
+      }
+    });
+
+  document.getElementById("pregunta_p16b_p16c_boton").addEventListener("click", fun_p16c_dev);
+  function fun_p16c_dev() {
+      $('#div_p16b').slideDown();
+      $('#div_p16b').removeClass('hidden');
+      $('#pregunta_p16b_footer').removeClass('hidden');
+      $('#div_p16c').slideUp();
+      $('#div_p16c').addClass('hidden');
+      $('#pregunta_p16c_footer').addClass('hidden');
+      $('#div_error_p16c').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p17_p16c_boton").addEventListener("click", fun_p16c);
+  document.getElementById("but_res_p16c").addEventListener("click", fun_p16c);
+    function fun_p16c() {
+    var frase = document.getElementById("res_p16c").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p16c").value = frase;
+    if (document.getElementById("res_p16c").value == "") {
+      $('#but_res_p16c').addClass('hidden');
+      $('#p_p16c').addClass('hidden');
+      $('#div_error_p16c').removeClass('hidden');
+    } else {
+      if ($("#radio-1-trabaja").is(':checked') == true) {
+        $('#div_p16c').slideUp();
+        $('#div_p16c').addClass('hidden');
+        $('#pregunta_p16c_footer').addClass('hidden');
         $('#div_p17').slideDown();
         $('#div_p17').removeClass('hidden');
         $('#pregunta_p17_footer').removeClass('hidden');
         $('#div_error_p17').addClass('hidden');
         document.getElementById("res_p17").focus();
       } else {
-        $('#div_p16a').slideUp();
-        $('#div_p16a').addClass('hidden');
-        $('#pregunta_p16a_footer').addClass('hidden');
-        $('#div_pregunta_s').slideDown();
-        $('#div_pregunta_s').removeClass('hidden');
+        $('#div_p16c').slideUp();
+        $('#div_p16c').addClass('hidden');
+        $('#pregunta_p16c_footer').addClass('hidden');
+        $('#div_pregunta_p17').slideDown();
+        $('#div_pregunta_p17').removeClass('hidden');
       }
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p16a').on('input', function() { 
+      var frase = document.getElementById("res_p16a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p16a").value = frase;
+      if (document.getElementById("res_p16a").value == "") {
+      $('#but_res_p16a').addClass('hidden');
+      $('#p_p16a').addClass('hidden');
+      $('#div_error_p16a').removeClass('hidden');
+      } else {
+       $('#but_res_p16a').removeClass('hidden');
+       $('#p_p16a').removeClass('hidden');
+       $('#div_error_p16a').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p17">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">17.- En promedio, cuántos son sus ingresos mensuales:</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p17, {type:"number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p17", placeholder: "Escriba aquí"}%>
+
+  </div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_p17"><strong>Por favor, selecciona una opción</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p17">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_p17">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p17_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">34 de 37 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 96%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_ps_p17_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p16c_p17_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p17");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p17").click();
+      }
+    });
+
+  document.getElementById("pregunta_p16_p17_boton").addEventListener("click", fun_p17_dev);
+  function fun_p17_dev() {
+      $('#div_p16c').slideDown();
+      $('#div_p16c').removeClass('hidden');
+      $('#pregunta_p16c_footer').removeClass('hidden');
+      $('#div_p17').slideUp();
+      $('#div_p17').addClass('hidden');
+      $('#pregunta_p17_footer').addClass('hidden');
+      $('#div_error_p17').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_ps_p17_boton").addEventListener("click", fun_p17);
+  document.getElementById("but_res_p17").addEventListener("click", fun_p17);
+    function fun_p17() {
+    var frase = document.getElementById("res_p17").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p17").value = frase;
+    if (document.getElementById("res_p17").value == "") {
+      $('#but_res_p17').addClass('hidden');
+      $('#p_p17').addClass('hidden');
+      $('#div_error_p17').removeClass('hidden');
+    } else {
+      $('#div_p17').slideUp();
+      $('#div_p17').addClass('hidden');
+      $('#pregunta_p17_footer').addClass('hidden');
+      $('#div_pregunta_s').slideDown();
+      $('#div_pregunta_s').removeClass('hidden');
     }
   }
 
@@ -4240,23 +4537,1032 @@
 
     //document.getElementById("but_res_pregunta_0").focus();
 
-    $('#res_p16').on('input', function() { 
-      var frase = document.getElementById("res_p16").value; 
+    $('#res_p17').on('input', function() { 
+      var frase = document.getElementById("res_p17").value; 
       frase = frase.replace("#"," ");
       frase = frase.replace("%"," ");
       frase = frase.replace("&"," ");
       frase = frase.replace("$"," ");
       frase = frase.replace("  "," ");
-      document.getElementById("res_p16").value = frase;
-      if (document.getElementById("res_p16").value == "") {
-      $('#but_res_p16').addClass('hidden');
-      $('#p_p16').addClass('hidden');
-      $('#div_error_p16').removeClass('hidden');
+      document.getElementById("res_p17").value = frase;
+      if (document.getElementById("res_p17").value == "") {
+      $('#but_res_p17').addClass('hidden');
+      $('#p_p17').addClass('hidden');
+      $('#div_error_p17').removeClass('hidden');
       } else {
-       $('#but_res_p16').removeClass('hidden');
-       $('#p_p16').removeClass('hidden');
-       $('#div_error_p16').addClass('hidden');
+       $('#but_res_p17').removeClass('hidden');
+       $('#p_p17').removeClass('hidden');
+       $('#div_error_p17').addClass('hidden');
       }
     }); 
   }); 
 </script>
+
+<div class="centrado hidden" style="width: 90%; text-align: center; position: absolute;" id="div_pregunta_s">
+  <h1 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Para efectos de supervisión, ¿me podría dar los siguientes datos, por favor?</h1>
+  <br>
+  <br>
+  <button type="button" class="boton3" style="" id="but_res_pregunta_s">
+    <i class="fas fa-check-circle"; id="but_pregunta_s"></i>
+    Siguiente!
+  </button>
+</div>
+
+<script type="text/javascript">
+  $('form').on('keypress', e => {
+    if (e.keyCode == 13) {
+        return false;
+    }
+  });
+  var input = document.getElementById("but_res_pregunta_s");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_pregunta_s").click();
+      }
+    });
+  document.getElementById("but_res_pregunta_s").addEventListener("click", fun_pregunta_s);
+  function fun_pregunta_s() {
+      $('#div_pregunta_s').slideUp();
+      $('#div_pregunta_s').addClass('hidden');
+      $('#div_pst').slideDown();
+      $('#div_pst').removeClass('hidden');
+      $('#pregunta_pst_footer').removeClass('hidden');
+      $('#div_error_pst').addClass('hidden');
+  }
+
+</script>
+
+
+<div class="centrado hidden" style="width: 90%;" id="div_pst">
+  <br>
+  <div class="field qts">
+    <h4 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Barrio donde vive:</h4>
+    <%= f.text_field :ps1, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_ps1", placeholder: "Barrio"}%>
+    <br>
+    <h4 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Dirección de residencia:</h4>
+    <%= f.text_field :ps2, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_ps2", placeholder: "Dirección"}%>
+    <br>
+    <h4 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Teléfono fijo o celular:</h4>
+    <%= f.text_field :ps3, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_ps3", placeholder: "Télefono fijo o celular"}%>
+
+  </div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_pst"><strong>Por favor, diligencie todos los campos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pst">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_pst">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_pst_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a">35 de 37 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 100%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_pe_pst_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_ps_pst_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_ps1");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_ps2").focus();
+      }
+    });
+
+  var input1 = document.getElementById("res_ps2");
+      input1.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_ps3").focus();
+      }
+    });
+
+  var input2 = document.getElementById("res_ps3");
+      input2.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_pst").focus();
+      }
+    });
+
+  document.getElementById("pregunta_ps_pst_boton").addEventListener("click", fun_pst_dev);
+  function fun_pst_dev() {
+      $('#div_pregunta_s').slideDown();
+      $('#div_pregunta_s').removeClass('hidden');
+      $('#div_pst').slideUp();
+      $('#div_pst').addClass('hidden');
+      $('#pregunta_pst_footer').addClass('hidden');
+      $('#div_error_pst').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_pe_pst_boton").addEventListener("click", fun_pst);
+  document.getElementById("but_res_pst").addEventListener("click", fun_pst);
+    function fun_pst() {
+    var frase = document.getElementById("res_ps1").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_ps1").value = frase;
+    var frase1 = document.getElementById("res_ps2").value; 
+      frase1 = frase1.replace("#"," ");
+      frase1 = frase1.replace("%"," ");
+      frase1 = frase1.replace("&"," ");
+      frase1 = frase1.replace("$"," ");
+      frase1 = frase1.replace("  "," ");
+      document.getElementById("res_ps2").value = frase1;
+    var frase2 = document.getElementById("res_ps3").value; 
+      frase2 = frase2.replace("#"," ");
+      frase2 = frase2.replace("%"," ");
+      frase2 = frase2.replace("&"," ");
+      frase2 = frase2.replace("$"," ");
+      frase2 = frase2.replace("  "," ");
+      document.getElementById("res_ps3").value = frase2;
+    if (document.getElementById("res_ps1").value == "" || document.getElementById("res_ps2").value == "" ||document.getElementById("res_ps3").value == "") {
+      $('#but_res_pst').addClass('hidden');
+      $('#p_pst').addClass('hidden');
+      $('#div_error_pst').removeClass('hidden');
+    } else {
+      $('#div_pst').slideUp();
+      $('#div_pst').addClass('hidden');
+      $('#pregunta_pst_footer').addClass('hidden');
+      $('#div_pregunta_pe').slideDown();
+      $('#div_pregunta_pe').removeClass('hidden');
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_ps1').on('input', function() { 
+      var frase = document.getElementById("res_ps1").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_ps1").value = frase;
+      if (document.getElementById("res_ps1").value == "" || document.getElementById("res_ps2").value == "" ||document.getElementById("res_ps3").value == "") {
+      $('#but_res_pst').addClass('hidden');
+      $('#p_pst').addClass('hidden');
+      $('#div_error_pst').removeClass('hidden');
+      } else {
+       $('#but_res_pst').removeClass('hidden');
+       $('#p_pst').removeClass('hidden');
+       $('#div_error_pst').addClass('hidden');
+      }
+    }); 
+
+    $('#res_ps2').on('input', function() { 
+      var frase = document.getElementById("res_ps2").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_ps2").value = frase;
+      if (document.getElementById("res_ps1").value == "" || document.getElementById("res_ps2").value == "" ||document.getElementById("res_ps3").value == "") {
+      $('#but_res_pst').addClass('hidden');
+      $('#p_pst').addClass('hidden');
+      $('#div_error_pst').removeClass('hidden');
+      } else {
+       $('#but_res_pst').removeClass('hidden');
+       $('#p_pst').removeClass('hidden');
+       $('#div_error_pst').addClass('hidden');
+      }
+    }); 
+
+    $('#res_ps3').on('input', function() { 
+      var frase = document.getElementById("res_ps3").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_ps3").value = frase;
+      if (document.getElementById("res_ps1").value == "" || document.getElementById("res_ps2").value == "" ||document.getElementById("res_ps3").value == "") {
+      $('#but_res_pst').addClass('hidden');
+      $('#p_pst').addClass('hidden');
+      $('#div_error_pst').removeClass('hidden');
+      } else {
+       $('#but_res_pst').removeClass('hidden');
+       $('#p_pst').removeClass('hidden');
+       $('#div_error_pst').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%; text-align: center; position: absolute;" id="div_pregunta_pe">
+  <h1 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Muchas gracias por su tiempo!</h1>
+  <br>
+  <br>
+  <button type="button" class="boton3" style="" id="but_res_pregunta_pe">
+    <i class="fas fa-check-circle"></i>
+    Haga clic aquí para diligenciar el nombre del encuestador!
+  </button>
+</div>
+
+<script type="text/javascript">
+  $('form').on('keypress', e => {
+    if (e.keyCode == 13) {
+        return false;
+    }
+  });
+  var input = document.getElementById("but_res_pregunta_pe");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_pregunta_pe").click();
+      }
+    });
+  document.getElementById("but_res_pregunta_pe").addEventListener("click", fun_pregunta_pe);
+  function fun_pregunta_pe() {
+      $('#div_pregunta_pe').slideUp();
+      $('#div_pregunta_pe').addClass('hidden');
+      $('#div_pd').slideDown();
+      $('#div_pd').removeClass('hidden');
+      $('#pregunta_pd_footer').removeClass('hidden');
+      $('#div_error_pd').addClass('hidden');
+      document.getElementById("res_pd").focus();
+  }
+
+</script>
+
+
+<div class="centrado hidden" style="width: 90%;" id="div_pd">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Para guardar la encuesta</h2>
+  <br>
+  <div class="field qts">
+    <h4 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Nombre del encuestador</h4>
+    <%= f.text_field :ps1, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_pd", placeholder: "Nombre del encuestador"}%>
+  </div>
+  <div class="hidden" style="color: #222d5a;" id="div_error_pd"><strong>Por favor, diligencie los campos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pd">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #222d5a;" id="p_pd">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_pd_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a;">36 de 37 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 100%; background-color: #afcb3a;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_pg_pd_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_pe_pd_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_pd");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_pd").click();
+      }
+    });
+
+  document.getElementById("pregunta_pe_pd_boton").addEventListener("click", fun_pd_dev);
+  function fun_pd_dev() {
+      $('#div_pe').slideDown();
+      $('#div_pe').removeClass('hidden');
+      $('#div_pd').slideUp();
+      $('#div_pd').addClass('hidden');
+      $('#pregunta_pd_footer').addClass('hidden');
+      $('#div_error_pd').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_pg_pd_boton").addEventListener("click", fun_pd);
+  document.getElementById("but_res_pd").addEventListener("click", fun_pd);
+    function fun_pd() {
+    var frase = document.getElementById("res_pd").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_pd").value = frase;
+    if (document.getElementById("res_pd").value == "") {
+      $('#but_res_pd').addClass('hidden');
+      $('#p_pd').addClass('hidden');
+      $('#div_error_pd').removeClass('hidden');
+    } else {
+      $('#div_pd').slideUp();
+      $('#div_pd').addClass('hidden');
+      $('#pregunta_pd_footer').addClass('hidden');
+      $('#div_pg').slideDown();
+      $('#div_pg').removeClass('hidden');
+      $('#pregunta_pg_footer').removeClass('hidden');
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_pd').on('input', function() { 
+      var frase = document.getElementById("res_pd").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_pd").value = frase;
+      if (document.getElementById("res_pd").value == "") {
+      $('#but_res_pd').addClass('hidden');
+      $('#p_pd').addClass('hidden');
+      $('#div_error_pd').removeClass('hidden');
+      } else {
+       $('#but_res_pd').removeClass('hidden');
+       $('#p_pd').removeClass('hidden');
+       $('#div_error_pd').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%; text-align: center;" id="div_pg">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Terminaste!</h2>
+    <i class="fas fa-check-circle" id="but_pregunta_pg"></i>
+    <a onclick='downloadCSV({ filename: "estudiantesyopal.csv" });' class="boton3" > Descargar encuesta </a>
+</div>  
+<div class="container hidden" id="pregunta_pg_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #222d5a;">37 de 37 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 100%; background-color: #942f88;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_20_21_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #942f88; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    var fecha= new Date();
+    var horas= fecha.getHours();
+    var minutos = fecha.getMinutes();
+    var segundos = fecha.getSeconds();
+    codigo = horas+""+minutos+""+segundos;
+  });
+
+    function convertArrayOfObjectsToCSV(args) {
+        var result, ctr, keys, columnDelimiter, lineDelimiter, data;
+ 
+        data = args.data || null;
+        if (data == null || !data.length) {
+            return null;
+        }
+ 
+        columnDelimiter = args.columnDelimiter || ',';
+        lineDelimiter = args.lineDelimiter || '\n';
+ 
+        keys = Object.keys(data[0]);
+ 
+        result = '';
+        result += keys.join(columnDelimiter);
+        result += lineDelimiter;
+ 
+        data.forEach(function(item) {
+            ctr = 0;
+            keys.forEach(function(key) {
+                if (ctr > 0) result += columnDelimiter;
+ 
+                result += item[key];
+                ctr++;
+            });
+            result += lineDelimiter;
+        });
+ 
+        return result;
+    }
+
+  function downloadCSV(args) {
+      var carrera_val = "";
+       if ($("#radio-1-trabaja").is(':checked') == true) {
+        carrera_val = "Economía";
+       }
+       if ($("#radio-2-trabaja").is(':checked') == true) {
+        carrera_val = "Administracion de Empresas";
+       }
+       if ($("#radio-3-trabaja").is(':checked') == true) {
+        carrera_val = "Mercadeo";
+       }
+       if ($("#radio-4-trabaja").is(':checked') == true) {
+        carrera_val = "Administración y Negocios Internacionales";
+       }
+       if ($("#radio-5-trabaja").is(':checked') == true) {
+        carrera_val = "Finanzas";
+       }
+
+       var universidad_val = "";
+       if ($("#radio-1-universidad").is(':checked') == true) {
+        universidad_val = "Fundacion Universitaria Internacional del Tropico Americano";
+       }
+       if ($("#radio-2-universidad").is(':checked') == true) {
+        universidad_val = "Fundacion Universitaria Tecnologica de Casanare (FUC)";
+       }
+       if ($("#radio-3-universidad").is(':checked') == true) {
+        universidad_val = "Corporacion Universitaria Remington";
+       }
+       if ($("#radio-4-universidad").is(':checked') == true) {
+        universidad_val = "Universidad de Boyaca";
+       }
+       if ($("#radio-5-universidad").is(':checked') == true) {
+        universidad_val = "Universidad de San Gil";
+       }
+       if ($("#radio-6-universidad").is(':checked') == true) {
+        universidad_val = "UNAD";
+       }
+
+       var trabaja_val = "";
+       if ($("#radio-1-trabaja").is(':checked') == true) {
+        trabaja_val = "Si";
+       }
+       if ($("#radio-2-trabaja").is(':checked') == true) {
+        trabaja_val = "No";
+       }
+
+       var p1_val = "";
+       if ($("#radio-1-p1").is(':checked') == true) {
+        p1_val = "Si";
+       }
+       if ($("#radio-2-p1").is(':checked') == true) {
+        p1_val = "No";
+       }
+
+       var p2a_val = "";
+       if ($("#radio-1-p2a").is(':checked') == true) {
+        p2a_val = "Si";
+       }
+       if ($("#radio-2-p2a").is(':checked') == true) {
+        p2a_val = "No";
+       }
+
+        var p5a_val = "";
+       if ($("#radio-1-p5a").is(':checked') == true) {
+        p5a_val = "1";
+       }
+       if ($("#radio-2-p5a").is(':checked') == true) {
+        p5a_val = "2";
+       }
+       if ($("#radio-3-p5a").is(':checked') == true) {
+        p5a_val = "3";
+       }
+       if ($("#radio-4-p5a").is(':checked') == true) {
+        p5a_val = "4";
+       }
+       if ($("#radio-5-p5a").is(':checked') == true) {
+        p5a_val = "5";
+       }
+       if ($("#radio-6-p5a").is(':checked') == true) {
+        p5a_val = "99";
+       }
+
+       var p5b_val = "";
+       if ($("#radio-1-p5b").is(':checked') == true) {
+        p5b_val = "1";
+       }
+       if ($("#radio-2-p5b").is(':checked') == true) {
+        p5b_val = "2";
+       }
+       if ($("#radio-3-p5b").is(':checked') == true) {
+        p5b_val = "3";
+       }
+       if ($("#radio-4-p5b").is(':checked') == true) {
+        p5b_val = "4";
+       }
+       if ($("#radio-5-p5b").is(':checked') == true) {
+        p5b_val = "5";
+       }
+       if ($("#radio-6-p5b").is(':checked') == true) {
+        p5b_val = "99";
+       }
+
+       var p5c_val = "";
+       if ($("#radio-1-p5c").is(':checked') == true) {
+        p5c_val = "1";
+       }
+       if ($("#radio-2-p5c").is(':checked') == true) {
+        p5c_val = "2";
+       }
+       if ($("#radio-3-p5c").is(':checked') == true) {
+        p5c_val = "3";
+       }
+       if ($("#radio-4-p5c").is(':checked') == true) {
+        p5c_val = "4";
+       }
+       if ($("#radio-5-p5c").is(':checked') == true) {
+        p5c_val = "5";
+       }
+       if ($("#radio-6-p5c").is(':checked') == true) {
+        p5c_val = "99";
+       }
+
+       var p5d_val = "";
+       if ($("#radio-1-p5d").is(':checked') == true) {
+        p5d_val = "1";
+       }
+       if ($("#radio-2-p5d").is(':checked') == true) {
+        p5d_val = "2";
+       }
+       if ($("#radio-3-p5d").is(':checked') == true) {
+        p5d_val = "3";
+       }
+       if ($("#radio-4-p5d").is(':checked') == true) {
+        p5d_val = "4";
+       }
+       if ($("#radio-5-p5d").is(':checked') == true) {
+        p5d_val = "5";
+       }
+       if ($("#radio-6-p5d").is(':checked') == true) {
+        p5d_val = "99";
+       }
+
+       var p5e_val = "";
+       if ($("#radio-1-p5e").is(':checked') == true) {
+        p5e_val = "1";
+       }
+       if ($("#radio-2-p5e").is(':checked') == true) {
+        p5e_val = "2";
+       }
+       if ($("#radio-3-p5e").is(':checked') == true) {
+        p5e_val = "3";
+       }
+       if ($("#radio-4-p5e").is(':checked') == true) {
+        p5e_val = "4";
+       }
+       if ($("#radio-5-p5e").is(':checked') == true) {
+        p5e_val = "5";
+       }
+       if ($("#radio-6-p5e").is(':checked') == true) {
+        p5e_val = "99";
+       }
+
+       var p5f_val = "";
+       if ($("#radio-1-p5f").is(':checked') == true) {
+        p5f_val = "1";
+       }
+       if ($("#radio-2-p5f").is(':checked') == true) {
+        p5f_val = "2";
+       }
+       if ($("#radio-3-p5f").is(':checked') == true) {
+        p5f_val = "3";
+       }
+       if ($("#radio-4-p5f").is(':checked') == true) {
+        p5f_val = "4";
+       }
+       if ($("#radio-5-p5f").is(':checked') == true) {
+        p5f_val = "5";
+       }
+       if ($("#radio-6-p5f").is(':checked') == true) {
+        p5f_val = "99";
+       }
+
+       var p5g_val = "";
+       if ($("#radio-1-p5g").is(':checked') == true) {
+        p5g_val = "1";
+       }
+       if ($("#radio-2-p5g").is(':checked') == true) {
+        p5g_val = "2";
+       }
+       if ($("#radio-3-p5g").is(':checked') == true) {
+        p5g_val = "3";
+       }
+       if ($("#radio-4-p5g").is(':checked') == true) {
+        p5g_val = "4";
+       }
+       if ($("#radio-5-p5g").is(':checked') == true) {
+        p5g_val = "5";
+       }
+       if ($("#radio-6-p5g").is(':checked') == true) {
+        p5g_val = "99";
+       }
+
+       var p6_val = "";
+       if ($("#radio-1-p6").is(':checked') == true) {
+        p6_val = "Presencial";
+       }
+       if ($("#radio-2-p6").is(':checked') == true) {
+        p6_val = "Virtual";
+       }
+       if ($("#radio-3-p6").is(':checked') == true) {
+        p6_val = "Semipresencial";
+       }
+
+       var p7_val = "";
+       if ($("#radio-1-p7").is(':checked') == true) {
+        p7_val = "Viernes y sábados de 8 a.m. a 5 p.m.";
+       }
+       if ($("#radio-2-p7").is(':checked') == true) {
+        p7_val = "Jueves, viernes y sábado de 8 a 5 p.m. cada 15 días";
+       }
+       if ($("#radio-3-p7").is(':checked') == true) {
+        p7_val = "Viernes de 6 p.m. a 9 p.m. y sábado de 8 a.m. a 5 p.m.";
+       }
+       if ($("#radio-4-p7").is(':checked') == true) {
+        p7_val = "Viernes de 6 p.m. a 10 p.m. y sábado de 7 a.m. a 1 p.m.";
+       }
+       if ($("#radio-5-p7").is(':checked') == true) {
+        p7_val = "Lunes a viernes de 2 p.m. a 6 p.m. ";
+       }
+       if ($("#radio-6-p7").is(':checked') == true) {
+        p7_val = "Una vez al mes jueves, viernes y sábado todo el día";
+       }
+       if ($("#radio-7-p7").is(':checked') == true) {
+        p7_val = "Otro. ¿Cuál?";
+       }
+       var p9_val = "";
+       if ($("#radio-1-p9").is(':checked') == true) {
+        p9_val = "Contado con descuento";
+       }
+       if ($("#radio-2-p9").is(':checked') == true) {
+        p9_val = "Crédito bancario";
+       }
+       if ($("#radio-3-p9").is(':checked') == true) {
+        p9_val = "ICETEX";
+       }
+       if ($("#radio-4-p9").is(':checked') == true) {
+        p9_val = "Apoyo familiar";
+       }
+       if ($("#radio-5-p9").is(':checked') == true) {
+        p9_val = "Cheques post fechados";
+       }
+       if ($("#radio-6-p9").is(':checked') == true) {
+        p9_val = "Crédito universitario";
+       }
+        if ($("#radio-7-p9").is(':checked') == true) {
+        p9_val = "Apoyo de la empresa donde trabaja";
+       }
+       if ($("#radio-8-p9").is(':checked') == true) {
+        p9_val = "Uso de cesantías";
+       }
+       if ($("#radio-9-p9").is(':checked') == true) {
+        p9_val = "Otro ¿Cuál?";
+       }
+
+       var p10_val = "";
+       if ($("#radio-1-p10").is(':checked') == true) {
+        p10_val = "Andes";
+       }
+       if ($("#radio-2-p10").is(':checked') == true) {
+        p10_val = "Javeriana";
+       }
+       if ($("#radio-3-p10").is(':checked') == true) {
+        p10_val = "Rosario";
+       }
+       if ($("#radio-4-p10").is(':checked') == true) {
+        p10_val = "Nacional";
+       }
+       if ($("#radio-5-p10").is(':checked') == true) {
+        p10_val = "UNAD";
+       }
+       if ($("#radio-6-p10").is(':checked') == true) {
+        p10_val = "Fundación Universitaria Internacional del Trópico Américano";
+       }
+       if ($("#radio-7-p10").is(':checked') == true) {
+        p10_val = "Fundación Universitaria Tecnológica del Casanare";
+       }
+       if ($("#radio-8-p10").is(':checked') == true) {
+        p10_val = "Fundación Remington";
+       }
+       if ($("#radio-9-p10").is(':checked') == true) {
+        p10_val = "Universidad de San Gil";
+       }
+       if ($("#radio-10-p10").is(':checked') == true) {
+        p10_val = "Universidad de Boyacá";
+       }
+       if ($("#radio-11-p10").is(':checked') == true) {
+        p10_val = "Universidad de La Salle";
+       }
+       if ($("#radio-12-p10").is(':checked') == true) {
+        p10_val = "Uniminuto";
+       }
+       if ($("#radio-13-p10").is(':checked') == true) {
+        p10_val = "Otro ¿Cuál?";
+       }
+
+       var p11_a_val = "";
+       if ($("#radio-1-p10").is(':checked') == true) {
+        p10_val = "Andes";
+       }
+       if ($("#radio-2-p10").is(':checked') == true) {
+        p10_val = "Javeriana";
+       }
+       if ($("#radio-3-p10").is(':checked') == true) {
+        p10_val = "Rosario";
+       }
+       if ($("#radio-4-p10").is(':checked') == true) {
+        p10_val = "Nacional";
+       }
+       if ($("#radio-5-p10").is(':checked') == true) {
+        p10_val = "UNAD";
+       }
+       if ($("#radio-6-p10").is(':checked') == true) {
+        p10_val = "Fundación Universitaria Internacional del Trópico Américano";
+       }
+
+       var p12_val = "";
+       if ($("#radio-1-p12").is(':checked') == true) {
+        p12_val = "si";
+       }
+       if ($("#radio-2-p12").is(':checked') == true) {
+        p12_val = "no";
+       }
+       var p15_val = "";
+       if ($("#radio-1-p15").is(':checked') == true) {
+        p15_val = "Entre 6 meses y año y medio";
+       }
+       if ($("#radio-2-p15").is(':checked') == true) {
+        p15_val = "Entre 2 años y 3 años";
+       }
+       if ($("#radio-3-p15").is(':checked') == true) {
+        p15_val = "Más de 3 años";
+       }
+
+
+        var data, filename, link;
+        var stockData = [
+         {
+         Pregunta: "Nombre",
+         Respuesta : $("#res_nombre").val()
+         },
+         {
+         Pregunta: "Semestre",
+         Respuesta : $("#res_semestre").val()
+         },
+         {
+         Pregunta: "Carrera",
+         Respuesta : carrera_val
+         },
+         {
+         Pregunta: "Universidad",
+         Respuesta : universidad_val
+         },
+         {
+         Pregunta: "Trabaja",
+         Respuesta : trabaja_val
+         },
+         {
+         Pregunta: "Empresa",
+         Respuesta : $("#res_empresa").val()
+         },
+         {
+         Pregunta: "Cargo",
+         Respuesta : $("#res_cargo").val()
+         },
+         {
+         Pregunta: "1 Está interesado en hacer un programa de posgrado",
+         Respuesta : p1_val
+         },
+         {
+         Pregunta: "2 Le interesaría estudiar este programa de posgrado",
+         Respuesta : p2a_val
+         },
+         {
+         Pregunta: "3 Qué aspectos positivos tiene para usted el hecho de realizar esta especialización en Evaluación y Desarrollo de Proyectos",
+         Respuesta : $("#res_p3").val()
+         },
+         {
+         Pregunta: "4 Y qué aspectos negativos o barreras le encuentra a realizar esta especialización en Evaluación y Desarrollo de Proyectos",
+         Respuesta : $("#res_p4").val()
+         },
+         {
+         Pregunta: "5 A Novedad",
+         Respuesta : p5a_val
+         },
+         {
+         Pregunta: "5 B Utilidad",
+         Respuesta : p5b_val
+         },
+         {
+         Pregunta: "5 C Diferencia a lo que ofrecen otras universidades",
+         Respuesta : p5c_val
+         },
+         {
+         Pregunta: "5 D Interesante del contenido",
+         Respuesta : p5d_val
+         },
+         {
+         Pregunta: "5 E La aplicabilidad de la información en su vida laboral",
+         Respuesta : p5e_val
+         },
+         {
+         Pregunta: "5 F Relevancia de realizar la especialización a nivel profesional",
+         Respuesta : p5f_val
+         },
+         {
+         Pregunta: "5 G Es un programa para personas como usted",
+         Respuesta : p5g_val
+         },
+         {
+         Pregunta: "6 Qué modalidad prefiere usted para realizar esta especialización",
+         Respuesta : p6_val
+         },
+         {
+         Pregunta: "7 En qué horarios preferiría usted que se dictara esta especialización",
+         Respuesta : p7_val
+         },
+         {
+         Pregunta: "7 Cuál",
+         Respuesta : $("#res_p7a").val()
+         },
+         {
+         Pregunta: "8 Cuánto dinero estaría dispuesto a pagar en total por esta especialización",
+         Respuesta : $("#res_p8").val()
+         },
+         {
+         Pregunta: "9 Qué modalidad de pago o financiación preferiría utilizar para la especialización",
+         Respuesta : p9_val
+         },
+         {
+         Pregunta: "9 Cual",
+         Respuesta :  $("#res_p9a").val()
+         },
+         {
+         Pregunta: "10 Cuál universidad cree usted que ofrecería esta especialización acá en Yopal",
+         Respuesta :  p10_val
+         },
+         {
+         Pregunta: "10 Cuál ",
+         Respuesta :  $("#res_p10a").val()
+         },
+         {
+         Pregunta: "11 Reconocimiento y prestigio",
+         Respuesta :  $("#radio-1-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Calidad académica del programa",
+         Respuesta :  $("#radio-2-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Calidad de la planta de docentes",
+         Respuesta :  $("#radio-3-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Facilidades de financiamiento",
+         Respuesta :  $("#radio-4-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Egresados destacados de la universidad",
+         Respuesta :  $("#radio-5-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Convenios con el exterior",
+         Respuesta :  $("#radio-6-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Los costos de la especialización",
+         Respuesta :  $("#radio-7-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Infraestructura de la universidad",
+         Respuesta :  $("#radio-8-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Recomendación de familia/amigos/terceros",
+         Respuesta :  $("#radio-9-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Empleabilidad de los egresados",
+         Respuesta :  $("#radio-10-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Acreditación de alta calidad de la especialización",
+         Respuesta :  $("#radio-11-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 La universidad donde ya hizo estudios (pregrado o post)",
+         Respuesta :  $("#radio-12-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Otro",
+         Respuesta :  $("#radio-13-p11").is(':checked')
+         },
+         {
+         Pregunta: "11 Cuál ",
+         Respuesta :  $("#res_p11a").val()
+         },
+         {
+         Pregunta: "12 Conoce alguna institución educativa que ofrezca esta especialización en Evaluación y desarrollo de Proyectos acá en Yopal",
+         Respuesta :  p12_val
+         },
+         {
+         Pregunta: "13 En cuáles otros temas estaría interesado en realizar una especialización",
+         Respuesta :  $("#res_p13").val()
+         },
+         {
+         Pregunta: "14 Falta de tiempo",
+         Respuesta :  $("#radio-1-p14").is(':checked')
+         },
+         {
+         Pregunta: "14 Altos costos",
+         Respuesta :  $("#radio-2-p14").is(':checked')
+         },
+         {
+         Pregunta: "14 Prestigio de la universidad",
+         Respuesta :  $("#radio-3-p14").is(':checked')
+         },
+         {
+         Pregunta: "14 Pensum poco atractivo",
+         Respuesta :  $("#radio-4-p14").is(':checked')
+         },
+         {
+         Pregunta: "14 otro",
+         Respuesta :  $("#radio-5-p14").is(':checked')
+         },
+         {
+         Pregunta: "14 Cual",
+         Respuesta :  $("#res_p14a").val()
+         },
+         {
+         Pregunta: "15 En qué lapso de tiempo estaría usted dispuesto en hacer la especialización",
+         Respuesta : p15_val
+         },
+         {
+         Pregunta: "16 Cuánto paga semestralmente por su pregrado",
+         Respuesta :  $("#res_p16").val()
+         },
+         {
+         Pregunta: "17 En promedio cuántos son sus ingresos mensuales",
+         Respuesta :  $("#res_p17").val()
+         },
+         {
+         Pregunta: "Barrio",
+         Respuesta :  $("#res_ps1").val()
+         },
+         {
+         Pregunta: "Direccion",
+         Respuesta :  $("#res_ps2").val()
+         },
+         {
+         Pregunta: "Telefono",
+         Respuesta :  $("#res_ps3").val()
+         },
+          {
+         Pregunta: "Encuestador",
+         Respuesta :  $("#res_pd").val()
+         },
+         ];
+
+  var csv = convertArrayOfObjectsToCSV({
+          
+          data: stockData
+
+          });
+          if (csv == null) return;
+   
+          filename = codigo + args.filename || 'export.csv';
+   
+          if (!csv.match(/^data:text\/csv/i)) {
+              csv = 'data:text/csv;charset=utf-8,' + csv;
+          }
+          data = encodeURI(csv);
+   
+          link = document.createElement('a');
+          link.setAttribute('href', data);
+          link.setAttribute('download', filename);
+          link.click();
+          alert("Encuesta descargada con Exito");
+    }
+
+</script>
+

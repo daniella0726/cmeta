@@ -3370,7 +3370,7 @@
   }
 
   document.getElementById("pregunta_p12_p11_boton").addEventListener("click", fun_p11);
-  document.getElementById("bus_res_p11").addEventListener("click", fun_p11);
+  document.getElementById("but_res_p11").addEventListener("click", fun_p11);
   function fun_p11() {
     if ($("#radio-13-p11").is(':checked') == true ) {
       setTimeout(function(){
@@ -3409,7 +3409,6 @@
   document.getElementById("radio-10-p11").addEventListener("click", fun_multi);
   document.getElementById("radio-11-p11").addEventListener("click", fun_multi);
   document.getElementById("radio-12-p11").addEventListener("click", fun_multi);
-  document.getElementById("but_res_p11").addEventListener("click", fun_multi);
   function fun_multi() {
     setTimeout(function(){
       $('#div_error_p11').addClass('hidden');
@@ -3498,7 +3497,6 @@
       $('#div_p12').removeClass('hidden');
       $('#pregunta_p12_footer').removeClass('hidden');
       $('#div_error_p12').addClass('hidden');
-      document.getElementById("res_p12").focus();
     }
   }
 
@@ -4205,7 +4203,7 @@
 
   document.getElementById("pregunta_p16a_p16_boton").addEventListener("click", fun_p16);
   document.getElementById("radio-1-p16").addEventListener("click", fun_p16);
-  document.getElementById("radio-1-p16").addEventListener("click", fun_p16);
+  document.getElementById("radio-2-p16").addEventListener("click", fun_p16);
   document.getElementById("but_res_p16").addEventListener("click", fun_p16);
     function fun_p16() {
     if ($("#radio-1-p16").is(':checked') == true) {
@@ -4217,7 +4215,7 @@
         $('#pregunta_p16a_footer').removeClass('hidden');
         $('#div_error_p16a').addClass('hidden');
         document.getElementById("res_p16a").focus();
-    } else {
+    } else if ($("#radio-2-p16").is(':checked') == true) {
         $('#div_p16').slideUp();
         $('#div_p16').addClass('hidden');
         $('#pregunta_p16_footer').addClass('hidden');
@@ -4225,8 +4223,10 @@
         $('#div_p16b').removeClass('hidden');
         $('#pregunta_p16b_footer').removeClass('hidden');
         $('#div_error_p16b').addClass('hidden');
+    } else {
+        $('#div_error_p16').aClass('hidden');
+    }  
     }
-  }
 
 </script>
 
@@ -4241,7 +4241,7 @@
   <br>
   <div class="field qts">
 
-    <%= f.text_field :p16a, {type:"number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p16a", placeholder: "Escriba aquí"}%>
+    <%= f.text_field :p16a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p16a", placeholder: "Escriba aquí"}%>
 
   </div>
   <div class="hidden" style="color: #222d5a;" id="div_error_p16a"><strong>Por favor, selecciona una opción</strong></div>
@@ -4354,7 +4354,7 @@
 <div class="centrado hidden" style="width: 90%;" id="div_p16b">
   <h3 style="font-family: 'Heebo', sans-serif; color: #942f88; text-transform: uppercase; text-align: center;">Para terminar, dos preguntas a nivel económico:</h3>
 
-  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">16.- Ha realizado algún estudio de posgrado:</h2>
+  <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">16.- ¿En la empresa donde trabaja actualmente, con qué tipo de recursos apoyan a sus trabajadores para capacitación? </h2>
   <br>
   <div class="field qts">
 
@@ -4439,7 +4439,7 @@
   document.getElementById("radio-6-p16b").addEventListener("click", fun_p16b);
   document.getElementById("but_res_p16b").addEventListener("click", fun_p16b);
     function fun_p16b() {
-    if ($("#radio-6-p16").is(':checked') == true) {
+    if ($("#radio-6-p16b").is(':checked') == true) {
         $('#div_p16b').slideUp();
         $('#div_p16b').addClass('hidden');
         $('#pregunta_p16b_footer').addClass('hidden');
@@ -4448,7 +4448,7 @@
         $('#pregunta_p16c_footer').removeClass('hidden');
         $('#div_error_p16c').addClass('hidden');
         document.getElementById("res_p16c").focus();
-    } else {
+    } else if ($("#radio-1-p16b").is(':checked') == true || $("#radio-2-p16b").is(':checked') == true || $("#radio-3-p16b").is(':checked') == true || $("#radio-4-p16b").is(':checked') == true || $("#radio-5-p16b").is(':checked') == true ) {
         $('#div_p16b').slideUp();
         $('#div_p16b').addClass('hidden');
         $('#pregunta_p16b_footer').addClass('hidden');
@@ -4456,7 +4456,9 @@
         $('#div_p17').removeClass('hidden');
         $('#pregunta_p17_footer').removeClass('hidden');
         $('#div_error_p17').addClass('hidden');
-    }
+      } else {
+        $('#div_error_p16b').removeClass('hidden'); 
+      }
   }
 
 </script>
@@ -5038,7 +5040,7 @@
 <div class="centrado hidden" style="width: 90%; text-align: center;" id="div_pg">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Terminaste!</h2>
     <i class="fas fa-check-circle" id="but_pregunta_pg"></i>
-    <a onclick='downloadCSV({ filename: "estudiantesyopal.csv" });' class="boton3" > Descargar encuesta </a>
+    <a onclick='downloadCSV({ filename: "profesionalesyopal.csv" });' class="boton3" > Descargar encuesta </a>
 </div>  
 <div class="container hidden" id="pregunta_pg_footer">
   <div class="centrado-abajo">

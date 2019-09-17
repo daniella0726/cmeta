@@ -761,10 +761,10 @@
       $('#div_trabaja').slideUp();
       $('#div_trabaja').addClass('hidden');
       $('#pregunta_trabaja_footer').addClass('hidden');
-      $('#div_edad').slideDown();
-      $('#div_edad').removeClass('hidden');
-      $('#pregunta_edad_footer').removeClass('hidden');
-      $('#div_error_edad').addClass('hidden');
+      $('#div_p1').slideDown();
+      $('#div_p1').removeClass('hidden');
+      $('#pregunta_p1_footer').removeClass('hidden');
+      $('#div_error_p1').addClass('hidden');
     } , 500); }
     else {
       $('#div_error_trabaja').removeClass('hidden');
@@ -3358,17 +3358,7 @@
   document.getElementById("pregunta_p12_p11_boton").addEventListener("click", fun_p11);
   document.getElementById("radio-13-p11").addEventListener("click", fun_p11);
   function fun_p11() {
-    if ($("#radio-2-p11").is(':checked') == true || $("#radio-3-p11").is(':checked') == true || $("#radio-4-p11").is(':checked') == true || $("#radio-5-p11").is(':checked') == true || $("#radio-6-p11").is(':checked') == true || $("#radio-7-p11").is(':checked') == true || $("#radio-8-p11").is(':checked') == true || $("#radio-9-p11").is(':checked') == true || $("#radio-10-p11").is(':checked') == true || $("#radio-11-p11").is(':checked') == true || $("#radio-12-p11").is(':checked') == true || $("#radio-13-p11").is(':checked') == true) {
-      setTimeout(function(){
-      $('#div_p11').slideUp();
-      $('#div_p11').addClass('hidden');
-      $('#pregunta_p11_footer').addClass('hidden');
-      $('#div_p12').slideDown();
-      $('#div_p12').removeClass('hidden');
-      $('#pregunta_p12_footer').removeClass('hidden');
-      $('#div_error_p12').addClass('hidden');
-      } , 500);
-    } else if ($("#radio-1-p11").is(':checked') == true ) {
+    if ($("#radio-13-p11").is(':checked') == true ) {
       setTimeout(function(){
       $('#div_p11').slideUp();
       $('#div_p11').addClass('hidden');
@@ -3377,6 +3367,16 @@
       $('#div_p11a').removeClass('hidden');
       $('#pregunta_p11a_footer').removeClass('hidden');
       $('#div_error_p11a').addClass('hidden');
+      } , 500);
+    } else if ($("#radio-2-p11").is(':checked') == true || $("#radio-3-p11").is(':checked') == true || $("#radio-4-p11").is(':checked') == true || $("#radio-5-p11").is(':checked') == true || $("#radio-6-p11").is(':checked') == true || $("#radio-7-p11").is(':checked') == true || $("#radio-8-p11").is(':checked') == true || $("#radio-9-p11").is(':checked') == true || $("#radio-10-p11").is(':checked') == true || $("#radio-11-p11").is(':checked') == true || $("#radio-12-p11").is(':checked') == true || $("#radio-11-p11").is(':checked') == true) {
+      setTimeout(function(){
+      $('#div_p11').slideUp();
+      $('#div_p11').addClass('hidden');
+      $('#pregunta_p11_footer').addClass('hidden');
+      $('#div_p12').slideDown();
+      $('#div_p12').removeClass('hidden');
+      $('#pregunta_p12_footer').removeClass('hidden');
+      $('#div_error_p12').addClass('hidden');
       } , 500);
     } else {
       $('#div_error_p11').removeClass('hidden');

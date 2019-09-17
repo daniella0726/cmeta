@@ -486,13 +486,28 @@
     </div>
 
     <div class="inputGroup">
-      <%= f.radio_button :carrera, "Administracion y negocios internacionales" , id:"radio-4-carrera"%>
-      <%= f.label :carrera, "Administración y Negocios Internacionales", for: "radio-4-carrera"%>
+      <%= f.radio_button :carrera, "Administracion de negocios internacionales" , id:"radio-4-carrera"%>
+      <%= f.label :carrera, "Administración de Negocios Internacionales", for: "radio-4-carrera"%>
     </div>
 
     <div class="inputGroup">
       <%= f.radio_button :carrera, "Finanzas" , id:"radio-5-carrera"%>
       <%= f.label :carrera, "Finanzas", for: "radio-5-carrera"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :carrera, "Administración Financiera" , id:"radio-6-carrera"%>
+      <%= f.label :carrera, "Administración Financiera", for: "radio-6-carrera"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :carrera, "Administración de empresas agropecuarias" , id:"radio-7-carrera"%>
+      <%= f.label :carrera, "Administración de empresas agropecuarias", for: "radio-7-carrera"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= f.radio_button :carrera, "Administración en salud" , id:"radio-8-carrera"%>
+      <%= f.label :carrera, "Administración en salud", for: "radio-8-carrera"%>
     </div>
   </div>
   <div class="hidden" style="color: #222d5a;" id="div_error_carrera"><strong>Por favor, selecciona una opción</strong></div>
@@ -544,8 +559,12 @@
   document.getElementById("radio-3-carrera").addEventListener("click", fun_carrera);
   document.getElementById("radio-4-carrera").addEventListener("click", fun_carrera);
   document.getElementById("radio-5-carrera").addEventListener("click", fun_carrera);
+  document.getElementById("radio-6-carrera").addEventListener("click", fun_carrera);
+  document.getElementById("radio-7-carrera").addEventListener("click", fun_carrera);
+  document.getElementById("radio-8-carrera").addEventListener("click", fun_carrera);
   function fun_carrera() {
-    setTimeout(function(){
+    if ($("#radio-1-carrera").is(':checked') == true || $("#radio-2-carrera").is(':checked') == true || $("#radio-3-carrera").is(':checked') == true || $("#radio-4-carrera").is(':checked') == true || $("#radio-5-carrera").is(':checked') == true || $("#radio-6-carrera").is(':checked') == true || $("#radio-7-carrera").is(':checked') == true || $("#radio-8-carrera").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_carrera').slideUp();
       $('#div_carrera').addClass('hidden');
       $('#pregunta_carrera_footer').addClass('hidden');
@@ -553,7 +572,11 @@
       $('#div_universidad').removeClass('hidden');
       $('#pregunta_universidad_footer').removeClass('hidden');
       $('#div_error_universidad').addClass('hidden');
-  }  , 500);}
+      }  , 500);
+    } else {
+      $('#div_error_carrera').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_universidad">
@@ -643,7 +666,8 @@
   document.getElementById("radio-5-universidad").addEventListener("click", fun_universidad);
   document.getElementById("radio-6-universidad").addEventListener("click", fun_universidad);
   function fun_universidad() {
-    setTimeout(function(){
+    if ($("#radio-1-universidad").is(':checked') == true || $("#radio-2-universidad").is(':checked') == true || $("#radio-3-universidad").is(':checked') == true || $("#radio-4-universidad").is(':checked') == true || $("#radio-5-universidad").is(':checked') == true || $("#radio-6-universidad").is(':checked') == true ) {
+      setTimeout(function(){
       $('#div_universidad').slideUp();
       $('#div_universidad').addClass('hidden');
       $('#pregunta_universidad_footer').addClass('hidden');
@@ -651,7 +675,11 @@
       $('#div_trabaja').removeClass('hidden');
       $('#pregunta_trabaja_footer').removeClass('hidden');
       $('#div_error_trabaja').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else {
+      $('#div_error_universidad').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_trabaja">
@@ -714,23 +742,11 @@
   }
 
   document.getElementById("pregunta_p1_trabaja_boton").addEventListener("click", fun_trabaja);
+  document.getElementById("radio-1-trabaja").addEventListener("click", fun_trabaja);
   document.getElementById("radio-2-trabaja").addEventListener("click", fun_trabaja);
-
   function fun_trabaja() {
-    setTimeout(function(){
-      $('#div_trabaja').slideUp();
-      $('#div_trabaja').addClass('hidden');
-      $('#pregunta_trabaja_footer').addClass('hidden');
-      $('#div_p1').slideDown();
-      $('#div_p1').removeClass('hidden');
-      $('#pregunta_p1_footer').removeClass('hidden');
-      $('#div_error_p1').addClass('hidden');
-  } , 500);
-  }
-
-  document.getElementById("radio-1-trabaja").addEventListener("click", fun_op1);
-  function fun_op1() {
-    setTimeout(function(){
+    if ($("#radio-1-trabaja").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_trabaja').slideUp();
       $('#div_trabaja').addClass('hidden');
       $('#pregunta_trabaja_footer').addClass('hidden');
@@ -738,7 +754,21 @@
       $('#div_empresa').removeClass('hidden');
       $('#pregunta_empresa_footer').removeClass('hidden');
       $('#div_error_empresa').addClass('hidden');
-  } , 500);
+
+      } , 500);
+    } else if ($("#radio-2-trabaja").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_trabaja').slideUp();
+      $('#div_trabaja').addClass('hidden');
+      $('#pregunta_trabaja_footer').addClass('hidden');
+      $('#div_edad').slideDown();
+      $('#div_edad').removeClass('hidden');
+      $('#pregunta_edad_footer').removeClass('hidden');
+      $('#div_error_edad').addClass('hidden');
+    } , 500); }
+    else {
+      $('#div_error_trabaja').removeClass('hidden');
+    }
   }
 
 </script>
@@ -1011,9 +1041,9 @@
 
   document.getElementById("pregunta_trabaja_p1_boton").addEventListener("click", fun_p1_dev);
   function fun_p1_dev() {
-      $('#div_trabaja').slideDown();
-      $('#div_trabaja').removeClass('hidden');
-      $('#pregunta_trabaja_footer').removeClass('hidden');
+      $('#div_edad').slideDown();
+      $('#div_edad').removeClass('hidden');
+      $('#pregunta_edad_footer').removeClass('hidden');
       $('#div_p1').slideUp();
       $('#div_p1').addClass('hidden');
       $('#pregunta_p1_footer').addClass('hidden');
@@ -1024,13 +1054,18 @@
   document.getElementById("radio-1-p1").addEventListener("click", fun_p1);
   document.getElementById("radio-2-p1").addEventListener("click", fun_p1);
   function fun_p1() {
-    setTimeout(function(){
+    if ($("#radio-1-p1").is(':checked') == true || $("#radio-2-p1").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p1').slideUp();
       $('#div_p1').addClass('hidden');
       $('#pregunta_p1_footer').addClass('hidden');
       $('#div_pregunta_px').slideDown();
       $('#div_pregunta_px').removeClass('hidden');
-  } , 500);}
+     } , 500);
+    } else {
+      $('#div_error_p1').removeClass('hidden');
+    }
+    }
 </script>
  
 <div class="centrado hidden" style="width: 90%; text-align: center; position: absolute;" id="div_pregunta_px">
@@ -1131,8 +1166,10 @@
 
   document.getElementById("pregunta_p3_p2a_boton").addEventListener("click", fun_p2a);
   document.getElementById("radio-1-p2a").addEventListener("click", fun_p2a);
+  document.getElementById("radio-2-p2a").addEventListener("click", fun_p2a);
   function fun_p2a() {
-    setTimeout(function(){
+    if ($("#radio-1-p2a").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p2a').slideUp();
       $('#div_p2a').addClass('hidden');
       $('#pregunta_p2a_footer').addClass('hidden');
@@ -1140,11 +1177,9 @@
       $('#div_p3').removeClass('hidden');
       $('#pregunta_p3_footer').removeClass('hidden');
       $('#div_error_p3').addClass('hidden');
-  } , 500);}
-
-  document.getElementById("radio-2-p2a").addEventListener("click", fun_op1);
-  function fun_op1() {
-    setTimeout(function(){
+      } , 500);
+    } else if ($("#radio-2-p2a").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p2a').slideUp();
       $('#div_p2a').addClass('hidden');
       $('#pregunta_p2a_footer').addClass('hidden');
@@ -1152,7 +1187,11 @@
       $('#div_p2b').removeClass('hidden');
       $('#pregunta_p2b_footer').removeClass('hidden');
       $('#div_error_p2b').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else {
+      $('#div_error_p2a').removeClass('hidden');
+    }
+    }
 
 </script>
 
@@ -1575,7 +1614,8 @@
   document.getElementById("radio-5-p5a").addEventListener("click", fun_p5a);
   document.getElementById("radio-6-p5a").addEventListener("click", fun_p5a);
   function fun_p5a() {
-    setTimeout(function(){
+    if ($("#radio-1-p5a").is(':checked') == true || $("#radio-2-p5a").is(':checked') == true || $("#radio-3-p5a").is(':checked') == true || $("#radio-4-p5a").is(':checked') == true || $("#radio-5-p5a").is(':checked') == true || $("#radio-6-p5a").is(':checked') == true ) {
+      setTimeout(function(){
       $('#div_p5a').slideUp();
       $('#div_p5a').addClass('hidden');
       $('#pregunta_p5a_footer').addClass('hidden');
@@ -1583,7 +1623,11 @@
       $('#div_p5b').removeClass('hidden');
       $('#pregunta_p5b_footer').removeClass('hidden');
       $('#div_error_p5b').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else {
+      $('#div_error_p5a').removeClass('hidden');
+    }
+    }
 </script>
 
 
@@ -1680,7 +1724,8 @@
   document.getElementById("radio-5-p5b").addEventListener("click", fun_p5b);
   document.getElementById("radio-6-p5b").addEventListener("click", fun_p5b);
   function fun_p5b() {
-    setTimeout(function(){
+    if ($("#radio-1-p5b").is(':checked') == true || $("#radio-2-p5b").is(':checked') == true || $("#radio-3-p5b").is(':checked') == true || $("#radio-4-p5b").is(':checked') == true || $("#radio-5-p5b").is(':checked') == true || $("#radio-6-p5b").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p5b').slideUp();
       $('#div_p5b').addClass('hidden');
       $('#pregunta_p5b_footer').addClass('hidden');
@@ -1688,7 +1733,11 @@
       $('#div_p5c').removeClass('hidden');
       $('#pregunta_p5c_footer').removeClass('hidden');
       $('#div_error_p5c').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else {
+      $('#div_error_p5b').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p5c">
@@ -1784,7 +1833,8 @@
   document.getElementById("radio-5-p5c").addEventListener("click", fun_p5c);
   document.getElementById("radio-6-p5c").addEventListener("click", fun_p5c);
   function fun_p5c() {
-    setTimeout(function(){
+    if ($("#radio-1-p5c").is(':checked') == true || $("#radio-2-p5c").is(':checked') == true || $("#radio-3-p5c").is(':checked') == true || $("#radio-4-p5c").is(':checked') == true || $("#radio-5-p5c").is(':checked') == true || $("#radio-6-p5c").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p5c').slideUp();
       $('#div_p5c').addClass('hidden');
       $('#pregunta_p5c_footer').addClass('hidden');
@@ -1792,7 +1842,11 @@
       $('#div_p5d').removeClass('hidden');
       $('#pregunta_p5d_footer').removeClass('hidden');
       $('#div_error_p5d').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else {
+      $('#div_error_p5c').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p5d">
@@ -1888,7 +1942,8 @@
   document.getElementById("radio-5-p5d").addEventListener("click", fun_p5d);
   document.getElementById("radio-6-p5d").addEventListener("click", fun_p5d);
   function fun_p5d() {
-    setTimeout(function(){
+    if ($("#radio-1-p5d").is(':checked') == true || $("#radio-2-p5d").is(':checked') == true || $("#radio-3-p5d").is(':checked') == true || $("#radio-4-p5d").is(':checked') == true || $("#radio-5-p5d").is(':checked') == true || $("#radio-6-p5d").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p5d').slideUp();
       $('#div_p5d').addClass('hidden');
       $('#pregunta_p5d_footer').addClass('hidden');
@@ -1896,7 +1951,11 @@
       $('#div_p5e').removeClass('hidden');
       $('#pregunta_p5e_footer').removeClass('hidden');
       $('#div_error_p5e').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else {
+      $('#div_error_p5d').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p5e">
@@ -1992,7 +2051,8 @@
   document.getElementById("radio-5-p5e").addEventListener("click", fun_p5e);
   document.getElementById("radio-6-p5e").addEventListener("click", fun_p5e);
   function fun_p5e() {
-    setTimeout(function(){
+    if ($("#radio-1-p5e").is(':checked') == true || $("#radio-2-p5e").is(':checked') == true || $("#radio-3-p5e").is(':checked') == true || $("#radio-4-p5e").is(':checked') == true || $("#radio-5-p5e").is(':checked') == true || $("#radio-6-p5e").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p5e').slideUp();
       $('#div_p5e').addClass('hidden');
       $('#pregunta_p5e_footer').addClass('hidden');
@@ -2000,7 +2060,11 @@
       $('#div_p5f').removeClass('hidden');
       $('#pregunta_p5f_footer').removeClass('hidden');
       $('#div_error_p5f').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else {
+      $('#div_error_p5e').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p5f">
@@ -2096,7 +2160,8 @@
   document.getElementById("radio-5-p5f").addEventListener("click", fun_p5f);
   document.getElementById("radio-6-p5f").addEventListener("click", fun_p5f);
   function fun_p5f() {
-    setTimeout(function(){
+    if ($("#radio-1-p5f").is(':checked') == true || $("#radio-2-p5f").is(':checked') == true || $("#radio-3-p5f").is(':checked') == true || $("#radio-4-p5f").is(':checked') == true || $("#radio-5-p5f").is(':checked') == true || $("#radio-6-p5f").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p5f').slideUp();
       $('#div_p5f').addClass('hidden');
       $('#pregunta_p5f_footer').addClass('hidden');
@@ -2104,7 +2169,11 @@
       $('#div_p5g').removeClass('hidden');
       $('#pregunta_p5g_footer').removeClass('hidden');
       $('#div_error_p5g').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else {
+      $('#div_error_p5f').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p5g">
@@ -2200,7 +2269,8 @@
   document.getElementById("radio-5-p5g").addEventListener("click", fun_p5g);
   document.getElementById("radio-6-p5g").addEventListener("click", fun_p5g);
   function fun_p5g() {
-    setTimeout(function(){
+    if ($("#radio-1-p5g").is(':checked') == true || $("#radio-2-p5g").is(':checked') == true || $("#radio-3-p5g").is(':checked') == true || $("#radio-4-p5g").is(':checked') == true || $("#radio-5-p5g").is(':checked') == true || $("#radio-6-p5g").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p5g').slideUp();
       $('#div_p5g').addClass('hidden');
       $('#pregunta_p5g_footer').addClass('hidden');
@@ -2208,7 +2278,11 @@
       $('#div_p6').removeClass('hidden');
       $('#pregunta_p6_footer').removeClass('hidden');
       $('#div_error_p6').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else {
+      $('#div_error_p5g').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p6">
@@ -2279,7 +2353,8 @@
   document.getElementById("radio-2-p6").addEventListener("click", fun_p6);
   document.getElementById("radio-3-p6").addEventListener("click", fun_p6);
   function fun_p6() {
-    setTimeout(function(){
+    if ($("#radio-1-p6").is(':checked') == true || $("#radio-2-p6").is(':checked') == true || $("#radio-3-p6").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p6').slideUp();
       $('#div_p6').addClass('hidden');
       $('#pregunta_p6_footer').addClass('hidden');
@@ -2287,7 +2362,11 @@
       $('#div_p7').removeClass('hidden');
       $('#pregunta_p7_footer').removeClass('hidden');
       $('#div_error_p7').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else {
+      $('#div_error_p6').removeClass('hidden');
+    }
+    }
 </script>
 
 
@@ -2382,8 +2461,10 @@
   document.getElementById("radio-4-p7").addEventListener("click", fun_p7);
   document.getElementById("radio-5-p7").addEventListener("click", fun_p7);
   document.getElementById("radio-6-p7").addEventListener("click", fun_p7);
+  document.getElementById("radio-7-p7").addEventListener("click", fun_p7);
   function fun_p7() {
-    setTimeout(function(){
+    if ($("#radio-1-p7").is(':checked') == true || $("#radio-2-p7").is(':checked') == true || $("#radio-3-p7").is(':checked') == true || $("#radio-4-p7").is(':checked') == true || $("#radio-5-p7").is(':checked') == true || $("#radio-6-p7").is(':checked') == true ) {
+      setTimeout(function(){
       $('#div_p7').slideUp();
       $('#div_p7').addClass('hidden');
       $('#pregunta_p7_footer').addClass('hidden');
@@ -2391,11 +2472,9 @@
       $('#div_p8').removeClass('hidden');
       $('#pregunta_p8_footer').removeClass('hidden');
       $('#div_error_p8').addClass('hidden');
-  } , 500);}
-
-  document.getElementById("radio-7-p7").addEventListener("click", fun_op1);
-  function fun_op1() {
-    setTimeout(function(){
+      } , 500);
+    } else if ($("#radio-7-p7").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p7').slideUp();
       $('#div_p7').addClass('hidden');
       $('#pregunta_p7_footer').addClass('hidden');
@@ -2403,7 +2482,12 @@
       $('#div_p7a').removeClass('hidden');
       $('#pregunta_p7a_footer').removeClass('hidden');
       $('#div_error_p7a').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else {
+      $('#div_error_p7').removeClass('hidden');
+    }
+    }
+
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p7a">
@@ -2726,8 +2810,10 @@
   document.getElementById("radio-6-p9").addEventListener("click", fun_p9);
   document.getElementById("radio-7-p9").addEventListener("click", fun_p9);
   document.getElementById("radio-8-p9").addEventListener("click", fun_p9);
+  document.getElementById("radio-9-p9").addEventListener("click", fun_p9);
   function fun_p9() {
-    setTimeout(function(){
+    if ($("#radio-1-p9").is(':checked') == true || $("#radio-2-p9").is(':checked') == true || $("#radio-3-p9").is(':checked') == true || $("#radio-4-p9").is(':checked') == true || $("#radio-5-p9").is(':checked') == true || $("#radio-6-p9").is(':checked') == true || $("#radio-7-p9").is(':checked') == true || $("#radio-8-p9").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p9').slideUp();
       $('#div_p9').addClass('hidden');
       $('#pregunta_p9_footer').addClass('hidden');
@@ -2735,11 +2821,9 @@
       $('#div_p10').removeClass('hidden');
       $('#pregunta_p10_footer').removeClass('hidden');
       $('#div_error_p10').addClass('hidden');
-  } , 500);}
-
-  document.getElementById("radio-9-p9").addEventListener("click", fun_op1);
-  function fun_op1() {
-    setTimeout(function(){
+      } , 500);
+    } else if ($("#radio-9-p9").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p9').slideUp();
       $('#div_p9').addClass('hidden');
       $('#pregunta_p9_footer').addClass('hidden');
@@ -2747,7 +2831,11 @@
       $('#div_p9a').removeClass('hidden');
       $('#pregunta_p9a_footer').removeClass('hidden');
       $('#div_error_p9a').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else {
+      $('#div_error_p9').removeClass('hidden');
+    }
+    }
 
 </script>
 
@@ -3001,8 +3089,10 @@
   document.getElementById("radio-10-p10").addEventListener("click", fun_p10);
   document.getElementById("radio-11-p10").addEventListener("click", fun_p10);
   document.getElementById("radio-12-p10").addEventListener("click", fun_p10);
+  document.getElementById("radio-13-p10").addEventListener("click", fun_p10);
   function fun_p10() {
-    setTimeout(function(){
+    if ($("#radio-1-p10").is(':checked') == true || $("#radio-2-p10").is(':checked') == true || $("#radio-3-p10").is(':checked') == true || $("#radio-4-p10").is(':checked') == true || $("#radio-5-p10").is(':checked') == true || $("#radio-6-p10").is(':checked') == true || $("#radio-7-p10").is(':checked') == true || $("#radio-8-p10").is(':checked') == true || $("#radio-9-p10").is(':checked') == true || $("#radio-10-p10").is(':checked') == true || $("#radio-11-p10").is(':checked') == true || $("#radio-12-p10").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p10').slideUp();
       $('#div_p10').addClass('hidden');
       $('#pregunta_p10_footer').addClass('hidden');
@@ -3010,11 +3100,9 @@
       $('#div_p11').removeClass('hidden');
       $('#pregunta_p11_footer').removeClass('hidden');
       $('#div_error_p11').addClass('hidden');
-  } , 500);}
-
-  document.getElementById("radio-13-p10").addEventListener("click", fun_op1);
-  function fun_op1() {
-    setTimeout(function(){
+      } , 500);
+    } else if ($("#radio-13-p10").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p10').slideUp();
       $('#div_p10').addClass('hidden');
       $('#pregunta_p10_footer').addClass('hidden');
@@ -3022,7 +3110,11 @@
       $('#div_p10a').removeClass('hidden');
       $('#pregunta_p10a_footer').removeClass('hidden');
       $('#div_error_p10a').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else {
+      $('#div_error_p10').removeClass('hidden');
+    }
+    }
 
 </script>
 
@@ -3264,11 +3356,10 @@
   }
 
   document.getElementById("pregunta_p12_p11_boton").addEventListener("click", fun_p11);
-
-  document.getElementById("but_res_p11").addEventListener("click", fun_p11);
-
+  document.getElementById("radio-13-p11").addEventListener("click", fun_p11);
   function fun_p11() {
-    setTimeout(function(){
+    if ($("#radio-2-p11").is(':checked') == true || $("#radio-3-p11").is(':checked') == true || $("#radio-4-p11").is(':checked') == true || $("#radio-5-p11").is(':checked') == true || $("#radio-6-p11").is(':checked') == true || $("#radio-7-p11").is(':checked') == true || $("#radio-8-p11").is(':checked') == true || $("#radio-9-p11").is(':checked') == true || $("#radio-10-p11").is(':checked') == true || $("#radio-11-p11").is(':checked') == true || $("#radio-12-p11").is(':checked') == true || $("#radio-13-p11").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p11').slideUp();
       $('#div_p11').addClass('hidden');
       $('#pregunta_p11_footer').addClass('hidden');
@@ -3276,7 +3367,21 @@
       $('#div_p12').removeClass('hidden');
       $('#pregunta_p12_footer').removeClass('hidden');
       $('#div_error_p12').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else if ($("#radio-1-p11").is(':checked') == true ) {
+      setTimeout(function(){
+      $('#div_p11').slideUp();
+      $('#div_p11').addClass('hidden');
+      $('#pregunta_p11_footer').addClass('hidden');
+      $('#div_p11a').slideDown();
+      $('#div_p11a').removeClass('hidden');
+      $('#pregunta_p11a_footer').removeClass('hidden');
+      $('#div_error_p11a').addClass('hidden');
+      } , 500);
+    } else {
+      $('#div_error_p11').removeClass('hidden');
+    }
+    }
 
   document.getElementById("radio-1-p11").addEventListener("click", fun_multi);
   document.getElementById("radio-2-p11").addEventListener("click", fun_multi);
@@ -3290,24 +3395,13 @@
   document.getElementById("radio-10-p11").addEventListener("click", fun_multi);
   document.getElementById("radio-11-p11").addEventListener("click", fun_multi);
   document.getElementById("radio-12-p11").addEventListener("click", fun_multi);
-  
+  document.getElementById("but_res_p11").addEventListener("click", fun_multi);
   function fun_multi() {
     setTimeout(function(){
+      $('#div_error_p11').addClass('hidden');
       $('#but_res_p11').removeClass('hidden');
+    } , 500);}
 
-  } , 500);}
-
-  document.getElementById("radio-13-p11").addEventListener("click", fun_op1);
-  function fun_op1() {
-    setTimeout(function(){
-      $('#div_p11').slideUp();
-      $('#div_p11').addClass('hidden');
-      $('#pregunta_p11_footer').addClass('hidden');
-      $('#div_p11a').slideDown();
-      $('#div_p11a').removeClass('hidden');
-      $('#pregunta_p11a_footer').removeClass('hidden');
-      $('#div_error_p11a').addClass('hidden');
-  } , 500);}
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p11a">
@@ -3479,10 +3573,11 @@
   }
 
   document.getElementById("pregunta_p13_p12_boton").addEventListener("click", fun_p12);
-
+  document.getElementById("radio-1-p12").addEventListener("click", fun_p12);
   document.getElementById("radio-2-p12").addEventListener("click", fun_p12);
   function fun_p12() {
-    setTimeout(function(){
+    if ($("#radio-2-p12").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p12').slideUp();
       $('#div_p12').addClass('hidden');
       $('#pregunta_p12_footer').addClass('hidden');
@@ -3490,11 +3585,9 @@
       $('#div_p13').removeClass('hidden');
       $('#pregunta_p13_footer').removeClass('hidden');
       $('#div_error_p13').addClass('hidden');
-  } , 500);}
-
-  document.getElementById("radio-1-p12").addEventListener("click", fun_op1);
-  function fun_op1() {
-    setTimeout(function(){
+      } , 500);
+    } else if ($("#radio-1-p12").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p12').slideUp();
       $('#div_p12').addClass('hidden');
       $('#pregunta_p12_footer').addClass('hidden');
@@ -3502,7 +3595,11 @@
       $('#div_p12b').removeClass('hidden');
       $('#pregunta_p12b_footer').removeClass('hidden');
       $('#div_error_p12b').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else {
+      $('#div_error_p12').removeClass('hidden');
+    }
+    }
 
 </script>
 
@@ -3799,34 +3896,10 @@
   }
 
   document.getElementById("pregunta_p15_p14_boton").addEventListener("click", fun_p14);
-
   document.getElementById("but_res_p14").addEventListener("click", fun_p14);
-
   function fun_p14() {
-    setTimeout(function(){
-      $('#div_p14').slideUp();
-      $('#div_p14').addClass('hidden');
-      $('#pregunta_p14_footer').addClass('hidden');
-      $('#div_p15').slideDown();
-      $('#div_p15').removeClass('hidden');
-      $('#pregunta_p15_footer').removeClass('hidden');
-      $('#div_error_p15').addClass('hidden');
-  } , 500);}
-
-  document.getElementById("radio-1-p14").addEventListener("click", fun_multi);
-  document.getElementById("radio-2-p14").addEventListener("click", fun_multi);
-  document.getElementById("radio-3-p14").addEventListener("click", fun_multi);
-  document.getElementById("radio-4-p14").addEventListener("click", fun_multi);
-  
-  function fun_multi() {
-    setTimeout(function(){
-      $('#but_res_p14').removeClass('hidden');
-
-  } , 500);}
-
-  document.getElementById("radio-5-p14").addEventListener("click", fun_op1);
-  function fun_op1() {
-    setTimeout(function(){
+    if ($("#radio-5-p14").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p14').slideUp();
       $('#div_p14').addClass('hidden');
       $('#pregunta_p14_footer').addClass('hidden');
@@ -3834,7 +3907,32 @@
       $('#div_p14a').removeClass('hidden');
       $('#pregunta_p14a_footer').removeClass('hidden');
       $('#div_error_p14a').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else if ($("#radio-1-p14").is(':checked') == true || $("#radio-2-p14").is(':checked') == true || $("#radio-3-p14").is(':checked') == true || $("#radio-4-p14").is(':checked') == true) {
+      setTimeout(function(){
+      $('#div_p14').slideUp();
+      $('#div_p14').addClass('hidden');
+      $('#pregunta_p14_footer').addClass('hidden');
+      $('#div_p15').slideDown();
+      $('#div_p15').removeClass('hidden');
+      $('#pregunta_p15_footer').removeClass('hidden');
+      $('#div_error_p15').addClass('hidden');
+      } , 500);
+    } else {
+      $('#div_error_p14').addClass('hidden');
+      $('#div_error_p14').removeClass('hidden');
+    }
+    }
+
+  document.getElementById("radio-1-p14").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-p14").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-p14").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-p14").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-p14").addEventListener("click", fun_multi);
+  function fun_multi() {
+    setTimeout(function(){
+      $('#but_res_p14').removeClass('hidden');
+    } , 500);}
 
 </script>
 
@@ -4015,7 +4113,8 @@
   document.getElementById("radio-2-p15").addEventListener("click", fun_p15);
   document.getElementById("radio-3-p15").addEventListener("click", fun_p15);
   function fun_p15() {
-    setTimeout(function(){
+    if ($("#radio-1-p15").is(':checked') == true || $("#radio-2-p15").is(':checked') == true || $("#radio-3-p15").is(':checked') == true) {
+      setTimeout(function(){
       $('#div_p15').slideUp();
       $('#div_p15').addClass('hidden');
       $('#pregunta_p15_footer').addClass('hidden');
@@ -4023,7 +4122,11 @@
       $('#div_p16').removeClass('hidden');
       $('#pregunta_p16_footer').removeClass('hidden');
       $('#div_error_p16').addClass('hidden');
-  } , 500);}
+      } , 500);
+    } else {
+      $('#div_error_p15').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p16">
@@ -5033,7 +5136,7 @@
         p10_val = "Otro ¿Cuál?";
        }
 
-       var p11_a_val = "";
+       var p14_a_val = "";
        if ($("#radio-1-p10").is(':checked') == true) {
         p10_val = "Andes";
        }

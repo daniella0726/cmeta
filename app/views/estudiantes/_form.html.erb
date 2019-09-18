@@ -3356,7 +3356,7 @@
   }
 
   document.getElementById("pregunta_p12_p11_boton").addEventListener("click", fun_p11);
-  document.getElementById("bus_res_p11").addEventListener("click", fun_p11);
+  document.getElementById("but_res_p11").addEventListener("click", fun_p11);
   function fun_p11() {
     if ($("#radio-13-p11").is(':checked') == true ) {
       setTimeout(function(){
@@ -3368,7 +3368,19 @@
       $('#pregunta_p11a_footer').removeClass('hidden');
       $('#div_error_p11a').addClass('hidden');
       } , 500);
-    } else if ($("#radio-2-p11").is(':checked') == true || $("#radio-3-p11").is(':checked') == true || $("#radio-4-p11").is(':checked') == true || $("#radio-5-p11").is(':checked') == true || $("#radio-6-p11").is(':checked') == true || $("#radio-7-p11").is(':checked') == true || $("#radio-8-p11").is(':checked') == true || $("#radio-9-p11").is(':checked') == true || $("#radio-10-p11").is(':checked') == true || $("#radio-11-p11").is(':checked') == true || $("#radio-12-p11").is(':checked') == true || $("#radio-11-p11").is(':checked') == true) {
+    } else if (
+      $("#radio-2-p11").is(':checked') == true || 
+      $("#radio-3-p11").is(':checked') == true || 
+      $("#radio-4-p11").is(':checked') == true || 
+      $("#radio-5-p11").is(':checked') == true || 
+      $("#radio-6-p11").is(':checked') == true || 
+      $("#radio-7-p11").is(':checked') == true || 
+      $("#radio-8-p11").is(':checked') == true || 
+      $("#radio-9-p11").is(':checked') == true || 
+      $("#radio-10-p11").is(':checked') == true || 
+      $("#radio-11-p11").is(':checked') == true || 
+      $("#radio-12-p11").is(':checked') == true || 
+      $("#radio-11-p11").is(':checked') == true) {
       setTimeout(function(){
       $('#div_p11').slideUp();
       $('#div_p11').addClass('hidden');
@@ -4708,6 +4720,7 @@
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Terminaste!</h2>
     <i class="fas fa-check-circle" id="but_pregunta_pg"></i>
     <a onclick='downloadCSV({ filename: "estudiantesyopal.csv" });' class="boton3" > Descargar encuesta </a>
+    <a href="/estudiantes/new" class="boton3" > Iniciar nueva encuesta de Estudiantes </a>
 </div>  
 <div class="container hidden" id="pregunta_pg_footer">
   <div class="centrado-abajo">

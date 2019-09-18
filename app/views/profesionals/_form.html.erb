@@ -4218,10 +4218,15 @@
         $('#div_p16').slideUp();
         $('#div_p16').addClass('hidden');
         $('#pregunta_p16_footer').addClass('hidden');
+        if ($("#radio-1-trabaja").is(':checked') == true) {
         $('#div_p16b').slideDown();
         $('#div_p16b').removeClass('hidden');
         $('#pregunta_p16b_footer').removeClass('hidden');
         $('#div_error_p16b').addClass('hidden');
+      } else {
+        $('#div_pregunta_s').slideDown();
+        $('#div_pregunta_s').removeClass('hidden');
+      }
     } else {
         $('#div_error_p16').aClass('hidden');
     }  
@@ -4319,9 +4324,8 @@
         $('#div_p16a').slideUp();
         $('#div_p16a').addClass('hidden');
         $('#pregunta_p16a_footer').addClass('hidden');
-        $('#div_pst').slideDown();
-        $('#div_pst').removeClass('hidden');
-        $('#pregunta_pst_footer').addClass('hidden');
+        $('#div_pregunta_s').slideDown();
+        $('#div_pregunta_s').removeClass('hidden');
       }
     }
   }

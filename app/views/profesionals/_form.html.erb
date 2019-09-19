@@ -5042,8 +5042,15 @@
 
 <div class="centrado hidden" style="width: 90%; text-align: center;" id="div_pg">
   <h2 style="font-family: 'Heebo', sans-serif; color: #222d5a;">Terminaste!</h2>
-    <i class="fas fa-check-circle" id="but_pregunta_pg"></i>
-    <a onclick='downloadCSV({ filename: "profesionalesyopal.csv" });' class="boton3" > Descargar encuesta </a>
+  <div class="row">
+    <div class="col-md-6">
+      <i class="fas fa-check-circle" id="but_pregunta_pg"></i>
+      <a onclick='downloadCSV({ filename: "profesionalesyopal.csv" });' class="boton3" > Descargar encuesta </a>
+    </div>
+    <div class="col-md-6">
+      <a href="https://quiet-reef-76274.herokuapp.com/profesionals/new" class="boton3" > Iniciar encuesta </a>
+    </div>  
+  </div>
 </div>  
 <div class="container hidden" id="pregunta_pg_footer">
   <div class="centrado-abajo">

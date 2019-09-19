@@ -4953,6 +4953,15 @@
        if ($("#radio-5-trabaja").is(':checked') == true) {
         carrera_val = "Finanzas";
        }
+       if ($("#radio-6-trabaja").is(':checked') == true) {
+        carrera_val = "Administración Financiera";
+       }
+       if ($("#radio-7-trabaja").is(':checked') == true) {
+        carrera_val = "Administración de empresas agropecuarias";
+       }
+       if ($("#radio-8-trabaja").is(':checked') == true) {
+        carrera_val = "Administración en salud";
+       }
        var universidad_val = "";
        if ($("#radio-1-universidad").is(':checked') == true) {
         universidad_val = "Fundacion Universitaria Internacional del Tropico Americano";
@@ -5262,15 +5271,51 @@
        if ($("#radio-3-p15").is(':checked') == true) {
         p15_val = "Más de 3 años";
        }
+       var edad_val = "";
+       if ($("#radio-1-edad").is(':checked') == true) {
+        edad_val = "20 a 25";
+       }
+       if ($("#radio-2-edad").is(':checked') == true) {
+        edad_val = "26 a 35";
+       }
+       if ($("#radio-3-edad").is(':checked') == true) {
+        edad_val = "36 a 45";
+       }
+       if ($("#radio-4-edad").is(':checked') == true) {
+        edad_val = "Más de 46 años";
+       }
+       var p16_val = "";
+       if ($("#radio-1-p16").is(':checked') == true) {
+        p16_val = "Si";
+       }
+       if ($("#radio-2-p16").is(':checked') == true) {
+        p16_val = "No";
+       }
+       var p16b_val = "";
+       if ($("#radio-1-p16b").is(':checked') == true) {
+        p16b_val = "No dan ningún tipo de apoyo";
+       }
+       if ($("#radio-2-p16b").is(':checked') == true) {
+        p16b_val = "Ayudan con recursos económicos";
+       }
+       if ($("#radio-3-p16b").is(':checked') == true) {
+        p16b_val = "Dan tiempo libre para los estudios";
+       }
+       if ($("#radio-4-p16b").is(':checked') == true) {
+        p16b_val = "Ayudan con tiempo y dinero";
+       }
+       if ($("#radio-5-p16b").is(':checked') == true) {
+        p16b_val = "Ayudan con el material para los estudios (libros materiales)";
+       }
+       if ($("#radio-6-p16b").is(':checked') == true) {
+        p16b_val = "Otro ¿Cuál?";
+       }
+       
         var data, filename, link;
         var stockData = [
          {
          Pregunta: "Nombre",
          Respuesta : $("#res_nombre").val()
-         },
-         {
-         Pregunta: "Semestre",
-         Respuesta : $("#res_semestre").val()
          },
          {
          Pregunta: "Carrera",
@@ -5291,6 +5336,10 @@
          {
          Pregunta: "Cargo",
          Respuesta : $("#res_cargo").val()
+         },
+         {
+         Pregunta: "Edad",
+         Respuesta : edad_val
          },
          {
          Pregunta: "1 Está interesado en hacer un programa de posgrado",
@@ -5461,11 +5510,23 @@
          Respuesta : p15_val
          },
          {
-         Pregunta: "16 Cuánto paga semestralmente por su pregrado",
-         Respuesta :  $("#res_p16").val()
+         Pregunta: "16 Ha realizado algun estudio de postgrado",
+         Respuesta :  p16_val
          },
          {
-         Pregunta: "17 En promedio cuántos son sus ingresos mensuales",
+         Pregunta: "16 cualestudio de postgrado",
+         Respuesta :  $("#res_p16a").val()
+         },
+         {
+         Pregunta: "17 En la empresa donde trabaja actualmente con qué tipo de recursos apoyan a sus trabajadores para capacitación?",
+         Respuesta :  p16b_val
+         },
+         {
+         Pregunta: "17 otra cual?",
+         Respuesta :  $("#res_p16c").val()
+         },
+         {
+         Pregunta: "18 En promedio cuántos son sus ingresos mensuales",
          Respuesta :  $("#res_p17").val()
          },
          {
